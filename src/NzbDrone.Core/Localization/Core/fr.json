@@ -1,0 +1,6 @@
+{
+    "language": "Langue",
+    "uiLanguage": "UI Langue",
+    "uiLanguageHelpText": "Langue que Radarr utilisera pour l'interface utilisateur",
+    "uiLanguageHelpTextWarning": "Rechargement du navigateur requis"
+}
