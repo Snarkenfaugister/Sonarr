@@ -1,6 +1,6 @@
 {
   "language": "Language",
   "uiLanguage": "UI Language",
-  "uiLanguageHelpText": "Language that Radarr will use for UI",
+  "uiLanguageHelpText": "Language that Sonarr will use for UI",
   "uiLanguageHelpTextWarning": "Browser Reload Required"
 }
