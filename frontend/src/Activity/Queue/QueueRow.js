@@ -19,6 +19,7 @@ import QueueStatusCell from './QueueStatusCell';
 import TimeleftCell from './TimeleftCell';
 import RemoveQueueItemModal from './RemoveQueueItemModal';
 import styles from './QueueRow.css';
+import translate from 'Utilities/String/translate';
 
 class QueueRow extends Component {
 
@@ -346,7 +347,7 @@ class QueueRow extends Component {
                   }
 
                   <SpinnerIconButton
-                    title="Remove from queue"
+                    title={translate('removeFromQueue')}
                     name={icons.REMOVE}
                     isSpinning={isRemoving}
                     onPress={this.onRemoveQueueItemPress}

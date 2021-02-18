@@ -8,6 +8,7 @@ import ModalContent from 'Components/Modal/ModalContent';
 import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
+import translate from 'Utilities/String/translate';
 
 class BlacklistDetailsModal extends Component {
 
@@ -39,19 +40,19 @@ class BlacklistDetailsModal extends Component {
           <ModalBody>
             <DescriptionList>
               <DescriptionListItem
-                title="Name"
+                title={translate('name')}
                 data={sourceTitle}
               />
 
               <DescriptionListItem
-                title="Protocol"
+                title={translate('protocol')}
                 data={protocol}
               />
 
               {
                 !!message &&
                   <DescriptionListItem
-                    title="Indexer"
+                    title={translate('indexer')}
                     data={indexer}
                   />
               }
@@ -59,7 +60,7 @@ class BlacklistDetailsModal extends Component {
               {
                 !!message &&
                   <DescriptionListItem
-                    title="Message"
+                    title={translate('message')}
                     data={message}
                   />
               }
@@ -68,7 +69,7 @@ class BlacklistDetailsModal extends Component {
 
           <ModalFooter>
             <Button onPress={onModalClose}>
-              Close
+              {translate('close')}
             </Button>
           </ModalFooter>
         </ModalContent>

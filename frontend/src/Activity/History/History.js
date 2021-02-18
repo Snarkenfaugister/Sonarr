@@ -14,6 +14,7 @@ import PageToolbarSection from 'Components/Page/Toolbar/PageToolbarSection';
 import PageToolbarButton from 'Components/Page/Toolbar/PageToolbarButton';
 import FilterMenu from 'Components/Menu/FilterMenu';
 import HistoryRowConnector from './HistoryRowConnector';
+import translate from 'Utilities/String/translate';
 
 class History extends Component {
 
@@ -64,11 +65,11 @@ class History extends Component {
     const hasError = error || episodesError;
 
     return (
-      <PageContent title="History">
+      <PageContent title={translate('history')}>
         <PageToolbar>
           <PageToolbarSection>
             <PageToolbarButton
-              label="Refresh"
+              label={translate('refresh')}
               iconName={icons.REFRESH}
               isSpinning={isFetching}
               onPress={onFirstPagePress}
@@ -81,7 +82,7 @@ class History extends Component {
               columns={columns}
             >
               <PageToolbarButton
-                label="Options"
+                label={translate('options')}
                 iconName={icons.TABLE}
               />
             </TableOptionsModalWrapper>
@@ -104,7 +105,9 @@ class History extends Component {
 
           {
             !isFetchingAny && hasError &&
-              <div>Unable to load history</div>
+              <div>
+                {translate('unableToLoadHistory')}
+              </div>
           }
 
           {
@@ -113,7 +116,7 @@ class History extends Component {
 
             isPopulated && !hasError && !items.length &&
               <div>
-                No history found
+                {translate('noHistoryFound')}
               </div>
           }
 

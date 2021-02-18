@@ -22,6 +22,7 @@ import TableOptionsModalWrapper from 'Components/Table/TableOptions/TableOptions
 import RemoveQueueItemsModal from './RemoveQueueItemsModal';
 import QueueOptionsConnector from './QueueOptionsConnector';
 import QueueRowConnector from './QueueRowConnector';
+import translate from 'Utilities/String/translate';
 
 class Queue extends Component {
 
@@ -167,11 +168,11 @@ class Queue extends Component {
     const disableSelectedActions = selectedCount === 0;
 
     return (
-      <PageContent title="Queue">
+      <PageContent title={translate('queue')}>
         <PageToolbar>
           <PageToolbarSection>
             <PageToolbarButton
-              label="Refresh"
+              label={translate('refresh')}
               iconName={icons.REFRESH}
               isSpinning={isRefreshing}
               onPress={onRefreshPress}
@@ -180,7 +181,7 @@ class Queue extends Component {
             <PageToolbarSeparator />
 
             <PageToolbarButton
-              label="Grab Selected"
+              label={translate('grabSelected')}
               iconName={icons.DOWNLOAD}
               isDisabled={disableSelectedActions || !isPendingSelected}
               isSpinning={isGrabbing}
@@ -188,7 +189,7 @@ class Queue extends Component {
             />
 
             <PageToolbarButton
-              label="Remove Selected"
+              label={translate('removeSelected')}
               iconName={icons.REMOVE}
               isDisabled={disableSelectedActions}
               isSpinning={isRemoving}
@@ -205,7 +206,7 @@ class Queue extends Component {
               optionsComponent={QueueOptionsConnector}
             >
               <PageToolbarButton
-                label="Options"
+                label={translate('options')}
                 iconName={icons.TABLE}
               />
             </TableOptionsModalWrapper>
@@ -221,14 +222,14 @@ class Queue extends Component {
           {
             !isRefreshing && hasError &&
               <div>
-                Failed to load Queue
+                {translate('failedToLoadQueue')}
               </div>
           }
 
           {
             isAllPopulated && !hasError && !items.length &&
               <div>
-                Queue is empty
+                {translate('queueIsEmpty')}
               </div>
           }
 

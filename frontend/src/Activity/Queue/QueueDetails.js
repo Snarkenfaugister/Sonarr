@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { icons, kinds } from 'Helpers/Props';
 import Icon from 'Components/Icon';
+import translate from 'Utilities/String/translate';
 
 function QueueDetails(props) {
   const {
@@ -23,7 +24,7 @@ function QueueDetails(props) {
     return (
       <Icon
         name={icons.PENDING}
-        title={`Release will be processed ${moment(estimatedCompletionTime).fromNow()}`}
+        title={translate('releaseWillBeProcessed', [moment(estimatedCompletionTime).fromNow()])}
       />
     );
   }
@@ -34,7 +35,7 @@ function QueueDetails(props) {
         <Icon
           name={icons.DOWNLOAD}
           kind={kinds.DANGER}
-          title={`Import failed: ${errorMessage}`}
+          title={translate('ImportFailed', [errorMessage])}
         />
       );
     }
@@ -44,7 +45,7 @@ function QueueDetails(props) {
         <Icon
           name={icons.DOWNLOAD}
           kind={kinds.WARNING}
-          title={'Downloaded - Unable to Import: check logs for details'}
+          title={translate('unableToImportCheckLogs')}
         />
       );
     }
@@ -54,7 +55,7 @@ function QueueDetails(props) {
         <Icon
           name={icons.DOWNLOAD}
           kind={kinds.PURPLE}
-          title={'Downloaded - Waiting to Import'}
+          title={translate('waitingToImport')}
         />
       );
     }
@@ -64,7 +65,7 @@ function QueueDetails(props) {
         <Icon
           name={icons.DOWNLOAD}
           kind={kinds.PURPLE}
-          title={'Downloaded - Importing'}
+          title={`${translate('downloaded')} - ${translate('importing')}`}
         />
       );
     }
@@ -75,7 +76,7 @@ function QueueDetails(props) {
       <Icon
         name={icons.DOWNLOADING}
         kind={kinds.DANGER}
-        title={`Download failed: ${errorMessage}`}
+        title={translate('downloadFailedInterp', [errorMessage])}
       />
     );
   }
@@ -85,7 +86,7 @@ function QueueDetails(props) {
       <Icon
         name={icons.DOWNLOADING}
         kind={kinds.DANGER}
-        title="Download failed: check download client for more details"
+        title={translate('downloadFailedCheckDownloadClientForMoreDetails')}
       />
     );
   }
@@ -95,7 +96,7 @@ function QueueDetails(props) {
       <Icon
         name={icons.DOWNLOADING}
         kind={kinds.WARNING}
-        title="Download warning: check download client for more details"
+        title={translate('downloadWarningCheckDownloadClientForMoreDetails')}
       />
     );
   }
@@ -104,7 +105,7 @@ function QueueDetails(props) {
     return (
       <Icon
         name={icons.DOWNLOADING}
-        title={`Episode is downloading - ${progress.toFixed(1)}% ${title}`}
+        title={translate('episodeIsDownloadingInterp', [progress.toFixed(1), title])}
       />
     );
   }

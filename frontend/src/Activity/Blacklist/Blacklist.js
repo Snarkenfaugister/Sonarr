@@ -6,6 +6,7 @@ import getSelectedIds from 'Utilities/Table/getSelectedIds';
 import removeOldSelectedState from 'Utilities/Table/removeOldSelectedState';
 import selectAll from 'Utilities/Table/selectAll';
 import toggleSelected from 'Utilities/Table/toggleSelected';
+import translate from 'Utilities/String/translate';
 import { align, icons, kinds } from 'Helpers/Props';
 import LoadingIndicator from 'Components/Loading/LoadingIndicator';
 import ConfirmModal from 'Components/Modal/ConfirmModal';
@@ -115,11 +116,11 @@ class Blacklist extends Component {
     const selectedIds = this.getSelectedIds();
 
     return (
-      <PageContent title="Blacklist">
+      <PageContent title={translate('blacklist')}>
         <PageToolbar>
           <PageToolbarSection>
             <PageToolbarButton
-              label="Remove Selected"
+              label={translate('removeSelected')}
               iconName={icons.REMOVE}
               isDisabled={!selectedIds.length}
               isSpinning={isRemoving}
@@ -127,7 +128,7 @@ class Blacklist extends Component {
             />
 
             <PageToolbarButton
-              label="Clear"
+              label={translate('clear')}
               iconName={icons.CLEAR}
               isSpinning={isClearingBlacklistExecuting}
               onPress={onClearBlacklistPress}
@@ -140,7 +141,7 @@ class Blacklist extends Component {
               columns={columns}
             >
               <PageToolbarButton
-                label="Options"
+                label={translate('options')}
                 iconName={icons.TABLE}
               />
             </TableOptionsModalWrapper>
@@ -155,13 +156,15 @@ class Blacklist extends Component {
 
           {
             !isFetching && !!error &&
-            <div>Unable to load blacklist</div>
+              <div>
+                {translate('unableToLoadBlacklist')}
+              </div>
           }
 
           {
             isPopulated && !error && !items.length &&
             <div>
-              No history blacklist
+              {translate('noHistoryBlacklist')}
             </div>
           }
 
@@ -205,9 +208,9 @@ class Blacklist extends Component {
         <ConfirmModal
           isOpen={isConfirmRemoveModalOpen}
           kind={kinds.DANGER}
-          title="Remove Selected"
-          message={'Are you sure you want to remove the selected items from the blacklist?'}
-          confirmLabel="Remove Selected"
+          title={translate('removeSelected')}
+          message={translate('areYouSureYouWantToRemoveTheSelectedItemsFromBlacklist')}
+          confirmLabel={translate('removeSelected')}
           onConfirm={this.onRemoveSelectedConfirmed}
           onCancel={this.onConfirmRemoveModalClose}
         />

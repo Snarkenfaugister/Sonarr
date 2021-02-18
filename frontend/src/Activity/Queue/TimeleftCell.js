@@ -6,6 +6,7 @@ import getRelativeDate from 'Utilities/Date/getRelativeDate';
 import formatBytes from 'Utilities/Number/formatBytes';
 import TableRowCell from 'Components/Table/Cells/TableRowCell';
 import styles from './TimeleftCell.css';
+import translate from 'Utilities/String/translate';
 
 function TimeleftCell(props) {
   const {
@@ -26,7 +27,7 @@ function TimeleftCell(props) {
     return (
       <TableRowCell
         className={styles.timeleft}
-        title={`Delaying download until ${date} at ${time}`}
+        title={translate('delayingDownloadUntilInterp', [date, time])}
       >
         -
       </TableRowCell>
@@ -40,7 +41,7 @@ function TimeleftCell(props) {
     return (
       <TableRowCell
         className={styles.timeleft}
-        title={`Retrying download ${date} at ${time}`}
+        title={translate('retryingDownloadInterp', [date, time])}
       >
         -
       </TableRowCell>

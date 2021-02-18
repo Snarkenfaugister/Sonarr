@@ -4,6 +4,7 @@ import { icons, kinds } from 'Helpers/Props';
 import Icon from 'Components/Icon';
 import TableRowCell from 'Components/Table/Cells/TableRowCell';
 import styles from './HistoryEventTypeCell.css';
+import translate from 'Utilities/String/translate';
 
 function getIconName(eventType) {
   switch (eventType) {
@@ -38,21 +39,21 @@ function getIconKind(eventType) {
 function getTooltip(eventType, data) {
   switch (eventType) {
     case 'grabbed':
-      return `Episode grabbed from ${data.indexer} and sent to ${data.downloadClient}`;
+      return translate('episodeGrabbedFromTo', [data.indexer, data.downloadClient]);
     case 'seriesFolderImported':
-      return 'Episode imported from series folder';
+      return translate('episodeImportedFromSeriesFolder');
     case 'downloadFolderImported':
-      return 'Episode downloaded successfully and picked up from download client';
+      return translate('episodeDownloadedSuccessfully');
     case 'downloadFailed':
-      return 'Episode download failed';
+      return translate('episodeDownloadFailed');
     case 'episodeFileDeleted':
-      return 'Episode file deleted';
+      return translate('episodeFileDeleted');
     case 'episodeFileRenamed':
-      return 'Episode file renamed';
+      return translate('episodeFileRenamed');
     case 'downloadIgnored':
-      return 'Episode Download Ignored';
+      return translate('episodeDownloadIgnored');
     default:
-      return 'Unknown event';
+      return translate('unknownEvent');
   }
 }
 

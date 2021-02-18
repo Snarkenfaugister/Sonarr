@@ -10,6 +10,7 @@ import ModalContent from 'Components/Modal/ModalContent';
 import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
+import translate from 'Utilities/String/translate';
 
 class RemoveQueueItemModal extends Component {
 
@@ -80,35 +81,35 @@ class RemoveQueueItemModal extends Component {
           onModalClose={this.onModalClose}
         >
           <ModalHeader>
-            Remove - {sourceTitle}
+            {translate('remove')} - {sourceTitle}
           </ModalHeader>
 
           <ModalBody>
             <div>
-              Are you sure you want to remove '{sourceTitle}' from the queue?
+              {translate('removeFromQueueText', [sourceTitle])}
             </div>
 
             <FormGroup>
-              <FormLabel>Remove From Download Client</FormLabel>
+              <FormLabel>{translate('removeFromDownloadClient')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="remove"
                 value={remove}
-                helpTextWarning="Removing will remove the download and the file(s) from the download client."
+                helpTextWarning={translate('removeHelpTextWarning')}
                 isDisabled={!canIgnore}
                 onChange={this.onRemoveChange}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Blacklist Release</FormLabel>
+              <FormLabel>{translate('blacklistRelease')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="blacklist"
                 value={blacklist}
-                helpText="Starts a search for this episode again and prevents this release from being grabbed again"
+                helpText={translate('blacklistSearchHelpText')}
                 onChange={this.onBlacklistChange}
               />
             </FormGroup>
@@ -117,14 +118,14 @@ class RemoveQueueItemModal extends Component {
 
           <ModalFooter>
             <Button onPress={this.onModalClose}>
-              Close
+              {translate('close')}
             </Button>
 
             <Button
               kind={kinds.DANGER}
               onPress={this.onRemoveConfirmed}
             >
-              Remove
+              {translate('remove')}
             </Button>
           </ModalFooter>
         </ModalContent>

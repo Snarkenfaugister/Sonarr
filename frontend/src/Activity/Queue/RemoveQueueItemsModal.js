@@ -11,6 +11,7 @@ import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import styles from './RemoveQueueItemsModal.css';
+import translate from 'Utilities/String/translate';
 
 class RemoveQueueItemsModal extends Component {
 
@@ -81,22 +82,22 @@ class RemoveQueueItemsModal extends Component {
           onModalClose={this.onModalClose}
         >
           <ModalHeader>
-            Remove Selected Item{selectedCount > 1 ? 's' : ''}
+            {translate(selectedCount === 1 ? 'removeSelectedItem' : 'removeSelectedItems')}
           </ModalHeader>
 
           <ModalBody>
             <div className={styles.message}>
-              Are you sure you want to remove {selectedCount} item{selectedCount > 1 ? 's' : ''} from the queue?
+              {translate(selectedCount === 1 ? 'areYouSureYouWantToRemoveSelectedItemFromQueue' : 'areYouSureYouWantToRemoveSelectedItemsFromQueue', [selectedCount])}
             </div>
 
             <FormGroup>
-              <FormLabel>Remove From Download Client</FormLabel>
+              <FormLabel>{translate('removeFromDownloadClient')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="remove"
                 value={remove}
-                helpTextWarning="Removing will remove the download and the file(s) from the download client."
+                helpTextWarning={translate('removeHelpTextWarning')}
                 isDisabled={!canIgnore}
                 onChange={this.onRemoveChange}
               />
@@ -104,14 +105,14 @@ class RemoveQueueItemsModal extends Component {
 
             <FormGroup>
               <FormLabel>
-                Blacklist Release{selectedCount > 1 ? 's' : ''}
+                {translate(selectedCount === 1 ? 'blacklistRelease' : 'blacklistReleases')}
               </FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="blacklist"
                 value={blacklist}
-                helpText="Prevents Sonarr from automatically grabbing this episode again"
+                helpText={translate('blacklistHelpText')}
                 onChange={this.onBlacklistChange}
               />
             </FormGroup>
@@ -120,14 +121,14 @@ class RemoveQueueItemsModal extends Component {
 
           <ModalFooter>
             <Button onPress={this.onModalClose}>
-              Close
+              {translate('close')}
             </Button>
 
             <Button
               kind={kinds.DANGER}
               onPress={this.onRemoveConfirmed}
             >
-              Remove
+              {translate('remove')}
             </Button>
           </ModalFooter>
         </ModalContent>

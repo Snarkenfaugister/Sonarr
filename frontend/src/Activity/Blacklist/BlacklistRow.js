@@ -11,6 +11,7 @@ import EpisodeQuality from 'Episode/EpisodeQuality';
 import SeriesTitleLink from 'Series/SeriesTitleLink';
 import BlacklistDetailsModal from './BlacklistDetailsModal';
 import styles from './BlacklistRow.css';
+import translate from 'Utilities/String/translate';
 
 class BlacklistRow extends Component {
 
@@ -152,7 +153,7 @@ class BlacklistRow extends Component {
                   />
 
                   <IconButton
-                    title="Remove from blacklist"
+                    title={translate('removeFromBlacklist')}
                     name={icons.REMOVE}
                     kind={kinds.DANGER}
                     onPress={onRemovePress}
