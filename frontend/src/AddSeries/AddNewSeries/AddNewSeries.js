@@ -11,6 +11,7 @@ import PageContent from 'Components/Page/PageContent';
 import PageContentBody from 'Components/Page/PageContentBody';
 import AddNewSeriesSearchResultConnector from './AddNewSeriesSearchResultConnector';
 import styles from './AddNewSeries.css';
+import translate from 'Utilities/String/translate';
 
 class AddNewSeries extends Component {
 
@@ -87,7 +88,7 @@ class AddNewSeries extends Component {
     const isFetching = this.state.isFetching;
 
     return (
-      <PageContent title="Add New Series">
+      <PageContent title={translate('addNewSeries')}>
         <PageContentBody>
           <div className={styles.searchContainer}>
             <div className={styles.searchIconContainer}>
@@ -101,7 +102,7 @@ class AddNewSeries extends Component {
               className={styles.searchInput}
               name="seriesLookup"
               value={term}
-              placeholder="eg. Breaking Bad, tvdb:####"
+              placeholder={translate('exampleNewSeries')}
               autoFocus={true}
               onChange={this.onSearchInputChange}
             />
@@ -126,7 +127,7 @@ class AddNewSeries extends Component {
             !isFetching && !!error ?
               <div className={styles.message}>
                 <div className={styles.helpText}>
-                  Failed to load search results, please try again.
+                  {translate('failedLoadingSearchResults')}
                 </div>
                 <div>{getErrorMessage(error)}</div>
               </div> : null
@@ -151,11 +152,15 @@ class AddNewSeries extends Component {
           {
             !isFetching && !error && !items.length && !!term &&
               <div className={styles.message}>
-                <div className={styles.noResults}>Couldn't find any results for '{term}'</div>
-                <div>You can also search using TVDB ID of a show. eg. tvdb:71663</div>
+                <div className={styles.noResults}>
+                  {translate('couldNotFindResults', [term])}
+                </div>
+                <div>
+                  {translate('youCanAlsoSearch')}
+                </div>
                 <div>
                   <Link to="https://wiki.servarr.com/Sonarr_FAQ#Why_cant_I_add_a_new_series_when_I_know_the_TVDB_ID">
-                    Why can't I find my show?
+                    {translate('cantFindMovie')}
                   </Link>
                 </div>
               </div>
@@ -166,9 +171,11 @@ class AddNewSeries extends Component {
               null :
               <div className={styles.message}>
                 <div className={styles.helpText}>
-                  It's easy to add a new series, just start typing the name the series you want to add.
+                  {translate('addNewMessage')}
                 </div>
-                <div>You can also search using TVDB ID of a show. eg. tvdb:71663</div>
+                <div>
+                  {translate('youCanAlsoSearch')}
+                </div>
               </div>
           }
 
@@ -176,14 +183,14 @@ class AddNewSeries extends Component {
             !term && !hasExistingSeries ?
               <div className={styles.message}>
                 <div className={styles.noSeriesText}>
-                  You haven't added any series yet, do you want to import some or all of your series first?
+                  {translate('haveNotAddedSeries')}
                 </div>
                 <div>
                   <Button
                     to="/add/import"
                     kind={kinds.PRIMARY}
                   >
-                    Import Existing Series
+                    {translate('importExistingSeries')}
                   </Button>
                 </div>
               </div> :

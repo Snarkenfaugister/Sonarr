@@ -12,6 +12,7 @@ import TextInput from 'Components/Form/TextInput';
 import ImportSeriesSearchResultConnector from './ImportSeriesSearchResultConnector';
 import ImportSeriesTitle from './ImportSeriesTitle';
 import styles from './ImportSeriesSelectSeries.css';
+import translate from 'Utilities/String/translate';
 
 class ImportSeriesSelectSeries extends Component {
 
@@ -174,7 +175,7 @@ class ImportSeriesSelectSeries extends Component {
                         kind={kinds.WARNING}
                       />
 
-                      No match found!
+                      {translate('noMatchFound')}
                     </div> :
                     null
                 }
@@ -189,7 +190,7 @@ class ImportSeriesSelectSeries extends Component {
                         kind={kinds.WARNING}
                       />
 
-                      Search failed, please try again later.
+                      {translate('searchFailedPleaseTryAgainLater')}
                     </div> :
                     null
                 }

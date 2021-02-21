@@ -11,6 +11,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import AddIndexerItem from './AddIndexerItem';
 import styles from './AddIndexerModalContent.css';
+import translate from 'Utilities/String/translate';
 
 class AddIndexerModalContent extends Component {
 
@@ -94,7 +95,7 @@ class AddIndexerModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Close
+            {translate('close')}
           </Button>
         </ModalFooter>
       </ModalContent>

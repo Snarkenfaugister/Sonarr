@@ -10,6 +10,7 @@ import PageContent from 'Components/Page/PageContent';
 import PageContentBody from 'Components/Page/PageContentBody';
 import RootFolders from 'RootFolder/RootFolders';
 import styles from './ImportSeriesSelectFolder.css';
+import translate from 'Utilities/String/translate';
 
 class ImportSeriesSelectFolder extends Component {
 
@@ -52,7 +53,7 @@ class ImportSeriesSelectFolder extends Component {
     } = this.props;
 
     return (
-      <PageContent title="Import Series">
+      <PageContent title={translate('importSeries')}>
         <PageContentBody>
           {
             isFetching && !isPopulated &&
@@ -61,35 +62,29 @@ class ImportSeriesSelectFolder extends Component {
 
           {
             !isFetching && !!error &&
-              <div>Unable to load root folders</div>
+              <div>{translate('unableToLoadRootFolders')}</div>
           }
 
           {
             !error && isPopulated &&
               <div>
                 <div className={styles.header}>
-                  Import series you already have
+                  {translate('importSeriesAlreadyHave')}
                 </div>
 
                 <div className={styles.tips}>
-                  Some tips to ensure the import goes smoothly:
+                  {translate('importTipsMessage')}
                   <ul>
-                    <li className={styles.tip}>
-                      Make sure that your files include the quality in their filenames. eg. <span className={styles.code}>episode.s02e15.bluray.mkv</span>
-                    </li>
-                    <li className={styles.tip}>
-                      Point Sonarr to the folder containing all of your tv shows, not a specific one. eg. <span className={styles.code}>"{isWindows ? 'C:\\tv shows' : '/tv shows'}"</span> and not <span className={styles.code}>"{isWindows ? 'C:\\tv shows\\the simpsons' : '/tv shows/the simpsons'}"</span> Additionally, each series must be in its own folder within the root/library folder.
-                    </li>
-                    <li className={styles.tip}>
-                      Do not use for importing downloads from your download client, this is only for existing organized libraries, not unsorted files.
-                    </li>
+                    <li className={styles.tip} dangerouslySetInnerHTML={{ __html: translate('importIncludeQuality', ['<code>episode.s02e15.bluray.mkv</code>']) }} />
+                    <li className={styles.tip} dangerouslySetInnerHTML={{ __html: translate('importRootPath', [`<code>${isWindows ? 'C:\\tv shows' : '/tv shows'}</code>`, `<code>${isWindows ? 'C:\\tv shows\\the simpsons' : '/tv shows/the simpsons'}</code>`]) }} />
+                    <li className={styles.tip}>{translate('importNotForDownloads')}</li>
                   </ul>
                 </div>
 
                 {
                   items.length > 0 ?
                     <div className={styles.recentFolders}>
-                      <FieldSet legend="Root Folders">
+                      <FieldSet legend={translate('rootFolders')}>
                         <RootFolders
                           isFetching={isFetching}
                           isPopulated={isPopulated}
@@ -107,7 +102,7 @@ class ImportSeriesSelectFolder extends Component {
                           className={styles.importButtonIcon}
                           name={icons.DRIVE}
                         />
-                        Choose another folder
+                        {translate('chooseAnotherFolder')}
                       </Button>
                     </div> :
 
@@ -121,7 +116,7 @@ class ImportSeriesSelectFolder extends Component {
                           className={styles.importButtonIcon}
                           name={icons.DRIVE}
                         />
-                        Start Import
+                        {translate('startImport')}
                       </Button>
                     </div>
                 }

@@ -7,6 +7,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import CustomFilter from './CustomFilter';
 import styles from './CustomFiltersModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function CustomFiltersModalContent(props) {
   const {
@@ -58,7 +59,7 @@ function CustomFiltersModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Close
+          {translate('close')}
         </Button>
       </ModalFooter>
     </ModalContent>

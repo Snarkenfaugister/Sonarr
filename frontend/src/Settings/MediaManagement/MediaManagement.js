@@ -13,6 +13,7 @@ import FormInputGroup from 'Components/Form/FormInputGroup';
 import RootFoldersConnector from 'RootFolder/RootFoldersConnector';
 import NamingConnector from './Naming/NamingConnector';
 import AddRootFolderConnector from './RootFolder/AddRootFolderConnector';
+import translate from 'Utilities/String/translate';
 
 const episodeTitleRequiredOptions = [
   { key: 'always', value: 'Always' },
@@ -415,7 +416,7 @@ class MediaManagement extends Component {
               </Form>
           }
 
-          <FieldSet legend="Root Folders">
+          <FieldSet legend={translate('rootFolders')}>
             <RootFoldersConnector />
             <AddRootFolderConnector />
           </FieldSet>

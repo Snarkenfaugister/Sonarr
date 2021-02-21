@@ -4,6 +4,7 @@ import LoadingIndicator from 'Components/Loading/LoadingIndicator';
 import Table from 'Components/Table/Table';
 import TableBody from 'Components/Table/TableBody';
 import RootFolderRowConnector from './RootFolderRowConnector';
+import translate from 'Utilities/String/translate';
 
 const rootFolderColumns = [
   {
@@ -43,7 +44,7 @@ function RootFolders(props) {
 
   if (!isFetching && !!error) {
     return (
-      <div>Unable to load root folders</div>
+      <div>{translate('unableToLoadRootFolders')}</div>
     );
   }
 

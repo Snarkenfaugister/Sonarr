@@ -11,6 +11,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import TagDetailsDelayProfile from './TagDetailsDelayProfile';
 import styles from './TagDetailsModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function TagDetailsModalContent(props) {
   const {
@@ -174,7 +175,7 @@ function TagDetailsModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Close
+          {translate('close')}
         </Button>
       </ModalFooter>
     </ModalContent>

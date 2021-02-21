@@ -20,6 +20,7 @@ import OrganizeSeriesModal from './Organize/OrganizeSeriesModal';
 import SeriesEditorRowConnector from './SeriesEditorRowConnector';
 import SeriesEditorFooter from './SeriesEditorFooter';
 import SeriesEditorFilterModalConnector from './SeriesEditorFilterModalConnector';
+import translate from 'Utilities/String/translate';
 
 class SeriesEditor extends Component {
 
@@ -136,7 +137,7 @@ class SeriesEditor extends Component {
               onTableOptionChange={onTableOptionChange}
             >
               <PageToolbarButton
-                label="Options"
+                label={translate('options')}
                 iconName={icons.TABLE}
               />
             </TableOptionsModalWrapper>

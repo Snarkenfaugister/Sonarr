@@ -15,6 +15,7 @@ import CalendarOptionsModal from './Options/CalendarOptionsModal';
 import LegendConnector from './Legend/LegendConnector';
 import CalendarConnector from './CalendarConnector';
 import styles from './CalendarPage.css';
+import translate from 'Utilities/String/translate';
 
 const MINIMUM_DAY_WIDTH = 120;
 
@@ -122,7 +123,7 @@ class CalendarPage extends Component {
 
           <PageToolbarSection alignContent={align.RIGHT}>
             <PageToolbarButton
-              label="Options"
+              label={translate('options')}
               iconName={icons.POSTER}
               onPress={this.onOptionsPress}
             />

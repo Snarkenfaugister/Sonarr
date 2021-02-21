@@ -1,43 +1,44 @@
 import React from 'react';
 import DescriptionList from 'Components/DescriptionList/DescriptionList';
 import DescriptionListItem from 'Components/DescriptionList/DescriptionListItem';
+import translate from 'Utilities/String/translate';
 
 function SeriesMonitoringOptionsPopoverContent() {
   return (
     <DescriptionList>
       <DescriptionListItem
-        title="All Episodes"
-        data="Monitor all episodes except specials"
+        title={translate('allEpisodes')}
+        data={translate('monitorAllEpisodesExceptSpecials')}
       />
 
       <DescriptionListItem
-        title="Future Episodes"
-        data="Monitor episodes that have not aired yet"
+        title={translate('futureEpisodes')}
+        data={translate('monitorUnairedEpisodes')}
       />
 
       <DescriptionListItem
-        title="Missing Episodes"
-        data="Monitor episodes that do not have files or have not aired yet"
+        title={translate('missingEpisodes')}
+        data={translate('monitorUnairedMissingFileEpisodes')}
       />
 
       <DescriptionListItem
-        title="Existing Episodes"
-        data="Monitor episodes that have files or have not aired yet"
+        title={translate('existingEpisodes')}
+        data={translate('monitorUnairedHaveFileEpisodes')}
       />
 
       <DescriptionListItem
-        title="First Season"
-        data="Monitor all episodes of the first season. All other seasons will be ignored"
+        title={translate('firstSeason')}
+        data={translate('monitorFirstSeason')}
       />
 
       <DescriptionListItem
-        title="Latest Season"
-        data="Monitor all episodes of the latest season and future seasons"
+        title={translate('latestSeason')}
+        data={translate('monitorLatestSeason')}
       />
 
       <DescriptionListItem
-        title="None"
-        data="No episodes will be monitored"
+        title={translate('none')}
+        data={translate('monitorNoEpisodes')}
       />
     </DescriptionList>
   );

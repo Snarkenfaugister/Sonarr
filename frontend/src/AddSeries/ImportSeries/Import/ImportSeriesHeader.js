@@ -9,6 +9,7 @@ import VirtualTableSelectAllHeaderCell from 'Components/Table/VirtualTableSelect
 import SeriesMonitoringOptionsPopoverContent from 'AddSeries/SeriesMonitoringOptionsPopoverContent';
 import SeriesTypePopoverContent from 'AddSeries/SeriesTypePopoverContent';
 import styles from './ImportSeriesHeader.css';
+import translate from 'Utilities/String/translate';
 
 function ImportSeriesHeader(props) {
   const {
@@ -30,14 +31,14 @@ function ImportSeriesHeader(props) {
         className={styles.folder}
         name="folder"
       >
-        Folder
+        {translate('folder')}
       </VirtualTableHeaderCell>
 
       <VirtualTableHeaderCell
         className={styles.monitor}
         name="monitor"
       >
-        Monitor
+        {translate('monitor')}
 
         <Popover
           anchor={
@@ -46,7 +47,7 @@ function ImportSeriesHeader(props) {
               name={icons.INFO}
             />
           }
-          title="Monitoring Options"
+          title={translate('monitoringOptions')}
           body={<SeriesMonitoringOptionsPopoverContent />}
           position={tooltipPositions.RIGHT}
         />
@@ -56,7 +57,7 @@ function ImportSeriesHeader(props) {
         className={styles.qualityProfile}
         name="qualityProfileId"
       >
-        Quality Profile
+        {translate('qualityProfile')}
       </VirtualTableHeaderCell>
 
       {
@@ -65,7 +66,7 @@ function ImportSeriesHeader(props) {
             className={styles.languageProfile}
             name="languageProfileId"
           >
-            Language Profile
+            {translate('languageProfile')}
           </VirtualTableHeaderCell>
       }
 
@@ -73,7 +74,7 @@ function ImportSeriesHeader(props) {
         className={styles.seriesType}
         name="seriesType"
       >
-        Series Type
+        {translate('seriesType')}
 
         <Popover
           anchor={
@@ -82,7 +83,7 @@ function ImportSeriesHeader(props) {
               name={icons.INFO}
             />
           }
-          title="Series Type"
+          title={translate('seriesType')}
           body={<SeriesTypePopoverContent />}
           position={tooltipPositions.RIGHT}
         />
@@ -92,14 +93,14 @@ function ImportSeriesHeader(props) {
         className={styles.seasonFolder}
         name="seasonFolder"
       >
-        Season Folder
+        {translate('seasonFolder')}
       </VirtualTableHeaderCell>
 
       <VirtualTableHeaderCell
         className={styles.series}
         name="series"
       >
-        Series
+        {translate('series')}
       </VirtualTableHeaderCell>
     </VirtualTableHeader>
   );

@@ -10,6 +10,7 @@ import Table from 'Components/Table/Table';
 import TableBody from 'Components/Table/TableBody';
 import SeasonNumber from 'Season/SeasonNumber';
 import SeriesHistoryRowConnector from './SeriesHistoryRowConnector';
+import translate from 'Utilities/String/translate';
 const columns = [
   {
     name: 'eventType',
@@ -116,7 +117,7 @@ class SeriesHistoryModalContent extends Component {
 
         <ModalFooter>
           <Button onPress={onModalClose}>
-            Close
+            {translate('close')}
           </Button>
         </ModalFooter>
       </ModalContent>

@@ -21,6 +21,7 @@ import TableBody from 'Components/Table/TableBody';
 import SeasonNumber from 'Season/SeasonNumber';
 import EpisodeFileEditorRow from './EpisodeFileEditorRow';
 import styles from './EpisodeFileEditorModalContent.css';
+import translate from 'Utilities/String/translate';
 
 const columns = [
   {
@@ -273,7 +274,7 @@ class EpisodeFileEditorModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Close
+            {translate('close')}
           </Button>
         </ModalFooter>
 

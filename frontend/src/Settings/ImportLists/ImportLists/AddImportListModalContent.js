@@ -12,6 +12,7 @@ import ModalFooter from 'Components/Modal/ModalFooter';
 import AddImportListItem from './AddImportListItem';
 import styles from './AddImportListModalContent.css';
 import titleCase from 'Utilities/String/titleCase';
+import translate from 'Utilities/String/translate';
 
 class AddImportListModalContent extends Component {
 
@@ -85,7 +86,7 @@ class AddImportListModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Close
+            {translate('close')}
           </Button>
         </ModalFooter>
       </ModalContent>

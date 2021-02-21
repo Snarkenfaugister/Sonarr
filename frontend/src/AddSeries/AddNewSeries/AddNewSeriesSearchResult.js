@@ -8,6 +8,7 @@ import Link from 'Components/Link/Link';
 import SeriesPoster from 'Series/SeriesPoster';
 import AddNewSeriesModal from './AddNewSeriesModal';
 import styles from './AddNewSeriesSearchResult.css';
+import translate from 'Utilities/String/translate';
 
 class AddNewSeriesSearchResult extends Component {
 
@@ -71,10 +72,10 @@ class AddNewSeriesSearchResult extends Component {
     } = this.state;
 
     const linkProps = isExistingSeries ? { to: `/series/${titleSlug}` } : { onPress: this.onPress };
-    let seasons = '1 Season';
+    let seasons = `1 ${translate('season')}`;
 
     if (seasonCount > 1) {
-      seasons = `${seasonCount} Seasons`;
+      seasons = translate('seasonsInterp', [seasonCount]);
     }
 
     return (
@@ -119,7 +120,7 @@ class AddNewSeriesSearchResult extends Component {
                       className={styles.alreadyExistsIcon}
                       name={icons.CHECK_CIRCLE}
                       size={36}
-                      title="Already in your library"
+                      title={translate('alreadyInYourLibrary')}
                     /> :
                     null
                 }
@@ -168,7 +169,7 @@ class AddNewSeriesSearchResult extends Component {
                     kind={kinds.DANGER}
                     size={sizes.LARGE}
                   >
-                    Ended
+                    {translate('ended')}
                   </Label> :
                   null
               }
@@ -179,7 +180,7 @@ class AddNewSeriesSearchResult extends Component {
                     kind={kinds.INFO}
                     size={sizes.LARGE}
                   >
-                    Upcoming
+                    {translate('upcoming')}
                   </Label> :
                   null
               }

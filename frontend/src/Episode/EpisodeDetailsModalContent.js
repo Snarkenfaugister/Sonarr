@@ -13,6 +13,7 @@ import EpisodeHistoryConnector from './History/EpisodeHistoryConnector';
 import EpisodeSearchConnector from './Search/EpisodeSearchConnector';
 import SeasonEpisodeNumber from './SeasonEpisodeNumber';
 import styles from './EpisodeDetailsModalContent.css';
+import translate from 'Utilities/String/translate';
 
 const tabs = [
   'details',
@@ -178,7 +179,7 @@ class EpisodeDetailsModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Close
+            {translate('close')}
           </Button>
         </ModalFooter>
       </ModalContent>

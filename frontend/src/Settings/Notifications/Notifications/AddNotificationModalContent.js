@@ -8,6 +8,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import AddNotificationItem from './AddNotificationItem';
 import styles from './AddNotificationModalContent.css';
+import translate from 'Utilities/String/translate';
 
 class AddNotificationModalContent extends Component {
 
@@ -65,7 +66,7 @@ class AddNotificationModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Close
+            {translate('close')}
           </Button>
         </ModalFooter>
       </ModalContent>

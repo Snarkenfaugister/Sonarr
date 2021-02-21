@@ -9,6 +9,7 @@ import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import styles from './LogsTableDetailsModal.css';
+import translate from 'Utilities/String/translate';
 
 function LogsTableDetailsModal(props) {
   const {
@@ -56,7 +57,7 @@ function LogsTableDetailsModal(props) {
 
         <ModalFooter>
           <Button onPress={onModalClose}>
-            Close
+            {translate('close')}
           </Button>
         </ModalFooter>
       </ModalContent>

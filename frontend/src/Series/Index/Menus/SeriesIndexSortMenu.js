@@ -4,6 +4,7 @@ import { align, sortDirections } from 'Helpers/Props';
 import SortMenu from 'Components/Menu/SortMenu';
 import MenuContent from 'Components/Menu/MenuContent';
 import SortMenuItem from 'Components/Menu/SortMenuItem';
+import translate from 'Utilities/String/translate';
 
 function SeriesIndexSortMenu(props) {
   const {
@@ -52,7 +53,7 @@ function SeriesIndexSortMenu(props) {
           sortDirection={sortDirection}
           onPress={onSortSelect}
         >
-          Quality Profile
+          {translate('qualityProfile')}
         </SortMenuItem>
 
         <SortMenuItem
@@ -61,7 +62,7 @@ function SeriesIndexSortMenu(props) {
           sortDirection={sortDirection}
           onPress={onSortSelect}
         >
-          Language Profile
+          {translate('languageProfile')}
         </SortMenuItem>
 
         <SortMenuItem

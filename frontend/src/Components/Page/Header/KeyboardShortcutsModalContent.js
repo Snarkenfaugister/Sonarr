@@ -7,6 +7,7 @@ import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import styles from './KeyboardShortcutsModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function getShortcuts() {
   const allShortcuts = [];
@@ -75,7 +76,7 @@ function KeyboardShortcutsModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Close
+          {translate('close')}
         </Button>
       </ModalFooter>
     </ModalContent>

@@ -11,6 +11,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import AddDownloadClientItem from './AddDownloadClientItem';
 import styles from './AddDownloadClientModalContent.css';
+import translate from 'Utilities/String/translate';
 
 class AddDownloadClientModalContent extends Component {
 
@@ -94,7 +95,7 @@ class AddDownloadClientModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Close
+            {translate('close')}
           </Button>
         </ModalFooter>
       </ModalContent>

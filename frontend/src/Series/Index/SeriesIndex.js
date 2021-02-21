@@ -24,6 +24,7 @@ import SeriesIndexSortMenu from './Menus/SeriesIndexSortMenu';
 import SeriesIndexViewMenu from './Menus/SeriesIndexViewMenu';
 import SeriesIndexFooterConnector from './SeriesIndexFooterConnector';
 import styles from './SeriesIndex.css';
+import translate from 'Utilities/String/translate';
 
 function getViewComponent(view) {
   if (view === 'posters') {
@@ -226,7 +227,7 @@ class SeriesIndex extends Component {
                   optionsComponent={SeriesIndexTableOptionsConnector}
                 >
                   <PageToolbarButton
-                    label="Options"
+                    label={translate('options')}
                     iconName={icons.TABLE}
                   />
                 </TableOptionsModalWrapper> :
@@ -236,7 +237,7 @@ class SeriesIndex extends Component {
             {
               view === 'posters' ?
                 <PageToolbarButton
-                  label="Options"
+                  label={translate('options')}
                   iconName={icons.POSTER}
                   isDisabled={hasNoSeries}
                   onPress={this.onPosterOptionsPress}
@@ -247,7 +248,7 @@ class SeriesIndex extends Component {
             {
               view === 'overview' ?
                 <PageToolbarButton
-                  label="Options"
+                  label={translate('options')}
                   iconName={icons.OVERVIEW}
                   isDisabled={hasNoSeries}
                   onPress={this.onOverviewOptionsPress}

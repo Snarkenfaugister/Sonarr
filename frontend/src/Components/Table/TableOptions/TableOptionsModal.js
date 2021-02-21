@@ -19,6 +19,7 @@ import TableOptionsColumn from './TableOptionsColumn';
 import TableOptionsColumnDragSource from './TableOptionsColumnDragSource';
 import TableOptionsColumnDragPreview from './TableOptionsColumnDragPreview';
 import styles from './TableOptionsModal.css';
+import translate from 'Utilities/String/translate';
 
 class TableOptionsModal extends Component {
 
@@ -231,7 +232,7 @@ class TableOptionsModal extends Component {
                   <Button
                     onPress={onModalClose}
                   >
-                    Close
+                    {translate('close')}
                   </Button>
                 </ModalFooter>
               </ModalContent> :

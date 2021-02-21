@@ -13,6 +13,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import NamingOption from './NamingOption';
 import styles from './NamingModal.css';
+import translate from 'Utilities/String/translate';
 
 const separatorOptions = [
   { key: ' ', value: 'Space ( )' },
@@ -529,7 +530,7 @@ class NamingModal extends Component {
               onSelectionChange={this.onInputSelectionChange}
             />
             <Button onPress={onModalClose}>
-              Close
+              {translate('close')}
             </Button>
           </ModalFooter>
         </ModalContent>

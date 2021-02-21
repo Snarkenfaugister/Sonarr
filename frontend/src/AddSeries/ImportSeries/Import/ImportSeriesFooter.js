@@ -11,6 +11,7 @@ import FormInputGroup from 'Components/Form/FormInputGroup';
 import PageContentFooter from 'Components/Page/PageContentFooter';
 import Popover from 'Components/Tooltip/Popover';
 import styles from './ImportSeriesFooter.css';
+import translate from 'Utilities/String/translate';
 
 const MIXED = 'mixed';
 
@@ -138,7 +139,7 @@ class ImportSeriesFooter extends Component {
       <PageContentFooter>
         <div className={styles.inputContainer}>
           <div className={styles.label}>
-            Monitor
+            {translate('monitor')}
           </div>
 
           <FormInputGroup
@@ -153,7 +154,7 @@ class ImportSeriesFooter extends Component {
 
         <div className={styles.inputContainer}>
           <div className={styles.label}>
-            Quality Profile
+            {translate('qualityProfile')}
           </div>
 
           <FormInputGroup
@@ -170,7 +171,7 @@ class ImportSeriesFooter extends Component {
           showLanguageProfile &&
             <div className={styles.inputContainer}>
               <div className={styles.label}>
-                Language Profile
+                {translate('languageProfile')}
               </div>
 
               <FormInputGroup
@@ -186,7 +187,7 @@ class ImportSeriesFooter extends Component {
 
         <div className={styles.inputContainer}>
           <div className={styles.label}>
-            Series Type
+            {translate('seriesType')}
           </div>
 
           <FormInputGroup
@@ -201,7 +202,7 @@ class ImportSeriesFooter extends Component {
 
         <div className={styles.inputContainer}>
           <div className={styles.label}>
-            Season Folder
+            {translate('seasonFolder')}
           </div>
 
           <CheckInput
@@ -225,7 +226,7 @@ class ImportSeriesFooter extends Component {
               isDisabled={!selectedCount || isLookingUpSeries}
               onPress={onImportPress}
             >
-              Import {selectedCount} Series
+              {translate('importSeriesInterp', [selectedCount])}
             </SpinnerButton>
 
             {
@@ -235,7 +236,7 @@ class ImportSeriesFooter extends Component {
                   kind={kinds.WARNING}
                   onPress={onCancelLookupPress}
                 >
-                  Cancel Processing
+                  {translate('cancelProcessing')}
                 </Button> :
                 null
             }
@@ -247,7 +248,7 @@ class ImportSeriesFooter extends Component {
                   kind={kinds.SUCCESS}
                   onPress={onLookupPress}
                 >
-                  Start Processing
+                  {translate('startProcessing')}
                 </Button> :
                 null
             }
@@ -263,7 +264,7 @@ class ImportSeriesFooter extends Component {
 
             {
               isLookingUpSeries ?
-                'Processing Folders' :
+                translate('processingFolders') :
                 null
             }
 
@@ -277,7 +278,7 @@ class ImportSeriesFooter extends Component {
                       kind={kinds.WARNING}
                     />
                   }
-                  title="Import Errors"
+                  title={translate('importErrors')}
                   body={
                     <ul>
                       {

@@ -8,6 +8,7 @@ import PageContent from 'Components/Page/PageContent';
 import PageContentBody from 'Components/Page/PageContentBody';
 import ImportSeriesTableConnector from './ImportSeriesTableConnector';
 import ImportSeriesFooterConnector from './ImportSeriesFooterConnector';
+import translate from 'Utilities/String/translate';
 
 class ImportSeries extends Component {
 
@@ -96,7 +97,7 @@ class ImportSeries extends Component {
     } = this.state;
 
     return (
-      <PageContent title="Import Series">
+      <PageContent title={translate('importSeries')}>
         <PageContentBody
           registerScroller={this.setScrollerRef}
           onScroll={this.onScroll}
@@ -107,7 +108,7 @@ class ImportSeries extends Component {
 
           {
             !rootFoldersFetching && !!rootFoldersError ?
-              <div>Unable to load root folders</div> :
+              <div>{translate('unableToLoadRootFolders')}</div> :
               null
           }
 
@@ -117,7 +118,7 @@ class ImportSeries extends Component {
             rootFoldersPopulated &&
             !unmappedFolders.length ?
               <div>
-                All series in {path} have been imported
+                {translate('allSeriesInPathHaveBeenImported', [path])}
               </div> :
               null
           }

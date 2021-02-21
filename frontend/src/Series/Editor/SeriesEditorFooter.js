@@ -13,6 +13,7 @@ import TagsModal from './Tags/TagsModal';
 import DeleteSeriesModal from './Delete/DeleteSeriesModal';
 import SeriesEditorFooterLabel from './SeriesEditorFooterLabel';
 import styles from './SeriesEditorFooter.css';
+import translate from 'Utilities/String/translate';
 
 const NO_CHANGE = 'noChange';
 
@@ -254,7 +255,7 @@ class SeriesEditorFooter extends Component {
                   className={styles.inputContainer}
                 >
                   <SeriesEditorFooterLabel
-                    label="Series Type"
+                    label={translate('seriesType')}
                     isSaving={isSaving && seriesType !== NO_CHANGE}
                   />
 

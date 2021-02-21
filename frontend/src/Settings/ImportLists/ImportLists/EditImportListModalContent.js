@@ -18,6 +18,7 @@ import FormInputGroup from 'Components/Form/FormInputGroup';
 import Popover from 'Components/Tooltip/Popover';
 import ProviderFieldFormGroup from 'Components/Form/ProviderFieldFormGroup';
 import styles from './EditImportListModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function EditImportListModalContent(props) {
 
@@ -100,7 +101,7 @@ function EditImportListModalContent(props) {
 
               <FormGroup>
                 <FormLabel>
-                  Monitor
+                  {translate('monitor')}
 
                   <Popover
                     anchor={
@@ -109,7 +110,7 @@ function EditImportListModalContent(props) {
                         name={icons.INFO}
                       />
                     }
-                    title="Monitoring Options"
+                    title={translate('monitoringOptions')}
                     body={<SeriesMonitoringOptionsPopoverContent />}
                     position={tooltipPositions.RIGHT}
                   />
@@ -162,7 +163,7 @@ function EditImportListModalContent(props) {
 
               <FormGroup>
                 <FormLabel>
-                  Series Type
+                  {translate('seriesType')}
 
                   <Popover
                     anchor={

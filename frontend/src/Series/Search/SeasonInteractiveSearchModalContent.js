@@ -8,6 +8,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import InteractiveSearchConnector from 'InteractiveSearch/InteractiveSearchConnector';
 import SeasonNumber from 'Season/SeasonNumber';
+import translate from 'Utilities/String/translate';
 
 function SeasonInteractiveSearchModalContent(props) {
   const {
@@ -34,7 +35,7 @@ function SeasonInteractiveSearchModalContent(props) {
 
       <ModalFooter>
         <Button onPress={onModalClose}>
-          Close
+          {translate('close')}
         </Button>
       </ModalFooter>
     </ModalContent>
