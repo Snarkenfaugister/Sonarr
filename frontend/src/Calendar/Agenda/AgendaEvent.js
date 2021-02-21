@@ -12,6 +12,7 @@ import episodeEntities from 'Episode/episodeEntities';
 import EpisodeDetailsModal from 'Episode/EpisodeDetailsModal';
 import CalendarEventQueueDetails from 'Calendar/Events/CalendarEventQueueDetails';
 import styles from './AgendaEvent.css';
+import translate from 'Utilities/String/translate';
 
 class AgendaEvent extends Component {
   //
@@ -127,7 +128,7 @@ class AgendaEvent extends Component {
                 <Icon
                   className={styles.statusIcon}
                   name={icons.WARNING}
-                  title="Episode does not have an absolute episode number"
+                  title={translate('Episode does not have an absolute episode number')}
                 />
             }
 
@@ -148,7 +149,7 @@ class AgendaEvent extends Component {
                 <Icon
                   className={styles.statusIcon}
                   name={icons.DOWNLOADING}
-                  title="Episode is downloading"
+                  title={translate('episodeIsDownloading')}
                 />
             }
 
@@ -160,7 +161,7 @@ class AgendaEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.EPISODE_FILE}
                   kind={kinds.WARNING}
-                  title="Quality cutoff has not been met"
+                  title={translate('qualityCutoffHasNotBeenMet')}
                 />
             }
 
@@ -173,7 +174,7 @@ class AgendaEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.EPISODE_FILE}
                   kind={kinds.WARNING}
-                  title="Language cutoff has not been met"
+                  title={translate('languageCutoffHasNotBeenMet')}
                 />
             }
 
@@ -183,7 +184,7 @@ class AgendaEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.INFO}
                   kind={kinds.INFO}
-                  title={seasonNumber === 1 ? 'Series Premiere' : 'Season Premiere'}
+                  title={seasonNumber === 1 ? translate('seriesPremiere') : translate('seasonPremiere')}
                 />
             }
 
@@ -196,7 +197,7 @@ class AgendaEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.INFO}
                   kind={kinds.WARNING}
-                  title={series.status === 'ended' ? 'Series finale' : 'Season finale'}
+                  title={series.status === 'ended' ? translate('seriesFinale') : translate('seasonFinale')}
                 />
             }
 
@@ -207,7 +208,7 @@ class AgendaEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.INFO}
                   kind={kinds.PINK}
-                  title="Special"
+                  title={translate('special')}
                 />
             }
           </div>

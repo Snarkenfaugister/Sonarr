@@ -12,6 +12,7 @@ import Link from 'Components/Link/Link';
 import EpisodeDetailsModal from 'Episode/EpisodeDetailsModal';
 import CalendarEventQueueDetails from './CalendarEventQueueDetails';
 import styles from './CalendarEvent.css';
+import translate from 'Utilities/String/translate';
 
 class CalendarEvent extends Component {
 
@@ -100,7 +101,7 @@ class CalendarEvent extends Component {
                 <Icon
                   className={styles.statusIcon}
                   name={icons.WARNING}
-                  title="Episode does not have an absolute episode number"
+                  title={translate('episodeNoAbsoluteOrder')}
                 />
             }
 
@@ -118,7 +119,7 @@ class CalendarEvent extends Component {
                 <Icon
                   className={styles.statusIcon}
                   name={icons.DOWNLOADING}
-                  title="Episode is downloading"
+                  title={translate('episodeIsDownloading')}
                 />
             }
 
@@ -130,7 +131,7 @@ class CalendarEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.EPISODE_FILE}
                   kind={kinds.WARNING}
-                  title="Quality cutoff has not been met"
+                  title={translate('qualityCutoffHasNotBeenMet')}
                 />
             }
 
@@ -143,7 +144,7 @@ class CalendarEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.EPISODE_FILE}
                   kind={kinds.WARNING}
-                  title="Language cutoff has not been met"
+                  title={translate('languageCutoffHasNotBeenMet')}
                 />
             }
 
@@ -153,7 +154,7 @@ class CalendarEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.INFO}
                   kind={kinds.INFO}
-                  title={seasonNumber === 1 ? 'Series premiere' : 'Season premiere'}
+                  title={seasonNumber === 1 ? translate('seriesPremiere') : translate('seasonPremiere')}
                 />
             }
 
@@ -166,7 +167,7 @@ class CalendarEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.INFO}
                   kind={kinds.WARNING}
-                  title={series.status === 'ended' ? 'Series finale' : 'Season finale'}
+                  title={series.status === 'ended' ? translate('seriesFinale') : translate('seasonFinale')}
                 />
             }
 
@@ -177,7 +178,7 @@ class CalendarEvent extends Component {
                   className={styles.statusIcon}
                   name={icons.INFO}
                   kind={kinds.PINK}
-                  title="Special"
+                  title={translate('special')}
                 />
             }
           </div>

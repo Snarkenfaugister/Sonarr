@@ -12,6 +12,7 @@ import ViewMenuItem from 'Components/Menu/ViewMenuItem';
 import * as calendarViews from 'Calendar/calendarViews';
 import CalendarHeaderViewButton from './CalendarHeaderViewButton';
 import styles from './CalendarHeader.css';
+import translate from 'Utilities/String/translate';
 
 function getTitle(time, start, end, view, longDateFormat) {
   const timeMoment = moment(time);
@@ -125,7 +126,7 @@ class CalendarHeader extends Component {
               isDisabled={view === calendarViews.AGENDA}
               onPress={onTodayPress}
             >
-              Today
+              {translate('today')}
             </Button>
           </div>
 
@@ -167,7 +168,7 @@ class CalendarHeader extends Component {
                           selectedView={view}
                           onPress={this.onViewChange}
                         >
-                          Month
+                          {translate('month')}
                         </ViewMenuItem>
                     }
 
@@ -176,7 +177,7 @@ class CalendarHeader extends Component {
                       selectedView={view}
                       onPress={this.onViewChange}
                     >
-                      Week
+                      {translate('week')}
                     </ViewMenuItem>
 
                     <ViewMenuItem
@@ -184,7 +185,7 @@ class CalendarHeader extends Component {
                       selectedView={view}
                       onPress={this.onViewChange}
                     >
-                      Forecast
+                      {translate('forecast')}
                     </ViewMenuItem>
 
                     <ViewMenuItem
@@ -192,7 +193,7 @@ class CalendarHeader extends Component {
                       selectedView={view}
                       onPress={this.onViewChange}
                     >
-                      Day
+                      {translate('day')}
                     </ViewMenuItem>
 
                     <ViewMenuItem
@@ -200,7 +201,7 @@ class CalendarHeader extends Component {
                       selectedView={view}
                       onPress={this.onViewChange}
                     >
-                      Agenda
+                      {translate('agenda')}
                     </ViewMenuItem>
                   </MenuContent>
                 </Menu> :

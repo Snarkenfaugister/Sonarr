@@ -116,55 +116,55 @@ class CalendarLinkModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Sonarr Calendar Feed
+          {translate('sonarrCalendarFeed')}
         </ModalHeader>
 
         <ModalBody>
           <Form>
             <FormGroup>
-              <FormLabel>Include Unmonitored</FormLabel>
+              <FormLabel>{translate('includeUnmonitored')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="unmonitored"
                 value={unmonitored}
-                helpText="Include unmonitored episodes in the iCal feed"
+                helpText={translate('unmonitoredHelpText')}
                 onChange={this.onInputChange}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Season Premieres Only</FormLabel>
+              <FormLabel>{translate('seasonPremieresOnly')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="premieresOnly"
                 value={premieresOnly}
-                helpText="Only the first episode in a season will be in the feed"
+                helpText={translate('premieresOnlyHelpText')}
                 onChange={this.onInputChange}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show as All-Day Events</FormLabel>
+              <FormLabel>{translate('showAsAllDayEvents')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="asAllDay"
                 value={asAllDay}
-                helpText="Events will appear as all-day events in your calendar"
+                helpText={translate('asAllDayHelpText')}
                 onChange={this.onInputChange}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Tags</FormLabel>
+              <FormLabel>{translate('tags')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.TAG}
                 name="tags"
                 value={tags}
-                helpText="Feed will only contain series with at least one matching tag"
+                helpText={translate('tagsOnlyHelpText')}
                 onChange={this.onInputChange}
               />
             </FormGroup>
@@ -172,14 +172,14 @@ class CalendarLinkModalContent extends Component {
             <FormGroup
               size={sizes.LARGE}
             >
-              <FormLabel>iCal Feed</FormLabel>
+              <FormLabel>{translate('iCalFeed')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.TEXT}
                 name="iCalHttpUrl"
                 value={iCalHttpUrl}
                 readOnly={true}
-                helpText="Copy this URL to your client(s) or click to subscribe if your browser supports webcal"
+                helpText={translate('iCalHttpUrlHelpText')}
                 buttons={[
                   <ClipboardButton
                     key="copy"

@@ -110,78 +110,78 @@ class CalendarOptionsModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Calendar Options
+          {translate('calendarOptions')}
         </ModalHeader>
 
         <ModalBody>
-          <FieldSet legend="Local">
+          <FieldSet legend={translate('local')}>
             <Form>
               <FormGroup>
-                <FormLabel>Collapse Multiple Episodes</FormLabel>
+                <FormLabel>{translate('collapseMultipleEpisodes')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="collapseMultipleEpisodes"
                   value={collapseMultipleEpisodes}
-                  helpText="Collapse multiple episodes airing on the same day"
+                  helpText={translate('collapseMultipleEpisodesHelpText')}
                   onChange={this.onOptionInputChange}
                 />
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Show Episode Information</FormLabel>
+                <FormLabel>{translate('showEpisodeInformation')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="showEpisodeInformation"
                   value={showEpisodeInformation}
-                  helpText="Show episode title and number"
+                  helpText={translate('showEpisodeInformationHelpText')}
                   onChange={this.onOptionInputChange}
                 />
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Icon for Finales</FormLabel>
+                <FormLabel>{translate('iconForFinales')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="showFinaleIcon"
                   value={showFinaleIcon}
-                  helpText="Show icon for series/season finales based on available episode information"
+                  helpText={translate('showForFinalesHelpText')}
                   onChange={this.onOptionInputChange}
                 />
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Icon for Specials</FormLabel>
+                <FormLabel>{translate('iconForSpecials')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="showSpecialIcon"
                   value={showSpecialIcon}
-                  helpText="Show icon for special episodes (season 0)"
+                  helpText={translate('showForSpecialsHelpText')}
                   onChange={this.onOptionInputChange}
                 />
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Icon for Cutoff Unmet</FormLabel>
+                <FormLabel>{translate('iconForCutoffUnmet')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="showCutoffUnmetIcon"
                   value={showCutoffUnmetIcon}
-                  helpText="Show icon for files when the cutoff hasn't been met"
+                  helpText={translate('showCutoffUnmetIconHelpText')}
                   onChange={this.onOptionInputChange}
                 />
               </FormGroup>
             </Form>
           </FieldSet>
 
-          <FieldSet legend="Global">
+          <FieldSet legend={translate('global')}>
             <Form>
               <FormGroup>
-                <FormLabel>First Day of Week</FormLabel>
+                <FormLabel>{translate('settingsFirstDayOfWeek')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.SELECT}
@@ -193,7 +193,7 @@ class CalendarOptionsModalContent extends Component {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Week Column Header</FormLabel>
+                <FormLabel>{translate('settingsWeekColumnHeader')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.SELECT}
@@ -201,12 +201,12 @@ class CalendarOptionsModalContent extends Component {
                   values={weekColumnOptions}
                   value={calendarWeekColumnHeader}
                   onChange={this.onGlobalInputChange}
-                  helpText="Shown above each column when week is the active view"
+                  helpText={translate('settingsWeekColumnHeaderHelpText')}
                 />
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Time Format</FormLabel>
+                <FormLabel>{translate('settingsTimeFormat')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.SELECT}
@@ -216,13 +216,13 @@ class CalendarOptionsModalContent extends Component {
                   onChange={this.onGlobalInputChange}
                 />
               </FormGroup><FormGroup>
-                <FormLabel>Enable Color-Impaired Mode</FormLabel>
+                <FormLabel>{translate('settingsEnableColorImpairedMode')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="enableColorImpairedMode"
                   value={enableColorImpairedMode}
-                  helpText="Altered style to allow color-impaired users to better distinguish color coded information"
+                  helpText={translate('settingsEnableColorImpairedModeHelpText')}
                   onChange={this.onGlobalInputChange}
                 />
               </FormGroup>

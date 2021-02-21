@@ -10,6 +10,7 @@ import Link from 'Components/Link/Link';
 import getStatusStyle from 'Calendar/getStatusStyle';
 import CalendarEventConnector from 'Calendar/Events/CalendarEventConnector';
 import styles from './CalendarEventGroup.css';
+import translate from 'Utilities/String/translate';
 
 function getEventsInfo(events) {
   let files = 0;
@@ -146,7 +147,7 @@ class CalendarEventGroup extends Component {
               <Icon
                 className={styles.statusIcon}
                 name={icons.WARNING}
-                title="Episode does not have an absolute episode number"
+                title={translate('episodeNoAbsoluteOrder')}
               />
           }
 
@@ -155,7 +156,7 @@ class CalendarEventGroup extends Component {
               <Icon
                 className={styles.statusIcon}
                 name={icons.DOWNLOADING}
-                title="An episode is downloading"
+                title={translate('anEpisodeIsDownloading')}
               />
           }
 
@@ -165,7 +166,7 @@ class CalendarEventGroup extends Component {
                 className={styles.statusIcon}
                 name={icons.INFO}
                 kind={kinds.INFO}
-                title={seasonNumber === 1 ? 'Series Premiere' : 'Season Premiere'}
+                title={seasonNumber === 1 ? translate('seriesPremiere') : translate('seasonPremiere')}
               />
           }
 
@@ -178,7 +179,7 @@ class CalendarEventGroup extends Component {
                 className={styles.statusIcon}
                 name={icons.INFO}
                 kind={kinds.WARNING}
-                title={series.status === 'ended' ? 'Series finale' : 'Season finale'}
+                title={series.status === 'ended' ? translate('seriesFinale') : translate('seasonFinale')}
               />
           }
         </div>

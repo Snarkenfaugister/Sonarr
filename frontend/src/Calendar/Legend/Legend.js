@@ -4,6 +4,7 @@ import { icons, kinds } from 'Helpers/Props';
 import LegendItem from './LegendItem';
 import LegendIconItem from './LegendIconItem';
 import styles from './Legend.css';
+import translate from 'Utilities/String/translate';
 
 function Legend(props) {
   const {
@@ -17,10 +18,10 @@ function Legend(props) {
   if (showFinaleIcon) {
     iconsToShow.push(
       <LegendIconItem
-        name="Finale"
+        name={translate('finale')}
         icon={icons.INFO}
         kind={kinds.WARNING}
-        tooltip="Series or season finale"
+        tooltip={translate('seriesOrSeasonFinale')}
       />
     );
   }
@@ -28,10 +29,10 @@ function Legend(props) {
   if (showSpecialIcon) {
     iconsToShow.push(
       <LegendIconItem
-        name="Special"
+        name={translate('special')}
         icon={icons.INFO}
         kind={kinds.PINK}
-        tooltip="Special episode"
+        tooltip={translate('specialEpisode')}
       />
     );
   }
@@ -39,10 +40,10 @@ function Legend(props) {
   if (showCutoffUnmetIcon) {
     iconsToShow.push(
       <LegendIconItem
-        name="Cutoff Not Met"
+        name={translate('cutoffNotMet')}
         icon={icons.EPISODE_FILE}
         kind={kinds.WARNING}
-        tooltip="Quality or language cutoff has not been met"
+        tooltip={translate('qualityOrLangCutoffHasNotBeenMet')}
       />
     );
   }
@@ -52,13 +53,13 @@ function Legend(props) {
       <div>
         <LegendItem
           status="unaired"
-          tooltip="Episode hasn't aired yet"
+          tooltip={translate('episodeHasntAiredYet')}
           colorImpairedMode={colorImpairedMode}
         />
 
         <LegendItem
           status="unmonitored"
-          tooltip="Episode is unmonitored"
+          tooltip={translate('episodeIsUnmonitored')}
           colorImpairedMode={colorImpairedMode}
         />
       </div>
@@ -66,14 +67,14 @@ function Legend(props) {
       <div>
         <LegendItem
           status="onAir"
-          name="On Air"
-          tooltip="Episode is currently airing"
+          name={translate('onAir')}
+          tooltip={translate('episodeIsCurrentlyAiring')}
           colorImpairedMode={colorImpairedMode}
         />
 
         <LegendItem
           status="missing"
-          tooltip="Episode has aired and is missing from disk"
+          tooltip={translate('episodeHasAiredMissing')}
           colorImpairedMode={colorImpairedMode}
         />
       </div>
@@ -81,23 +82,23 @@ function Legend(props) {
       <div>
         <LegendItem
           status="downloading"
-          tooltip="Episode is currently downloading"
+          tooltip={translate('episodeCurrentlyDownloading')}
           colorImpairedMode={colorImpairedMode}
         />
 
         <LegendItem
           status="downloaded"
-          tooltip="Episode was downloaded and sorted"
+          tooltip={translate('episodeWasDownloadedAndSorted')}
           colorImpairedMode={colorImpairedMode}
         />
       </div>
 
       <div>
         <LegendIconItem
-          name="Premiere"
+          name={translate('premiere')}
           icon={icons.INFO}
           kind={kinds.INFO}
-          tooltip="Series or season premiere"
+          tooltip={translate('seriesOrSeasonPremiere')}
         />
 
         {iconsToShow[0]}

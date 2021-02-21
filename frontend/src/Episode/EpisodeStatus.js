@@ -51,7 +51,7 @@ function EpisodeStatus(props) {
       <div className={styles.center}>
         <Icon
           name={icons.DOWNLOADING}
-          title="Episode is downloading"
+          title={translate('episodeIsDownloading')}
         />
       </div>
     );

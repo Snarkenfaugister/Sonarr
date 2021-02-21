@@ -7,6 +7,7 @@ import DaysOfWeekConnector from './Day/DaysOfWeekConnector';
 import CalendarDaysConnector from './Day/CalendarDaysConnector';
 import AgendaConnector from './Agenda/AgendaConnector';
 import styles from './Calendar.css';
+import translate from 'Utilities/String/translate';
 
 class Calendar extends Component {
 
@@ -30,7 +31,7 @@ class Calendar extends Component {
 
         {
           !isFetching && !!error &&
-            <div>Unable to load the calendar</div>
+            <div>{translate('unableToLoadTheCalendar')}</div>
         }
 
         {

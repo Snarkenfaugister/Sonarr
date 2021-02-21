@@ -94,11 +94,11 @@ class CalendarPage extends Component {
     const PageComponent = hasSeries ? CalendarConnector : NoSeries;
 
     return (
-      <PageContent title="Calendar">
+      <PageContent title={translate('calendar')}>
         <PageToolbar>
           <PageToolbarSection>
             <PageToolbarButton
-              label="iCal Link"
+              label={translate('iCalLink')}
               iconName={icons.CALENDAR}
               onPress={this.onGetCalendarLinkPress}
             />
@@ -106,14 +106,14 @@ class CalendarPage extends Component {
             <PageToolbarSeparator />
 
             <PageToolbarButton
-              label="RSS Sync"
+              label={translate('rSSSync')}
               iconName={icons.RSS}
               isSpinning={isRssSyncExecuting}
               onPress={onRssSyncPress}
             />
 
             <PageToolbarButton
-              label="Search for Missing"
+              label={translate('searchForMissing')}
               iconName={icons.SEARCH}
               isDisabled={!missingEpisodeIds.length}
               isSpinning={isSearchingForMissing}
