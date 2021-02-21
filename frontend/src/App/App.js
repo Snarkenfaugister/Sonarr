@@ -5,10 +5,11 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import PageConnector from 'Components/Page/PageConnector';
 import AppRoutes from './AppRoutes';
+import translate from 'Utilities/String/translate';
 
 function App({ store, history }) {
   return (
-    <DocumentTitle title="Sonarr">
+    <DocumentTitle title={translate('sonarr')}>
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <PageConnector>

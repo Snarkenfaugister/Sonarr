@@ -9,6 +9,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import UpdateChanges from 'System/Updates/UpdateChanges';
 import styles from './AppUpdatedModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function mergeUpdates(items, version, prevVersion) {
   let installedIndex = items.findIndex((u) => u.version === version);
@@ -63,36 +64,34 @@ function AppUpdatedModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        Sonarr Updated
+        {translate('SonarrUpdated')}
       </ModalHeader>
 
       <ModalBody>
-        <div>
-          Sonarr has been updated to version <span className={styles.version}>{version}</span>, in order to get the latest changes you'll need to reload Sonarr.
-        </div>
+        <div dangerouslySetInnerHTML={{ __html: translate('versionUpdateText', [`<span className=${styles.version}>${version}</span>`]) }} />
 
         {
           isPopulated && !error && !!update &&
             <div>
               {
                 !update.changes &&
-                  <div className={styles.maintenance}>Maintenance release</div>
+                  <div className={styles.maintenance}>{translate('maintenanceRelease')}</div>
               }
 
               {
                 !!update.changes &&
                   <div>
                     <div className={styles.changes}>
-                      What's new?
+                      {translate('whatsNew')}
                     </div>
 
                     <UpdateChanges
-                      title="New"
+                      title={translate('new')}
                       changes={update.changes.new}
                     />
 
                     <UpdateChanges
-                      title="Fixed"
+                      title={translate('fixed')}
                       changes={update.changes.fixed}
                     />
                   </div>
@@ -110,14 +109,14 @@ function AppUpdatedModalContent(props) {
         <Button
           onPress={onSeeChangesPress}
         >
-          Recent Changes
+          {translate('recentChanges')}
         </Button>
 
         <Button
           kind={kinds.PRIMARY}
           onPress={onModalClose}
         >
-          Reload
+          {translate('reload')}
         </Button>
       </ModalFooter>
     </ModalContent>

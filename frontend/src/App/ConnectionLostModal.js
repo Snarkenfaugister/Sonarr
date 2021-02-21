@@ -8,6 +8,7 @@ import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import styles from './ConnectionLostModal.css';
+import translate from 'Utilities/String/translate';
 
 function ConnectionLostModal(props) {
   const {
@@ -22,16 +23,16 @@ function ConnectionLostModal(props) {
     >
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Connection Lost
+          {translate('connectionLost')}
         </ModalHeader>
 
         <ModalBody>
           <div>
-            Sonarr has lost it's connection to the backend and will need to be reloaded to restore functionality.
+            {translate('connectionLostMessage')}
           </div>
 
           <div className={styles.automatic}>
-            Sonarr will try to connect automatically, or you can click reload below.
+            {translate('connectionLostAutomaticMessage')}
           </div>
         </ModalBody>
         <ModalFooter>
@@ -39,7 +40,7 @@ function ConnectionLostModal(props) {
             kind={kinds.PRIMARY}
             onPress={onModalClose}
           >
-            Reload
+            {translate('reload')}
           </Button>
         </ModalFooter>
       </ModalContent>

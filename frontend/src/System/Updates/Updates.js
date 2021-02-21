@@ -13,6 +13,7 @@ import PageContent from 'Components/Page/PageContent';
 import PageContentBody from 'Components/Page/PageContentBody';
 import UpdateChanges from './UpdateChanges';
 import styles from './Updates.css';
+import translate from 'Utilities/String/translate';
 
 class Updates extends Component {
 
@@ -181,19 +182,19 @@ class Updates extends Component {
 
                         {
                           !hasChanges &&
-                            <div>Maintenance release</div>
+                            <div>{translate('maintenanceRelease')}</div>
                         }
 
                         {
                           hasChanges &&
                             <div className={styles.changes}>
                               <UpdateChanges
-                                title="New"
+                                title={translate('new')}
                                 changes={update.changes.new}
                               />
 
                               <UpdateChanges
-                                title="Fixed"
+                                title={translate('fixed')}
                                 changes={update.changes.fixed}
                               />
                             </div>
