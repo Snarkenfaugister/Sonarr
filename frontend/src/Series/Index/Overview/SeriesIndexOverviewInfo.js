@@ -7,6 +7,7 @@ import { icons } from 'Helpers/Props';
 import dimensions from 'Styles/Variables/dimensions';
 import SeriesIndexOverviewInfoRow from './SeriesIndexOverviewInfoRow';
 import styles from './SeriesIndexOverviewInfo.css';
+import translate from 'Utilities/String/translate';
 
 const infoRowHeight = parseInt(dimensions.seriesIndexOverviewInfoRowHeight);
 
@@ -163,7 +164,7 @@ function getInfoRowProps(row, props) {
 
   if (name === 'path') {
     return {
-      title: 'Path',
+      title: translate('path'),
       iconName: icons.FOLDER,
       label: props.path
     };

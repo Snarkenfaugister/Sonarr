@@ -134,7 +134,7 @@ function SeriesIndexSortMenu(props) {
           sortDirection={sortDirection}
           onPress={onSortSelect}
         >
-          Path
+          {translate('path')}
         </SortMenuItem>
 
         <SortMenuItem

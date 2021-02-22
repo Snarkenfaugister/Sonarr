@@ -147,7 +147,7 @@ class EditSeriesModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Path</FormLabel>
+              <FormLabel>{translate('path')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.PATH}

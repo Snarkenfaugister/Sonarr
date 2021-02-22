@@ -13,16 +13,17 @@ import EpisodeQuality from 'Episode/EpisodeQuality';
 import HistoryDetailsConnector from 'Activity/History/Details/HistoryDetailsConnector';
 import HistoryEventTypeCell from 'Activity/History/HistoryEventTypeCell';
 import styles from './EpisodeHistoryRow.css';
+import translate from 'Utilities/String/translate';
 
 function getTitle(eventType) {
   switch (eventType) {
-    case 'grabbed': return 'Grabbed';
-    case 'seriesFolderImported': return 'Series Folder Imported';
-    case 'downloadFolderImported': return 'Download Folder Imported';
-    case 'downloadFailed': return 'Download Failed';
-    case 'episodeFileDeleted': return 'Episode File Deleted';
-    case 'episodeFileRenamed': return 'Episode File Renamed';
-    default: return 'Unknown';
+    case 'grabbed': return translate('grabbed');
+    case 'seriesFolderImported': return translate('seriesFolderImported');
+    case 'downloadFolderImported': return translate('downloadFolderImported');
+    case 'downloadFailed': return translate('downloadFailed');
+    case 'episodeFileDeleted': return translate('episodeFileDeleted');
+    case 'episodeFileRenamed': return translate('episodeFileRenamed');
+    default: return translate('unknown');
   }
 }
 
@@ -126,7 +127,7 @@ class EpisodeHistoryRow extends Component {
           {
             eventType === 'grabbed' &&
               <IconButton
-                title="Mark as failed"
+                title={translate('markAsFailed')}
                 name={icons.REMOVE}
                 onPress={this.onMarkAsFailedPress}
               />
@@ -136,9 +137,9 @@ class EpisodeHistoryRow extends Component {
         <ConfirmModal
           isOpen={isMarkAsFailedModalOpen}
           kind={kinds.DANGER}
-          title="Mark as Failed"
-          message={`Are you sure you want to mark '${sourceTitle}' as failed?`}
-          confirmLabel="Mark as Failed"
+          title={translate('markAsFailed')}
+          message={translate('markAsFailedMessageText', [sourceTitle])}
+          confirmLabel={translate('markAsFailed')}
           onConfirm={this.onConfirmMarkAsFailed}
           onCancel={this.onMarkAsFailedModalClose}
         />

@@ -9,6 +9,7 @@ import createSetClientSideCollectionFilterReducer from './Creators/Reducers/crea
 import createHandleActions from './Creators/createHandleActions';
 import { set, updateItem } from './baseActions';
 import { filters, filterPredicates, filterBuilderProps } from './seriesActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -72,7 +73,7 @@ export const defaultState = {
     },
     {
       name: 'path',
-      label: 'Path',
+      label: translate('path'),
       isSortable: true,
       isVisible: true
     },

@@ -7,6 +7,7 @@ import ProgressBar from 'Components/ProgressBar';
 import QueueDetails from 'Activity/Queue/QueueDetails';
 import EpisodeQuality from './EpisodeQuality';
 import styles from './EpisodeStatus.css';
+import translate from 'Utilities/String/translate';
 
 function EpisodeStatus(props) {
   const {
@@ -35,7 +36,7 @@ function EpisodeStatus(props) {
           {...queueItem}
           progressBar={
             <ProgressBar
-              title={`Episode is downloading - ${progress.toFixed(1)}% ${queueItem.title}`}
+              title={translate('episodeIsDownloadingInterp', [progress.toFixed(1), queueItem.title])}
               progress={progress}
               kind={kinds.PURPLE}
               size={sizes.MEDIUM}
@@ -67,7 +68,7 @@ function EpisodeStatus(props) {
           quality={quality}
           size={episodeFile.size}
           isCutoffNotMet={isCutoffNotMet}
-          title="Episode Downloaded"
+          title={translate('episodeDownloaded')}
         />
       </div>
     );
@@ -78,7 +79,7 @@ function EpisodeStatus(props) {
       <div className={styles.center}>
         <Icon
           name={icons.TBA}
-          title="TBA"
+          title={translate('tba')}
         />
       </div>
     );
@@ -90,7 +91,7 @@ function EpisodeStatus(props) {
         <Icon
           name={icons.UNMONITORED}
           kind={kinds.DISABLED}
-          title="Episode is not monitored"
+          title={translate('episodeNotMonitored')}
         />
       </div>
     );
@@ -101,7 +102,7 @@ function EpisodeStatus(props) {
       <div className={styles.center}>
         <Icon
           name={icons.MISSING}
-          title="Episode missing from disk"
+          title={translate('episodeMissingFromDisk')}
         />
       </div>
     );
@@ -111,7 +112,7 @@ function EpisodeStatus(props) {
     <div className={styles.center}>
       <Icon
         name={icons.NOT_AIRED}
-        title="Episode has not aired"
+        title={translate('episodeHasNotAired')}
       />
     </div>
   );

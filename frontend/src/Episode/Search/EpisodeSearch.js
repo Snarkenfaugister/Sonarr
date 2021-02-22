@@ -4,6 +4,7 @@ import { icons, kinds, sizes } from 'Helpers/Props';
 import Button from 'Components/Link/Button';
 import Icon from 'Components/Icon';
 import styles from './EpisodeSearch.css';
+import translate from 'Utilities/String/translate';
 
 function EpisodeSearch(props) {
   const {
@@ -24,7 +25,7 @@ function EpisodeSearch(props) {
             name={icons.QUICK}
           />
 
-          Quick Search
+          {translate('quickSearch')}
         </Button>
       </div>
 
@@ -40,7 +41,7 @@ function EpisodeSearch(props) {
             name={icons.INTERACTIVE}
           />
 
-          Interactive Search
+          {translate('interactiveSearch')}
         </Button>
       </div>
     </div>

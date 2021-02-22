@@ -4,6 +4,7 @@ import LoadingIndicator from 'Components/Loading/LoadingIndicator';
 import Table from 'Components/Table/Table';
 import TableBody from 'Components/Table/TableBody';
 import EpisodeHistoryRow from './EpisodeHistoryRow';
+import translate from 'Utilities/String/translate';
 
 const columns = [
   {
@@ -12,32 +13,32 @@ const columns = [
   },
   {
     name: 'sourceTitle',
-    label: 'Source Title',
+    label: translate('sourceTitle'),
     isVisible: true
   },
   {
     name: 'language',
-    label: 'Language',
+    label: translate('language'),
     isVisible: true
   },
   {
     name: 'quality',
-    label: 'Quality',
+    label: translate('quality'),
     isVisible: true
   },
   {
     name: 'date',
-    label: 'Date',
+    label: translate('date'),
     isVisible: true
   },
   {
     name: 'details',
-    label: 'Details',
+    label: translate('details'),
     isVisible: true
   },
   {
     name: 'actions',
-    label: 'Actions',
+    label: translate('actions'),
     isVisible: true
   }
 ];
@@ -66,13 +67,13 @@ class EpisodeHistory extends Component {
 
     if (!isFetching && !!error) {
       return (
-        <div>Unable to load episode history.</div>
+        <div>{translate('unableToLoadEpisodeHistory')}</div>
       );
     }
 
     if (isPopulated && !hasItems && !error) {
       return (
-        <div>No episode history.</div>
+        <div>{translate('noEpisodeHistory')}</div>
       );
     }
 

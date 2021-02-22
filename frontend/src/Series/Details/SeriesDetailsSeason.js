@@ -27,6 +27,7 @@ import SeasonInteractiveSearchModalConnector from 'Series/Search/SeasonInteracti
 import EpisodeRowConnector from './EpisodeRowConnector';
 import SeasonInfo from './SeasonInfo';
 import styles from './SeriesDetailsSeason.css';
+import translate from 'Utilities/String/translate';
 
 function getSeasonStatistics(episodes) {
   let episodeCount = 0;
@@ -332,7 +333,7 @@ class SeriesDetailsSeason extends Component {
                       isSpinning={isSearching}
                     />
 
-                    Search
+                    {translate('search')}
                   </MenuItem>
 
                   <MenuItem

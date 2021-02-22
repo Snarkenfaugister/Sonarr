@@ -10,6 +10,7 @@ import episodeEntities from 'Episode/episodeEntities';
 import createFetchHandler from './Creators/createFetchHandler';
 import createHandleActions from './Creators/createHandleActions';
 import { updateItem } from './baseActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -46,12 +47,12 @@ export const defaultState = {
     },
     {
       name: 'path',
-      label: 'Path',
+      label: translate('path'),
       isVisible: false
     },
     {
       name: 'relativePath',
-      label: 'Relative Path',
+      label: translate('relativePath'),
       isVisible: false
     },
     {
@@ -76,7 +77,7 @@ export const defaultState = {
     },
     {
       name: 'size',
-      label: 'Size',
+      label: translate('size'),
       isVisible: false
     },
     {

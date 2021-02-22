@@ -11,6 +11,7 @@ import TableBody from 'Components/Table/TableBody';
 import InteractiveSearchFilterModalConnector from './InteractiveSearchFilterModalConnector';
 import InteractiveSearchRow from './InteractiveSearchRow';
 import styles from './InteractiveSearch.css';
+import translate from 'Utilities/String/translate';
 
 const columns = [
   {
@@ -39,7 +40,7 @@ const columns = [
   },
   {
     name: 'size',
-    label: 'Size',
+    label: translate('size'),
     isSortable: true,
     isVisible: true
   },
@@ -57,7 +58,7 @@ const columns = [
   },
   {
     name: 'qualityWeight',
-    label: 'Quality',
+    label: translate('quality'),
     isSortable: true,
     isVisible: true
   },

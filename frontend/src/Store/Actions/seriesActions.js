@@ -13,6 +13,7 @@ import createRemoveItemHandler from './Creators/createRemoveItemHandler';
 import createHandleActions from './Creators/createHandleActions';
 import { updateItem, set } from './baseActions';
 import { fetchEpisodes } from './episodeActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Local
@@ -228,7 +229,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'path',
-    label: 'Path',
+    label: translate('path'),
     type: filterBuilderTypes.STRING
   },
   {

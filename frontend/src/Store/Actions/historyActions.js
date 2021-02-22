@@ -10,6 +10,7 @@ import createSetTableOptionReducer from './Creators/Reducers/createSetTableOptio
 import createHandleActions from './Creators/createHandleActions';
 import createServerSideCollectionHandlers from './Creators/createServerSideCollectionHandlers';
 import { updateItem } from './baseActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -58,7 +59,7 @@ export const defaultState = {
     },
     {
       name: 'quality',
-      label: 'Quality',
+      label: translate('quality'),
       isVisible: true
     },
     {

@@ -9,7 +9,7 @@ import translate from 'Utilities/String/translate';
 const rootFolderColumns = [
   {
     name: 'path',
-    label: 'Path',
+    label: translate('path'),
     isVisible: true
   },
   {

@@ -10,6 +10,7 @@ import createHandleActions from './Creators/createHandleActions';
 import createRemoveItemHandler from './Creators/createRemoveItemHandler';
 import createServerSideCollectionHandlers from './Creators/createServerSideCollectionHandlers';
 import { set, updateItem } from './baseActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -49,7 +50,7 @@ export const defaultState = {
     },
     {
       name: 'quality',
-      label: 'Quality',
+      label: translate('quality'),
       isVisible: true
     },
     {

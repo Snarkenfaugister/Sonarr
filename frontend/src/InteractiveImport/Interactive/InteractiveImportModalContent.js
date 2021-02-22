@@ -32,7 +32,7 @@ import translate from 'Utilities/String/translate';
 const columns = [
   {
     name: 'relativePath',
-    label: 'Relative Path',
+    label: translate('relativePath'),
     isSortable: true,
     isVisible: true
   },
@@ -54,7 +54,7 @@ const columns = [
   },
   {
     name: 'quality',
-    label: 'Quality',
+    label: translate('quality'),
     isSortable: true,
     isVisible: true
   },
@@ -66,7 +66,7 @@ const columns = [
   },
   {
     name: 'size',
-    label: 'Size',
+    label: translate('size'),
     isSortable: true,
     isVisible: true
   },

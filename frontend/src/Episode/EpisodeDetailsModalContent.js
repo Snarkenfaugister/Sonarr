@@ -116,21 +116,21 @@ class EpisodeDetailsModalContent extends Component {
                 className={styles.tab}
                 selectedClassName={styles.selectedTab}
               >
-                Details
+                {translate('details')}
               </Tab>
 
               <Tab
                 className={styles.tab}
                 selectedClassName={styles.selectedTab}
               >
-                History
+                {translate('history')}
               </Tab>
 
               <Tab
                 className={styles.tab}
                 selectedClassName={styles.selectedTab}
               >
-                Search
+                {translate('search')}
               </Tab>
             </TabList>
 
@@ -172,7 +172,7 @@ class EpisodeDetailsModalContent extends Component {
                 to={seriesLink}
                 onPress={onModalClose}
               >
-                Open Series
+                {translate('openSeries')}
               </Button>
           }
 

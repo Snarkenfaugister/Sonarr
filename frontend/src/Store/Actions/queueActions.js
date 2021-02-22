@@ -11,6 +11,7 @@ import createFetchHandler from './Creators/createFetchHandler';
 import createHandleActions from './Creators/createHandleActions';
 import createServerSideCollectionHandlers from './Creators/createServerSideCollectionHandlers';
 import { set, updateItem } from './baseActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -94,7 +95,7 @@ export const defaultState = {
       },
       {
         name: 'quality',
-        label: 'Quality',
+        label: translate('quality'),
         isSortable: true,
         isVisible: true
       },

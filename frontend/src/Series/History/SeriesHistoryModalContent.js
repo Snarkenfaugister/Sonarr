@@ -33,7 +33,7 @@ const columns = [
   },
   {
     name: 'quality',
-    label: 'Quality',
+    label: translate('quality'),
     isVisible: true
   },
   {

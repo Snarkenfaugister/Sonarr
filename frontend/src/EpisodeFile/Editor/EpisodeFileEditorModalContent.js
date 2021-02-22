@@ -31,7 +31,7 @@ const columns = [
   },
   {
     name: 'relativePath',
-    label: 'Relative Path',
+    label: translate('relativePath'),
     isVisible: true
   },
   {
@@ -46,7 +46,7 @@ const columns = [
   },
   {
     name: 'quality',
-    label: 'Quality',
+    label: translate('quality'),
     isVisible: true
   }
 ];

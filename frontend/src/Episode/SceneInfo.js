@@ -4,6 +4,7 @@ import DescriptionList from 'Components/DescriptionList/DescriptionList';
 import DescriptionListItem from 'Components/DescriptionList/DescriptionListItem';
 import padNumber from 'Utilities/Number/padNumber';
 import styles from './SceneInfo.css';
+import translate from 'Utilities/String/translate';
 
 function SceneInfo(props) {
   const {
@@ -23,7 +24,7 @@ function SceneInfo(props) {
           <DescriptionListItem
             titleClassName={styles.title}
             descriptionClassName={styles.description}
-            title="Season"
+            title={translate('season')}
             data={sceneSeasonNumber}
           />
       }
@@ -33,7 +34,7 @@ function SceneInfo(props) {
           <DescriptionListItem
             titleClassName={styles.title}
             descriptionClassName={styles.description}
-            title="Episode"
+            title={translate('episode')}
             data={sceneEpisodeNumber}
           />
       }
@@ -43,7 +44,7 @@ function SceneInfo(props) {
           <DescriptionListItem
             titleClassName={styles.title}
             descriptionClassName={styles.description}
-            title="Absolute"
+            title={translate('absolute')}
             data={sceneAbsoluteEpisodeNumber}
           />
       }
@@ -53,7 +54,7 @@ function SceneInfo(props) {
           <DescriptionListItem
             titleClassName={styles.title}
             descriptionClassName={styles.description}
-            title={alternateTitles.length === 1 ? 'Title' : 'Titles'}
+            title={alternateTitles.length === 1 ? translate('title') : translate('titles')}
             data={
               <div>
                 {

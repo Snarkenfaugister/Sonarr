@@ -12,6 +12,7 @@ import EpisodeQuality from 'Episode/EpisodeQuality';
 import EpisodeAiringConnector from './EpisodeAiringConnector';
 import MediaInfo from './MediaInfo';
 import styles from './EpisodeSummary.css';
+import translate from 'Utilities/String/translate';
 
 class EpisodeSummary extends Component {
 
@@ -63,7 +64,7 @@ class EpisodeSummary extends Component {
     return (
       <div>
         <div>
-          <span className={styles.infoTitle}>Airs</span>
+          <span className={styles.infoTitle}>{translate('airs')}</span>
 
           <EpisodeAiringConnector
             airDateUtc={airDateUtc}
@@ -72,7 +73,7 @@ class EpisodeSummary extends Component {
         </div>
 
         <div>
-          <span className={styles.infoTitle}>Quality Profile</span>
+          <span className={styles.infoTitle}>{translate('qualityProfile')}</span>
 
           <Label
             kind={kinds.PRIMARY}
@@ -88,7 +89,7 @@ class EpisodeSummary extends Component {
           {
             hasOverview ?
               overview :
-              'No episode overview.'
+              translate('noEpisodeOverview')
           }
         </div>
 
@@ -97,15 +98,15 @@ class EpisodeSummary extends Component {
             <div className={styles.files}>
               <div className={styles.filesHeader}>
                 <div className={styles.path}>
-                  Path
+                  {translate('path')}
                 </div>
 
                 <div className={styles.size}>
-                  Size
+                  {translate('size')}
                 </div>
 
                 <div className={styles.quality}>
-                  Quality
+                  {translate('quality')}
                 </div>
 
                 <div className={styles.actions} />
@@ -137,13 +138,13 @@ class EpisodeSummary extends Component {
                         name={icons.MEDIA_INFO}
                       />
                     }
-                    title="Media Info"
+                    title={translate('mediaInfo')}
                     body={<MediaInfo {...mediaInfo} />}
                     position={tooltipPositions.LEFT}
                   />
 
                   <IconButton
-                    title="Delete episode from disk"
+                    title={translate('deleteEpisodeFromDisk')}
                     name={icons.REMOVE}
                     onPress={this.onRemoveEpisodeFilePress}
                   />
@@ -155,9 +156,9 @@ class EpisodeSummary extends Component {
         <ConfirmModal
           isOpen={this.state.isRemoveEpisodeFileModalOpen}
           kind={kinds.DANGER}
-          title="Delete Episode File"
-          message={`Are you sure you want to delete '${path}'?`}
-          confirmLabel="Delete"
+          title={translate('deleteEpisodeFile')}
+          message={translate('areYouSureYouWantToDeleteInterp', [path])}
+          confirmLabel={translate('delete')}
           onConfirm={this.onConfirmRemoveEpisodeFile}
           onCancel={this.onRemoveEpisodeFileModalClose}
         />

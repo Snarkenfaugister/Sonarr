@@ -7,6 +7,7 @@ import isToday from 'Utilities/Date/isToday';
 import isTomorrow from 'Utilities/Date/isTomorrow';
 import { kinds, sizes } from 'Helpers/Props';
 import Label from 'Components/Label';
+import translate from 'Utilities/String/translate';
 
 function EpisodeAiring(props) {
   const {
@@ -29,7 +30,7 @@ function EpisodeAiring(props) {
   if (!airDateUtc) {
     return (
       <span>
-        TBA on {networkLabel}
+        {translate('tbaOnInterp', [networkLabel])}
       </span>
     );
   }
@@ -39,7 +40,7 @@ function EpisodeAiring(props) {
   if (!showRelativeDates) {
     return (
       <span>
-        {moment(airDateUtc).format(shortDateFormat)} at {time} on {networkLabel}
+        {translate('dateAtTimeOnNetworkInterp', [moment(airDateUtc).format(shortDateFormat), time, networkLabel])}
       </span>
     );
   }
@@ -47,7 +48,7 @@ function EpisodeAiring(props) {
   if (isToday(airDateUtc)) {
     return (
       <span>
-        {time} on {networkLabel}
+        {translate('timeOnNetworkInterp', [time, networkLabel])}
       </span>
     );
   }
@@ -55,7 +56,7 @@ function EpisodeAiring(props) {
   if (isTomorrow(airDateUtc)) {
     return (
       <span>
-        Tomorrow at {time} on {networkLabel}
+        {translate('tomorrowAtTimeOnNetworkInterp', [time, networkLabel])}
       </span>
     );
   }
@@ -63,14 +64,14 @@ function EpisodeAiring(props) {
   if (isInNextWeek(airDateUtc)) {
     return (
       <span>
-        {moment(airDateUtc).format('dddd')} at {time} on {networkLabel}
+        {translate('dateAtTimeOnNetworkInterp', [moment(airDateUtc).format('dddd'), time, networkLabel])}
       </span>
     );
   }
 
   return (
     <span>
-      {moment(airDateUtc).format(shortDateFormat)} at {time} on {networkLabel}
+      {translate('dateAtTimeOnNetworkInterp', [moment(airDateUtc).format(shortDateFormat), time, networkLabel])}
     </span>
   );
 }

@@ -7,16 +7,17 @@ import Icon from 'Components/Icon';
 import Popover from 'Components/Tooltip/Popover';
 import SceneInfo from './SceneInfo';
 import styles from './EpisodeNumber.css';
+import translate from 'Utilities/String/translate';
 
 function getWarningMessage(unverifiedSceneNumbering, seriesType, absoluteEpisodeNumber) {
   const messages = [];
 
   if (unverifiedSceneNumbering) {
-    messages.push('Scene number hasn\'t been verified yet');
+    messages.push(translate('sceneNumberHasntBeenVerifiedYet'));
   }
 
   if (seriesType === 'anime' && !absoluteEpisodeNumber) {
-    messages.push('Episode does not have an absolute episode number');
+    messages.push(translate('episodeNoAbsoluteOrder'));
   }
 
   return messages.join('\n');
@@ -70,7 +71,7 @@ function EpisodeNumber(props) {
                 }
               </span>
             }
-            title="Scene Information"
+            title={translate('sceneInformation')}
             body={
               <SceneInfo
                 seasonNumber={seasonNumber}
