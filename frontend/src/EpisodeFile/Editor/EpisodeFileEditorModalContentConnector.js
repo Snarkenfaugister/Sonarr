@@ -9,6 +9,7 @@ import createSeriesSelector from 'Store/Selectors/createSeriesSelector';
 import { deleteEpisodeFiles, updateEpisodeFiles } from 'Store/Actions/episodeFileActions';
 import { fetchLanguageProfileSchema, fetchQualityProfileSchema } from 'Store/Actions/settingsActions';
 import EpisodeFileEditorModalContent from './EpisodeFileEditorModalContent';
+import translate from 'Utilities/String/translate';
 
 function createSchemaSelector() {
   return createSelector(
@@ -21,9 +22,9 @@ function createSchemaSelector() {
       let error = null;
 
       if (languageProfiles.schemaError) {
-        error = 'Unable to load languages';
+        error = translate('unableToLoadLanguages');
       } else if (qualityProfiles.schemaError) {
-        error = 'Unable to load qualities';
+        error = translate('unableToLoadQualities');
       }
 
       return {

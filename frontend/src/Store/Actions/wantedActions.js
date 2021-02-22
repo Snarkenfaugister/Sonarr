@@ -7,6 +7,7 @@ import createSetTableOptionReducer from './Creators/Reducers/createSetTableOptio
 import createBatchToggleEpisodeMonitoredHandler from './Creators/createBatchToggleEpisodeMonitoredHandler';
 import createServerSideCollectionHandlers from './Creators/createServerSideCollectionHandlers';
 import createHandleActions from './Creators/createHandleActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -35,7 +36,7 @@ export const defaultState = {
       },
       {
         name: 'episode',
-        label: 'Episode',
+        label: translate('episode'),
         isVisible: true
       },
       {
@@ -45,7 +46,7 @@ export const defaultState = {
       },
       {
         name: 'airDateUtc',
-        label: 'Air Date',
+        label: translate('airDate'),
         isSortable: true,
         isVisible: true
       },
@@ -107,7 +108,7 @@ export const defaultState = {
       },
       {
         name: 'episode',
-        label: 'Episode',
+        label: translate('episode'),
         isVisible: true
       },
       {
@@ -117,13 +118,13 @@ export const defaultState = {
       },
       {
         name: 'airDateUtc',
-        label: 'Air Date',
+        label: translate('airDate'),
         isSortable: true,
         isVisible: true
       },
       {
         name: 'language',
-        label: 'Language',
+        label: translate('language'),
         isVisible: false
       },
       {

@@ -131,7 +131,7 @@ class DeleteSeriesModalContent extends Component {
             kind={kinds.DANGER}
             onPress={this.onDeleteSeriesConfirmed}
           >
-            Delete
+            {translate('delete')}
           </Button>
         </ModalFooter>
       </ModalContent>

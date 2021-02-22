@@ -93,7 +93,7 @@ function EditImportListExclusionModalContent(props) {
               kind={kinds.DANGER}
               onPress={onDeleteImportListExclusionPress}
             >
-              Delete
+              {translate('delete')}
             </Button>
         }
 

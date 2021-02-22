@@ -172,7 +172,7 @@ function EditReleaseProfileModalContent(props) {
               kind={kinds.DANGER}
               onPress={onDeleteReleaseProfilePress}
             >
-              Delete
+              {translate('delete')}
             </Button>
         }
 

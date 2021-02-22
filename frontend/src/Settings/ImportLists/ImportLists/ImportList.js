@@ -6,6 +6,7 @@ import Label from 'Components/Label';
 import ConfirmModal from 'Components/Modal/ConfirmModal';
 import EditImportListModalConnector from './EditImportListModalConnector';
 import styles from './ImportList.css';
+import translate from 'Utilities/String/translate';
 
 class ImportList extends Component {
 
@@ -89,7 +90,7 @@ class ImportList extends Component {
           kind={kinds.DANGER}
           title="Delete Import List"
           message={`Are you sure you want to delete the list '${name}'?`}
-          confirmLabel="Delete"
+          confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteImportList}
           onCancel={this.onDeleteImportListModalClose}
         />

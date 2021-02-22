@@ -268,7 +268,7 @@ function EditNotificationModalContent(props) {
               kind={kinds.DANGER}
               onPress={onDeleteNotificationPress}
             >
-              Delete
+              {translate('delete')}
             </Button>
         }
 

@@ -9,6 +9,7 @@ import TagList from 'Components/TagList';
 import ConfirmModal from 'Components/Modal/ConfirmModal';
 import EditDelayProfileModalConnector from './EditDelayProfileModalConnector';
 import styles from './DelayProfile.css';
+import translate from 'Utilities/String/translate';
 
 function getDelay(enabled, delay) {
   if (!enabled) {
@@ -141,7 +142,7 @@ class DelayProfile extends Component {
           kind={kinds.DANGER}
           title="Delete Delay Profile"
           message="Are you sure you want to delete this delay profile?"
-          confirmLabel="Delete"
+          confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteDelayProfile}
           onCancel={this.onDeleteDelayProfileModalClose}
         />

@@ -1218,5 +1218,8 @@
     "episodeNotMonitored": "Episode is not monitored",
     "episodeMissingFromDisk": "Episode missing from disk",
     "episodeHasNotAired": "Episode has not aired",
-    "absolute": "Absolute"
+    "absolute": "Absolute",
+    "airDate": "Air Date",
+    "manageEpisodes": "Manage Episodes",
+    "noEpisodeFilesToManage": "No episode files to manage."
 }

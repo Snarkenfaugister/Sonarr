@@ -57,12 +57,12 @@ export const defaultState = {
     },
     {
       name: 'airDateUtc',
-      label: 'Air Date',
+      label: translate('airDate'),
       isVisible: true
     },
     {
       name: 'language',
-      label: 'Language',
+      label: translate('language'),
       isVisible: false
     },
     {

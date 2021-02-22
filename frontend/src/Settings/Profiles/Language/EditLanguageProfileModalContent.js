@@ -125,7 +125,7 @@ function EditLanguageProfileModalContent(props) {
                 isDisabled={isInUse}
                 onPress={onDeleteLanguageProfilePress}
               >
-                Delete
+                {translate('delete')}
               </Button>
             </div>
         }

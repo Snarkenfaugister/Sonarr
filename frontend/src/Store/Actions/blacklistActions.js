@@ -45,7 +45,7 @@ export const defaultState = {
     },
     {
       name: 'language',
-      label: 'Language',
+      label: translate('language'),
       isVisible: false
     },
     {

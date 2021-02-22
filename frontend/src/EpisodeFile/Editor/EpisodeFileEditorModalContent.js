@@ -26,7 +26,7 @@ import translate from 'Utilities/String/translate';
 const columns = [
   {
     name: 'episodeNumber',
-    label: 'Episode',
+    label: translate('episode'),
     isVisible: true
   },
   {
@@ -36,12 +36,12 @@ const columns = [
   },
   {
     name: 'airDateUtc',
-    label: 'Air Date',
+    label: translate('airDate'),
     isVisible: true
   },
   {
     name: 'language',
-    label: 'Language',
+    label: translate('language'),
     isVisible: true
   },
   {
@@ -170,7 +170,7 @@ class EpisodeFileEditorModalContent extends Component {
       });
 
       return acc;
-    }, [{ key: 'selectLanguage', value: 'Select Language', disabled: true }]);
+    }, [{ key: 'selectLanguage', value: translate('selectLanguage'), disabled: true }]);
 
     const qualityOptions = _.reduceRight(qualities, (acc, quality) => {
       acc.push({
@@ -179,14 +179,14 @@ class EpisodeFileEditorModalContent extends Component {
       });
 
       return acc;
-    }, [{ key: 'selectQuality', value: 'Select Quality', disabled: true }]);
+    }, [{ key: 'selectQuality', value: translate('selectQuality'), disabled: true }]);
 
     const hasSelectedFiles = this.getSelectedIds().length > 0;
 
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Manage Episodes  {seasonNumber != null && <SeasonNumber seasonNumber={seasonNumber} />}
+          {translate('manageEpisodes')} {seasonNumber != null && <SeasonNumber seasonNumber={seasonNumber} />}
         </ModalHeader>
 
         <ModalBody>
@@ -205,7 +205,7 @@ class EpisodeFileEditorModalContent extends Component {
           {
             isPopulated && !items.length ?
               <div>
-                No episode files to manage.
+                {translate('noEpisodeFilesToManage')}
               </div>:
               null
           }
@@ -247,7 +247,7 @@ class EpisodeFileEditorModalContent extends Component {
               isDisabled={!hasSelectedFiles}
               onPress={this.onDeletePress}
             >
-              Delete
+              {translate('delete')}
             </SpinnerButton>
 
             <div className={styles.selectInput}>
@@ -281,9 +281,9 @@ class EpisodeFileEditorModalContent extends Component {
         <ConfirmModal
           isOpen={isConfirmDeleteModalOpen}
           kind={kinds.DANGER}
-          title="Delete Selected Episode Files"
-          message={'Are you sure you want to delete the selected episode files?'}
-          confirmLabel="Delete"
+          title={translate('deleteSelectedEpisodeFiles')}
+          message={translate('deleteSelectedEpisodeFilesMessage')}
+          confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDelete}
           onCancel={this.onConfirmDeleteModalClose}
         />

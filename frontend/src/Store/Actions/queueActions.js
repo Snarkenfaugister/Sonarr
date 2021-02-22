@@ -71,7 +71,7 @@ export const defaultState = {
       },
       {
         name: 'episode',
-        label: 'Episode',
+        label: translate('episode'),
         isSortable: true,
         isVisible: true
       },
@@ -89,7 +89,7 @@ export const defaultState = {
       },
       {
         name: 'language',
-        label: 'Language',
+        label: translate('language'),
         isSortable: true,
         isVisible: false
       },

@@ -242,7 +242,7 @@ function EditImportListModalContent(props) {
               kind={kinds.DANGER}
               onPress={onDeleteImportListPress}
             >
-              Delete
+              {translate('delete')}
             </Button>
         }
 

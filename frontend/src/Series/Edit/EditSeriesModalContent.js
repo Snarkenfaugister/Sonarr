@@ -176,7 +176,7 @@ class EditSeriesModalContent extends Component {
             kind={kinds.DANGER}
             onPress={onDeleteSeriesPress}
           >
-            Delete
+            {translate('delete')}
           </Button>
 
           <Button

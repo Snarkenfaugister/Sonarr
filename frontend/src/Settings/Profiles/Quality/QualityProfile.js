@@ -8,6 +8,7 @@ import ConfirmModal from 'Components/Modal/ConfirmModal';
 import Tooltip from 'Components/Tooltip/Tooltip';
 import EditQualityProfileModalConnector from './EditQualityProfileModalConnector';
 import styles from './QualityProfile.css';
+import translate from 'Utilities/String/translate';
 
 class QualityProfile extends Component {
 
@@ -162,7 +163,7 @@ class QualityProfile extends Component {
           kind={kinds.DANGER}
           title="Delete Quality Profile"
           message={`Are you sure you want to delete the quality profile '${name}'?`}
-          confirmLabel="Delete"
+          confirmLabel={translate('delete')}
           isSpinning={isDeleting}
           onConfirm={this.onConfirmDeleteQualityProfile}
           onCancel={this.onDeleteQualityProfileModalClose}

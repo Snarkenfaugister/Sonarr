@@ -160,7 +160,7 @@ function EditIndexerModalContent(props) {
               kind={kinds.DANGER}
               onPress={onDeleteIndexerPress}
             >
-              Delete
+              {translate('delete')}
             </Button>
         }
 

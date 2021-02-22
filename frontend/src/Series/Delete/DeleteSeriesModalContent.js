@@ -78,7 +78,7 @@ class DeleteSeriesModalContent extends Component {
         onModalClose={onModalClose}
       >
         <ModalHeader>
-          Delete - {title}
+          {translate('delete')} - {title}
         </ModalHeader>
 
         <ModalBody>
@@ -139,7 +139,7 @@ class DeleteSeriesModalContent extends Component {
             kind={kinds.DANGER}
             onPress={this.onDeleteSeriesConfirmed}
           >
-            Delete
+            {translate('delete')}
           </Button>
         </ModalFooter>
       </ModalContent>

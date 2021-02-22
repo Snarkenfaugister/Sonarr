@@ -9,6 +9,7 @@ import TagList from 'Components/TagList';
 import ConfirmModal from 'Components/Modal/ConfirmModal';
 import EditReleaseProfileModalConnector from './EditReleaseProfileModalConnector';
 import styles from './ReleaseProfile.css';
+import translate from 'Utilities/String/translate';
 
 class ReleaseProfile extends Component {
 
@@ -182,7 +183,7 @@ class ReleaseProfile extends Component {
           kind={kinds.DANGER}
           title="Delete ReleaseProfile"
           message={'Are you sure you want to delete this releaseProfile?'}
-          confirmLabel="Delete"
+          confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteReleaseProfile}
           onCancel={this.onDeleteReleaseProfileModalClose}
         />

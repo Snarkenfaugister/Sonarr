@@ -230,7 +230,7 @@ class EditQualityProfileModalContent extends Component {
                     isDisabled={isInUse}
                     onPress={onDeleteQualityProfilePress}
                   >
-                    Delete
+                    {translate('delete')}
                   </Button>
                 </div>
             }

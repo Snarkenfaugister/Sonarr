@@ -60,7 +60,7 @@ const columns = [
   },
   {
     name: 'language',
-    label: 'Language',
+    label: translate('language'),
     isSortable: true,
     isVisible: true
   },
@@ -231,8 +231,8 @@ class InteractiveImportModalContent extends Component {
       { key: SELECT, value: 'Select...', disabled: true },
       { key: SEASON, value: 'Select Season' },
       { key: EPISODE, value: 'Select Episode(s)' },
-      { key: LANGUAGE, value: 'Select Language' },
-      { key: QUALITY, value: 'Select Quality' }
+      { key: LANGUAGE, value: translate('selectLanguage') },
+      { key: QUALITY, value: translate('selectQuality') }
     ];
 
     if (allowSeriesChange) {

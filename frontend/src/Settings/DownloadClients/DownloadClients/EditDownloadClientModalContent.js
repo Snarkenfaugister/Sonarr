@@ -145,7 +145,7 @@ class EditDownloadClientModalContent extends Component {
                 kind={kinds.DANGER}
                 onPress={onDeleteDownloadClientPress}
               >
-                Delete
+                {translate('delete')}
               </Button>
           }
 

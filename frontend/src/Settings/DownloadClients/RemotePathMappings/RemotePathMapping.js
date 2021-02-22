@@ -7,6 +7,7 @@ import Link from 'Components/Link/Link';
 import ConfirmModal from 'Components/Modal/ConfirmModal';
 import EditRemotePathMappingModalConnector from './EditRemotePathMappingModalConnector';
 import styles from './RemotePathMapping.css';
+import translate from 'Utilities/String/translate';
 
 class RemotePathMapping extends Component {
 
@@ -89,7 +90,7 @@ class RemotePathMapping extends Component {
           kind={kinds.DANGER}
           title="Delete Delay Profile"
           message="Are you sure you want to delete this remote path mapping?"
-          confirmLabel="Delete"
+          confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteRemotePathMapping}
           onCancel={this.onDeleteRemotePathMappingModalClose}
         />

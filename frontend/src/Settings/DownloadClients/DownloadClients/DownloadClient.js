@@ -6,6 +6,7 @@ import Label from 'Components/Label';
 import ConfirmModal from 'Components/Modal/ConfirmModal';
 import EditDownloadClientModalConnector from './EditDownloadClientModalConnector';
 import styles from './DownloadClient.css';
+import translate from 'Utilities/String/translate';
 
 class DownloadClient extends Component {
 
@@ -105,7 +106,7 @@ class DownloadClient extends Component {
           kind={kinds.DANGER}
           title="Delete Download Client"
           message={`Are you sure you want to delete the download client '${name}'?`}
-          confirmLabel="Delete"
+          confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteDownloadClient}
           onCancel={this.onDeleteDownloadClientModalClose}
         />

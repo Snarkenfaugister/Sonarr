@@ -355,7 +355,7 @@ class SeriesEditorFooter extends Component {
                 isDisabled={!selectedCount || isDeleting}
                 onPress={this.onDeleteSelectedPress}
               >
-                Delete
+                {translate('delete')}
               </SpinnerButton>
             </div>
           </div>

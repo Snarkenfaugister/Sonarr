@@ -5,6 +5,7 @@ import Card from 'Components/Card';
 import ConfirmModal from 'Components/Modal/ConfirmModal';
 import TagDetailsModal from './Details/TagDetailsModal';
 import styles from './Tag.css';
+import translate from 'Utilities/String/translate';
 
 class Tag extends Component {
 
@@ -152,7 +153,7 @@ class Tag extends Component {
           kind={kinds.DANGER}
           title="Delete Tag"
           message={`Are you sure you want to delete the tag '${label}'?`}
-          confirmLabel="Delete"
+          confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteTag}
           onCancel={this.onDeleteTagModalClose}
         />

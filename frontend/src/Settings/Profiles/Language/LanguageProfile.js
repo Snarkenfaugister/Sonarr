@@ -7,6 +7,7 @@ import IconButton from 'Components/Link/IconButton';
 import ConfirmModal from 'Components/Modal/ConfirmModal';
 import EditLanguageProfileModalConnector from './EditLanguageProfileModalConnector';
 import styles from './LanguageProfile.css';
+import translate from 'Utilities/String/translate';
 
 class LanguageProfile extends Component {
 
@@ -123,7 +124,7 @@ onCloneLanguageProfilePress
           kind={kinds.DANGER}
           title="Delete Language Profile"
           message={`Are you sure you want to delete the language profile '${name}'?`}
-          confirmLabel="Delete"
+          confirmLabel={translate('delete')}
           isSpinning={isDeleting}
           onConfirm={this.onConfirmDeleteLanguageProfile}
           onCancel={this.onDeleteLanguageProfileModalClose}

@@ -137,7 +137,7 @@ function EditDelayProfileModalContent(props) {
               kind={kinds.DANGER}
               onPress={onDeleteDelayProfilePress}
             >
-              Delete
+              {translate('delete')}
             </Button>
         }
 

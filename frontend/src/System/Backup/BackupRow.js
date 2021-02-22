@@ -10,6 +10,7 @@ import TableRow from 'Components/Table/TableRow';
 import TableRowCell from 'Components/Table/Cells/TableRowCell';
 import RestoreBackupModalConnector from './RestoreBackupModalConnector';
 import styles from './BackupRow.css';
+import translate from 'Utilities/String/translate';
 
 class BackupRow extends Component {
 
@@ -132,7 +133,7 @@ class BackupRow extends Component {
           kind={kinds.DANGER}
           title="Delete Backup"
           message={`Are you sure you want to delete the backup '${name}'?`}
-          confirmLabel="Delete"
+          confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeletePress}
           onCancel={this.onConfirmDeleteModalClose}
         />

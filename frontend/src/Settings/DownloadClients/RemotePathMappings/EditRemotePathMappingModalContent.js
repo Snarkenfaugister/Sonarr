@@ -106,7 +106,7 @@ function EditRemotePathMappingModalContent(props) {
               kind={kinds.DANGER}
               onPress={onDeleteRemotePathMappingPress}
             >
-              Delete
+              {translate('delete')}
             </Button>
         }
 

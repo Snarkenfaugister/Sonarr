@@ -18,7 +18,7 @@ const columns = [
   },
   {
     name: 'episode',
-    label: 'Episode',
+    label: translate('episode'),
     isVisible: true
   },
   {
@@ -28,7 +28,7 @@ const columns = [
   },
   {
     name: 'language',
-    label: 'Language',
+    label: translate('language'),
     isVisible: true
   },
   {

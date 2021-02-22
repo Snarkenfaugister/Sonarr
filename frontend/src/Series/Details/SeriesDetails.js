@@ -37,6 +37,7 @@ import SeriesDetailsLinks from './SeriesDetailsLinks';
 import MonitoringOptionsModal from 'Series/MonitoringOptions/MonitoringOptionsModal';
 import { getSeriesStatusDetails } from 'Series/SeriesStatus';
 import styles from './SeriesDetails.css';
+import translate from 'Utilities/String/translate';
 
 const defaultFontSize = parseInt(fonts.defaultFontSize);
 const lineHeight = parseFloat(fonts.lineHeight);
@@ -312,7 +313,7 @@ class SeriesDetails extends Component {
             />
 
             <PageToolbarButton
-              label="Delete"
+              label={translate('delete')}
               iconName={icons.DELETE}
               onPress={this.onDeleteSeriesPress}
             />
