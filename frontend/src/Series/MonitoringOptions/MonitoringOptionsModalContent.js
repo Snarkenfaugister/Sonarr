@@ -11,6 +11,7 @@ import Form from 'Components/Form/Form';
 import FormGroup from 'Components/Form/FormGroup';
 import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
+import translate from 'Utilities/String/translate';
 
 const NO_CHANGE = 'noChange';
 
@@ -101,14 +102,14 @@ class MonitoringOptionsModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <SpinnerButton
             isSpinning={isSaving}
             onPress={this.onSavePress}
           >
-            Save
+            {translate('save')}
           </SpinnerButton>
         </ModalFooter>
       </ModalContent>

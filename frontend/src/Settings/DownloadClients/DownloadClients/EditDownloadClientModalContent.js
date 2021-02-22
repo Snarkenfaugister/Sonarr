@@ -15,6 +15,7 @@ import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import ProviderFieldFormGroup from 'Components/Form/ProviderFieldFormGroup';
 import styles from './EditDownloadClientModalContent.css';
+import translate from 'Utilities/String/translate';
 
 class EditDownloadClientModalContent extends Component {
 
@@ -159,7 +160,7 @@ class EditDownloadClientModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <SpinnerErrorButton
@@ -167,7 +168,7 @@ class EditDownloadClientModalContent extends Component {
             error={saveError}
             onPress={onSavePress}
           >
-            Save
+            {translate('save')}
           </SpinnerErrorButton>
         </ModalFooter>
       </ModalContent>

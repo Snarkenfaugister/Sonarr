@@ -10,6 +10,7 @@ import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import styles from './RestoreBackupModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function getErrorMessage(error) {
   if (!error || !error.responseJSON || !error.responseJSON.message) {
@@ -200,7 +201,7 @@ class RestoreBackupModalContent extends Component {
           </div>
 
           <Button onPress={onModalClose}>
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <SpinnerButton

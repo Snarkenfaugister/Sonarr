@@ -12,6 +12,7 @@ import Table from 'Components/Table/Table';
 import TableBody from 'Components/Table/TableBody';
 import RecentFolderRow from './RecentFolderRow';
 import styles from './InteractiveImportSelectFolderModalContent.css';
+import translate from 'Utilities/String/translate';
 
 const recentFoldersColumns = [
   {
@@ -149,7 +150,7 @@ class InteractiveImportSelectFolderModalContent extends Component {
 
         <ModalFooter>
           <Button onPress={onModalClose}>
-            Cancel
+            {translate('cancel')}
           </Button>
         </ModalFooter>
       </ModalContent>

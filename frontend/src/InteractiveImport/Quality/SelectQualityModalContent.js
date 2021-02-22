@@ -11,6 +11,7 @@ import ModalContent from 'Components/Modal/ModalContent';
 import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
+import translate from 'Utilities/String/translate';
 
 class SelectQualityModalContent extends Component {
 
@@ -136,7 +137,7 @@ class SelectQualityModalContent extends Component {
 
         <ModalFooter>
           <Button onPress={onModalClose}>
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <Button

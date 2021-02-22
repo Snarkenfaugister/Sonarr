@@ -16,6 +16,7 @@ import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import QualityProfileItems from './QualityProfileItems';
 import styles from './EditQualityProfileModalContent.css';
+import translate from 'Utilities/String/translate';
 
 const MODAL_BODY_PADDING = parseInt(dimensions.modalBodyPadding);
 
@@ -237,7 +238,7 @@ class EditQualityProfileModalContent extends Component {
             <Button
               onPress={onModalClose}
             >
-              Cancel
+              {translate('cancel')}
             </Button>
 
             <SpinnerErrorButton
@@ -245,7 +246,7 @@ class EditQualityProfileModalContent extends Component {
               error={saveError}
               onPress={onSavePress}
             >
-              Save
+              {translate('save')}
             </SpinnerErrorButton>
           </ModalFooter>
         </Measure>

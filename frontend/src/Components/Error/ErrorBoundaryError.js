@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import translate from 'Utilities/String/translate';
 import styles from './ErrorBoundaryError.css';
 
 function ErrorBoundaryError(props) {
@@ -54,7 +55,7 @@ ErrorBoundaryError.defaultProps = {
   className: styles.container,
   messageClassName: styles.message,
   detailsClassName: styles.details,
-  message: 'There was an error loading this content'
+  message: translate('errorLoadingContent')
 };
 
 export default ErrorBoundaryError;

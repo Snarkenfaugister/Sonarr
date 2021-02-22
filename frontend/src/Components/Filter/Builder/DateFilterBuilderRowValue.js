@@ -7,6 +7,7 @@ import SelectInput from 'Components/Form/SelectInput';
 import TextInput from 'Components/Form/TextInput';
 import { NAME } from './FilterBuilderRowValue';
 import styles from './DateFilterBuilderRowValue.css';
+import translate from 'Utilities/String/translate';
 
 const timeOptions = [
   { key: 'seconds', value: 'seconds' },
@@ -160,7 +161,7 @@ class DateFilterBuilderRowValue extends Component {
       <TextInput
         name={NAME}
         value={filterValue}
-        placeholder="yyyy-mm-dd"
+        placeholder={translate('yyyyMmDd')}
         onChange={this.onValueChange}
       />
     );

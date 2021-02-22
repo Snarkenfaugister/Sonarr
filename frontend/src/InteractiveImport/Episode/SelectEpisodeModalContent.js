@@ -17,6 +17,7 @@ import Table from 'Components/Table/Table';
 import TableBody from 'Components/Table/TableBody';
 import SelectEpisodeRow from './SelectEpisodeRow';
 import styles from './SelectEpisodeModalContent.css';
+import translate from 'Utilities/String/translate';
 
 const columns = [
   {
@@ -208,7 +209,7 @@ class SelectEpisodeModalContent extends Component {
 
           <div className={styles.buttons}>
             <Button onPress={onModalClose}>
-              Cancel
+              {translate('cancel')}
             </Button>
 
             <Button

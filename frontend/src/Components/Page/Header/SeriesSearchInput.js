@@ -9,6 +9,7 @@ import SeriesSearchResult from './SeriesSearchResult';
 import LoadingIndicator from 'Components/Loading/LoadingIndicator';
 import FuseWorker from './fuse.worker';
 import styles from './SeriesSearchInput.css';
+import translate from 'Utilities/String/translate';
 
 const ADD_NEW_TYPE = 'addNew';
 
@@ -91,7 +92,7 @@ class SeriesSearchInput extends Component {
     if (item.type === ADD_NEW_TYPE) {
       return (
         <div className={styles.addNewSeriesSuggestion}>
-          Search for {query}
+          {translate('searchForInterp', [query])}
         </div>
       );
     }
@@ -271,14 +272,14 @@ class SeriesSearchInput extends Component {
 
     if (suggestions.length || loading) {
       suggestionGroups.push({
-        title: 'Existing Series',
+        title: translate('existingSeries'),
         loading,
         suggestions
       });
     }
 
     suggestionGroups.push({
-      title: 'Add New Series',
+      title: translate('addNewSeries'),
       suggestions: [
         {
           type: ADD_NEW_TYPE,
@@ -292,7 +293,7 @@ class SeriesSearchInput extends Component {
       className: styles.input,
       name: 'seriesSearch',
       value,
-      placeholder: 'Search',
+      placeholder: translate('search'),
       autoComplete: 'off',
       spellCheck: false,
       onChange: this.onChange,

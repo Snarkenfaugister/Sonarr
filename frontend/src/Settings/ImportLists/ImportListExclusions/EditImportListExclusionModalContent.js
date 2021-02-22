@@ -14,6 +14,7 @@ import FormGroup from 'Components/Form/FormGroup';
 import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import styles from './EditImportListExclusionModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function EditImportListExclusionModalContent(props) {
   const {
@@ -99,7 +100,7 @@ function EditImportListExclusionModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Cancel
+          {translate('cancel')}
         </Button>
 
         <SpinnerErrorButton
@@ -107,7 +108,7 @@ function EditImportListExclusionModalContent(props) {
           error={saveError}
           onPress={onSavePress}
         >
-          Save
+          {translate('save')}
         </SpinnerErrorButton>
       </ModalFooter>
     </ModalContent>

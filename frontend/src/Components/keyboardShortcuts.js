@@ -1,31 +1,32 @@
 import React, { Component } from 'react';
 import Mousetrap from 'mousetrap';
 import getDisplayName from 'Helpers/getDisplayName';
+import translate from 'Utilities/String/translate';
 
 export const shortcuts = {
   OPEN_KEYBOARD_SHORTCUTS_MODAL: {
     key: '?',
-    name: 'Open This Modal'
+    name: translate('openThisModal')
   },
 
   CLOSE_MODAL: {
     key: 'Esc',
-    name: 'Close Current Modal'
+    name: translate('closeCurrentModal')
   },
 
   ACCEPT_CONFIRM_MODAL: {
     key: 'Enter',
-    name: 'Accept Confirmation Modal'
+    name: translate('acceptConfirmationModal')
   },
 
   SERIES_SEARCH_INPUT: {
     key: 's',
-    name: 'Focus Search Box'
+    name: translate('focusSearchBox')
   },
 
   SAVE_SETTINGS: {
     key: 'mod+s',
-    name: 'Save Settings'
+    name: translate('saveSettings')
   }
 };
 

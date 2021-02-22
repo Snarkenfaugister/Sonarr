@@ -3,6 +3,7 @@ import React from 'react';
 import { kinds } from 'Helpers/Props';
 import TagInputTag from 'Components/Form/TagInputTag';
 import styles from './FilterBuilderRowValueTag.css';
+import translate from 'Utilities/String/translate';
 
 function FilterBuilderRowValueTag(props) {
   return (
@@ -18,7 +19,7 @@ function FilterBuilderRowValueTag(props) {
         props.isLastTag ?
           null :
           <div className={styles.or}>
-            or
+            {translate('or')}
           </div>
       }
     </div>

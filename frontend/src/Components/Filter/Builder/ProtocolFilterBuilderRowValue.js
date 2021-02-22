@@ -1,9 +1,10 @@
 import React from 'react';
+import translate from 'Utilities/String/translate';
 import FilterBuilderRowValue from './FilterBuilderRowValue';
 
 const protocols = [
-  { id: 'torrent', name: 'Torrent' },
-  { id: 'usenet', name: 'Usenet' }
+  { id: 'torrent', name: translate('torrent') },
+  { id: 'usenet', name: translate('usenet') }
 ];
 
 function ProtocolFilterBuilderRowValue(props) {

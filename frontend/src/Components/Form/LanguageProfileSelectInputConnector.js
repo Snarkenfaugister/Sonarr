@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import sortByName from 'Utilities/Array/sortByName';
 import createSortedSectionSelector from 'Store/Selectors/createSortedSectionSelector';
 import SelectInput from './SelectInput';
+import translate from 'Utilities/String/translate';
 
 function createMapStateToProps() {
   return createSelector(
@@ -23,7 +24,7 @@ function createMapStateToProps() {
       if (includeNoChange) {
         values.unshift({
           key: 'noChange',
-          value: 'No Change',
+          value: translate('noChange'),
           disabled: true
         });
       }
@@ -31,7 +32,7 @@ function createMapStateToProps() {
       if (includeMixed) {
         values.unshift({
           key: 'mixed',
-          value: '(Mixed)',
+          value: `(${translate('mixed')})`,
           disabled: true
         });
       }

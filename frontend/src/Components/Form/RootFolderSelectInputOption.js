@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import formatBytes from 'Utilities/Number/formatBytes';
 import EnhancedSelectInputOption from './EnhancedSelectInputOption';
 import styles from './RootFolderSelectInputOption.css';
+import translate from 'Utilities/String/translate';
 
 function RootFolderSelectInputOption(props) {
   const {
@@ -47,14 +48,14 @@ function RootFolderSelectInputOption(props) {
           freeSpace == null ?
             null :
             <div className={styles.freeSpace}>
-              {formatBytes(freeSpace)} Free
+              {translate('bytesFreeInterp', [formatBytes(freeSpace)])}
             </div>
         }
 
         {
           isMissing ?
             <div className={styles.isMissing}>
-              Missing
+              {translate('missing')}
             </div> :
             null
         }

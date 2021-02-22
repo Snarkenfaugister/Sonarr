@@ -15,6 +15,7 @@ import FormGroup from 'Components/Form/FormGroup';
 import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import styles from './EditDelayProfileModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function EditDelayProfileModalContent(props) {
   const {
@@ -143,7 +144,7 @@ function EditDelayProfileModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Cancel
+          {translate('cancel')}
         </Button>
 
         <SpinnerErrorButton
@@ -151,7 +152,7 @@ function EditDelayProfileModalContent(props) {
           error={saveError}
           onPress={onSavePress}
         >
-          Save
+          {translate('save')}
         </SpinnerErrorButton>
       </ModalFooter>
     </ModalContent>

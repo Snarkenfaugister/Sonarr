@@ -10,6 +10,7 @@ import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import styles from './DeleteSeriesModalContent.css';
+import translate from 'Utilities/String/translate';
 
 class DeleteSeriesModalContent extends Component {
 
@@ -123,7 +124,7 @@ class DeleteSeriesModalContent extends Component {
 
         <ModalFooter>
           <Button onPress={onModalClose}>
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <Button

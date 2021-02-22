@@ -27,6 +27,7 @@ import SelectSeriesModal from 'InteractiveImport/Series/SelectSeriesModal';
 import SelectSeasonModal from 'InteractiveImport/Season/SelectSeasonModal';
 import InteractiveImportRow from './InteractiveImportRow';
 import styles from './InteractiveImportModalContent.css';
+import translate from 'Utilities/String/translate';
 
 const columns = [
   {
@@ -360,7 +361,7 @@ class InteractiveImportModalContent extends Component {
 
           <div className={styles.rightButtons}>
             <Button onPress={onModalClose}>
-              Cancel
+              {translate('cancel')}
             </Button>
 
             {

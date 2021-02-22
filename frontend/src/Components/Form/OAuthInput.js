@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { kinds } from 'Helpers/Props';
 import SpinnerErrorButton from 'Components/Link/SpinnerErrorButton';
+import translate from 'Utilities/String/translate';
 
 function OAuthInput(props) {
   const {
@@ -33,7 +34,7 @@ OAuthInput.propTypes = {
 };
 
 OAuthInput.defaultProps = {
-  label: 'Start OAuth'
+  label: translate('startOauth')
 };
 
 export default OAuthInput;

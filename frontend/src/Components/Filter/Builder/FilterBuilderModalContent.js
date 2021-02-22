@@ -10,6 +10,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import FilterBuilderRow from './FilterBuilderRow';
 import styles from './FilterBuilderModalContent.css';
+import translate from 'Utilities/String/translate';
 
 class FilterBuilderModalContent extends Component {
 
@@ -107,7 +108,7 @@ class FilterBuilderModalContent extends Component {
       this.setState({
         labelErrors: [
           {
-            message: 'Label is required'
+            message: translate('labelRequired')
           }
         ]
       });
@@ -145,13 +146,13 @@ class FilterBuilderModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Custom Filter
+          {translate('customFilter')}
         </ModalHeader>
 
         <ModalBody>
           <div className={styles.labelContainer}>
             <div className={styles.label}>
-              Label
+              {translate('label')}
             </div>
 
             <div className={styles.labelInputContainer}>
@@ -192,7 +193,7 @@ class FilterBuilderModalContent extends Component {
 
         <ModalFooter>
           <Button onPress={onCancelPress}>
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <SpinnerErrorButton
@@ -200,7 +201,7 @@ class FilterBuilderModalContent extends Component {
             error={saveError}
             onPress={this.onSaveFilterPress}
           >
-            Save
+            {translate('save')}
           </SpinnerErrorButton>
         </ModalFooter>
       </ModalContent>

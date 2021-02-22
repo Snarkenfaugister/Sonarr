@@ -4,6 +4,7 @@ import DocumentTitle from 'react-document-title';
 import ErrorBoundary from 'Components/Error/ErrorBoundary';
 import PageContentError from './PageContentError';
 import styles from './PageContent.css';
+import translate from 'Utilities/String/translate';
 
 function PageContent(props) {
   const {
@@ -14,7 +15,7 @@ function PageContent(props) {
 
   return (
     <ErrorBoundary errorComponent={PageContentError}>
-      <DocumentTitle title={title ? `${title} - Sonarr` : 'Sonarr'}>
+      <DocumentTitle title={title ? `${title} - ${translate('sonarr')}` : translate('sonarr')}>
         <div className={className}>
           {children}
         </div>

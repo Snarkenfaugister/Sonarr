@@ -4,6 +4,7 @@ import { icons } from 'Helpers/Props';
 import IconButton from 'Components/Link/IconButton';
 import SpinnerIconButton from 'Components/Link/SpinnerIconButton';
 import styles from './CustomFilter.css';
+import translate from 'Utilities/String/translate';
 
 class CustomFilter extends Component {
 
@@ -89,7 +90,7 @@ class CustomFilter extends Component {
           />
 
           <SpinnerIconButton
-            title="Remove filter"
+            title={translate('removeFilter')}
             name={icons.REMOVE}
             isSpinning={this.state.isDeleting}
             onPress={this.onRemovePress}

@@ -12,6 +12,7 @@ import FormGroup from 'Components/Form/FormGroup';
 import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import styles from './EditReleaseProfileModalContent.css';
+import translate from 'Utilities/String/translate';
 
 const tagInputDelimiters = ['Tab', 'Enter', ','];
 
@@ -178,7 +179,7 @@ function EditReleaseProfileModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Cancel
+          {translate('cancel')}
         </Button>
 
         <SpinnerErrorButton
@@ -186,7 +187,7 @@ function EditReleaseProfileModalContent(props) {
           error={saveError}
           onPress={onSavePress}
         >
-          Save
+          {translate('save')}
         </SpinnerErrorButton>
       </ModalFooter>
     </ModalContent>

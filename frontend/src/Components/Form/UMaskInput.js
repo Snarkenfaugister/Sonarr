@@ -3,31 +3,32 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styles from './UMaskInput.css';
 import EnhancedSelectInput from './EnhancedSelectInput';
+import translate from 'Utilities/String/translate';
 
 const umaskOptions = [
   {
     key: '755',
-    value: '755 - Owner write, Everyone else read',
+    value: translate('umask755HelpText'),
     hint: 'drwxr-xr-x'
   },
   {
     key: '775',
-    value: '775 - Owner & Group write, Other read',
+    value: translate('umask775HelpText'),
     hint: 'drwxrwxr-x'
   },
   {
     key: '770',
-    value: '770 - Owner & Group write',
+    value: translate('umask770HelpText'),
     hint: 'drwxrwx---'
   },
   {
     key: '750',
-    value: '750 - Owner write, Group read',
+    value: translate('umask750HelpText'),
     hint: 'drwxr-x---'
   },
   {
     key: '777',
-    value: '777 - Everyone write',
+    value: translate('umask777HelpText'),
     hint: 'drwxrwxrwx'
   }
 ];
@@ -101,16 +102,16 @@ class UMaskInput extends Component {
         </div>
         <div className={styles.details}>
           <div>
-            <label>UMask</label>
+            <label>{translate('umask')}</label>
             <div className={styles.value}>{umask}</div>
           </div>
           <div>
-            <label>Folder</label>
+            <label>{translate('folder')}</label>
             <div className={styles.value}>{folder}</div>
             <div className={styles.unit}>d{formatPermissions(folderNum)}</div>
           </div>
           <div>
-            <label>File</label>
+            <label>{translate('file')}</label>
             <div className={styles.value}>{file}</div>
             <div className={styles.unit}>{formatPermissions(fileNum)}</div>
           </div>

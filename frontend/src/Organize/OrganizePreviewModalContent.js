@@ -15,6 +15,7 @@ import CheckInput from 'Components/Form/CheckInput';
 import SeasonNumber from 'Season/SeasonNumber';
 import OrganizePreviewRow from './OrganizePreviewRow';
 import styles from './OrganizePreviewModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function getValue(allSelected, allUnselected) {
   if (allSelected) {
@@ -172,7 +173,7 @@ class OrganizePreviewModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <Button

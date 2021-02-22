@@ -12,6 +12,7 @@ import FormGroup from 'Components/Form/FormGroup';
 import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import ProviderFieldFormGroup from 'Components/Form/ProviderFieldFormGroup';
+import translate from 'Utilities/String/translate';
 
 function EditMetadataModalContent(props) {
   const {
@@ -72,7 +73,7 @@ function EditMetadataModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Cancel
+          {translate('cancel')}
         </Button>
 
         <SpinnerErrorButton
@@ -80,7 +81,7 @@ function EditMetadataModalContent(props) {
           error={saveError}
           onPress={onSavePress}
         >
-          Save
+          {translate('save')}
         </SpinnerErrorButton>
       </ModalFooter>
     </ModalContent>

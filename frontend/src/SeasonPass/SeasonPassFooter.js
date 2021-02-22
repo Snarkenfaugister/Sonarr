@@ -6,6 +6,7 @@ import MonitorEpisodesSelectInput from 'Components/Form/MonitorEpisodesSelectInp
 import SelectInput from 'Components/Form/SelectInput';
 import PageContentFooter from 'Components/Page/PageContentFooter';
 import styles from './SeasonPassFooter.css';
+import translate from 'Utilities/String/translate';
 
 const NO_CHANGE = 'noChange';
 
@@ -78,7 +79,7 @@ class SeasonPassFooter extends Component {
     } = this.state;
 
     const monitoredOptions = [
-      { key: NO_CHANGE, value: 'No Change', disabled: true },
+      { key: NO_CHANGE, value: translate('noChange'), disabled: true },
       { key: 'monitored', value: 'Monitored' },
       { key: 'unmonitored', value: 'Unmonitored' }
     ];

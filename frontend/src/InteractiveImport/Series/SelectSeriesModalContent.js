@@ -10,6 +10,7 @@ import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import SelectSeriesRow from './SelectSeriesRow';
 import styles from './SelectSeriesModalContent.css';
+import translate from 'Utilities/String/translate';
 
 class SelectSeriesModalContent extends Component {
 
@@ -86,7 +87,7 @@ class SelectSeriesModalContent extends Component {
 
         <ModalFooter>
           <Button onPress={onModalClose}>
-            Cancel
+            {translate('cancel')}
           </Button>
         </ModalFooter>
       </ModalContent>

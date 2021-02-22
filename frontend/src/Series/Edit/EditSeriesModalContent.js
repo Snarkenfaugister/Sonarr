@@ -13,6 +13,7 @@ import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import MoveSeriesModal from 'Series/MoveSeries/MoveSeriesModal';
 import styles from './EditSeriesModalContent.css';
+import translate from 'Utilities/String/translate';
 
 class EditSeriesModalContent extends Component {
 
@@ -181,14 +182,14 @@ class EditSeriesModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <SpinnerButton
             isSpinning={isSaving}
             onPress={this.onSavePress}
           >
-            Save
+            {translate('save')}
           </SpinnerButton>
         </ModalFooter>
 

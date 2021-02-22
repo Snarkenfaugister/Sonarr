@@ -7,6 +7,7 @@ import Link from 'Components/Link/Link';
 import LoadingIndicator from 'Components/Loading/LoadingIndicator';
 import SelectInput from 'Components/Form/SelectInput';
 import styles from './TablePager.css';
+import translate from 'Utilities/String/translate';
 
 class TablePager extends Component {
 
@@ -156,7 +157,7 @@ class TablePager extends Component {
 
         <div className={styles.recordsContainer}>
           <div className={styles.records}>
-            Total records: {totalRecords}
+            {translate('totalRecordsInterp', [totalRecords])}
           </div>
         </div>
       </div>

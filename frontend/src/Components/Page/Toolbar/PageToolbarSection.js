@@ -11,6 +11,7 @@ import MenuContent from 'Components/Menu/MenuContent';
 import MenuItem from 'Components/Menu/MenuItem';
 import ToolbarMenuButton from 'Components/Menu/ToolbarMenuButton';
 import styles from './PageToolbarSection.css';
+import translate from 'Utilities/String/translate';
 
 const BUTTON_WIDTH = parseInt(dimensions.toolbarButtonWidth);
 const SEPARATOR_MARGIN = parseInt(dimensions.toolbarSeparatorMargin);
@@ -161,7 +162,7 @@ class PageToolbarSection extends Component {
                       <ToolbarMenuButton
                         className={styles.overflowMenuButton}
                         iconName={icons.OVERFLOW}
-                        text="More"
+                        text={translate('more')}
                       />
 
                       <MenuContent>

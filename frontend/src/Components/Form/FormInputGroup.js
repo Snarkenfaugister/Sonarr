@@ -26,6 +26,7 @@ import TextInput from './TextInput';
 import UMaskInput from './UMaskInput';
 import FormInputHelpText from './FormInputHelpText';
 import styles from './FormInputGroup.css';
+import translate from 'Utilities/String/translate';
 
 function getComponent(type) {
   switch (type) {
@@ -211,7 +212,7 @@ function FormInputGroup(props) {
           <Link
             to={helpLink}
           >
-            More Info
+            {translate('moreInfo')}
           </Link>
       }
 

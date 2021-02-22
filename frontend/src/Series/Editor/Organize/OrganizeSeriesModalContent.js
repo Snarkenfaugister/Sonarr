@@ -9,6 +9,7 @@ import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import styles from './OrganizeSeriesModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function OrganizeSeriesModalContent(props) {
   const {
@@ -51,7 +52,7 @@ function OrganizeSeriesModalContent(props) {
 
       <ModalFooter>
         <Button onPress={onModalClose}>
-          Cancel
+          {translate('cancel')}
         </Button>
 
         <Button

@@ -1,4 +1,5 @@
 import React from 'react';
+import translate from 'Utilities/String/translate';
 import styles from './LoadingMessage.css';
 
 const messages = [
@@ -19,7 +20,8 @@ const messages = [
   'I\'ll be here all week',
   'Don\'t forget to tip your waitress',
   'Apply directly to the forehead',
-  'Loading Battlestation'
+  'Loading Battlestation',
+  translate('availableInYourLanguage')
 ];
 
 let message = null;

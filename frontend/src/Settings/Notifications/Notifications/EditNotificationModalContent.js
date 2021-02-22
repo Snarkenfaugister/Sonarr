@@ -15,6 +15,7 @@ import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import ProviderFieldFormGroup from 'Components/Form/ProviderFieldFormGroup';
 import styles from './EditNotificationModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function EditNotificationModalContent(props) {
   const {
@@ -282,7 +283,7 @@ function EditNotificationModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Cancel
+          {translate('cancel')}
         </Button>
 
         <SpinnerErrorButton
@@ -290,7 +291,7 @@ function EditNotificationModalContent(props) {
           error={saveError}
           onPress={onSavePress}
         >
-          Save
+          {translate('save')}
         </SpinnerErrorButton>
       </ModalFooter>
     </ModalContent>

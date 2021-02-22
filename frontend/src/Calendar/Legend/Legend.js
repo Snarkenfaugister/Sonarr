@@ -40,7 +40,7 @@ function Legend(props) {
   if (showCutoffUnmetIcon) {
     iconsToShow.push(
       <LegendIconItem
-        name={translate('cutoffNotMet')}
+        name={translate('cutoffUnmet')}
         icon={icons.EPISODE_FILE}
         kind={kinds.WARNING}
         tooltip={translate('qualityOrLangCutoffHasNotBeenMet')}

@@ -14,6 +14,7 @@ import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import ProviderFieldFormGroup from 'Components/Form/ProviderFieldFormGroup';
 import styles from './EditIndexerModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function EditIndexerModalContent(props) {
   const {
@@ -174,7 +175,7 @@ function EditIndexerModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Cancel
+          {translate('cancel')}
         </Button>
 
         <SpinnerErrorButton
@@ -182,7 +183,7 @@ function EditIndexerModalContent(props) {
           error={saveError}
           onPress={onSavePress}
         >
-          Save
+          {translate('save')}
         </SpinnerErrorButton>
       </ModalFooter>
     </ModalContent>

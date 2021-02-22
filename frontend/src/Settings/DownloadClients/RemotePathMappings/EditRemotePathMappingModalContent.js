@@ -14,6 +14,7 @@ import FormGroup from 'Components/Form/FormGroup';
 import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import styles from './EditRemotePathMappingModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function EditRemotePathMappingModalContent(props) {
   const {
@@ -112,7 +113,7 @@ function EditRemotePathMappingModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Cancel
+          {translate('cancel')}
         </Button>
 
         <SpinnerErrorButton
@@ -120,7 +121,7 @@ function EditRemotePathMappingModalContent(props) {
           error={saveError}
           onPress={onSavePress}
         >
-          Save
+          {translate('save')}
         </SpinnerErrorButton>
       </ModalFooter>
     </ModalContent>

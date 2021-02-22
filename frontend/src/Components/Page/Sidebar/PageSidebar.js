@@ -13,6 +13,7 @@ import HealthStatusConnector from 'System/Status/Health/HealthStatusConnector';
 import MessagesConnector from './Messages/MessagesConnector';
 import PageSidebarItem from './PageSidebarItem';
 import styles from './PageSidebar.css';
+import translate from 'Utilities/String/translate';
 
 const HEADER_HEIGHT = parseInt(dimensions.headerHeight);
 const SIDEBAR_WIDTH = parseInt(dimensions.sidebarWidth);
@@ -20,24 +21,24 @@ const SIDEBAR_WIDTH = parseInt(dimensions.sidebarWidth);
 const links = [
   {
     iconName: icons.SERIES_CONTINUING,
-    title: 'Series',
+    title: translate('series'),
     to: '/',
     alias: '/series',
     children: [
       {
-        title: 'Add New',
+        title: translate('addNew'),
         to: '/add/new'
       },
       {
-        title: 'Library Import',
+        title: translate('importLibrary'),
         to: '/add/import'
       },
       {
-        title: 'Mass Editor',
+        title: translate('massEditor'),
         to: '/serieseditor'
       },
       {
-        title: 'Season Pass',
+        title: translate('seasonPass'),
         to: '/seasonpass'
       }
     ]
@@ -45,26 +46,26 @@ const links = [
 
   {
     iconName: icons.CALENDAR,
-    title: 'Calendar',
+    title: translate('calendar'),
     to: '/calendar'
   },
 
   {
     iconName: icons.ACTIVITY,
-    title: 'Activity',
+    title: translate('activity'),
     to: '/activity/queue',
     children: [
       {
-        title: 'Queue',
+        title: translate('queue'),
         to: '/activity/queue',
         statusComponent: QueueStatusConnector
       },
       {
-        title: 'History',
+        title: translate('history'),
         to: '/activity/history'
       },
       {
-        title: 'Blacklist',
+        title: translate('blacklist'),
         to: '/activity/blacklist'
       }
     ]
@@ -72,15 +73,15 @@ const links = [
 
   {
     iconName: icons.WARNING,
-    title: 'Wanted',
+    title: translate('wanted'),
     to: '/wanted/missing',
     children: [
       {
-        title: 'Missing',
+        title: translate('missing'),
         to: '/wanted/missing'
       },
       {
-        title: 'Cutoff Unmet',
+        title: translate('cutoffUnmet'),
         to: '/wanted/cutoffunmet'
       }
     ]
@@ -88,51 +89,51 @@ const links = [
 
   {
     iconName: icons.SETTINGS,
-    title: 'Settings',
+    title: translate('settings'),
     to: '/settings',
     children: [
       {
-        title: 'Media Management',
+        title: translate('mediaManagement'),
         to: '/settings/mediamanagement'
       },
       {
-        title: 'Profiles',
+        title: translate('profiles'),
         to: '/settings/profiles'
       },
       {
-        title: 'Quality',
+        title: translate('quality'),
         to: '/settings/quality'
       },
       {
-        title: 'Indexers',
+        title: translate('indexers'),
         to: '/settings/indexers'
       },
       {
-        title: 'Download Clients',
+        title: translate('downloadClients'),
         to: '/settings/downloadclients'
       },
       {
-        title: 'Import Lists',
+        title: translate('importLists'),
         to: '/settings/importlists'
       },
       {
-        title: 'Connect',
+        title: translate('connect'),
         to: '/settings/connect'
       },
       {
-        title: 'Metadata',
+        title: translate('metadata'),
         to: '/settings/metadata'
       },
       {
-        title: 'Tags',
+        title: translate('tags'),
         to: '/settings/tags'
       },
       {
-        title: 'General',
+        title: translate('general'),
         to: '/settings/general'
       },
       {
-        title: 'UI',
+        title: translate('ui'),
         to: '/settings/ui'
       }
     ]

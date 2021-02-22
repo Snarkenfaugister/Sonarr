@@ -4,6 +4,7 @@ import { icons } from 'Helpers/Props';
 import IconButton from 'Components/Link/IconButton';
 import TextInput from './TextInput';
 import styles from './KeyValueListInputItem.css';
+import translate from 'Utilities/String/translate';
 
 class KeyValueListInputItem extends Component {
 
@@ -117,8 +118,8 @@ KeyValueListInputItem.propTypes = {
 };
 
 KeyValueListInputItem.defaultProps = {
-  keyPlaceholder: 'Key',
-  valuePlaceholder: 'Value'
+  keyPlaceholder: translate('key'),
+  valuePlaceholder: translate('value')
 };
 
 export default KeyValueListInputItem;

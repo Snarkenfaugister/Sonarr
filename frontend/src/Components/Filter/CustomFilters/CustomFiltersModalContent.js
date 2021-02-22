@@ -25,7 +25,7 @@ function CustomFiltersModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        Custom Filters
+        {translate('customFilters')}
       </ModalHeader>
 
       <ModalBody>
@@ -50,7 +50,7 @@ function CustomFiltersModalContent(props) {
 
         <div className={styles.addButtonContainer}>
           <Button onPress={onAddCustomFilter}>
-            Add Custom Filter
+            {translate('addCustomFilter')}
           </Button>
         </div>
       </ModalBody>

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { fetchOptions, clearOptions, defaultState } from 'Store/Actions/providerOptionActions';
+import translate from 'Utilities/String/translate';
 import DeviceInput from './DeviceInput';
 
 function createMapStateToProps() {
@@ -28,7 +29,7 @@ function createMapStateToProps() {
 
           return {
             id: valueDevice,
-            name: `Unknown (${valueDevice})`
+            name: translate('unknown', [valueDevice])
           };
         })
       };

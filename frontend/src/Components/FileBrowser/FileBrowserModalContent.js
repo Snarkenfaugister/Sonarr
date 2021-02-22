@@ -16,6 +16,7 @@ import TableBody from 'Components/Table/TableBody';
 import PathInput from 'Components/Form/PathInput';
 import FileBrowserRow from './FileBrowserRow';
 import styles from './FileBrowserModalContent.css';
+import translate from 'Utilities/String/translate';
 
 const columns = [
   {
@@ -115,7 +116,7 @@ class FileBrowserModalContent extends Component {
         onModalClose={onModalClose}
       >
         <ModalHeader>
-          File Browser
+          {translate('fileBrowser')}
         </ModalHeader>
 
         <ModalBody
@@ -123,18 +124,19 @@ class FileBrowserModalContent extends Component {
           scrollDirection={scrollDirections.NONE}
         >
           {
-            isWindowsService &&
-              <Alert
-                className={styles.mappedDrivesWarning}
-                kind={kinds.WARNING}
-              >
-                Mapped network drives are not available when running as a Windows Service, see the <Link className={styles.faqLink} to="https://wiki.servarr.com/Sonarr_FAQ#Why_cant_Sonarr_see_my_files_on_a_remote_server">FAQ</Link> for more information.
-              </Alert>
+            <Alert
+              className={styles.mappedDrivesWarning}
+              kind={kinds.WARNING}
+            >
+              <Link className={styles.faqLink} to="https://wiki.servarr.com/Sonarr_FAQ#Why_cant_Sonarr_see_my_files_on_a_remote_server">
+                {translate('mappedDrivesRunningAsService')}
+              </Link>
+            </Alert>
           }
 
           <PathInput
             className={styles.pathInput}
-            placeholder="Start typing or select a path below"
+            placeholder={translate('startTypingOrSelectAPathBelow')}
             hasFileBrowser={false}
             {...otherProps}
             value={this.state.currentPath}
@@ -148,7 +150,7 @@ class FileBrowserModalContent extends Component {
           >
             {
               !!error &&
-                <div>Error loading contents</div>
+                <div>{translate('errorLoadingContents')}</div>
             }
 
             {
@@ -162,7 +164,7 @@ class FileBrowserModalContent extends Component {
                       emptyParent &&
                         <FileBrowserRow
                           type="computer"
-                          name="My Computer"
+                          name={translate('My Computer')}
                           path={parent}
                           onPress={this.onRowPress}
                         />
@@ -172,7 +174,7 @@ class FileBrowserModalContent extends Component {
                       !emptyParent && parent &&
                         <FileBrowserRow
                           type="parent"
-                          name="..."
+                          name={translate('parentDir')}
                           path={parent}
                           onPress={this.onRowPress}
                         />
@@ -223,13 +225,13 @@ class FileBrowserModalContent extends Component {
           <Button
             onPress={onModalClose}
           >
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <Button
             onPress={this.onOkPress}
           >
-            Ok
+            {translate('ok')}
           </Button>
         </ModalFooter>
       </ModalContent>

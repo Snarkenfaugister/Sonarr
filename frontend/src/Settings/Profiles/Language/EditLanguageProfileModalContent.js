@@ -14,6 +14,7 @@ import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import LanguageProfileItems from './LanguageProfileItems';
 import styles from './EditLanguageProfileModalContent.css';
+import translate from 'Utilities/String/translate';
 
 function EditLanguageProfileModalContent(props) {
   const {
@@ -132,7 +133,7 @@ function EditLanguageProfileModalContent(props) {
         <Button
           onPress={onModalClose}
         >
-          Cancel
+          {translate('cancel')}
         </Button>
 
         <SpinnerErrorButton
@@ -140,7 +141,7 @@ function EditLanguageProfileModalContent(props) {
           error={saveError}
           onPress={onSavePress}
         >
-          Save
+          {translate('save')}
         </SpinnerErrorButton>
       </ModalFooter>
     </ModalContent>

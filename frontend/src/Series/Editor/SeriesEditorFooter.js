@@ -165,13 +165,13 @@ class SeriesEditorFooter extends Component {
     } = this.state;
 
     const monitoredOptions = [
-      { key: NO_CHANGE, value: 'No Change', disabled: true },
+      { key: NO_CHANGE, value: translate('noChange'), disabled: true },
       { key: 'monitored', value: 'Monitored' },
       { key: 'unmonitored', value: 'Unmonitored' }
     ];
 
     const seasonFolderOptions = [
-      { key: NO_CHANGE, value: 'No Change', disabled: true },
+      { key: NO_CHANGE, value: translate('noChange'), disabled: true },
       { key: 'yes', value: 'Yes' },
       { key: 'no', value: 'No' }
     ];

@@ -9,6 +9,7 @@ import ModalContent from 'Components/Modal/ModalContent';
 import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
+import translate from 'Utilities/String/translate';
 
 function ConfirmModal(props) {
   const {
@@ -93,8 +94,8 @@ ConfirmModal.propTypes = {
 ConfirmModal.defaultProps = {
   kind: kinds.PRIMARY,
   size: sizes.MEDIUM,
-  confirmLabel: 'OK',
-  cancelLabel: 'Cancel',
+  confirmLabel: translate('ok'),
+  cancelLabel: translate('cancel'),
   isSpinning: false
 };
 

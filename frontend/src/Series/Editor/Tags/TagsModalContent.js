@@ -13,6 +13,7 @@ import FormGroup from 'Components/Form/FormGroup';
 import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import styles from './TagsModalContent.css';
+import translate from 'Utilities/String/translate';
 
 class TagsModalContent extends Component {
 
@@ -162,7 +163,7 @@ class TagsModalContent extends Component {
 
         <ModalFooter>
           <Button onPress={onModalClose}>
-            Cancel
+            {translate('cancel')}
           </Button>
 
           <Button

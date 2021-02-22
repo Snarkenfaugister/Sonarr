@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import sortByName from 'Utilities/Array/sortByName';
 import { fetchIndexers } from 'Store/Actions/settingsActions';
 import EnhancedSelectInput from './EnhancedSelectInput';
+import translate from 'Utilities/String/translate';
 
 function createMapStateToProps() {
   return createSelector(
@@ -29,7 +30,7 @@ function createMapStateToProps() {
       if (includeAny) {
         values.unshift({
           key: 0,
-          value: '(Any)'
+          value: `(${translate('any')})`
         });
       }
 
