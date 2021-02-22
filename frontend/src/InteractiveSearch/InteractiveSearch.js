@@ -16,13 +16,13 @@ import translate from 'Utilities/String/translate';
 const columns = [
   {
     name: 'protocol',
-    label: 'Source',
+    label: translate('source'),
     isSortable: true,
     isVisible: true
   },
   {
     name: 'age',
-    label: 'Age',
+    label: translate('age'),
     isSortable: true,
     isVisible: true
   },
@@ -34,7 +34,7 @@ const columns = [
   },
   {
     name: 'indexer',
-    label: 'Indexer',
+    label: translate('indexer'),
     isSortable: true,
     isVisible: true
   },
@@ -46,7 +46,7 @@ const columns = [
   },
   {
     name: 'peers',
-    label: 'Peers',
+    label: translate('peers'),
     isSortable: true,
     isVisible: true
   },
@@ -66,7 +66,7 @@ const columns = [
     name: 'preferredWordScore',
     label: React.createElement(Icon, {
       name: icons.SCORE,
-      title: 'Preferred word score'
+      title: translate('preferredWordScore')
     }),
     isSortable: true,
     isVisible: true
@@ -75,7 +75,7 @@ const columns = [
     name: 'rejections',
     label: React.createElement(Icon, {
       name: icons.DANGER,
-      title: 'Rejections'
+      title: translate('rejections')
     }),
     isSortable: true,
     fixedSortDirection: sortDirections.ASCENDING,
@@ -138,10 +138,10 @@ function InteractiveSearch(props) {
             {
               errorMessage ?
                 <Fragment>
-                  Search failed because its {errorMessage.charAt(0).toLowerCase() + errorMessage.slice(1)}.
-                  Try refreshing the series info and verify the necessary information is present before searching again
+                  {translate('searchFailedBecauseItsInterp', [errorMessage.charAt(0).toLowerCase() + errorMessage.slice(1)])}
+                  {translate('tryRefreshingBeforeSearchingAgain')}
                 </Fragment> :
-                'Unable to load results for this episode search. Try again later'
+                translate('unableToLoadResultsIntSearch')
             }
           </div> :
           null
@@ -150,7 +150,7 @@ function InteractiveSearch(props) {
       {
         !isFetching && isPopulated && !totalReleasesCount ?
           <div>
-            No results found
+            {translate('noResultsFound')}
           </div> :
           null
       }
@@ -158,7 +158,7 @@ function InteractiveSearch(props) {
       {
         !!totalReleasesCount && isPopulated && !items.length ?
           <div>
-            All results are hidden by the applied filter
+            {translate('allResultsHiddenFilter')}
           </div> :
           null
       }
@@ -194,7 +194,7 @@ function InteractiveSearch(props) {
       {
         totalReleasesCount !== items.length && !!items.length ?
           <div className={styles.filteredMessage}>
-            Some results are hidden by the applied filter
+            {translate('someResultsHiddenFilter')}
           </div> :
           null
       }

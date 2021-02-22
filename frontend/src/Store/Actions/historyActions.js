@@ -75,7 +75,7 @@ export const defaultState = {
     },
     {
       name: 'indexer',
-      label: 'Indexer',
+      label: translate('indexer'),
       isVisible: false
     },
     {

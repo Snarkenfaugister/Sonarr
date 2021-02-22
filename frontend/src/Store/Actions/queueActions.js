@@ -107,7 +107,7 @@ export const defaultState = {
       },
       {
         name: 'indexer',
-        label: 'Indexer',
+        label: translate('indexer'),
         isSortable: true,
         isVisible: false
       },

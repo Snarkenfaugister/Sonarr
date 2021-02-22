@@ -8,6 +8,7 @@ import DescriptionList from 'Components/DescriptionList/DescriptionList';
 import DescriptionListItem from 'Components/DescriptionList/DescriptionListItem';
 import Popover from 'Components/Tooltip/Popover';
 import Icon from 'Components/Icon';
+import translate from 'Utilities/String/translate';
 
 function formatReleaseNumber(seasonNumber, episodeNumbers, absoluteEpisodeNumbers) {
   if (episodeNumbers && episodeNumbers.length) {
@@ -25,7 +26,7 @@ function formatReleaseNumber(seasonNumber, episodeNumbers, absoluteEpisodeNumber
   }
 
   if (seasonNumber !== undefined) {
-    return `Season ${seasonNumber}`;
+    return translate('seasonInterp', [seasonNumber]);
   }
 
   return null;
@@ -78,14 +79,14 @@ function ReleaseSceneIndicator(props) {
 
   if (isMixed) {
     level = styles.levelMixed;
-    messages.push(<div>{comment ?? 'Source'} releases exist with ambiguous numbering, unable to reliably identify episode.</div>);
+    messages.push(<div>{translate('releasesExistWithAmbiguousNumberingInterp', [comment ?? translate('source')])}</div>);
   } else if (isUnknown) {
     level = styles.levelUnknown;
-    messages.push(<div>Numbering varies for this episode and release does not match any known mappings.</div>);
+    messages.push(<div>{translate('numberingVariesNoKnownMappings')}</div>);
     if (sceneOrigin === 'unknown') {
-      messages.push(<div>Assuming Scene numbering.</div>);
+      messages.push(<div>{translate('assumingSceneNumbering')}</div>);
     } else if (sceneOrigin === 'unknown:tvdb') {
-      messages.push(<div>Assuming TheTVDB numbering.</div>);
+      messages.push(<div>{translate('assumingTvdbNumbering')}</div>);
     }
   } else if (mappingDifferent) {
     level = styles.levelMapped;
@@ -98,9 +99,9 @@ function ReleaseSceneIndicator(props) {
       level = styles.levelNotRequested;
     }
     if (mappedNumber) {
-      messages.push(<div>Mapped episode wasn't requested in this search.</div>);
+      messages.push(<div>{translate('mappedEpisodeWasntRequested')}</div>);
     } else {
-      messages.push(<div>Unknown episode or series.</div>);
+      messages.push(<div>{translate('unknownEpisodeOrSeries')}</div>);
     }
   }
 
@@ -111,7 +112,7 @@ function ReleaseSceneIndicator(props) {
           <DescriptionListItem
             titleClassName={styles.title}
             descriptionClassName={styles.description}
-            title="Mapping"
+            title={translate('mapping')}
             data={comment}
           />
       }
@@ -121,7 +122,7 @@ function ReleaseSceneIndicator(props) {
           <DescriptionListItem
             titleClassName={styles.title}
             descriptionClassName={styles.description}
-            title="Title"
+            title={translate('title')}
             data={title}
           />
       }
@@ -131,7 +132,7 @@ function ReleaseSceneIndicator(props) {
           <DescriptionListItem
             titleClassName={styles.title}
             descriptionClassName={styles.description}
-            title="Release"
+            title={translate('release')}
             data={releaseNumber ?? 'unknown'}
           />
       }
@@ -141,7 +142,7 @@ function ReleaseSceneIndicator(props) {
           <DescriptionListItem
             titleClassName={styles.title}
             descriptionClassName={styles.description}
-            title="TheTVDB"
+            title={translate('theTvdb')}
             data={mappedNumber ?? 'unknown'}
           />
       }
@@ -158,7 +159,7 @@ function ReleaseSceneIndicator(props) {
           />
         </div>
       }
-      title="Scene Info"
+      title={translate('sceneInfo')}
       body={
         <div>
           {table}

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { kinds } from 'Helpers/Props';
 import Label from 'Components/Label';
+import translate from 'Utilities/String/translate';
 
 function getKind(seeders) {
   if (seeders > 50) {
@@ -21,14 +22,14 @@ function getKind(seeders) {
 
 function getPeersTooltipPart(peers, peersUnit) {
   if (peers == null) {
-    return `Unknown ${peersUnit}s`;
+    return translate('unknownInterp', [translate(peersUnit)]);
   }
 
   if (peers === 1) {
-    return `1 ${peersUnit}`;
+    return `1 ${translate(peersUnit)}`;
   }
 
-  return `${peers} ${peersUnit}s`;
+  return `${peers} ${translate(`${peersUnit}s`)}`;
 }
 
 function Peers(props) {

@@ -18,6 +18,7 @@ import ProtocolLabel from 'Activity/Queue/ProtocolLabel';
 import ReleaseSceneIndicator from './ReleaseSceneIndicator';
 import Peers from './Peers';
 import styles from './InteractiveSearchRow.css';
+import translate from 'Utilities/String/translate';
 
 function getDownloadIcon(isGrabbing, isGrabbed, grabError) {
   if (isGrabbing) {
@@ -35,12 +36,12 @@ function getDownloadTooltip(isGrabbing, isGrabbed, grabError) {
   if (isGrabbing) {
     return '';
   } else if (isGrabbed) {
-    return 'Added to downloaded queue';
+    return translate('addedToDownloadQueue');
   } else if (grabError) {
     return grabError;
   }
 
-  return 'Add to downloaded queue';
+  return translate('addToDownloadQueue');
 }
 
 class InteractiveSearchRow extends Component {
@@ -207,7 +208,7 @@ class InteractiveSearchRow extends Component {
                     kind={kinds.DANGER}
                   />
                 }
-                title="Release Rejected"
+                title={translate('releaseRejected')}
                 body={
                   <ul>
                     {
@@ -239,9 +240,9 @@ class InteractiveSearchRow extends Component {
         <ConfirmModal
           isOpen={this.state.isConfirmGrabModalOpen}
           kind={kinds.WARNING}
-          title="Grab Release"
-          message={`Sonarr was unable to determine which series and episode this release was for. Sonarr may be unable to automatically import this release. Do you want to grab '${title}'?`}
-          confirmLabel="Grab"
+          title={translate('grabRelease')}
+          message={translate('unableToDetermineDoYouWantToGrabInterp', [title])}
+          confirmLabel={translate('grab')}
           onConfirm={this.onGrabConfirm}
           onCancel={this.onGrabCancel}
         />

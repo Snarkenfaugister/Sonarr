@@ -29,7 +29,7 @@ function createMapStateToProps() {
 
           return {
             id: valueDevice,
-            name: translate('unknown', [valueDevice])
+            name: translate('unknownBracketsInterp', [valueDevice])
           };
         })
       };

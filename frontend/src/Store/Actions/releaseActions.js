@@ -132,7 +132,7 @@ export const defaultState = {
     },
     {
       name: 'age',
-      label: 'Age',
+      label: translate('age'),
       type: filterBuilderTypes.NUMBER
     },
     {
@@ -143,7 +143,7 @@ export const defaultState = {
     },
     {
       name: 'indexerId',
-      label: 'Indexer',
+      label: translate('indexer'),
       type: filterBuilderTypes.EXACT,
       valueType: filterBuilderValueTypes.INDEXER
     },
@@ -159,7 +159,7 @@ export const defaultState = {
     },
     {
       name: 'peers',
-      label: 'Peers',
+      label: translate('peers'),
       type: filterBuilderTypes.NUMBER
     },
     {
