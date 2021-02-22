@@ -38,18 +38,18 @@ const columns = [
   },
   {
     name: 'series',
-    label: 'Series',
+    label: translate('series'),
     isSortable: true,
     isVisible: true
   },
   {
     name: 'season',
-    label: 'Season',
+    label: translate('season'),
     isVisible: true
   },
   {
     name: 'episodes',
-    label: 'Episode(s)',
+    label: translate('episodesBracket'),
     isVisible: true
   },
   {
@@ -86,8 +86,8 @@ const filterExistingFilesOptions = {
 };
 
 const importModeOptions = [
-  { key: 'move', value: 'Move Files' },
-  { key: 'copy', value: 'Hardlink/Copy Files' }
+  { key: 'move', value: translate('moveFiles') },
+  { key: 'copy', value: translate('hardlinkCopyFiles') }
 ];
 
 const SELECT = 'select';
@@ -225,12 +225,12 @@ class InteractiveImportModalContent extends Component {
       items.find((file) => file.id === selectedIds[0]) :
       null;
 
-    const errorMessage = getErrorMessage(error, 'Unable to load manual import items');
+    const errorMessage = getErrorMessage(error, translate('unableToLoadManualImportItems'));
 
     const bulkSelectOptions = [
-      { key: SELECT, value: 'Select...', disabled: true },
-      { key: SEASON, value: 'Select Season' },
-      { key: EPISODE, value: 'Select Episode(s)' },
+      { key: SELECT, value: translate('selectDotDot'), disabled: true },
+      { key: SEASON, value: translate('selectSeason') },
+      { key: EPISODE, value: translate('selectEpisodesBracket') },
       { key: LANGUAGE, value: translate('selectLanguage') },
       { key: QUALITY, value: translate('selectQuality') }
     ];
@@ -238,14 +238,14 @@ class InteractiveImportModalContent extends Component {
     if (allowSeriesChange) {
       bulkSelectOptions.splice(1, 0, {
         key: SERIES,
-        value: 'Select Series'
+        value: translate('selectSeries')
       });
     }
 
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Manual Import - {title || folder}
+          {translate('manualImport')} - {title || folder}
         </ModalHeader>
 
         <ModalBody scrollDirection={scrollDirections.BOTH}>
@@ -261,7 +261,7 @@ class InteractiveImportModalContent extends Component {
 
                     <div className={styles.filterText}>
                       {
-                        filterExistingFiles ? 'Unmapped Files Only' : 'All Files'
+                        filterExistingFiles ? translate('unmappedFilesOnly') : translate('All Files')
                       }
                     </div>
                   </MenuButton>
@@ -280,7 +280,7 @@ class InteractiveImportModalContent extends Component {
                       isSelected={filterExistingFiles}
                       onPress={this.onFilterExistingFilesChange}
                     >
-                      Unmapped Files Only
+                      {translate('unmappedFilesOnly')}
                     </SelectedMenuItem>
                   </MenuContent>
                 </Menu>
@@ -331,7 +331,7 @@ class InteractiveImportModalContent extends Component {
 
           {
             isPopulated && !items.length && !isFetching &&
-              'No video files were found in the selected folder'
+              translate('noVideoFilesFoundSelectedFolder')
           }
         </ModalBody>
 
@@ -374,7 +374,7 @@ class InteractiveImportModalContent extends Component {
               isDisabled={!selectedIds.length || !!invalidRowsSelected.length}
               onPress={this.onImportSelectedPress}
             >
-              Import
+              {translate('import')}
             </Button>
           </div>
         </ModalFooter>

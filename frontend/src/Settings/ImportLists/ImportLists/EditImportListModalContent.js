@@ -150,7 +150,7 @@ function EditImportListModalContent(props) {
               </FormGroup>
 
               <FormGroup className={showLanguageProfile ? undefined : styles.hideLanguageProfile}>
-                <FormLabel>Language Profile</FormLabel>
+                <FormLabel>{translate('languageProfile')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.LANGUAGE_PROFILE_SELECT}

@@ -48,7 +48,7 @@ class SelectSeriesModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Manual Import - Select Series
+          {translate('manualImport')} - {translate('selectSeries')}
         </ModalHeader>
 
         <ModalBody
@@ -57,7 +57,7 @@ class SelectSeriesModalContent extends Component {
         >
           <TextInput
             className={styles.filterInput}
-            placeholder="Filter series"
+            placeholder={translate('filterSeries')}
             name="filter"
             value={filter}
             autoFocus={true}

@@ -124,7 +124,7 @@ class EditSeriesModalContent extends Component {
             {
               showLanguageProfile &&
                 <FormGroup>
-                  <FormLabel>Language Profile</FormLabel>
+                  <FormLabel>{translate('languageProfile')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.LANGUAGE_PROFILE_SELECT}

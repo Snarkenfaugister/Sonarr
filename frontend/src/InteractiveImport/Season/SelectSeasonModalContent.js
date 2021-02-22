@@ -23,7 +23,7 @@ class SelectSeasonModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Manual Import - Select Season
+          {translate('manualImport')} - {translate('selectSeason')}
         </ModalHeader>
 
         <ModalBody>

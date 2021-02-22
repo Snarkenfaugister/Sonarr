@@ -22,13 +22,13 @@ import translate from 'Utilities/String/translate';
 const columns = [
   {
     name: 'episodeNumber',
-    label: '#',
+    label: translate('episodeNumberHash'),
     isSortable: true,
     isVisible: true
   },
   {
     name: 'title',
-    label: 'Title',
+    label: translate('title'),
     isVisible: true
   },
   {
@@ -109,7 +109,7 @@ class SelectEpisodeModalContent extends Component {
     } = this.state;
     const filterEpisodeNumber = parseInt(filter);
 
-    const errorMessage = getErrorMessage(error, 'Unable to load episodes');
+    const errorMessage = getErrorMessage(error, translate('unableToLoadEpisodes'));
 
     const selectedFilesCount = ids.length;
     const selectedCount = this.getSelectedIds().length;
@@ -122,7 +122,7 @@ class SelectEpisodeModalContent extends Component {
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
           <div className={styles.header}>
-            Manual Import - Select Episode(s)
+            {translate('manualImport')} - {translate('selectEpisodesBracket')}
           </div>
 
         </ModalHeader>
@@ -133,7 +133,7 @@ class SelectEpisodeModalContent extends Component {
         >
           <TextInput
             className={styles.filterInput}
-            placeholder="Filter episodes by title or number"
+            placeholder={translate('filterEpisodesByTitleOrNumber')}
             name="filter"
             value={filter}
             autoFocus={true}
@@ -192,7 +192,7 @@ class SelectEpisodeModalContent extends Component {
 
             {
               isPopulated && !items.length ?
-                'No episodes were found for the selected season' :
+                translate('noEpisodesFoundForSelectedSeason') :
                 null
             }
           </Scroller>
@@ -203,7 +203,7 @@ class SelectEpisodeModalContent extends Component {
             {
               relativePath ?
                 relativePath :
-                `${selectedFilesCount} selected files`
+                translate('selectedFilesInterp', [selectedFilesCount])
             }
           </div>
 
@@ -217,7 +217,7 @@ class SelectEpisodeModalContent extends Component {
               isDisabled={!selectionIsValid}
               onPress={this.onEpisodesSelect}
             >
-              Select Episodes
+              {translate('selectEpisodes')}
             </Button>
           </div>
         </ModalFooter>

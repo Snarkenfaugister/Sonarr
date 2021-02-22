@@ -34,7 +34,7 @@ function SelectLanguageModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        Manual Import - Select Language
+        {translate('manualImport')} - {translate('selectLanguage')}
       </ModalHeader>
 
       <ModalBody>
@@ -45,14 +45,14 @@ function SelectLanguageModalContent(props) {
 
         {
           !isFetching && !!error &&
-            <div>Unable to load languages</div>
+            <div>{translate('unableToLoadLanguages')}</div>
         }
 
         {
           isPopulated && !error &&
             <Form>
               <FormGroup>
-                <FormLabel>Language</FormLabel>
+                <FormLabel>{translate('language')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.SELECT}

@@ -37,12 +37,12 @@ export const defaultState = {
     },
     {
       name: 'episodeNumber',
-      label: '#',
+      label: translate('episodeNumberHash'),
       isVisible: true
     },
     {
       name: 'title',
-      label: 'Title',
+      label: translate('title'),
       isVisible: true
     },
     {

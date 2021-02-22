@@ -127,7 +127,7 @@ export const defaultState = {
   filterBuilderProps: [
     {
       name: 'title',
-      label: 'Title',
+      label: translate('title'),
       type: filterBuilderTypes.STRING
     },
     {

@@ -19,6 +19,7 @@ import SelectQualityModal from 'InteractiveImport/Quality/SelectQualityModal';
 import SelectLanguageModal from 'InteractiveImport/Language/SelectLanguageModal';
 import InteractiveImportRowCellPlaceholder from './InteractiveImportRowCellPlaceholder';
 import styles from './InteractiveImportRow.css';
+import translate from 'Utilities/String/translate';
 
 class InteractiveImportRow extends Component {
 
@@ -222,7 +223,7 @@ class InteractiveImportRow extends Component {
 
         <TableRowCellButton
           isDisabled={!allowSeriesChange}
-          title={allowSeriesChange ? 'Click to change series' : undefined}
+          title={allowSeriesChange ? translate('clickToChangeSeries') : undefined}
           onPress={this.onSelectSeriesPress}
         >
           {
@@ -232,7 +233,7 @@ class InteractiveImportRow extends Component {
 
         <TableRowCellButton
           isDisabled={!series}
-          title={series ? 'Click to change season' : undefined}
+          title={series ? translate('clickToChangeSeason') : undefined}
           onPress={this.onSelectSeasonPress}
         >
           {
@@ -251,7 +252,7 @@ class InteractiveImportRow extends Component {
 
         <TableRowCellButton
           isDisabled={!series || isNaN(seasonNumber)}
-          title={series && !isNaN(seasonNumber) ? 'Click to change episode' : undefined}
+          title={series && !isNaN(seasonNumber) ? translate('clickToChangeEpisode') : undefined}
           onPress={this.onSelectEpisodePress}
         >
           {
@@ -261,7 +262,7 @@ class InteractiveImportRow extends Component {
 
         <TableRowCellButton
           className={styles.quality}
-          title="Click to change quality"
+          title={translate('clickToChangeQuality')}
           onPress={this.onSelectQualityPress}
         >
           {
@@ -280,7 +281,7 @@ class InteractiveImportRow extends Component {
 
         <TableRowCellButton
           className={styles.language}
-          title="Click to change language"
+          title={translate('clickToChangeLanguage')}
           onPress={this.onSelectLanguagePress}
         >
           {
@@ -311,7 +312,7 @@ class InteractiveImportRow extends Component {
                     kind={kinds.DANGER}
                   />
                 }
-                title="Release Rejected"
+                title={translate('releaseRejected')}
                 body={
                   <ul>
                     {

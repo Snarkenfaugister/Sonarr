@@ -8,6 +8,7 @@ import createClientSideCollectionSelector from 'Store/Selectors/createClientSide
 import { executeCommand } from 'Store/Actions/commandActions';
 import * as commandNames from 'Commands/commandNames';
 import InteractiveImportModalContent from './InteractiveImportModalContent';
+import translate from 'Utilities/String/translate';
 
 function createMapStateToProps() {
   return createSelector(
@@ -115,27 +116,27 @@ class InteractiveImportModalContentConnector extends Component {
         } = item;
 
         if (!series) {
-          this.setState({ interactiveImportErrorMessage: 'Series must be chosen for each selected file' });
+          this.setState({ interactiveImportErrorMessage: translate('interactiveImportSeriesError') });
           return false;
         }
 
         if (isNaN(seasonNumber)) {
-          this.setState({ interactiveImportErrorMessage: 'Season must be chosen for each selected file' });
+          this.setState({ interactiveImportErrorMessage: translate('interactiveImportSeasonError') });
           return false;
         }
 
         if (!episodes || !episodes.length) {
-          this.setState({ interactiveImportErrorMessage: 'One or more episodes must be chosen for each selected file' });
+          this.setState({ interactiveImportErrorMessage: translate('interactiveImportEpisodesError') });
           return false;
         }
 
         if (!quality) {
-          this.setState({ interactiveImportErrorMessage: 'Quality must be chosen for each selected file' });
+          this.setState({ interactiveImportErrorMessage: translate('interactiveImportQualityError') });
           return false;
         }
 
         if (!language) {
-          this.setState({ interactiveImportErrorMessage: 'Language must be chosen for each selected file' });
+          this.setState({ interactiveImportErrorMessage: translate('interactiveImportLanguageError') });
           return false;
         }
 

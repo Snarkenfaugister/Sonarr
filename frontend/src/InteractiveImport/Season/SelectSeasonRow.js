@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Link from 'Components/Link/Link';
 import styles from './SelectSeasonRow.css';
+import translate from 'Utilities/String/translate';
 
 class SelectSeasonRow extends Component {
 
@@ -25,7 +26,7 @@ class SelectSeasonRow extends Component {
         onPress={this.onPress}
       >
         {
-          seasonNumber === 0 ? 'Specials' : `Season ${seasonNumber}`
+          seasonNumber === 0 ? translate('specials') : translate('seasonInterp', [seasonNumber])
         }
       </Link>
     );

@@ -28,7 +28,7 @@ const columns = [
   },
   {
     name: 'title',
-    label: 'Title',
+    label: translate('title'),
     isSortable: true,
     isVisible: true
   },

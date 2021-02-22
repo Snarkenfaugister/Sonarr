@@ -38,7 +38,7 @@ export const defaultState = {
     },
     {
       name: 'series.sortTitle',
-      label: 'Series',
+      label: translate('series'),
       isSortable: true,
       isVisible: true
     },

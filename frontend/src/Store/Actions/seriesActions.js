@@ -195,7 +195,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'languageProfileId',
-    label: 'Language Profile',
+    label: translate('languageProfile'),
     type: filterBuilderTypes.EXACT,
     valueType: filterBuilderValueTypes.LANGUAGE_PROFILE
   },

@@ -81,7 +81,7 @@ class SelectQualityModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Manual Import - Select Quality
+          {translate('manualImport')} - {translate('selectQuality')}
         </ModalHeader>
 
         <ModalBody>
@@ -92,14 +92,14 @@ class SelectQualityModalContent extends Component {
 
           {
             !isFetching && !!error &&
-              <div>Unable to load qualities</div>
+              <div>{translate('unableToLoadQualities')}</div>
           }
 
           {
             isPopulated && !error &&
               <Form>
                 <FormGroup>
-                  <FormLabel>Quality</FormLabel>
+                  <FormLabel>{translate('quality')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.SELECT}
@@ -111,7 +111,7 @@ class SelectQualityModalContent extends Component {
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Proper</FormLabel>
+                  <FormLabel>{translate('proper')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.CHECK}
@@ -122,7 +122,7 @@ class SelectQualityModalContent extends Component {
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Real</FormLabel>
+                  <FormLabel>{translate('real')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.CHECK}
@@ -144,7 +144,7 @@ class SelectQualityModalContent extends Component {
             kind={kinds.SUCCESS}
             onPress={this.onQualitySelect}
           >
-            Select Quality
+            {translate('selectQuality')}
           </Button>
         </ModalFooter>
       </ModalContent>

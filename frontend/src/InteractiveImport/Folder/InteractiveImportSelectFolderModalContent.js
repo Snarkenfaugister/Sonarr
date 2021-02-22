@@ -17,11 +17,11 @@ import translate from 'Utilities/String/translate';
 const recentFoldersColumns = [
   {
     name: 'folder',
-    label: 'Folder'
+    label: translate('folder')
   },
   {
     name: 'lastUsed',
-    label: 'Last Used'
+    label: translate('lastUsed')
   },
   {
     name: 'actions',
@@ -76,7 +76,7 @@ class InteractiveImportSelectFolderModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Manual Import - Select Folder
+          {translate('manualImport')} - {translate('selectFolder')}
         </ModalHeader>
 
         <ModalBody>
@@ -125,7 +125,7 @@ class InteractiveImportSelectFolderModalContent extends Component {
                   name={icons.QUICK}
                 />
 
-                Move Automatically
+                {translate('quickImport')}
               </Button>
             </div>
 
@@ -142,7 +142,7 @@ class InteractiveImportSelectFolderModalContent extends Component {
                   name={icons.INTERACTIVE}
                 />
 
-                Interactive Import
+                {translate('interactiveImport')}
               </Button>
             </div>
           </div>

@@ -233,7 +233,7 @@ class SeriesEditorFooter extends Component {
                   className={styles.inputContainer}
                 >
                   <SeriesEditorFooterLabel
-                    label="Language Profile"
+                    label={translate('languageProfile')}
                     isSaving={isSaving && languageProfileId !== NO_CHANGE}
                   />
 

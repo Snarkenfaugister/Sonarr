@@ -16,6 +16,7 @@ import NoSeries from 'Series/NoSeries';
 import SeasonPassFilterModalConnector from './SeasonPassFilterModalConnector';
 import SeasonPassFooter from './SeasonPassFooter';
 import SeasonPassRowConnector from './SeasonPassRowConnector';
+import translate from 'Utilities/String/translate';
 
 const columns = [
   {
@@ -24,7 +25,7 @@ const columns = [
   },
   {
     name: 'sortTitle',
-    label: 'Title',
+    label: translate('title'),
     isSortable: true,
     isVisible: true
   },
