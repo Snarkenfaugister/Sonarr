@@ -110,7 +110,7 @@ export const defaultState = {
     },
     {
       name: 'seasonCount',
-      label: 'Seasons',
+      label: translate('seasons'),
       isSortable: true,
       isVisible: true
     },

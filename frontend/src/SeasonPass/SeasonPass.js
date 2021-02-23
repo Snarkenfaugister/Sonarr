@@ -35,7 +35,7 @@ const columns = [
   },
   {
     name: 'seasonCount',
-    label: 'Seasons',
+    label: translate('seasons'),
     isSortable: true,
     isVisible: true
   }
@@ -123,7 +123,7 @@ class SeasonPass extends Component {
     } = this.state;
 
     return (
-      <PageContent title="Season Pass">
+      <PageContent title={translate('seasonPass')}>
         <PageToolbar>
           <PageToolbarSection />
           <PageToolbarSection alignContent={align.RIGHT}>
@@ -146,7 +146,7 @@ class SeasonPass extends Component {
 
           {
             !isFetching && !!error &&
-              <div>Unable to load the calendar</div>
+              <div>{translate('unableToLoadTheCalendar')}</div>
           }
 
           {

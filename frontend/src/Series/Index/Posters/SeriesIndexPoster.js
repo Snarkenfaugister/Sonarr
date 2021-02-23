@@ -12,6 +12,7 @@ import DeleteSeriesModal from 'Series/Delete/DeleteSeriesModal';
 import SeriesIndexProgressBar from 'Series/Index/ProgressBar/SeriesIndexProgressBar';
 import SeriesIndexPosterInfo from './SeriesIndexPosterInfo';
 import styles from './SeriesIndexPoster.css';
+import translate from 'Utilities/String/translate';
 
 class SeriesIndexPoster extends Component {
 
@@ -197,7 +198,7 @@ class SeriesIndexPoster extends Component {
         {
           showMonitored &&
             <div className={styles.title}>
-              {monitored ? 'Monitored' : 'Unmonitored'}
+              {monitored ? translate('monitored') : translate('unmonitored')}
             </div>
         }
 

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import translate from 'Utilities/String/translate';
 
 function SeasonNumber(props) {
   const {
@@ -7,11 +8,11 @@ function SeasonNumber(props) {
   } = props;
 
   if (seasonNumber === 0) {
-    return `${separator}Specials`;
+    return `${separator}${translate('specials')}`;
   }
 
   if (seasonNumber > 0) {
-    return `${separator}Season ${seasonNumber}`;
+    return `${separator}${translate('season')} ${seasonNumber}`;
   }
 
   return null;

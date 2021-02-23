@@ -94,7 +94,7 @@ class OrganizePreviewModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Organize & Rename {seasonNumber != null && <SeasonNumber seasonNumber={seasonNumber} />}
+          {translate('organizeAndRename')} {seasonNumber != null && <SeasonNumber seasonNumber={seasonNumber} />}
         </ModalHeader>
 
         <ModalBody>
@@ -105,7 +105,7 @@ class OrganizePreviewModalContent extends Component {
 
           {
             !isFetching && error &&
-              <div>Error loading previews</div>
+              <div>{translate('errorLoadingPreviews')}</div>
           }
 
           {
@@ -113,8 +113,8 @@ class OrganizePreviewModalContent extends Component {
               <div>
                 {
                   renameEpisodes ?
-                    <div>Success! My work is done, no files to rename.</div> :
-                    <div>Renaming is disabled, nothing to rename</div>
+                    <div>{translate('organizeModalSuccess')}</div> :
+                    <div>{translate('organizeModalDisabled')}</div>
                 }
               </div>
           }
@@ -124,14 +124,14 @@ class OrganizePreviewModalContent extends Component {
               <div>
                 <Alert>
                   <div>
-                    All paths are relative to:
+                    {translate('organizeModalAllPathsRelative')}
                     <span className={styles.path}>
                       {path}
                     </span>
                   </div>
 
                   <div>
-                    Naming pattern:
+                    {translate('organizeModalNamingPattern')}
                     <span className={styles.episodeFormat}>
                       {episodeFormat}
                     </span>
@@ -180,7 +180,7 @@ class OrganizePreviewModalContent extends Component {
             kind={kinds.PRIMARY}
             onPress={this.onOrganizePress}
           >
-            Organize
+            {translate('organize')}
           </Button>
         </ModalFooter>
       </ModalContent>

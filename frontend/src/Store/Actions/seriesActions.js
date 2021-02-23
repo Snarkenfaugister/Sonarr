@@ -152,7 +152,7 @@ export const filterPredicates = {
 export const filterBuilderProps = [
   {
     name: 'monitored',
-    label: 'Monitored',
+    label: translate('monitored'),
     type: filterBuilderTypes.EXACT,
     valueType: filterBuilderValueTypes.BOOL
   },

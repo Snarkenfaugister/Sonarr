@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import padNumber from 'Utilities/Number/padNumber';
 import MonitorToggleButton from 'Components/MonitorToggleButton';
 import styles from './SeasonPassSeason.css';
+import translate from 'Utilities/String/translate';
 
 class SeasonPassSeason extends Component {
 
@@ -47,7 +48,7 @@ class SeasonPassSeason extends Component {
 
           <span>
             {
-              seasonNumber === 0 ? 'Specials' : `S${padNumber(seasonNumber, 2)}`
+              seasonNumber === 0 ? translate('specials') : `S${padNumber(seasonNumber, 2)}`
             }
           </span>
         </div>
@@ -57,7 +58,7 @@ class SeasonPassSeason extends Component {
             styles.episodes,
             percentOfEpisodes === 100 && styles.allEpisodes
           )}
-          title={`${episodeFileCount}/${totalEpisodeCount} episodes downloaded`}
+          title={translate('episodesDownloadedInterp', [episodeFileCount, totalEpisodeCount])}
         >
           {
             totalEpisodeCount === 0 ? '0/0' : `${episodeFileCount}/${totalEpisodeCount}`

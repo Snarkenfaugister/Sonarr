@@ -68,7 +68,7 @@ export const defaultState = {
     filters: [
       {
         key: 'monitored',
-        label: 'Monitored',
+        label: translate('monitored'),
         filters: [
           {
             key: 'monitored',
@@ -79,7 +79,7 @@ export const defaultState = {
       },
       {
         key: 'unmonitored',
-        label: 'Unmonitored',
+        label: translate('unmonitored'),
         filters: [
           {
             key: 'monitored',
@@ -145,7 +145,7 @@ export const defaultState = {
     filters: [
       {
         key: 'monitored',
-        label: 'Monitored',
+        label: translate('monitored'),
         filters: [
           {
             key: 'monitored',
@@ -156,7 +156,7 @@ export const defaultState = {
       },
       {
         key: 'unmonitored',
-        label: 'Unmonitored',
+        label: translate('unmonitored'),
         filters: [
           {
             key: 'monitored',

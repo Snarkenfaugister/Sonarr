@@ -79,7 +79,7 @@ class MonitoringOptionsModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Monitor Series
+          {translate('monitorSeries')}
         </ModalHeader>
 
         <ModalBody>

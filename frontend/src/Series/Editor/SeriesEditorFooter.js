@@ -166,8 +166,8 @@ class SeriesEditorFooter extends Component {
 
     const monitoredOptions = [
       { key: NO_CHANGE, value: translate('noChange'), disabled: true },
-      { key: 'monitored', value: 'Monitored' },
-      { key: 'unmonitored', value: 'Unmonitored' }
+      { key: 'monitored', value: translate('monitored') },
+      { key: 'unmonitored', value: translate('unmonitored') }
     ];
 
     const seasonFolderOptions = [
@@ -180,7 +180,7 @@ class SeriesEditorFooter extends Component {
       <PageContentFooter>
         <div className={styles.inputContainer}>
           <SeriesEditorFooterLabel
-            label="Monitor Series"
+            label={translate('monitorSeries')}
             isSaving={isSaving && monitored !== NO_CHANGE}
           />
 
@@ -322,7 +322,7 @@ class SeriesEditorFooter extends Component {
         <div className={styles.buttonContainer}>
           <div className={styles.buttonContainerContent}>
             <SeriesEditorFooterLabel
-              label={`${selectedCount} Series Selected`}
+              label={translate('seriesSelectedInterp', [selectedCount])}
               isSaving={false}
             />
 

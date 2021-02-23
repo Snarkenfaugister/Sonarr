@@ -14,12 +14,12 @@ const rootFolderColumns = [
   },
   {
     name: 'freeSpace',
-    label: 'Free Space',
+    label: translate('freeSpace'),
     isVisible: true
   },
   {
     name: 'unmappedFolders',
-    label: 'Unmapped Folders',
+    label: translate('unmappedFolders'),
     isVisible: true
   },
   {

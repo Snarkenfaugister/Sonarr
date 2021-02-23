@@ -489,7 +489,7 @@ class SeriesDetails extends Component {
                     />
 
                     <span className={styles.qualityProfileName}>
-                      {monitored ? 'Monitored' : 'Unmonitored'}
+                      {monitored ? translate('monitored') : translate('unmonitored')}
                     </span>
                   </Label>
 

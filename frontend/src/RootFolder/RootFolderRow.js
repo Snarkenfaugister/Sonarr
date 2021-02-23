@@ -8,6 +8,7 @@ import Link from 'Components/Link/Link';
 import TableRow from 'Components/Table/TableRow';
 import TableRowCell from 'Components/Table/Cells/TableRowCell';
 import styles from './RootFolderRow.css';
+import translate from 'Utilities/String/translate';
 
 function RootFolderRow(props) {
   const {
@@ -33,7 +34,7 @@ function RootFolderRow(props) {
                 className={styles.unavailableLabel}
                 kind={kinds.DANGER}
               >
-                Unavailable
+                {translate('unavailable')}
               </Label>
             </div> :
 
@@ -56,7 +57,7 @@ function RootFolderRow(props) {
 
       <TableRowCell className={styles.actions}>
         <IconButton
-          title="Remove root folder"
+          title={translate('removeRootFolder')}
           name={icons.REMOVE}
           onPress={onDeletePress}
         />

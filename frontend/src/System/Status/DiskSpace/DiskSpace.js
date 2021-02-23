@@ -10,6 +10,7 @@ import TableRow from 'Components/Table/TableRow';
 import TableRowCell from 'Components/Table/Cells/TableRowCell';
 import ProgressBar from 'Components/ProgressBar';
 import styles from './DiskSpace.css';
+import translate from 'Utilities/String/translate';
 
 const columns = [
   {
@@ -19,7 +20,7 @@ const columns = [
   },
   {
     name: 'freeSpace',
-    label: 'Free Space',
+    label: translate('freeSpace'),
     isVisible: true
   },
   {

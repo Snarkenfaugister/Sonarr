@@ -59,7 +59,7 @@ function OrganizeSeriesModalContent(props) {
           kind={kinds.DANGER}
           onPress={onOrganizeSeriesPress}
         >
-          Organize
+          {translate('organize')}
         </Button>
       </ModalFooter>
     </ModalContent>

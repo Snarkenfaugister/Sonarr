@@ -1254,5 +1254,10 @@
     "unknownEpisodeOrSeries": "Unknown episode or series.",
     "mapping": "Mapping",
     "release": "Release",
-    "theTvdb": "TheTVDB"
+    "theTvdb": "TheTVDB",
+    "seasons": "Seasons",
+    "monitorSeries": "Monitor Series",
+    "monitorEpisodes": "Monitor Episodes",
+    "seriesSelectedInterp": "{0} Series Selected",
+    "episodesDownloadedInterp": "{0}/{1} episodes downloaded"
 }

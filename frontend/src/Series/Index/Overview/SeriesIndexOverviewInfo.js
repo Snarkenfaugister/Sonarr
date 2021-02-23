@@ -72,7 +72,7 @@ function getInfoRowProps(row, props) {
   const { name } = row;
 
   if (name === 'monitored') {
-    const monitoredText = props.monitored ? 'Monitored' : 'Unmonitored';
+    const monitoredText = props.monitored ? translate('monitored') : translate('unmonitored');
 
     return {
       title: monitoredText,

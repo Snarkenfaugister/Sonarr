@@ -80,8 +80,8 @@ class SeasonPassFooter extends Component {
 
     const monitoredOptions = [
       { key: NO_CHANGE, value: translate('noChange'), disabled: true },
-      { key: 'monitored', value: 'Monitored' },
-      { key: 'unmonitored', value: 'Unmonitored' }
+      { key: 'monitored', value: translate('monitored') },
+      { key: 'unmonitored', value: translate('unmonitored') }
     ];
 
     const noChanges = monitored === NO_CHANGE && monitor === NO_CHANGE;
@@ -90,7 +90,7 @@ class SeasonPassFooter extends Component {
       <PageContentFooter>
         <div className={styles.inputContainer}>
           <div className={styles.label}>
-            Monitor Series
+            {translate('monitorSeries')}
           </div>
 
           <SelectInput
@@ -104,7 +104,7 @@ class SeasonPassFooter extends Component {
 
         <div className={styles.inputContainer}>
           <div className={styles.label}>
-            Monitor Episodes
+            {translate('monitorEpisodes')}
           </div>
 
           <MonitorEpisodesSelectInput
@@ -118,7 +118,7 @@ class SeasonPassFooter extends Component {
 
         <div>
           <div className={styles.label}>
-            {selectedCount} Series Selected
+            {translate('seriesSelectedInterp', [selectedCount])}
           </div>
 
           <SpinnerButton
@@ -128,7 +128,7 @@ class SeasonPassFooter extends Component {
             isDisabled={!selectedCount || noChanges}
             onPress={this.onUpdateSelectedPress}
           >
-            Update Selected
+            {translate('updateSelected')}
           </SpinnerButton>
         </div>
       </PageContentFooter>

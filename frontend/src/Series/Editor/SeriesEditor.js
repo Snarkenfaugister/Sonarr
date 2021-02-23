@@ -163,7 +163,7 @@ class SeriesEditor extends Component {
 
           {
             !isFetching && !!error &&
-              <div>Unable to load the calendar</div>
+              <div>{translate('unableToLoadTheCalendar')}</div>
           }
 
           {
