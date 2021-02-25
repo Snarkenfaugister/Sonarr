@@ -13,6 +13,7 @@ import DeleteSeriesModal from 'Series/Delete/DeleteSeriesModal';
 import SeriesIndexProgressBar from 'Series/Index/ProgressBar/SeriesIndexProgressBar';
 import SeriesIndexOverviewInfo from './SeriesIndexOverviewInfo';
 import styles from './SeriesIndexOverview.css';
+import translate from 'Utilities/String/translate';
 
 const columnPadding = parseInt(dimensions.seriesIndexColumnPadding);
 const columnPaddingSmallScreen = parseInt(dimensions.seriesIndexColumnPaddingSmallScreen);
@@ -129,7 +130,7 @@ class SeriesIndexOverview extends Component {
                 status === 'ended' &&
                 <div
                   className={styles.ended}
-                  title="Ended"
+                  title={translate('ended')}
                 />
               }
 
@@ -172,7 +173,7 @@ class SeriesIndexOverview extends Component {
               <div className={styles.actions}>
                 <SpinnerIconButton
                   name={icons.REFRESH}
-                  title="Refresh series"
+                  title={translate('refreshSeries')}
                   isSpinning={isRefreshingSeries}
                   onPress={onRefreshSeriesPress}
                 />
@@ -182,7 +183,7 @@ class SeriesIndexOverview extends Component {
                     <SpinnerIconButton
                       className={styles.action}
                       name={icons.SEARCH}
-                      title="Search for monitored episodes"
+                      title={translate('searchMonitoredEpisodes')}
                       isSpinning={isSearchingSeries}
                       onPress={onSearchPress}
                     />
@@ -190,7 +191,7 @@ class SeriesIndexOverview extends Component {
 
                 <IconButton
                   name={icons.EDIT}
-                  title="Edit Series"
+                  title={translate('editSeries')}
                   onPress={this.onEditSeriesPress}
                 />
               </div>

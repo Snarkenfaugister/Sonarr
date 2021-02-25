@@ -170,7 +170,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'network',
-    label: 'Network',
+    label: translate('network'),
     type: filterBuilderTypes.STRING,
     optionsSelector: function(items) {
       const tagList = items.reduce((acc, series) => {
@@ -189,7 +189,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'qualityProfileId',
-    label: 'Quality Profile',
+    label: translate('qualityProfile'),
     type: filterBuilderTypes.EXACT,
     valueType: filterBuilderValueTypes.QUALITY_PROFILE
   },
@@ -219,7 +219,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'seasonCount',
-    label: 'Season Count',
+    label: translate('seasonCount'),
     type: filterBuilderTypes.NUMBER
   },
   {
@@ -239,7 +239,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'sizeOnDisk',
-    label: 'Size on Disk',
+    label: translate('sizeOnDisk'),
     type: filterBuilderTypes.NUMBER,
     valueType: filterBuilderValueTypes.BYTES
   },
@@ -274,7 +274,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'tags',
-    label: 'Tags',
+    label: translate('tags'),
     type: filterBuilderTypes.ARRAY,
     valueType: filterBuilderValueTypes.TAG
   },

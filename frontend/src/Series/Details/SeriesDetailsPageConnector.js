@@ -7,6 +7,7 @@ import { push } from 'connected-react-router';
 import createAllSeriesSelector from 'Store/Selectors/createAllSeriesSelector';
 import NotFound from 'Components/NotFound';
 import SeriesDetailsConnector from './SeriesDetailsConnector';
+import translate from 'Utilities/String/translate';
 
 function createMapStateToProps() {
   return createSelector(
@@ -54,7 +55,7 @@ class SeriesDetailsPageConnector extends Component {
     if (!titleSlug) {
       return (
         <NotFound
-          message="Sorry, that series cannot be found."
+          message={translate('sorrySeriesCannotBeFound')}
         />
       );
     }

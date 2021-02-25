@@ -40,7 +40,7 @@ function TagDetailsModalContent(props) {
 
         {
           !!series.length &&
-            <FieldSet legend="Series">
+            <FieldSet legend={translate('series')}>
               {
                 series.map((item) => {
                   return (

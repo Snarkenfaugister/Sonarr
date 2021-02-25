@@ -23,7 +23,7 @@ const columns = [
   },
   {
     name: 'sourceTitle',
-    label: 'Source Title',
+    label: translate('sourceTitle'),
     isVisible: true
   },
   {
@@ -38,17 +38,17 @@ const columns = [
   },
   {
     name: 'date',
-    label: 'Date',
+    label: translate('date'),
     isVisible: true
   },
   {
     name: 'details',
-    label: 'Details',
+    label: translate('details'),
     isVisible: true
   },
   {
     name: 'actions',
-    label: 'Actions',
+    label: translate('actions'),
     isVisible: true
   }
 ];
@@ -75,7 +75,7 @@ class SeriesHistoryModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          History {seasonNumber != null && <SeasonNumber seasonNumber={seasonNumber} />}
+          {translate('history')} {seasonNumber != null && <SeasonNumber seasonNumber={seasonNumber} />}
         </ModalHeader>
 
         <ModalBody>
@@ -86,12 +86,12 @@ class SeriesHistoryModalContent extends Component {
 
           {
             !isFetching && !!error &&
-              <div>Unable to load history.</div>
+              <div>{translate('unableToLoadHistory')}</div>
           }
 
           {
             isPopulated && !hasItems && !error &&
-              <div>No history.</div>
+              <div>{translate('noHistory')}</div>
           }
 
           {

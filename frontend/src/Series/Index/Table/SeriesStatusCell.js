@@ -5,6 +5,7 @@ import Icon from 'Components/Icon';
 import VirtualTableRowCell from 'Components/Table/Cells/TableRowCell';
 import { getSeriesStatusDetails } from 'Series/SeriesStatus';
 import styles from './SeriesStatusCell.css';
+import translate from 'Utilities/String/translate';
 
 function SeriesStatusCell(props) {
   const {
@@ -25,7 +26,7 @@ function SeriesStatusCell(props) {
       <Icon
         className={styles.statusIcon}
         name={monitored ? icons.MONITORED : icons.UNMONITORED}
-        title={monitored ? 'Series is monitored' : 'Series is unmonitored'}
+        title={monitored ? translate('seriesIsMonitored') : translate('seriesIsUnmonitored')}
       />
 
       <Icon

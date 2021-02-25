@@ -4,6 +4,7 @@ import PageContent from 'Components/Page/PageContent';
 import PageContentBody from 'Components/Page/PageContentBody';
 import SettingsToolbarConnector from './SettingsToolbarConnector';
 import styles from './Settings.css';
+import translate from 'Utilities/String/translate';
 
 function Settings() {
   return (
@@ -105,7 +106,7 @@ function Settings() {
           className={styles.link}
           to="/settings/tags"
         >
-          Tags
+          {translate('tags')}
         </Link>
 
         <div className={styles.summary}>

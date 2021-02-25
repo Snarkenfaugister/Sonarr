@@ -231,12 +231,12 @@ class SeriesDetails extends Component {
 
     const statusDetails = getSeriesStatusDetails(status);
 
-    let episodeFilesCountMessage = 'No episode files';
+    let episodeFilesCountMessage = translate('noEpisodeFiles');
 
     if (episodeFileCount === 1) {
-      episodeFilesCountMessage = '1 episode file';
+      episodeFilesCountMessage = translate('oneEpisodeFile');
     } else if (episodeFileCount > 1) {
-      episodeFilesCountMessage = `${episodeFileCount} episode files`;
+      episodeFilesCountMessage = translate('episodeFilesInterp', [episodeFileCount]);
     }
 
     let expandIcon = icons.EXPAND_INDETERMINATE;
@@ -252,48 +252,48 @@ class SeriesDetails extends Component {
         <PageToolbar>
           <PageToolbarSection>
             <PageToolbarButton
-              label="Refresh & Scan"
+              label={translate('refreshAndScan')}
               iconName={icons.REFRESH}
               spinningName={icons.REFRESH}
-              title="Refresh information and scan disk"
+              title={translate('refreshInformationAndScanDisk')}
               isSpinning={isRefreshing}
               onPress={onRefreshPress}
             />
 
             <PageToolbarButton
-              label="Search Monitored"
+              label={translate('searchMonitored')}
               iconName={icons.SEARCH}
               isDisabled={!monitored || !hasMonitoredEpisodes || !hasEpisodes}
               isSpinning={isSearching}
-              title={hasMonitoredEpisodes ? undefined : 'No monitored episodes in this series'}
+              title={hasMonitoredEpisodes ? undefined : translate('noMonitoredEpisodesInSeries')}
               onPress={onSearchPress}
             />
 
             <PageToolbarSeparator />
 
             <PageToolbarButton
-              label="Preview Rename"
+              label={translate('previewRename')}
               iconName={icons.ORGANIZE}
               isDisabled={!hasEpisodeFiles}
               onPress={this.onOrganizePress}
             />
 
             <PageToolbarButton
-              label="Manage Episodes"
+              label={translate('manageEpisodes')}
               iconName={icons.EPISODE_FILE}
               isDisabled={!hasEpisodeFiles}
               onPress={this.onManageEpisodesPress}
             />
 
             <PageToolbarButton
-              label="History"
+              label={translate('history')}
               iconName={icons.HISTORY}
               isDisabled={!hasEpisodes}
               onPress={this.onSeriesHistoryPress}
             />
 
             <PageToolbarButton
-              label="Manual File Import"
+              label={translate('manualFileImport')}
               iconName={icons.INTERACTIVE}
               onPress={this.onInteractiveImportPress}
             />
@@ -301,13 +301,13 @@ class SeriesDetails extends Component {
             <PageToolbarSeparator />
 
             <PageToolbarButton
-              label="Series Monitoring"
+              label={translate('seriesMonitoring')}
               iconName={icons.MONITORED}
               onPress={this.onMonitorOptionsPress}
             />
 
             <PageToolbarButton
-              label="Edit"
+              label={translate('edit')}
               iconName={icons.EDIT}
               onPress={this.onEditSeriesPress}
             />
@@ -322,7 +322,7 @@ class SeriesDetails extends Component {
 
           <PageToolbarSection alignContent={align.RIGHT}>
             <PageToolbarButton
-              label={allExpanded ? 'Collapse All' : 'Expand All'}
+              label={allExpanded ? translate('collapseAll') : translate('expandAll')}
               iconName={expandIcon}
               onPress={this.onExpandAllPress}
             />
@@ -375,7 +375,7 @@ class SeriesDetails extends Component {
                                 size={20}
                               />
                             }
-                            title="Alternate Titles"
+                            title={translate('Alternate Titles')}
                             body={<SeriesAlternateTitles alternateTitles={alternateTitles} />}
                             position={tooltipPositions.BOTTOM}
                           />
@@ -388,7 +388,7 @@ class SeriesDetails extends Component {
                       className={styles.seriesNavigationButton}
                       name={icons.ARROW_LEFT}
                       size={30}
-                      title={`Go to ${previousSeries.title}`}
+                      title={translate('goToInterp', [previousSeries.title])}
                       to={`/series/${previousSeries.titleSlug}`}
                     />
 
@@ -396,7 +396,7 @@ class SeriesDetails extends Component {
                       className={styles.seriesNavigationButton}
                       name={icons.ARROW_RIGHT}
                       size={30}
-                      title={`Go to ${nextSeries.title}`}
+                      title={translate('goToInterp', [nextSeries.title])}
                       to={`/series/${nextSeries.titleSlug}`}
                     />
                   </div>
@@ -407,7 +407,7 @@ class SeriesDetails extends Component {
                     {
                       !!runtime &&
                         <span className={styles.runtime}>
-                          {runtime} Minutes
+                          {translate('minutesInterp', [runtime])}
                         </span>
                     }
 
@@ -462,7 +462,7 @@ class SeriesDetails extends Component {
 
                   <Label
                     className={styles.detailsLabel}
-                    title="Quality Profile"
+                    title={translate('qualityProfile')}
                     size={sizes.LARGE}
                   >
                     <Icon
@@ -512,7 +512,7 @@ class SeriesDetails extends Component {
                     !!network &&
                       <Label
                         className={styles.detailsLabel}
-                        title="Network"
+                        title={translate('network')}
                         size={sizes.LARGE}
                       >
                         <Icon
@@ -538,7 +538,7 @@ class SeriesDetails extends Component {
                         />
 
                         <span className={styles.links}>
-                          Links
+                          {translate('links')}
                         </span>
                       </Label>
                     }
@@ -567,7 +567,7 @@ class SeriesDetails extends Component {
                             />
 
                             <span className={styles.tags}>
-                              Tags
+                              {translate('tags')}
                             </span>
                           </Label>
                         }
@@ -599,12 +599,12 @@ class SeriesDetails extends Component {
 
             {
               !isFetching && episodesError &&
-                <div>Loading episodes failed</div>
+                <div>{translate('loadingEpisodesFailed')}</div>
             }
 
             {
               !isFetching && episodeFilesError &&
-                <div>Loading episode files failed</div>
+                <div>{translate('loadingEpisodeFilesFailed')}</div>
             }
 
             {
@@ -629,7 +629,7 @@ class SeriesDetails extends Component {
             {
               isPopulated && !seasons.length &&
                 <div>
-                  No episode information is available.
+                  {translate('noEpisodeInformationAvailable')}
                 </div>
             }
 

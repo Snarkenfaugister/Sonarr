@@ -64,31 +64,31 @@ class DeleteSeriesModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Delete Selected Series
+          {translate('deleteSelectedSeries')}
         </ModalHeader>
 
         <ModalBody>
           <div>
             <FormGroup>
-              <FormLabel>Add List Exclusion</FormLabel>
+              <FormLabel>{translate('addListExclusion')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="addImportListExclusion"
                 value={addImportListExclusion}
-                helpText="Prevent series from being added to Sonarr by lists"
+                helpText={translate('addImportExclusionHelpText')}
                 onChange={this.onAddImportListExclusionChange}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>{`Delete Series Folder${series.length > 1 ? 's' : ''}`}</FormLabel>
+              <FormLabel>{translate(series.length > 1 ? 'deleteSeriesFoldersLabel' : 'deleteSeriesFolderLabel')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="deleteFiles"
                 value={deleteFiles}
-                helpText={`Delete Series Folder${series.length > 1 ? 's' : ''} and all contents`}
+                helpText={translate(series.length > 1 ? 'deleteSeriesFoldersHelpText' : 'deleteSeriesFolderHelpText')}
                 kind={kinds.DANGER}
                 onChange={this.onDeleteFilesChange}
               />
@@ -96,7 +96,7 @@ class DeleteSeriesModalContent extends Component {
           </div>
 
           <div className={styles.message}>
-            {`Are you sure you want to delete ${series.length} selected series${deleteFiles ? ' and all contents' : ''}?`}
+            {translate(deleteFiles ? 'areYouSureYouWantToDeleteSeriesInterp' : 'areYouSureYouWantToDeleteSeriesAndContentsInterp', [series.length])}
           </div>
 
           <ul>

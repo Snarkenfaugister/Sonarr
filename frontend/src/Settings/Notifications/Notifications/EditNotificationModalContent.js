@@ -230,7 +230,7 @@ function EditNotificationModalContent(props) {
               }
 
               <FormGroup>
-                <FormLabel>Tags</FormLabel>
+                <FormLabel>{translate('tags')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.TAG}

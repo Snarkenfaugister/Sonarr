@@ -57,7 +57,7 @@ export const defaultState = {
       },
       {
         name: 'actions',
-        columnLabel: 'Actions',
+        columnLabel: translate('actions'),
         isVisible: true,
         isModifiable: false
       }
@@ -134,7 +134,7 @@ export const defaultState = {
       },
       {
         name: 'actions',
-        columnLabel: 'Actions',
+        columnLabel: translate('actions'),
         isVisible: true,
         isModifiable: false
       }

@@ -252,10 +252,10 @@ class SeriesDetailsSeason extends Component {
             {
               seasonNumber === 0 ?
                 <span className={styles.seasonNumber}>
-                  Specials
+                  {translate('specials')}
                 </span> :
                 <span className={styles.seasonNumber}>
-                  Season {seasonNumber}
+                  {translate('seasonInterp', [seasonNumber])}
                 </span>
             }
 
@@ -269,7 +269,7 @@ class SeriesDetailsSeason extends Component {
                   <span>{episodeFileCount} / {episodeCount}</span>
                 </Label>
               }
-              title="Season Information"
+              title={translate('seasonInformation')}
               body={
                 <div>
                   <SeasonInfo
@@ -299,7 +299,7 @@ class SeriesDetailsSeason extends Component {
             <Icon
               className={styles.expandButtonIcon}
               name={isExpanded ? icons.COLLAPSE : icons.EXPAND}
-              title={isExpanded ? 'Hide episodes' : 'Show episodes'}
+              title={isExpanded ? translate('hideEpisodes') : translate('showEpisodes')}
               size={24}
             />
             {
@@ -345,7 +345,7 @@ class SeriesDetailsSeason extends Component {
                       name={icons.INTERACTIVE}
                     />
 
-                    Interactive Search
+                    {translate('interactiveSearch')}
                   </MenuItem>
 
                   <MenuItem
@@ -357,7 +357,7 @@ class SeriesDetailsSeason extends Component {
                       name={icons.ORGANIZE}
                     />
 
-                    Preview Rename
+                    {translate('previewRename')}
                   </MenuItem>
 
                   <MenuItem
@@ -369,7 +369,7 @@ class SeriesDetailsSeason extends Component {
                       name={icons.EPISODE_FILE}
                     />
 
-                    Manage Episodes
+                    {translate('manageEpisodes')}
                   </MenuItem>
 
                   <MenuItem
@@ -381,7 +381,7 @@ class SeriesDetailsSeason extends Component {
                       name={icons.HISTORY}
                     />
 
-                    History
+                    {translate('history')}
                   </MenuItem>
                 </MenuContent>
               </Menu> :
@@ -390,7 +390,7 @@ class SeriesDetailsSeason extends Component {
                 <SpinnerIconButton
                   className={styles.actionButton}
                   name={icons.SEARCH}
-                  title={hasMonitoredEpisodes && seriesMonitored ? 'Search for monitored episodes in this season' : 'No monitored episodes in this season'}
+                  title={hasMonitoredEpisodes && seriesMonitored ? translate('searchMonitoredInThisSeason') : translate('noMonitoredInThisSeason')}
                   size={24}
                   isSpinning={isSearching}
                   isDisabled={isSearching || !hasMonitoredEpisodes || !seriesMonitored}
@@ -400,7 +400,7 @@ class SeriesDetailsSeason extends Component {
                 <IconButton
                   className={styles.actionButton}
                   name={icons.INTERACTIVE}
-                  title="Interactive search for all episodes in this season"
+                  title={translate('interactiveSearchAllEpisodesInThisSeason')}
                   size={24}
                   isDisabled={!totalEpisodeCount}
                   onPress={this.onInteractiveSearchPress}
@@ -409,7 +409,7 @@ class SeriesDetailsSeason extends Component {
                 <IconButton
                   className={styles.actionButton}
                   name={icons.ORGANIZE}
-                  title="Preview rename for this season"
+                  title={translate('previewRenameForThisSeason')}
                   size={24}
                   isDisabled={!episodeFileCount}
                   onPress={this.onOrganizePress}
@@ -418,7 +418,7 @@ class SeriesDetailsSeason extends Component {
                 <IconButton
                   className={styles.actionButton}
                   name={icons.EPISODE_FILE}
-                  title="Manage episode files in this season"
+                  title={translate('manageEpisodeFilesInThisSeason')}
                   size={24}
                   isDisabled={!episodeFileCount}
                   onPress={this.onManageEpisodesPress}
@@ -427,7 +427,7 @@ class SeriesDetailsSeason extends Component {
                 <IconButton
                   className={styles.actionButton}
                   name={icons.HISTORY}
-                  title="View history for this season"
+                  title={translate('viewHistoryForThisSeason')}
                   size={24}
                   isDisabled={!totalEpisodeCount}
                   onPress={this.onHistoryPress}
@@ -464,7 +464,7 @@ class SeriesDetailsSeason extends Component {
                     </Table> :
 
                     <div className={styles.noEpisodes}>
-                      No episodes in this season
+                      {translate('noEpisodesInThisSeason')}
                     </div>
                 }
                 <div className={styles.collapseButtonContainer}>
@@ -472,7 +472,7 @@ class SeriesDetailsSeason extends Component {
                     iconClassName={styles.collapseButtonIcon}
                     name={icons.COLLAPSE}
                     size={20}
-                    title="Hide episodes"
+                    title={translate('hideEpisodes')}
                     onPress={this.onExpandPress}
                   />
                 </div>

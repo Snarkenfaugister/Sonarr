@@ -4,6 +4,7 @@ import formatBytes from 'Utilities/Number/formatBytes';
 import DescriptionList from 'Components/DescriptionList/DescriptionList';
 import DescriptionListItem from 'Components/DescriptionList/DescriptionListItem';
 import styles from './SeasonInfo.css';
+import translate from 'Utilities/String/translate';
 
 function SeasonInfo(props) {
   const {
@@ -18,28 +19,28 @@ function SeasonInfo(props) {
       <DescriptionListItem
         titleClassName={styles.title}
         descriptionClassName={styles.description}
-        title="Total"
+        title={translate('total')}
         data={totalEpisodeCount}
       />
 
       <DescriptionListItem
         titleClassName={styles.title}
         descriptionClassName={styles.description}
-        title="Monitored"
+        title={translate('monitored')}
         data={monitoredEpisodeCount}
       />
 
       <DescriptionListItem
         titleClassName={styles.title}
         descriptionClassName={styles.description}
-        title="With Files"
+        title={translate('withFiles')}
         data={episodeFileCount}
       />
 
       <DescriptionListItem
         titleClassName={styles.title}
         descriptionClassName={styles.description}
-        title="Size on Disk"
+        title={translate('sizeOnDisk')}
         data={formatBytes(sizeOnDisk)}
       />
     </DescriptionList>

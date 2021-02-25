@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import getRelativeDate from 'Utilities/Date/getRelativeDate';
 import formatBytes from 'Utilities/Number/formatBytes';
+import translate from 'Utilities/String/translate';
 import styles from './SeriesIndexPosterInfo.css';
 
 function SeriesIndexPosterInfo(props) {
@@ -67,18 +68,18 @@ function SeriesIndexPosterInfo(props) {
 
     return (
       <div className={styles.info}>
-        {`Added ${addedDate}`}
+        {translate('addedInterp', [addedDate])}
       </div>
     );
   }
 
   if (sortKey === 'seasonCount') {
-    let seasons = '1 season';
+    let seasons = translate('oneSeason');
 
     if (seasonCount === 0) {
-      seasons = 'No seasons';
+      seasons = translate('noSeasons');
     } else if (seasonCount > 1) {
-      seasons = `${seasonCount} seasons`;
+      seasons = translate('seasonsInterp', [seasonCount]);
     }
 
     return (

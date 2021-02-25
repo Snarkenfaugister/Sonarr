@@ -12,6 +12,7 @@ import DelayProfileDragPreview from './DelayProfileDragPreview';
 import DelayProfile from './DelayProfile';
 import EditDelayProfileModalConnector from './EditDelayProfileModalConnector';
 import styles from './DelayProfiles.css';
+import translate from 'Utilities/String/translate';
 
 class DelayProfiles extends Component {
 
@@ -84,7 +85,7 @@ class DelayProfiles extends Component {
                   <div className={styles.column}>Protocol</div>
                   <div className={styles.column}>Usenet Delay</div>
                   <div className={styles.column}>Torrent Delay</div>
-                  <div className={styles.tags}>Tags</div>
+                  <div className={styles.tags}>{translate('tags')}</div>
                 </div>
 
                 <div className={styles.delayProfiles}>

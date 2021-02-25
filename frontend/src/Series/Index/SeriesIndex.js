@@ -197,7 +197,7 @@ class SeriesIndex extends Component {
         <PageToolbar>
           <PageToolbarSection>
             <PageToolbarButton
-              label="Update all"
+              label={translate('updateAll')}
               iconName={icons.REFRESH}
               spinningName={icons.REFRESH}
               isSpinning={isRefreshingSeries}
@@ -206,7 +206,7 @@ class SeriesIndex extends Component {
             />
 
             <PageToolbarButton
-              label="RSS Sync"
+              label={translate('rssSync')}
               iconName={icons.RSS}
               isSpinning={isRssSyncExecuting}
               isDisabled={hasNoSeries}
@@ -295,7 +295,7 @@ class SeriesIndex extends Component {
 
             {
               !isFetching && !!error &&
-                <div>Unable to load series</div>
+                <div>{translate('unableToLoadSeries')}</div>
             }
 
             {

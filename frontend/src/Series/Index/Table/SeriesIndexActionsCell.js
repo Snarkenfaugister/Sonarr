@@ -6,6 +6,7 @@ import SpinnerIconButton from 'Components/Link/SpinnerIconButton';
 import VirtualTableRowCell from 'Components/Table/Cells/VirtualTableRowCell';
 import EditSeriesModalConnector from 'Series/Edit/EditSeriesModalConnector';
 import DeleteSeriesModal from 'Series/Delete/DeleteSeriesModal';
+import translate from 'Utilities/String/translate';
 
 class SeriesIndexActionsCell extends Component {
 
@@ -65,14 +66,14 @@ class SeriesIndexActionsCell extends Component {
       >
         <SpinnerIconButton
           name={icons.REFRESH}
-          title="Refresh series"
+          title={translate('refreshSeries')}
           isSpinning={isRefreshingSeries}
           onPress={onRefreshSeriesPress}
         />
 
         <IconButton
           name={icons.EDIT}
-          title="Edit Series"
+          title={translate('editSeries')}
           onPress={this.onEditSeriesPress}
         />
 

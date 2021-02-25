@@ -172,8 +172,8 @@ class SeriesEditorFooter extends Component {
 
     const seasonFolderOptions = [
       { key: NO_CHANGE, value: translate('noChange'), disabled: true },
-      { key: 'yes', value: 'Yes' },
-      { key: 'no', value: 'No' }
+      { key: 'yes', value: translate('yes') },
+      { key: 'no', value: translate('no') }
     ];
 
     return (
@@ -211,7 +211,7 @@ class SeriesEditorFooter extends Component {
                   className={styles.inputContainer}
                 >
                   <SeriesEditorFooterLabel
-                    label="Quality Profile"
+                    label={translate('qualityProfile')}
                     isSaving={isSaving && qualityProfileId !== NO_CHANGE}
                   />
 
@@ -277,7 +277,7 @@ class SeriesEditorFooter extends Component {
                   className={styles.inputContainer}
                 >
                   <SeriesEditorFooterLabel
-                    label="Season Folder"
+                    label={translate('seasonFolder')}
                     isSaving={isSaving && seasonFolder !== NO_CHANGE}
                   />
 
@@ -299,7 +299,7 @@ class SeriesEditorFooter extends Component {
                   className={styles.inputContainer}
                 >
                   <SeriesEditorFooterLabel
-                    label="Root Folder"
+                    label={translate('rootFolder')}
                     isSaving={isSaving && rootFolderPath !== NO_CHANGE}
                   />
 
@@ -335,7 +335,7 @@ class SeriesEditorFooter extends Component {
                   isDisabled={!selectedCount || isOrganizingSeries}
                   onPress={onOrganizeSeriesPress}
                 >
-                  Rename Files
+                  {translate('renameFiles')}
                 </SpinnerButton>
 
                 <SpinnerButton
@@ -344,7 +344,7 @@ class SeriesEditorFooter extends Component {
                   isDisabled={!selectedCount || isOrganizingSeries}
                   onPress={this.onTagsPress}
                 >
-                  Set Tags
+                  {translate('setTags')}
                 </SpinnerButton>
               </div>
 

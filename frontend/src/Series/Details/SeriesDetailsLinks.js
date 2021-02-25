@@ -4,6 +4,7 @@ import { kinds, sizes } from 'Helpers/Props';
 import Label from 'Components/Label';
 import Link from 'Components/Link/Link';
 import styles from './SeriesDetailsLinks.css';
+import translate from 'Utilities/String/translate';
 
 function SeriesDetailsLinks(props) {
   const {
@@ -23,7 +24,7 @@ function SeriesDetailsLinks(props) {
           kind={kinds.INFO}
           size={sizes.LARGE}
         >
-          The TVDB
+          {translate('theTvdb')}
         </Label>
       </Link>
 
@@ -36,7 +37,7 @@ function SeriesDetailsLinks(props) {
           kind={kinds.INFO}
           size={sizes.LARGE}
         >
-          Trakt
+          {translate('trakt')}
         </Label>
       </Link>
 
@@ -51,7 +52,7 @@ function SeriesDetailsLinks(props) {
               kind={kinds.INFO}
               size={sizes.LARGE}
             >
-              TV Maze
+              {translate('tvMaze')}
             </Label>
           </Link>
       }
@@ -67,7 +68,7 @@ function SeriesDetailsLinks(props) {
               kind={kinds.INFO}
               size={sizes.LARGE}
             >
-              IMDB
+              {translate('imdb')}
             </Label>
           </Link>
       }

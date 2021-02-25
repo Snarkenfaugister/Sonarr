@@ -14,9 +14,9 @@ import ModalFooter from 'Components/Modal/ModalFooter';
 import translate from 'Utilities/String/translate';
 
 const posterSizeOptions = [
-  { key: 'small', value: 'Small' },
-  { key: 'medium', value: 'Medium' },
-  { key: 'large', value: 'Large' }
+  { key: 'small', value: translate('small') },
+  { key: 'medium', value: translate('medium') },
+  { key: 'large', value: translate('large') }
 ];
 
 class SeriesIndexOverviewOptionsModalContent extends Component {
@@ -144,13 +144,13 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Overview Options
+          {translate('overviewOptions')}
         </ModalHeader>
 
         <ModalBody>
           <Form>
             <FormGroup>
-              <FormLabel>Poster Size</FormLabel>
+              <FormLabel>{translate('posterSize')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.SELECT}
@@ -162,19 +162,19 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Detailed Progress Bar</FormLabel>
+              <FormLabel>{translate('detailedProgressBar')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="detailedProgressBar"
                 value={detailedProgressBar}
-                helpText="Show text on progess bar"
+                helpText={translate('detailedProgressBarHelpText')}
                 onChange={this.onChangeOverviewOption}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show Monitored</FormLabel>
+              <FormLabel>{translate('showMonitored')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
@@ -185,7 +185,7 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show Network</FormLabel>
+              <FormLabel>{translate('showNetwork')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
@@ -196,7 +196,7 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show Quality Profile</FormLabel>
+              <FormLabel>{translate('showQualityProfile')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
@@ -207,7 +207,7 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show Previous Airing</FormLabel>
+              <FormLabel>{translate('showPreviousAiring')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
@@ -218,7 +218,7 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show Date Added</FormLabel>
+              <FormLabel>{translate('showDateAdded')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
@@ -229,7 +229,7 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show Season Count</FormLabel>
+              <FormLabel>{translate('showSeasonCount')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
@@ -240,7 +240,7 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show Path</FormLabel>
+              <FormLabel>{translate('showPath')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
@@ -251,7 +251,7 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show Size on Disk</FormLabel>
+              <FormLabel>{translate('showSizeOnDisk')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
@@ -262,13 +262,13 @@ class SeriesIndexOverviewOptionsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Show Search</FormLabel>
+              <FormLabel>{translate('showSearch')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="showSearchAction"
                 value={showSearchAction}
-                helpText="Show search button on hover"
+                helpText={translate('showSearchHelpText')}
                 onChange={this.onChangeOverviewOption}
               />
             </FormGroup>

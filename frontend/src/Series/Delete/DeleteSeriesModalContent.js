@@ -65,12 +65,12 @@ class DeleteSeriesModalContent extends Component {
 
     const deleteFiles = this.state.deleteFiles;
     const addImportListExclusion = this.state.addImportListExclusion;
-    let deleteFilesLabel = `Delete ${episodeFileCount} Episode Files`;
-    let deleteFilesHelpText = 'Delete the episode files and series folder';
+    let deleteFilesLabel = translate('deleteFilesLabel', [episodeFileCount]);
+    let deleteFilesHelpText = translate('deleteFilesHelpText');
 
     if (episodeFileCount === 0) {
-      deleteFilesLabel = 'Delete Series Folder';
-      deleteFilesHelpText = 'Delete the series folder and its contents';
+      deleteFilesLabel = translate('deleteSeriesFolderLabel');
+      deleteFilesHelpText = translate('deleteSeriesFolderHelpText');
     }
 
     return (
@@ -92,13 +92,13 @@ class DeleteSeriesModalContent extends Component {
           </div>
 
           <FormGroup>
-            <FormLabel>Add List Exclusion</FormLabel>
+            <FormLabel>{translate('addListExclusion')}</FormLabel>
 
             <FormInputGroup
               type={inputTypes.CHECK}
               name="addImportListExclusion"
               value={addImportListExclusion}
-              helpText="Prevent series from being added to Sonarr by lists"
+              helpText={translate('addImportExclusionHelpText')}
               onChange={this.onAddImportListExclusionChange}
             />
           </FormGroup>
@@ -119,11 +119,11 @@ class DeleteSeriesModalContent extends Component {
           {
             deleteFiles &&
               <div className={styles.deleteFilesMessage}>
-                <div>The series folder <strong>{path}</strong> and all of its content will be deleted.</div>
+                <div dangerouslySetInnerHTML={{ __html: translate('deleteTheSeriesFolder', [`<strong>${path}</strong>`]) }} />
 
                 {
                   !!episodeFileCount &&
-                    <div>{episodeFileCount} episode files totaling {formatBytes(sizeOnDisk)}</div>
+                    <div>{episodeFileCount} {translate('episodeFilesTotaling')} {formatBytes(sizeOnDisk)}</div>
                 }
               </div>
           }

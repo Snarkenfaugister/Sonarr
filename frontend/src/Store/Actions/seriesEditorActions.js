@@ -49,7 +49,7 @@ export const defaultState = {
     },
     {
       name: 'qualityProfileId',
-      label: 'Quality Profile',
+      label: translate('qualityProfile'),
       isSortable: true,
       isVisible: true
     },
@@ -79,13 +79,13 @@ export const defaultState = {
     },
     {
       name: 'sizeOnDisk',
-      label: 'Size on Disk',
+      label: translate('sizeOnDisk'),
       isSortable: true,
       isVisible: false
     },
     {
       name: 'tags',
-      label: 'Tags',
+      label: translate('tags'),
       isSortable: true,
       isVisible: true
     }

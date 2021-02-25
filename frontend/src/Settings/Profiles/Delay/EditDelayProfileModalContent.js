@@ -115,7 +115,7 @@ function EditDelayProfileModalContent(props) {
                   </Alert> :
 
                   <FormGroup>
-                    <FormLabel>Tags</FormLabel>
+                    <FormLabel>{translate('tags')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.TAG}

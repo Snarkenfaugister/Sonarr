@@ -72,7 +72,7 @@ class AddNewSeriesSearchResult extends Component {
     } = this.state;
 
     const linkProps = isExistingSeries ? { to: `/series/${titleSlug}` } : { onPress: this.onPress };
-    let seasons = `1 ${translate('season')}`;
+    let seasons = translate('oneSeason');
 
     if (seasonCount > 1) {
       seasons = translate('seasonsInterp', [seasonCount]);

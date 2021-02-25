@@ -61,21 +61,21 @@ class TagsModalContent extends Component {
     } = this.state;
 
     const applyTagsOptions = [
-      { key: 'add', value: 'Add' },
-      { key: 'remove', value: 'Remove' },
-      { key: 'replace', value: 'Replace' }
+      { key: 'add', value: translate('add') },
+      { key: 'remove', value: translate('remove') },
+      { key: 'replace', value: translate('replace') }
     ];
 
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Tags
+          {translate('tags')}
         </ModalHeader>
 
         <ModalBody>
           <Form>
             <FormGroup>
-              <FormLabel>Tags</FormLabel>
+              <FormLabel>{translate('tags')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.TAG}
@@ -86,7 +86,7 @@ class TagsModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Apply Tags</FormLabel>
+              <FormLabel>{translate('applyTags')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.SELECT}
@@ -94,17 +94,17 @@ class TagsModalContent extends Component {
                 value={applyTags}
                 values={applyTagsOptions}
                 helpTexts={[
-                  'How to apply tags to the selected series',
-                  'Add: Add the tags the existing list of tags',
-                  'Remove: Remove the entered tags',
-                  'Replace: Replace the tags with the entered tags (enter no tags to clear all tags)'
+                  translate('applyTagsHelpTexts1'),
+                  translate('applyTagsHelpTexts2'),
+                  translate('applyTagsHelpTexts3'),
+                  translate('applyTagsHelpTexts4')
                 ]}
                 onChange={this.onInputChange}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Result</FormLabel>
+              <FormLabel>{translate('results')}</FormLabel>
 
               <div className={styles.result}>
                 {
@@ -121,7 +121,7 @@ class TagsModalContent extends Component {
                     return (
                       <Label
                         key={tag.id}
-                        title={removeTag ? 'Removing tag' : 'Existing tag'}
+                        title={removeTag ? translate('removingTag') : translate('existingTag')}
                         kind={removeTag ? kinds.INVERSE : kinds.INFO}
                         size={sizes.LARGE}
                       >
@@ -147,7 +147,7 @@ class TagsModalContent extends Component {
                         return (
                           <Label
                             key={tag.id}
-                            title={'Adding tag'}
+                            title={translate('addingTag')}
                             kind={kinds.SUCCESS}
                             size={sizes.LARGE}
                           >
@@ -170,7 +170,7 @@ class TagsModalContent extends Component {
             kind={kinds.PRIMARY}
             onPress={this.onApplyTagsPress}
           >
-            Apply
+            {translate('apply')}
           </Button>
         </ModalFooter>
       </ModalContent>

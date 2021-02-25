@@ -122,7 +122,7 @@ class SeriesIndexPoster extends Component {
             <SpinnerIconButton
               className={styles.action}
               name={icons.REFRESH}
-              title="Refresh series"
+              title={translate('refreshSeries')}
               isSpinning={isRefreshingSeries}
               onPress={onRefreshSeriesPress}
             />
@@ -132,7 +132,7 @@ class SeriesIndexPoster extends Component {
                 <SpinnerIconButton
                   className={styles.action}
                   name={icons.SEARCH}
-                  title="Search for monitored episodes"
+                  title={translate('searchMonitoredEpisodes')}
                   isSpinning={isSearchingSeries}
                   onPress={onSearchPress}
                 />
@@ -141,7 +141,7 @@ class SeriesIndexPoster extends Component {
             <IconButton
               className={styles.action}
               name={icons.EDIT}
-              title="Edit Series"
+              title={translate('editSeries')}
               onPress={this.onEditSeriesPress}
             />
           </Label>
@@ -150,7 +150,7 @@ class SeriesIndexPoster extends Component {
             status === 'ended' &&
               <div
                 className={styles.ended}
-                title="Ended"
+                title={translate('ended')}
               />
           }
 

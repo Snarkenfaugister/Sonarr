@@ -12,6 +12,7 @@ import TableBody from 'Components/Table/TableBody';
 import TableRow from 'Components/Table/TableRow';
 import TableRowCell from 'Components/Table/Cells/TableRowCell';
 import styles from './Health.css';
+import translate from 'Utilities/String/translate';
 
 function getInternalLink(source) {
   switch (source) {
@@ -40,7 +41,7 @@ function getInternalLink(source) {
       return (
         <IconButton
           name={icons.SERIES_CONTINUING}
-          title="Series Editor"
+          title={translate('seriesEditor')}
           to="/serieseditor"
         />
       );
@@ -97,7 +98,7 @@ const columns = [
   },
   {
     name: 'actions',
-    label: 'Actions',
+    label: translate('actions'),
     isVisible: true
   }
 ];

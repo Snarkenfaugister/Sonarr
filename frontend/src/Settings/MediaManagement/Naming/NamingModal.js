@@ -253,7 +253,7 @@ class NamingModal extends Component {
                 </FieldSet>
             }
 
-            <FieldSet legend="Series">
+            <FieldSet legend={translate('series')}>
               <div className={styles.groups}>
                 {
                   seriesTokens.map(({ token, example }) => {

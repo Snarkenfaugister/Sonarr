@@ -21,6 +21,7 @@ import SeriesBanner from 'Series/SeriesBanner';
 import hasGrowableColumns from './hasGrowableColumns';
 import SeriesStatusCell from './SeriesStatusCell';
 import styles from './SeriesIndexRow.css';
+import translate from 'Utilities/String/translate';
 
 class SeriesIndexRow extends Component {
 
@@ -290,8 +291,8 @@ class SeriesIndexRow extends Component {
                     progress={progress}
                     kind={getProgressBarKind(status, monitored, progress)}
                     showText={true}
-                    text={`${episodeFileCount} / ${episodeCount}`}
-                    title={`${episodeFileCount} / ${episodeCount} (Total: ${totalEpisodeCount})`}
+                    text={translate('progressInterp', [episodeFileCount, episodeCount])}
+                    title={translate('progressTotalInterp', [episodeFileCount, episodeCount, totalEpisodeCount])}
                     width={125}
                   />
                 </VirtualTableRowCell>
@@ -322,8 +323,8 @@ class SeriesIndexRow extends Component {
                     progress={progress}
                     kind={getProgressBarKind(status, monitored, progress)}
                     showText={true}
-                    text={`${seasonStatistics.episodeFileCount} / ${seasonStatistics.episodeCount}`}
-                    title={`${seasonStatistics.episodeFileCount} / ${seasonStatistics.episodeCount} (Total: ${seasonStatistics.totalEpisodeCount})`}
+                    text={translate('progressInterp', [seasonStatistics.episodeFileCount, seasonStatistics.episodeCount])}
+                    title={translate('progressTotalInterp', [seasonStatistics.episodeFileCount, seasonStatistics.episodeCount, seasonStatistics.totalEpisodeCount])}
                     width={125}
                   />
                 </VirtualTableRowCell>
@@ -451,7 +452,7 @@ class SeriesIndexRow extends Component {
                 >
                   <SpinnerIconButton
                     name={icons.REFRESH}
-                    title="Refresh series"
+                    title={translate('refreshSeries')}
                     isSpinning={isRefreshingSeries}
                     onPress={onRefreshSeriesPress}
                   />
@@ -461,7 +462,7 @@ class SeriesIndexRow extends Component {
                       <SpinnerIconButton
                         className={styles.action}
                         name={icons.SEARCH}
-                        title="Search for monitored episodes"
+                        title={translate('searchMonitoredEpisodes')}
                         isSpinning={isSearchingSeries}
                         onPress={onSearchPress}
                       />
@@ -469,7 +470,7 @@ class SeriesIndexRow extends Component {
 
                   <IconButton
                     name={icons.EDIT}
-                    title="Edit Series"
+                    title={translate('editSeries')}
                     onPress={this.onEditSeriesPress}
                   />
                 </VirtualTableRowCell>

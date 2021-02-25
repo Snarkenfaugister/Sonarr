@@ -6,6 +6,7 @@ import { ColorImpairedConsumer } from 'App/ColorImpairedContext';
 import DescriptionList from 'Components/DescriptionList/DescriptionList';
 import DescriptionListItem from 'Components/DescriptionList/DescriptionListItem';
 import styles from './SeriesIndexFooter.css';
+import translate from 'Utilities/String/translate';
 
 class SeriesIndexFooter extends PureComponent {
 
@@ -60,7 +61,7 @@ class SeriesIndexFooter extends PureComponent {
                       enableColorImpairedMode && 'colorImpaired'
                     )}
                   />
-                  <div>Continuing (All episodes downloaded)</div>
+                  <div>{translate('continuingAllEpisodesDownloaded')}</div>
                 </div>
 
                 <div className={styles.legendItem}>
@@ -70,7 +71,7 @@ class SeriesIndexFooter extends PureComponent {
                       enableColorImpairedMode && 'colorImpaired'
                     )}
                   />
-                  <div>Ended (All episodes downloaded)</div>
+                  <div>{translate('endedAllEpisodesDownloaded')}</div>
                 </div>
 
                 <div className={styles.legendItem}>
@@ -80,7 +81,7 @@ class SeriesIndexFooter extends PureComponent {
                       enableColorImpairedMode && 'colorImpaired'
                     )}
                   />
-                  <div>Missing Episodes (Series monitored)</div>
+                  <div>{translate('missingEpisodesSeriesMonitored')}</div>
                 </div>
 
                 <div className={styles.legendItem}>
@@ -90,55 +91,55 @@ class SeriesIndexFooter extends PureComponent {
                       enableColorImpairedMode && 'colorImpaired'
                     )}
                   />
-                  <div>Missing Episodes (Series not monitored)</div>
+                  <div>{translate('missingEpisodesSeriesNotMonitored')}</div>
                 </div>
               </div>
 
               <div className={styles.statistics}>
                 <DescriptionList>
                   <DescriptionListItem
-                    title="Series"
+                    title={translate('series')}
                     data={count}
                   />
 
                   <DescriptionListItem
-                    title="Ended"
+                    title={translate('ended')}
                     data={ended}
                   />
 
                   <DescriptionListItem
-                    title="Continuing"
+                    title={translate('continuing')}
                     data={continuing}
                   />
                 </DescriptionList>
 
                 <DescriptionList>
                   <DescriptionListItem
-                    title="Monitored"
+                    title={translate('monitored')}
                     data={monitored}
                   />
 
                   <DescriptionListItem
-                    title="Unmonitored"
+                    title={translate('unmonitored')}
                     data={count - monitored}
                   />
                 </DescriptionList>
 
                 <DescriptionList>
                   <DescriptionListItem
-                    title="Episodes"
+                    title={translate('episodes')}
                     data={episodes}
                   />
 
                   <DescriptionListItem
-                    title="Files"
+                    title={translate('files')}
                     data={episodeFiles}
                   />
                 </DescriptionList>
 
                 <DescriptionList>
                   <DescriptionListItem
-                    title="Total File Size"
+                    title={translate('totalFileSize')}
                     data={formatBytes(totalFileSize)}
                   />
                 </DescriptionList>

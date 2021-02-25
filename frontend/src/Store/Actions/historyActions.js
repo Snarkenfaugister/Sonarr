@@ -64,7 +64,7 @@ export const defaultState = {
     },
     {
       name: 'date',
-      label: 'Date',
+      label: translate('date'),
       isSortable: true,
       isVisible: true
     },
@@ -94,7 +94,7 @@ export const defaultState = {
     },
     {
       name: 'details',
-      columnLabel: 'Details',
+      columnLabel: translate('details'),
       isVisible: true,
       isModifiable: false
     }
@@ -110,7 +110,7 @@ export const defaultState = {
     },
     {
       key: 'grabbed',
-      label: 'Grabbed',
+      label: translate('grabbed'),
       filters: [
         {
           key: 'eventType',

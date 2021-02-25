@@ -11,6 +11,7 @@ import createRemoveItemHandler from './Creators/createRemoveItemHandler';
 import createHandleActions from './Creators/createHandleActions';
 import createServerSideCollectionHandlers from './Creators/createServerSideCollectionHandlers';
 import { set } from './baseActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -107,7 +108,7 @@ export const defaultState = {
       },
       {
         name: 'actions',
-        columnLabel: 'Actions',
+        columnLabel: translate('actions'),
         isSortable: true,
         isVisible: true,
         isModifiable: false

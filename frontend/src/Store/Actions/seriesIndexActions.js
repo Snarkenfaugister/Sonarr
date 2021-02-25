@@ -74,13 +74,13 @@ export const defaultState = {
     },
     {
       name: 'network',
-      label: 'Network',
+      label: translate('network'),
       isSortable: true,
       isVisible: true
     },
     {
       name: 'qualityProfileId',
-      label: 'Quality Profile',
+      label: translate('qualityProfile'),
       isSortable: true,
       isVisible: true
     },
@@ -146,7 +146,7 @@ export const defaultState = {
     },
     {
       name: 'sizeOnDisk',
-      label: 'Size on Disk',
+      label: translate('sizeOnDisk'),
       isSortable: true,
       isVisible: false
     },
@@ -170,7 +170,7 @@ export const defaultState = {
     },
     {
       name: 'tags',
-      label: 'Tags',
+      label: translate('tags'),
       isSortable: true,
       isVisible: false
     },
@@ -182,7 +182,7 @@ export const defaultState = {
     },
     {
       name: 'actions',
-      columnLabel: 'Actions',
+      columnLabel: translate('actions'),
       isVisible: true,
       isModifiable: false
     }

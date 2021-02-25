@@ -39,7 +39,7 @@ export const defaultState = {
     },
     {
       name: 'sourceTitle',
-      label: 'Source Title',
+      label: translate('sourceTitle'),
       isSortable: true,
       isVisible: true
     },
@@ -55,7 +55,7 @@ export const defaultState = {
     },
     {
       name: 'date',
-      label: 'Date',
+      label: translate('date'),
       isSortable: true,
       isVisible: true
     },
@@ -67,7 +67,7 @@ export const defaultState = {
     },
     {
       name: 'actions',
-      columnLabel: 'Actions',
+      columnLabel: translate('actions'),
       isVisible: true,
       isModifiable: false
     }

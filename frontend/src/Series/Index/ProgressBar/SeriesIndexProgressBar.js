@@ -4,6 +4,7 @@ import getProgressBarKind from 'Utilities/Series/getProgressBarKind';
 import { sizes } from 'Helpers/Props';
 import ProgressBar from 'Components/ProgressBar';
 import styles from './SeriesIndexProgressBar.css';
+import translate from 'Utilities/String/translate';
 
 function SeriesIndexProgressBar(props) {
   const {
@@ -17,7 +18,7 @@ function SeriesIndexProgressBar(props) {
   } = props;
 
   const progress = episodeCount ? episodeFileCount / episodeCount * 100 : 100;
-  const text = `${episodeFileCount} / ${episodeCount}`;
+  const text = translate('progressInterp', [episodeFileCount, episodeCount]);
 
   return (
     <ProgressBar
@@ -28,7 +29,7 @@ function SeriesIndexProgressBar(props) {
       size={detailedProgressBar ? sizes.MEDIUM : sizes.SMALL}
       showText={detailedProgressBar}
       text={text}
-      title={`${episodeFileCount} / ${episodeCount} (Total: ${totalEpisodeCount})`}
+      title={translate('progressTotalInterp', [episodeFileCount, episodeCount, totalEpisodeCount])}
       width={posterWidth}
     />
   );

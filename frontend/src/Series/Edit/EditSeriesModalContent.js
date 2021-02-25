@@ -81,37 +81,37 @@ class EditSeriesModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Edit - {title}
+          {translate('edit')} - {title}
         </ModalHeader>
 
         <ModalBody>
           <Form {...otherProps}>
             <FormGroup>
-              <FormLabel>Monitored</FormLabel>
+              <FormLabel>{translate('monitored')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="monitored"
-                helpText="Download monitored episodes in this series"
+                helpText={translate('downloadMonitoredInThisSeries')}
                 {...monitored}
                 onChange={onInputChange}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Use Season Folder</FormLabel>
+              <FormLabel>{translate('useSeasonFolder')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="seasonFolder"
-                helpText="Sort episodes into season folders"
+                helpText={translate('useSeasonFolderHelpText')}
                 {...seasonFolder}
                 onChange={onInputChange}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Quality Profile</FormLabel>
+              <FormLabel>{translate('qualityProfile')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.QUALITY_PROFILE_SELECT}
@@ -136,7 +136,7 @@ class EditSeriesModalContent extends Component {
             }
 
             <FormGroup>
-              <FormLabel>Series Type</FormLabel>
+              <FormLabel>{translate('seriesType')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.SERIES_TYPE_SELECT}
@@ -158,7 +158,7 @@ class EditSeriesModalContent extends Component {
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Tags</FormLabel>
+              <FormLabel>{translate('tags')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.TAG}

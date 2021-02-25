@@ -4,6 +4,7 @@ import { align } from 'Helpers/Props';
 import ViewMenu from 'Components/Menu/ViewMenu';
 import MenuContent from 'Components/Menu/MenuContent';
 import ViewMenuItem from 'Components/Menu/ViewMenuItem';
+import translate from 'Utilities/String/translate';
 
 function SeriesIndexViewMenu(props) {
   const {
@@ -23,7 +24,7 @@ function SeriesIndexViewMenu(props) {
           selectedView={view}
           onPress={onViewSelect}
         >
-          Table
+          {translate('table')}
         </ViewMenuItem>
 
         <ViewMenuItem
@@ -31,7 +32,7 @@ function SeriesIndexViewMenu(props) {
           selectedView={view}
           onPress={onViewSelect}
         >
-          Posters
+          {translate('posters')}
         </ViewMenuItem>
 
         <ViewMenuItem
@@ -39,7 +40,7 @@ function SeriesIndexViewMenu(props) {
           selectedView={view}
           onPress={onViewSelect}
         >
-          Overview
+          {translate('overview')}
         </ViewMenuItem>
       </MenuContent>
     </ViewMenu>

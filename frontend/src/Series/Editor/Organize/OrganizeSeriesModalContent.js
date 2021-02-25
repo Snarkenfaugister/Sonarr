@@ -21,12 +21,12 @@ function OrganizeSeriesModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        Organize Selected Series
+        {translate('organizeSelectedSeries')}
       </ModalHeader>
 
       <ModalBody>
         <Alert>
-          Tip: To preview a rename, select "Cancel", then select any series title and use the
+          {translate('previewRenameHelpText')}
           <Icon
             className={styles.renameIcon}
             name={icons.ORGANIZE}
@@ -34,7 +34,7 @@ function OrganizeSeriesModalContent(props) {
         </Alert>
 
         <div className={styles.message}>
-          Are you sure you want to organize all files in the {seriesTitles.length} selected series?
+          {translate('organizeConfirm', [seriesTitles.length])}
         </div>
 
         <ul>

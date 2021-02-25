@@ -83,7 +83,7 @@ function getInfoRowProps(row, props) {
 
   if (name === 'network') {
     return {
-      title: 'Network',
+      title: translate('network'),
       iconName: icons.NETWORK,
       label: props.network
     };
@@ -91,7 +91,7 @@ function getInfoRowProps(row, props) {
 
   if (name === 'qualityProfileId') {
     return {
-      title: 'Quality Profile',
+      title: translate('qualityProfile'),
       iconName: icons.PROFILE,
       label: props.qualityProfile.name
     };
@@ -107,7 +107,7 @@ function getInfoRowProps(row, props) {
     } = props;
 
     return {
-      title: `Previous Airing: ${formatDateTime(previousAiring, longDateFormat, timeFormat)}`,
+      title: translate('previousAiringInterp', [formatDateTime(previousAiring, longDateFormat, timeFormat)]),
       iconName: icons.CALENDAR,
       label: getRelativeDate(
         previousAiring,
@@ -131,7 +131,7 @@ function getInfoRowProps(row, props) {
     } = props;
 
     return {
-      title: `Added: ${formatDateTime(added, longDateFormat, timeFormat)}`,
+      title: translate('addedInterp', [formatDateTime(added, longDateFormat, timeFormat)]),
       iconName: icons.ADD,
       label: getRelativeDate(
         added,
@@ -147,16 +147,16 @@ function getInfoRowProps(row, props) {
 
   if (name === 'seasonCount') {
     const { seasonCount } = props;
-    let seasons = '1 season';
+    let seasons = translate('oneSeason');
 
     if (seasonCount === 0) {
-      seasons = 'No seasons';
+      seasons = translate('noSeasons');
     } else if (seasonCount > 1) {
-      seasons = `${seasonCount} seasons`;
+      seasons = translate('seasonsInterp', [seasonCount]);
     }
 
     return {
-      title: 'Season Count',
+      title: translate('seasonCount'),
       iconName: icons.CIRCLE,
       label: seasons
     };
@@ -172,7 +172,7 @@ function getInfoRowProps(row, props) {
 
   if (name === 'sizeOnDisk') {
     return {
-      title: 'Size on Disk',
+      title: translate('sizeOnDisk'),
       iconName: icons.DRIVE,
       label: formatBytes(props.sizeOnDisk)
     };
