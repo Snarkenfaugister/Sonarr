@@ -86,8 +86,8 @@ class ImportListExclusion extends Component {
         <ConfirmModal
           isOpen={this.state.isDeleteImportListExclusionModalOpen}
           kind={kinds.DANGER}
-          title="Delete Import List Exclusion"
-          message="Are you sure you want to delete this import list exclusion?"
+          title={translate('deleteImportListExclusion')}
+          message={translate('areYouSureYouWantToDeleteThisImportListExclusion')}
           confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteImportListExclusion}
           onCancel={this.onDeleteImportListExclusionModalClose}

@@ -53,7 +53,7 @@ class EditDownloadClientModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          {`${id ? 'Edit' : 'Add'} Download Client - ${implementationName}`}
+          {`${id ? translate('editDownloadClient') : translate('addDownloadClient')} - ${implementationName}`}
         </ModalHeader>
 
         <ModalBody>
@@ -64,7 +64,7 @@ class EditDownloadClientModalContent extends Component {
 
           {
             !isFetching && !!error &&
-              <div>Unable to add a new download client, please try again.</div>
+              <div>{translate('unableToAddANewDownloadClientPleaseTryAgain')}</div>
           }
 
           {
@@ -81,7 +81,7 @@ class EditDownloadClientModalContent extends Component {
                 }
 
                 <FormGroup>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{translate('name')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.TEXT}
@@ -92,7 +92,7 @@ class EditDownloadClientModalContent extends Component {
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Enable</FormLabel>
+                  <FormLabel>{translate('enable')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.CHECK}
@@ -121,12 +121,12 @@ class EditDownloadClientModalContent extends Component {
                   advancedSettings={advancedSettings}
                   isAdvanced={true}
                 >
-                  <FormLabel>Client Priority</FormLabel>
+                  <FormLabel>{translate('clientPriority')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.NUMBER}
                     name="priority"
-                    helpText="Prioritize multiple Download Clients. Round-Robin is used for clients with the same priority."
+                    helpText={translate('priorityHelpText')}
                     min={1}
                     max={50}
                     {...priority}
@@ -154,7 +154,7 @@ class EditDownloadClientModalContent extends Component {
             error={saveError}
             onPress={onTestPress}
           >
-            Test
+            {translate('test')}
           </SpinnerErrorButton>
 
           <Button

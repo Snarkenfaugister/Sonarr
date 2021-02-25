@@ -67,7 +67,7 @@ export const defaultState = {
     },
     {
       name: 'seasonFolder',
-      label: 'Season Folder',
+      label: translate('seasonFolder'),
       isSortable: true,
       isVisible: true
     },

@@ -26,7 +26,7 @@ const columns = [
   },
   {
     name: 'name',
-    label: 'Name',
+    label: translate('name'),
     isVisible: true
   }
 ];

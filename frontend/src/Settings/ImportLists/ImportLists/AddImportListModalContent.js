@@ -32,7 +32,7 @@ class AddImportListModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Add List
+          {translate('addList')}
         </ModalHeader>
 
         <ModalBody>
@@ -44,7 +44,7 @@ class AddImportListModalContent extends Component {
 
           {
             !isSchemaFetching && !!schemaError ?
-              <div>Unable to add a new list, please try again.</div> :
+              <div>{translate('unableToAddANewListPleaseTryAgain')}</div> :
               null
           }
 
@@ -53,13 +53,13 @@ class AddImportListModalContent extends Component {
               <div>
 
                 <Alert kind={kinds.INFO}>
-                  <div>Sonarr supports multiple lists for importing Series into the database.</div>
-                  <div>For more information on the individual lists, click on the info buttons.</div>
+                  <div>{translate('sonarrSupportsMultipleLists')}</div>
+                  <div>{translate('forMoreInformationOnTheIndividualListsClinkOnTheInfoButtons')}</div>
                 </Alert>
                 {
                   Object.keys(listGroups).map((key) => {
                     return (
-                      <FieldSet legend={`${titleCase(key)} List`} key={key}>
+                      <FieldSet legend={translate('listInterp', [titleCase(key)])} key={key}>
                         <div className={styles.lists}>
                           {
                             listGroups[key].map((list) => {

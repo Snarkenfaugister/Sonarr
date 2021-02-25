@@ -15,6 +15,7 @@ import LoggingSettings from './LoggingSettings';
 import ProxySettings from './ProxySettings';
 import SecuritySettings from './SecuritySettings';
 import UpdateSettings from './UpdateSettings';
+import translate from 'Utilities/String/translate';
 
 const requiresRestartKeys = [
   'bindAddress',
@@ -112,7 +113,7 @@ class GeneralSettings extends Component {
     } = this.props;
 
     return (
-      <PageContent title="General Settings">
+      <PageContent title={translate('generalSettings')}>
         <SettingsToolbarConnector
           {...otherProps}
         />
@@ -125,7 +126,7 @@ class GeneralSettings extends Component {
 
           {
             !isFetching && error &&
-              <div>Unable to load General settings</div>
+              <div>{translate('unableToLoadGeneralSettings')}</div>
           }
 
           {
@@ -184,12 +185,12 @@ class GeneralSettings extends Component {
         <ConfirmModal
           isOpen={this.state.isRestartRequiredModalOpen}
           kind={kinds.DANGER}
-          title="Restart Sonarr"
+          title={translate('restartSonarr')}
           message={
-            `Sonarr requires a restart to apply changes, do you want to restart now? ${isWindowsService ? 'Depending which user is running the Sonarr service you may need to restart Sonarr as admin once before the service will start automatically.' : ''}`
+            `${translate('restartSonarrHelpText')} ${isWindowsService ? translate('restartSonarrHelpTextWindows') : ''}`
           }
-          cancelLabel="I'll restart later"
-          confirmLabel="Restart Now"
+          cancelLabel={translate('illRestartLater')}
+          confirmLabel={translate('restartNow')}
           onConfirm={this.onConfirmRestart}
           onCancel={this.onCloseRestartRequiredModalOpen}
         />

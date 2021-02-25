@@ -10,6 +10,7 @@ import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import NamingModal from './NamingModal';
 import styles from './Naming.css';
+import translate from 'Utilities/String/translate';
 
 class Naming extends Component {
 
@@ -122,12 +123,12 @@ class Naming extends Component {
     const renameEpisodes = hasSettings && settings.renameEpisodes.value;
 
     const multiEpisodeStyleOptions = [
-      { key: 0, value: 'Extend', hint: 'S01E01-02-03' },
-      { key: 1, value: 'Duplicate', hint: 'S01E01.S01E02' },
-      { key: 2, value: 'Repeat', hint: 'S01E01E02E03' },
-      { key: 3, value: 'Scene', hint: 'S01E01-E02-E03' },
-      { key: 4, value: 'Range', hint: 'S01E01-03' },
-      { key: 5, value: 'Prefixed Range', hint: 'S01E01-E03' }
+      { key: 0, value: translate('styleOptionsExtend'), hint: 'S01E01-02-03' },
+      { key: 1, value: translate('styleOptionsDuplicate'), hint: 'S01E01.S01E02' },
+      { key: 2, value: translate('styleOptionsRepeat'), hint: 'S01E01E02E03' },
+      { key: 3, value: translate('styleOptionsScene'), hint: 'S01E01-E02-E03' },
+      { key: 4, value: translate('styleOptionsRange'), hint: 'S01E01-03' },
+      { key: 5, value: translate('styleOptionsPrefixed Range'), hint: 'S01E01-E03' }
     ];
 
     const standardEpisodeFormatHelpTexts = [];
@@ -145,56 +146,56 @@ class Naming extends Component {
 
     if (examplesPopulated) {
       if (examples.singleEpisodeExample) {
-        standardEpisodeFormatHelpTexts.push(`Single Episode: ${examples.singleEpisodeExample}`);
+        standardEpisodeFormatHelpTexts.push(translate('singleEpisodeFormatInterp', [examples.singleEpisodeExample]));
       } else {
-        standardEpisodeFormatErrors.push({ message: 'Single Episode: Invalid Format' });
+        standardEpisodeFormatErrors.push({ message: translate('singleEpisodeFormatInterp', [translate('invalidFormat')]) });
       }
 
       if (examples.multiEpisodeExample) {
-        standardEpisodeFormatHelpTexts.push(`Multi Episode: ${examples.multiEpisodeExample}`);
+        standardEpisodeFormatHelpTexts.push(translate('multiEpisodeFormatInterp', [examples.multiEpisodeExample]));
       } else {
-        standardEpisodeFormatErrors.push({ message: 'Multi Episode: Invalid Format' });
+        standardEpisodeFormatErrors.push({ message: translate('multiEpisodeFormatInterp', [translate('invalidFormat')]) });
       }
 
       if (examples.dailyEpisodeExample) {
-        dailyEpisodeFormatHelpTexts.push(`Example: ${examples.dailyEpisodeExample}`);
+        dailyEpisodeFormatHelpTexts.push(translate('singleEpisodeFormatInterp', [examples.dailyEpisodeExample]));
       } else {
-        dailyEpisodeFormatErrors.push({ message: 'Invalid Format' });
+        dailyEpisodeFormatErrors.push({ message: translate('invalidFormat') });
       }
 
       if (examples.animeEpisodeExample) {
         animeEpisodeFormatHelpTexts.push(`Single Episode: ${examples.animeEpisodeExample}`);
       } else {
-        animeEpisodeFormatErrors.push({ message: 'Single Episode: Invalid Format' });
+        animeEpisodeFormatErrors.push({ message: translate('singleEpisodeFormatInterp', [translate('invalidFormat')]) });
       }
 
       if (examples.animeMultiEpisodeExample) {
-        animeEpisodeFormatHelpTexts.push(`Multi Episode: ${examples.animeMultiEpisodeExample}`);
+        animeEpisodeFormatHelpTexts.push(translate('multiEpisodeFormatInterp', [examples.animeMultiEpisodeExample]));
       } else {
-        animeEpisodeFormatErrors.push({ message: 'Multi Episode: Invalid Format' });
+        animeEpisodeFormatErrors.push({ message: translate('multiEpisodeFormatInterp', [translate('invalidFormat')]) });
       }
 
       if (examples.seriesFolderExample) {
-        seriesFolderFormatHelpTexts.push(`Example: ${examples.seriesFolderExample}`);
+        seriesFolderFormatHelpTexts.push(translate('singleEpisodeFormatInterp', [examples.seriesFolderExample]));
       } else {
-        seriesFolderFormatErrors.push({ message: 'Invalid Format' });
+        seriesFolderFormatErrors.push({ message: translate('invalidFormat') });
       }
 
       if (examples.seasonFolderExample) {
-        seasonFolderFormatHelpTexts.push(`Example: ${examples.seasonFolderExample}`);
+        seasonFolderFormatHelpTexts.push(translate('exampleFormatInterp', [examples.seasonFolderExample]));
       } else {
-        seasonFolderFormatErrors.push({ message: 'Invalid Format' });
+        seasonFolderFormatErrors.push({ message: translate('invalidFormat') });
       }
 
       if (examples.specialsFolderExample) {
-        specialsFolderFormatHelpTexts.push(`Example: ${examples.specialsFolderExample}`);
+        specialsFolderFormatHelpTexts.push(translate('exampleFormatInterp', [examples.specialsFolderExample]));
       } else {
-        specialsFolderFormatErrors.push({ message: 'Invalid Format' });
+        specialsFolderFormatErrors.push({ message: translate('invalidFormat') });
       }
     }
 
     return (
-      <FieldSet legend="Episode Naming">
+      <FieldSet legend={translate('episodeNaming')}>
         {
           isFetching &&
             <LoadingIndicator />
@@ -202,31 +203,31 @@ class Naming extends Component {
 
         {
           !isFetching && error &&
-            <div>Unable to load Naming settings</div>
+            <div>{translate('unableToLoadNamingSettings')}</div>
         }
 
         {
           hasSettings && !isFetching && !error &&
             <Form>
               <FormGroup size={sizes.MEDIUM}>
-                <FormLabel>Rename Episodes</FormLabel>
+                <FormLabel>{translate('renameEpisodes')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="renameEpisodes"
-                  helpText="Sonarr will use the existing file name if renaming is disabled"
+                  helpText={translate('renameEpisodesHelpText')}
                   onChange={onInputChange}
                   {...settings.renameEpisodes}
                 />
               </FormGroup>
 
               <FormGroup size={sizes.MEDIUM}>
-                <FormLabel>Replace Illegal Characters</FormLabel>
+                <FormLabel>{translate('replaceIllegalCharacters')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="replaceIllegalCharacters"
-                  helpText="Replace illegal characters. If unchecked, Sonarr will remove them instead"
+                  helpText={translate('replaceIllegalCharactersHelpText')}
                   onChange={onInputChange}
                   {...settings.replaceIllegalCharacters}
                 />
@@ -236,7 +237,7 @@ class Naming extends Component {
                 renameEpisodes &&
                   <div>
                     <FormGroup size={sizes.LARGE}>
-                      <FormLabel>Standard Episode Format</FormLabel>
+                      <FormLabel>{translate('standardEpisodeFormat')}</FormLabel>
 
                       <FormInputGroup
                         inputClassName={styles.namingInput}
@@ -251,7 +252,7 @@ class Naming extends Component {
                     </FormGroup>
 
                     <FormGroup size={sizes.LARGE}>
-                      <FormLabel>Daily Episode Format</FormLabel>
+                      <FormLabel>{translate('dailyEpisodeFormat')}</FormLabel>
 
                       <FormInputGroup
                         inputClassName={styles.namingInput}
@@ -266,7 +267,7 @@ class Naming extends Component {
                     </FormGroup>
 
                     <FormGroup size={sizes.LARGE}>
-                      <FormLabel>Anime Episode Format</FormLabel>
+                      <FormLabel>{translate('animeEpisodeFormat')}</FormLabel>
 
                       <FormInputGroup
                         inputClassName={styles.namingInput}
@@ -286,7 +287,7 @@ class Naming extends Component {
                 advancedSettings={advancedSettings}
                 isAdvanced={true}
               >
-                <FormLabel>Series Folder Format</FormLabel>
+                <FormLabel>{translate('seriesFolderFormat')}</FormLabel>
 
                 <FormInputGroup
                   inputClassName={styles.namingInput}
@@ -295,13 +296,13 @@ class Naming extends Component {
                   buttons={<FormInputButton onPress={this.onSeriesFolderNamingModalOpenClick}>?</FormInputButton>}
                   onChange={onInputChange}
                   {...settings.seriesFolderFormat}
-                  helpTexts={['Used when adding a new series or moving series via the series editor', ...seriesFolderFormatHelpTexts]}
+                  helpTexts={[translate('seriesFolderFormatHelpText'), ...seriesFolderFormatHelpTexts]}
                   errors={[...seriesFolderFormatErrors, ...settings.seriesFolderFormat.errors]}
                 />
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Season Folder Format</FormLabel>
+                <FormLabel>{translate('seasonFolderFormat')}</FormLabel>
 
                 <FormInputGroup
                   inputClassName={styles.namingInput}
@@ -319,7 +320,7 @@ class Naming extends Component {
                 advancedSettings={advancedSettings}
                 isAdvanced={true}
               >
-                <FormLabel>Specials Folder Format</FormLabel>
+                <FormLabel>{translate('specialsFolderFormat')}</FormLabel>
 
                 <FormInputGroup
                   inputClassName={styles.namingInput}
@@ -334,7 +335,7 @@ class Naming extends Component {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Multi-Episode Style</FormLabel>
+                <FormLabel>{translate('multiEpisodeStyle')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.SELECT}

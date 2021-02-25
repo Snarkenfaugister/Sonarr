@@ -32,7 +32,7 @@ class AddDownloadClientModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Add Download Client
+          {translate('addDownloadClient')}
         </ModalHeader>
 
         <ModalBody>
@@ -43,7 +43,7 @@ class AddDownloadClientModalContent extends Component {
 
           {
             !isSchemaFetching && !!schemaError &&
-              <div>Unable to add a new downloadClient, please try again.</div>
+              <div>{translate('unableToAddANewDownloadClientPleaseTryAgain')}</div>
           }
 
           {
@@ -51,11 +51,11 @@ class AddDownloadClientModalContent extends Component {
               <div>
 
                 <Alert kind={kinds.INFO}>
-                  <div>Sonarr supports any downloadClient that uses the Newznab standard, as well as other downloadClients listed below.</div>
-                  <div>For more information on the individual downloadClients, clink on the info buttons.</div>
+                  <div>{translate('sonarrSupportsAnyDownloadClient')}</div>
+                  <div>{translate('forMoreInformationOnTheIndividualDownloadClients')}</div>
                 </Alert>
 
-                <FieldSet legend="Usenet">
+                <FieldSet legend={translate('usenet')}>
                   <div className={styles.downloadClients}>
                     {
                       usenetDownloadClients.map((downloadClient) => {
@@ -72,7 +72,7 @@ class AddDownloadClientModalContent extends Component {
                   </div>
                 </FieldSet>
 
-                <FieldSet legend="Torrents">
+                <FieldSet legend={translate('torrents')}>
                   <div className={styles.downloadClients}>
                     {
                       torrentDownloadClients.map((downloadClient) => {

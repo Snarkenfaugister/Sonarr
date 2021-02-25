@@ -6,6 +6,7 @@ import FieldSet from 'Components/FieldSet';
 import FormGroup from 'Components/Form/FormGroup';
 import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
+import translate from 'Utilities/String/translate';
 
 const branchValues = [
   'master',
@@ -42,10 +43,10 @@ function UpdateSettings(props) {
       value: titleCase(packageUpdateMechanism)
     });
   } else {
-    updateOptions.push({ key: 'builtIn', value: 'Built-In' });
+    updateOptions.push({ key: 'builtIn', value: translate('builtIn') });
   }
 
-  updateOptions.push({ key: 'script', value: 'Script' });
+  updateOptions.push({ key: 'script', value: translate('script') });
 
   return (
     <FieldSet legend="Updates">
@@ -53,12 +54,12 @@ function UpdateSettings(props) {
         advancedSettings={advancedSettings}
         isAdvanced={true}
       >
-        <FormLabel>Branch</FormLabel>
+        <FormLabel>{translate('branch')}</FormLabel>
 
         <FormInputGroup
           type={inputTypes.AUTO_COMPLETE}
           name="branch"
-          helpText={usingExternalUpdateMechanism ? 'Branch used by external update mechanism' : 'Branch to use to update Sonarr'}
+          helpText={usingExternalUpdateMechanism ? translate('branchUpdateMechanism') : translate('branchUpdate')}
           helpLink="https://wiki.servarr.com/Sonarr_Settings#Updates"
           {...branch}
           values={branchValues}
@@ -75,12 +76,12 @@ function UpdateSettings(props) {
               isAdvanced={true}
               size={sizes.MEDIUM}
             >
-              <FormLabel>Automatic</FormLabel>
+              <FormLabel>{translate('automatic')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.CHECK}
                 name="updateAutomatically"
-                helpText="Automatically download and install updates. You will still be able to install from System: Updates"
+                helpText={translate('updateAutomaticallyHelpText')}
                 onChange={onInputChange}
                 {...updateAutomatically}
               />
@@ -90,13 +91,13 @@ function UpdateSettings(props) {
               advancedSettings={advancedSettings}
               isAdvanced={true}
             >
-              <FormLabel>Mechanism</FormLabel>
+              <FormLabel>{translate('mechanism')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.SELECT}
                 name="updateMechanism"
                 values={updateOptions}
-                helpText="Use Sonarr's built-in updater or a script"
+                helpText={translate('updateMechanismHelpText')}
                 helpLink="https://wiki.servarr.com/Sonarr_Settings#Updates"
                 onChange={onInputChange}
                 {...updateMechanism}
@@ -109,12 +110,12 @@ function UpdateSettings(props) {
                 advancedSettings={advancedSettings}
                 isAdvanced={true}
               >
-                <FormLabel>Script Path</FormLabel>
+                <FormLabel>{translate('scriptPath')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.TEXT}
                   name="updateScriptPath"
-                  helpText="Path to a custom script that takes an extracted update package and handle the remainder of the update process"
+                  helpText={translate('updateScriptPathHelpText')}
                   onChange={onInputChange}
                   {...updateScriptPath}
                 />

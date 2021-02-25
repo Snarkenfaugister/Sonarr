@@ -92,7 +92,7 @@ function EditNotificationModalContent(props) {
               }
 
               <FormGroup>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{translate('name')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.TEXT}
@@ -277,7 +277,7 @@ function EditNotificationModalContent(props) {
           error={saveError}
           onPress={onTestPress}
         >
-          Test
+          {translate('test')}
         </SpinnerErrorButton>
 
         <Button

@@ -153,7 +153,7 @@ class Notification extends Component {
               kind={kinds.DISABLED}
               outline={true}
             >
-              Disabled
+              {translate('disabled')}
             </Label> :
             null
         }

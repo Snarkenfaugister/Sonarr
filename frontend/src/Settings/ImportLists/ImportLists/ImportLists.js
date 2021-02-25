@@ -10,6 +10,7 @@ import ImportList from './ImportList';
 import AddImportListModal from './AddImportListModal';
 import EditImportListModalConnector from './EditImportListModalConnector';
 import styles from './ImportLists.css';
+import translate from 'Utilities/String/translate';
 
 class ImportLists extends Component {
 
@@ -60,10 +61,10 @@ class ImportLists extends Component {
 
     return (
       <FieldSet
-        legend="Import Lists"
+        legend={translate('importLists')}
       >
         <PageSectionContent
-          errorMessage="Unable to load Lists"
+          errorMessage={translate('unableToLoadLists')}
           {...otherProps}
         >
           <div className={styles.lists}>

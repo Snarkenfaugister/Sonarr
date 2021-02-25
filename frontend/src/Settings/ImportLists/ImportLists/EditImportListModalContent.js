@@ -57,7 +57,7 @@ function EditImportListModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        {id ? 'Edit List' : 'Add List'}
+        {id ? translate('editList') : translate('addList')}
       </ModalHeader>
 
       <ModalBody>
@@ -69,7 +69,7 @@ function EditImportListModalContent(props) {
 
         {
           !isFetching && !!error ?
-            <div>Unable to add a new list, please try again.</div> :
+            <div>{translate('unableToAddANewListPleaseTryAgain')}</div> :
             null
         }
 
@@ -77,7 +77,7 @@ function EditImportListModalContent(props) {
           !isFetching && !error ?
             <Form {...otherProps}>
               <FormGroup>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{translate('name')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.TEXT}
@@ -88,12 +88,12 @@ function EditImportListModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Enable Automatic Add</FormLabel>
+                <FormLabel>{translate('enableAutomaticAdd')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="enableAutomaticAdd"
-                  helpText={'Add series to Sonarr when syncs are performed via the UI or by Sonarr'}
+                  helpText={translate('listEnableAutomaticSearchHelpText')}
                   {...enableAutomaticAdd}
                   onChange={onInputChange}
                 />
@@ -125,12 +125,12 @@ function EditImportListModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Root Folder</FormLabel>
+                <FormLabel>{translate('rootFolder')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.ROOT_FOLDER_SELECT}
                   name="rootFolderPath"
-                  helpText={'Root Folder list items will be added to'}
+                  helpText={translate('listRootFolderHelpText')}
                   {...rootFolderPath}
                   includeMissingValue={true}
                   onChange={onInputChange}
@@ -143,7 +143,7 @@ function EditImportListModalContent(props) {
                 <FormInputGroup
                   type={inputTypes.QUALITY_PROFILE_SELECT}
                   name="qualityProfileId"
-                  helpText={'Quality Profile list items will be added with'}
+                  helpText={translate('listQualityProfileHelpText')}
                   {...qualityProfileId}
                   onChange={onInputChange}
                 />
@@ -155,7 +155,7 @@ function EditImportListModalContent(props) {
                 <FormInputGroup
                   type={inputTypes.LANGUAGE_PROFILE_SELECT}
                   name="languageProfileId"
-                  helpText={'Language Profile list items will be added with'}
+                  helpText={translate('listLanguageProfileHelpText')}
                   {...languageProfileId}
                   onChange={onInputChange}
                 />
@@ -172,7 +172,7 @@ function EditImportListModalContent(props) {
                         name={icons.INFO}
                       />
                     }
-                    title="Series Types"
+                    title={translate('seriesTypes')}
                     body={<SeriesTypePopoverContent />}
                     position={tooltipPositions.RIGHT}
                   />
@@ -187,7 +187,7 @@ function EditImportListModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Season Folder</FormLabel>
+                <FormLabel>{translate('seasonFolder')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
@@ -198,12 +198,12 @@ function EditImportListModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Sonarr Tags</FormLabel>
+                <FormLabel>{translate('sonarrTags')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.TAG}
                   name="tags"
-                  helpText="Tags list items will be added with"
+                  helpText={translate('listTagsHelpText')}
                   {...tags}
                   onChange={onInputChange}
                 />
@@ -251,7 +251,7 @@ function EditImportListModalContent(props) {
           error={saveError}
           onPress={onTestPress}
         >
-          Test
+          {translate('test')}
         </SpinnerErrorButton>
 
         <Button

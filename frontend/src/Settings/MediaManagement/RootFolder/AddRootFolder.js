@@ -5,6 +5,7 @@ import Button from 'Components/Link/Button';
 import Icon from 'Components/Icon';
 import FileBrowserModal from 'Components/FileBrowser/FileBrowserModal';
 import styles from './AddRootFolder.css';
+import translate from 'Utilities/String/translate';
 
 class AddRootFolder extends Component {
 
@@ -49,7 +50,7 @@ class AddRootFolder extends Component {
             className={styles.importButtonIcon}
             name={icons.DRIVE}
           />
-          Add Root Folder
+          {translate('addRootFolder')}
         </Button>
 
         <FileBrowserModal

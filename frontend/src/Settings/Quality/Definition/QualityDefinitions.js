@@ -4,6 +4,7 @@ import FieldSet from 'Components/FieldSet';
 import PageSectionContent from 'Components/Page/PageSectionContent';
 import QualityDefinitionConnector from './QualityDefinitionConnector';
 import styles from './QualityDefinitions.css';
+import translate from 'Utilities/String/translate';
 
 class QualityDefinitions extends Component {
 
@@ -25,7 +26,7 @@ class QualityDefinitions extends Component {
         >
           <div className={styles.header}>
             <div className={styles.quality}>Quality</div>
-            <div className={styles.title}>Title</div>
+            <div className={styles.title}>{translate('title')}</div>
             <div className={styles.sizeLimit}>Size Limit</div>
 
             {

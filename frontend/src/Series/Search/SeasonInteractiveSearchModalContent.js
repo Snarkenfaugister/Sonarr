@@ -20,7 +20,7 @@ function SeasonInteractiveSearchModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        Interactive Search  {seasonNumber != null && <SeasonNumber seasonNumber={seasonNumber} />}
+        {translate('interactiveSearch')}  {seasonNumber != null && <SeasonNumber seasonNumber={seasonNumber} />}
       </ModalHeader>
 
       <ModalBody scrollDirection={scrollDirections.BOTH}>

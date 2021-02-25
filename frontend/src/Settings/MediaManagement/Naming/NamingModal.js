@@ -16,16 +16,16 @@ import styles from './NamingModal.css';
 import translate from 'Utilities/String/translate';
 
 const separatorOptions = [
-  { key: ' ', value: 'Space ( )' },
-  { key: '.', value: 'Period (.)' },
-  { key: '_', value: 'Underscore (_)' },
-  { key: '-', value: 'Dash (-)' }
+  { key: ' ', value: `${translate('separatorSpace')} ( )` },
+  { key: '.', value: `${translate('separatorPeriod')} (.)` },
+  { key: '_', value: `${translate('separatorUnderscore')} (_)` },
+  { key: '-', value: `${translate('separatorDash')} (-)` }
 ];
 
 const caseOptions = [
-  { key: 'title', value: 'Default Case' },
-  { key: 'lower', value: 'Lower Case' },
-  { key: 'upper', value: 'Upper Case' }
+  { key: 'title', value: translate('defaultCase') },
+  { key: 'lower', value: translate('lowerCase') },
+  { key: 'upper', value: translate('upperCase') }
 ];
 
 const fileNameTokens = [
@@ -204,7 +204,7 @@ class NamingModal extends Component {
       >
         <ModalContent onModalClose={onModalClose}>
           <ModalHeader>
-            File Name Tokens
+            {translate('fileNameTokens')}
           </ModalHeader>
 
           <ModalBody>
@@ -228,7 +228,7 @@ class NamingModal extends Component {
 
             {
               !advancedSettings &&
-                <FieldSet legend="File Names">
+                <FieldSet legend={translate('fileNames')}>
                   <div className={styles.groups}>
                     {
                       fileNameTokens.map(({ token, example }) => {
@@ -275,7 +275,7 @@ class NamingModal extends Component {
               </div>
             </FieldSet>
 
-            <FieldSet legend="Series ID">
+            <FieldSet legend={translate('seriesId')}>
               <div className={styles.groups}>
                 {
                   seriesIdTokens.map(({ token, example }) => {
@@ -299,7 +299,7 @@ class NamingModal extends Component {
 
             {
               season &&
-                <FieldSet legend="Season">
+                <FieldSet legend={translate('season')}>
                   <div className={styles.groups}>
                     {
                       seasonTokens.map(({ token, example }) => {
@@ -325,7 +325,7 @@ class NamingModal extends Component {
             {
               episode &&
                 <div>
-                  <FieldSet legend="Episode">
+                  <FieldSet legend={translate('episode')}>
                     <div className={styles.groups}>
                       {
                         episodeTokens.map(({ token, example }) => {
@@ -347,7 +347,7 @@ class NamingModal extends Component {
                     </div>
                   </FieldSet>
 
-                  <FieldSet legend="Air-Date">
+                  <FieldSet legend={translate('airDate')}>
                     <div className={styles.groups}>
                       {
                         airDateTokens.map(({ token, example }) => {
@@ -371,7 +371,7 @@ class NamingModal extends Component {
 
                   {
                     anime &&
-                      <FieldSet legend="Absolute Episode Number">
+                      <FieldSet legend={translate('absoluteEpisodeNumber')}>
                         <div className={styles.groups}>
                           {
                             absoluteTokens.map(({ token, example }) => {
@@ -399,7 +399,7 @@ class NamingModal extends Component {
             {
               additional &&
                 <div>
-                  <FieldSet legend="Episode Title">
+                  <FieldSet legend={translate('episodeTitle')}>
                     <div className={styles.groups}>
                       {
                         episodeTitleTokens.map(({ token, example }) => {
@@ -421,7 +421,7 @@ class NamingModal extends Component {
                     </div>
                   </FieldSet>
 
-                  <FieldSet legend="Quality">
+                  <FieldSet legend={translate('quality')}>
                     <div className={styles.groups}>
                       {
                         qualityTokens.map(({ token, example }) => {
@@ -443,7 +443,7 @@ class NamingModal extends Component {
                     </div>
                   </FieldSet>
 
-                  <FieldSet legend="Media Info">
+                  <FieldSet legend={translate('mediaInfo')}>
                     <div className={styles.groups}>
                       {
                         mediaInfoTokens.map(({ token, example, footNote }) => {
@@ -467,14 +467,11 @@ class NamingModal extends Component {
 
                     <div className={styles.footNote}>
                       <Icon className={styles.icon} name={icons.FOOTNOTE} />
-                      <div>
-                        MediaInfo Full/AudioLanguages/SubtitleLanguages support a <code>:EN+DE</code> suffix allowing you to filter the languages included in the filename. Use <code>-DE</code> to exclude specific languages.
-                        Appending <code>+</code> (eg <code>:EN+</code>) will output <code>[EN]</code>/<code>[EN+--]</code>/<code>[--]</code> depending on excluded languages. For example <code>{'{'}MediaInfo Full:EN+DE{'}'}</code>.
-                      </div>
+                      <div dangerouslySetInnerHTML={{ __html: `${translate('namingMediaInfoHelpText1', ['<code>:EN+DE</code>', '<code>-DE</code>'])}\n${translate('namingMediaInfoHelpText2', ['<code>+</code>', '<code>:EN+</code>', '<code>[EN]</code>/<code>[EN+--]</code>/<code>[--]</code>', '<code>{MediaInfo Full:EN+DE}</code>'])}` }} />
                     </div>
                   </FieldSet>
 
-                  <FieldSet legend="Other">
+                  <FieldSet legend={translate('other')}>
                     <div className={styles.groups}>
                       {
                         otherTokens.map(({ token, example }) => {
@@ -496,7 +493,7 @@ class NamingModal extends Component {
                     </div>
                   </FieldSet>
 
-                  <FieldSet legend="Original">
+                  <FieldSet legend={translate('original')}>
                     <div className={styles.groups}>
                       {
                         originalTokens.map(({ token, example }) => {

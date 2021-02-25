@@ -8,6 +8,7 @@ import PageSectionContent from 'Components/Page/PageSectionContent';
 import RemotePathMapping from './RemotePathMapping';
 import EditRemotePathMappingModalConnector from './EditRemotePathMappingModalConnector';
 import styles from './RemotePathMappings.css';
+import translate from 'Utilities/String/translate';
 
 class RemotePathMappings extends Component {
 
@@ -44,15 +45,15 @@ class RemotePathMappings extends Component {
     } = this.props;
 
     return (
-      <FieldSet legend="Remote Path Mappings">
+      <FieldSet legend={translate('remotePathMappings')}>
         <PageSectionContent
-          errorMessage="Unable to load Remote Path Mappings"
+          errorMessage={translate('unableToLoadRemotePathMappings')}
           {...otherProps}
         >
           <div className={styles.remotePathMappingsHeader}>
-            <div className={styles.host}>Host</div>
-            <div className={styles.path}>Remote Path</div>
-            <div className={styles.path}>Local Path</div>
+            <div className={styles.host}>{translate('host')}</div>
+            <div className={styles.path}>{translate('remotePath')}</div>
+            <div className={styles.path}>{translate('localPath')}</div>
           </div>
 
           <div>

@@ -39,7 +39,7 @@ function EditImportListExclusionModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        {id ? 'Edit Import List Exclusion' : 'Add Import List Exclusion'}
+        {id ? translate('editImportListExclusion') : translate('addImportListExclusion')}
       </ModalHeader>
 
       <ModalBody className={styles.body}>
@@ -50,7 +50,7 @@ function EditImportListExclusionModalContent(props) {
 
         {
           !isFetching && !!error &&
-            <div>Unable to add a new import list exclusion, please try again.</div>
+            <div>{translate('unableToAddANewImportListExclusionPleaseTryAgain')}</div>
         }
 
         {
@@ -59,24 +59,24 @@ function EditImportListExclusionModalContent(props) {
               {...otherProps}
             >
               <FormGroup>
-                <FormLabel>Title</FormLabel>
+                <FormLabel>{translate('title')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.TEXT}
                   name="title"
-                  helpText="The name of the series to exclude"
+                  helpText={translate('excludeTitleHelpText')}
                   {...title}
                   onChange={onInputChange}
                 />
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>TVDB ID</FormLabel>
+                <FormLabel>{translate('tvdbId')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.TEXT}
                   name="tvdbId"
-                  helpText="The TVDB ID of the series to exclude"
+                  helpText={translate('excludeTvdbHelpText')}
                   {...tvdbId}
                   onChange={onInputChange}
                 />

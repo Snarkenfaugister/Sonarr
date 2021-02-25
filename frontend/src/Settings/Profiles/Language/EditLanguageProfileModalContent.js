@@ -62,7 +62,7 @@ function EditLanguageProfileModalContent(props) {
           !isFetching && !error &&
             <Form {...otherProps}>
               <FormGroup>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{translate('name')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.TEXT}

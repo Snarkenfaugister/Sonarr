@@ -8,6 +8,7 @@ import PageToolbarSeparator from 'Components/Page/Toolbar/PageToolbarSeparator';
 import SettingsToolbarConnector from 'Settings/SettingsToolbarConnector';
 import IndexersConnector from './Indexers/IndexersConnector';
 import IndexerOptionsConnector from './Options/IndexerOptionsConnector';
+import translate from 'Utilities/String/translate';
 
 class IndexerSettings extends Component {
 
@@ -57,7 +58,7 @@ class IndexerSettings extends Component {
     } = this.state;
 
     return (
-      <PageContent title="Indexer Settings">
+      <PageContent title={translate('indexerSettings')}>
         <SettingsToolbarConnector
           isSaving={isSaving}
           hasPendingChanges={hasPendingChanges}
@@ -66,7 +67,7 @@ class IndexerSettings extends Component {
               <PageToolbarSeparator />
 
               <PageToolbarButton
-                label="Test All Indexers"
+                label={translate('testAllIndexers')}
                 iconName={icons.TEST}
                 isSpinning={isTestingAll}
                 onPress={dispatchTestAllIndexers}

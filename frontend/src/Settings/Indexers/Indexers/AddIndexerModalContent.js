@@ -32,7 +32,7 @@ class AddIndexerModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Add Indexer
+          {translate('addIndexer')}
         </ModalHeader>
 
         <ModalBody>
@@ -43,7 +43,7 @@ class AddIndexerModalContent extends Component {
 
           {
             !isSchemaFetching && !!schemaError &&
-              <div>Unable to add a new indexer, please try again.</div>
+              <div>{translate('unableToAddANewIndexerPleaseTryAgain')}</div>
           }
 
           {
@@ -51,11 +51,11 @@ class AddIndexerModalContent extends Component {
               <div>
 
                 <Alert kind={kinds.INFO}>
-                  <div>Sonarr supports any indexer that uses the Newznab standard, as well as other indexers listed below.</div>
-                  <div>For more information on the individual indexers, clink on the info buttons.</div>
+                  <div>{translate('sonarrSupportsAnyIndexer')}</div>
+                  <div>{translate('forMoreInformationOnTheIndividualIndexers')}</div>
                 </Alert>
 
-                <FieldSet legend="Usenet">
+                <FieldSet legend={translate('usenet')}>
                   <div className={styles.indexers}>
                     {
                       usenetIndexers.map((indexer) => {
@@ -72,7 +72,7 @@ class AddIndexerModalContent extends Component {
                   </div>
                 </FieldSet>
 
-                <FieldSet legend="Torrents">
+                <FieldSet legend={translate('torrents')}>
                   <div className={styles.indexers}>
                     {
                       torrentIndexers.map((indexer) => {

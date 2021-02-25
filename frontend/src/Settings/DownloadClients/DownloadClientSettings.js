@@ -9,6 +9,7 @@ import SettingsToolbarConnector from 'Settings/SettingsToolbarConnector';
 import DownloadClientsConnector from './DownloadClients/DownloadClientsConnector';
 import DownloadClientOptionsConnector from './Options/DownloadClientOptionsConnector';
 import RemotePathMappingsConnector from './RemotePathMappings/RemotePathMappingsConnector';
+import translate from 'Utilities/String/translate';
 
 class DownloadClientSettings extends Component {
 
@@ -58,7 +59,7 @@ class DownloadClientSettings extends Component {
     } = this.state;
 
     return (
-      <PageContent title="Download Client Settings">
+      <PageContent title={translate('downloadClientSettings')}>
         <SettingsToolbarConnector
           isSaving={isSaving}
           hasPendingChanges={hasPendingChanges}
@@ -67,7 +68,7 @@ class DownloadClientSettings extends Component {
               <PageToolbarSeparator />
 
               <PageToolbarButton
-                label="Test All Clients"
+                label={translate('testAllClients')}
                 iconName={icons.TEST}
                 isSpinning={isTestingAll}
                 onPress={dispatchTestAllDownloadClients}

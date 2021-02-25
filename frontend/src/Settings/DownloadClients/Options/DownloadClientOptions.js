@@ -7,6 +7,7 @@ import Form from 'Components/Form/Form';
 import FormGroup from 'Components/Form/FormGroup';
 import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
+import translate from 'Utilities/String/translate';
 
 function DownloadClientOptions(props) {
   const {
@@ -27,21 +28,21 @@ function DownloadClientOptions(props) {
 
       {
         !isFetching && error &&
-          <div>Unable to load download client options</div>
+          <div>{translate('unableToLoadDownloadClientOptions')}</div>
       }
 
       {
         hasSettings && !isFetching && !error &&
           <div>
-            <FieldSet legend="Completed Download Handling">
+            <FieldSet legend={translate('completedDownloadHandling')}>
               <Form>
                 <FormGroup size={sizes.MEDIUM}>
-                  <FormLabel>Enable</FormLabel>
+                  <FormLabel>{translate('enable')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.CHECK}
                     name="enableCompletedDownloadHandling"
-                    helpText="Automatically import completed downloads from download client"
+                    helpText={translate('enableCompletedDownloadHandlingHelpText')}
                     onChange={onInputChange}
                     {...settings.enableCompletedDownloadHandling}
                   />
@@ -52,12 +53,12 @@ function DownloadClientOptions(props) {
                   isAdvanced={true}
                   size={sizes.MEDIUM}
                 >
-                  <FormLabel>Remove</FormLabel>
+                  <FormLabel>{translate('remove')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.CHECK}
                     name="removeCompletedDownloads"
-                    helpText="Remove imported downloads from download client history"
+                    helpText={translate('removeCompletedDownloadsHelpText')}
                     onChange={onInputChange}
                     {...settings.removeCompletedDownloads}
                   />
@@ -70,12 +71,12 @@ function DownloadClientOptions(props) {
             >
               <Form>
                 <FormGroup size={sizes.MEDIUM}>
-                  <FormLabel>Redownload</FormLabel>
+                  <FormLabel>{translate('redownload')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.CHECK}
                     name="autoRedownloadFailed"
-                    helpText="Automatically search for and attempt to download a different release"
+                    helpText={translate('autoRedownloadFailedHelpText')}
                     onChange={onInputChange}
                     {...settings.autoRedownloadFailed}
                   />
@@ -86,12 +87,12 @@ function DownloadClientOptions(props) {
                   isAdvanced={true}
                   size={sizes.MEDIUM}
                 >
-                  <FormLabel>Remove</FormLabel>
+                  <FormLabel>{translate('remove')}</FormLabel>
 
                   <FormInputGroup
                     type={inputTypes.CHECK}
                     name="removeFailedDownloads"
-                    helpText="Remove failed downloads from download client history"
+                    helpText={translate('removeFailedDownloadsHelpText')}
                     onChange={onInputChange}
                     {...settings.removeFailedDownloads}
                   />

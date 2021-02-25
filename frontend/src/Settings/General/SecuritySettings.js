@@ -9,17 +9,18 @@ import FormLabel from 'Components/Form/FormLabel';
 import FormInputGroup from 'Components/Form/FormInputGroup';
 import FormInputButton from 'Components/Form/FormInputButton';
 import ConfirmModal from 'Components/Modal/ConfirmModal';
+import translate from 'Utilities/String/translate';
 
 const authenticationMethodOptions = [
-  { key: 'none', value: 'None' },
+  { key: 'none', value: translate('none') },
   { key: 'basic', value: 'Basic (Browser Popup)' },
   { key: 'forms', value: 'Forms (Login Page)' }
 ];
 
 const certificateValidationOptions = [
-  { key: 'enabled', value: 'Enabled' },
-  { key: 'disabledForLocalAddresses', value: 'Disabled for Local Addresses' },
-  { key: 'disabled', value: 'Disabled' }
+  { key: 'enabled', value: translate('enabled') },
+  { key: 'disabledForLocalAddresses', value: translate('certValidationNoLocal') },
+  { key: 'disabled', value: translate('disabled') }
 ];
 
 class SecuritySettings extends Component {
@@ -76,16 +77,16 @@ class SecuritySettings extends Component {
     const authenticationEnabled = authenticationMethod && authenticationMethod.value !== 'none';
 
     return (
-      <FieldSet legend="Security">
+      <FieldSet legend={translate('Security')}>
         <FormGroup>
-          <FormLabel>Authentication</FormLabel>
+          <FormLabel>{translate('authentication')}</FormLabel>
 
           <FormInputGroup
             type={inputTypes.SELECT}
             name="authenticationMethod"
             values={authenticationMethodOptions}
-            helpText="Require Username and Password to access Sonarr"
-            helpTextWarning="Requires restart to take effect"
+            helpText={translate('authenticationMethodHelpText')}
+            helpTextWarning={translate('restartRequiredHelpTextWarning')}
             onChange={onInputChange}
             {...authenticationMethod}
           />
@@ -94,12 +95,12 @@ class SecuritySettings extends Component {
         {
           authenticationEnabled &&
           <FormGroup>
-            <FormLabel>Username</FormLabel>
+            <FormLabel>{translate('username')}</FormLabel>
 
             <FormInputGroup
               type={inputTypes.TEXT}
               name="username"
-              helpTextWarning="Requires restart to take effect"
+              helpTextWarning={translate('restartRequiredHelpTextWarning')}
               onChange={onInputChange}
               {...username}
             />
@@ -109,12 +110,12 @@ class SecuritySettings extends Component {
         {
           authenticationEnabled &&
           <FormGroup>
-            <FormLabel>Password</FormLabel>
+            <FormLabel>{translate('password')}</FormLabel>
 
             <FormInputGroup
               type={inputTypes.PASSWORD}
               name="password"
-              helpTextWarning="Requires restart to take effect"
+              helpTextWarning={translate('restartRequiredHelpTextWarning')}
               onChange={onInputChange}
               {...password}
             />
@@ -122,13 +123,13 @@ class SecuritySettings extends Component {
         }
 
         <FormGroup>
-          <FormLabel>API Key</FormLabel>
+          <FormLabel>{translate('apiKey')}</FormLabel>
 
           <FormInputGroup
             type={inputTypes.TEXT}
             name="apiKey"
             readOnly={true}
-            helpTextWarning="Requires restart to take effect"
+            helpTextWarning={translate('restartRequiredHelpTextWarning')}
             buttons={[
               <ClipboardButton
                 key="copy"
@@ -154,13 +155,13 @@ class SecuritySettings extends Component {
         </FormGroup>
 
         <FormGroup>
-          <FormLabel>Certificate Validation</FormLabel>
+          <FormLabel>{translate('certificateValidation')}</FormLabel>
 
           <FormInputGroup
             type={inputTypes.SELECT}
             name="certificateValidation"
             values={certificateValidationOptions}
-            helpText="Change how strict HTTPS certification validation is"
+            helpText={translate('certificateValidationHelpText')}
             onChange={onInputChange}
             {...certificateValidation}
           />
@@ -169,9 +170,9 @@ class SecuritySettings extends Component {
         <ConfirmModal
           isOpen={this.state.isConfirmApiKeyResetModalOpen}
           kind={kinds.DANGER}
-          title="Reset API Key"
-          message="Are you sure you want to reset your API Key?"
-          confirmLabel="Reset"
+          title={translate('resetAPIKey')}
+          message={translate('areYouSureYouWantToResetYourAPIKey')}
+          confirmLabel={translate('reset')}
           onConfirm={this.onConfirmResetApiKey}
           onCancel={this.onCloseResetApiKeyModal}
         />

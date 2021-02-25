@@ -5,6 +5,7 @@ import Card from 'Components/Card';
 import Label from 'Components/Label';
 import EditMetadataModalConnector from './EditMetadataModalConnector';
 import styles from './Metadata.css';
+import translate from 'Utilities/String/translate';
 
 class Metadata extends Component {
 
@@ -66,13 +67,13 @@ class Metadata extends Component {
           {
             enable ?
               <Label kind={kinds.SUCCESS}>
-                Enabled
+                {translate('enabled')}
               </Label> :
               <Label
                 kind={kinds.DISABLED}
                 outline={true}
               >
-                Disabled
+                {translate('disabled')}
               </Label>
           }
         </div>

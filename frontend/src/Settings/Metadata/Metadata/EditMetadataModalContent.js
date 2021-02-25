@@ -41,7 +41,7 @@ function EditMetadataModalContent(props) {
       <ModalBody>
         <Form {...otherProps}>
           <FormGroup>
-            <FormLabel>Enable</FormLabel>
+            <FormLabel>{translate('enable')}</FormLabel>
 
             <FormInputGroup
               type={inputTypes.CHECK}

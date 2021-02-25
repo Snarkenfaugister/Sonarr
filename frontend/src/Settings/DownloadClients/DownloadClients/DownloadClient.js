@@ -73,13 +73,13 @@ class DownloadClient extends Component {
           {
             enable ?
               <Label kind={kinds.SUCCESS}>
-                Enabled
+                {translate('enabled')}
               </Label> :
               <Label
                 kind={kinds.DISABLED}
                 outline={true}
               >
-                Disabled
+                {translate('disabled')}
               </Label>
           }
 
@@ -89,7 +89,7 @@ class DownloadClient extends Component {
                 kind={kinds.DISABLED}
                 outline={true}
               >
-                Priority: {priority}
+                {translate('priorityInterp', [priority])}
               </Label>
           }
         </div>
@@ -104,8 +104,8 @@ class DownloadClient extends Component {
         <ConfirmModal
           isOpen={this.state.isDeleteDownloadClientModalOpen}
           kind={kinds.DANGER}
-          title="Delete Download Client"
-          message={`Are you sure you want to delete the download client '${name}'?`}
+          title={translate('deleteDownloadClient')}
+          message={translate('deleteDownloadClientMessageText', [name])}
           confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteDownloadClient}
           onCancel={this.onDeleteDownloadClientModalClose}

@@ -72,7 +72,7 @@ class ImportList extends Component {
           {
             enableAutomaticAdd &&
               <Label kind={kinds.SUCCESS}>
-                Automatic Add
+                {translate('automaticAdd')}
               </Label>
           }
 
@@ -88,8 +88,8 @@ class ImportList extends Component {
         <ConfirmModal
           isOpen={this.state.isDeleteImportListModalOpen}
           kind={kinds.DANGER}
-          title="Delete Import List"
-          message={`Are you sure you want to delete the list '${name}'?`}
+          title={translate('deleteImportList')}
+          message={translate('deleteListMessageText', [name])}
           confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteImportList}
           onCancel={this.onDeleteImportListModalClose}

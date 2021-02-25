@@ -7,6 +7,7 @@ import Menu from 'Components/Menu/Menu';
 import MenuContent from 'Components/Menu/MenuContent';
 import AddImportListPresetMenuItem from './AddImportListPresetMenuItem';
 import styles from './AddImportListItem.css';
+import translate from 'Utilities/String/translate';
 
 class AddImportListItem extends Component {
 
@@ -57,7 +58,7 @@ class AddImportListItem extends Component {
                     size={sizes.SMALL}
                     onPress={this.onListSelect}
                   >
-                    Custom
+                    {translate('custom')}
                   </Button>
 
                   <Menu className={styles.presetsMenu}>
@@ -65,7 +66,7 @@ class AddImportListItem extends Component {
                       className={styles.presetsMenuButton}
                       size={sizes.SMALL}
                     >
-                      Presets
+                      {translate('presets')}
                     </Button>
 
                     <MenuContent>
@@ -90,7 +91,7 @@ class AddImportListItem extends Component {
               to={infoLink}
               size={sizes.SMALL}
             >
-              More info
+              {translate('moreInfo')}
             </Button>
           </div>
         </div>

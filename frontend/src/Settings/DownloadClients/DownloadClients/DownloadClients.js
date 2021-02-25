@@ -9,6 +9,7 @@ import DownloadClient from './DownloadClient';
 import AddDownloadClientModal from './AddDownloadClientModal';
 import EditDownloadClientModalConnector from './EditDownloadClientModalConnector';
 import styles from './DownloadClients.css';
+import translate from 'Utilities/String/translate';
 
 class DownloadClients extends Component {
 
@@ -58,9 +59,9 @@ class DownloadClients extends Component {
     } = this.state;
 
     return (
-      <FieldSet legend="Download Clients">
+      <FieldSet legend={translate('downloadClients')}>
         <PageSectionContent
-          errorMessage="Unable to load download clients"
+          errorMessage={translate('unableToLoadDownloadClients')}
           {...otherProps}
         >
           <div className={styles.downloadClients}>

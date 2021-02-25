@@ -16,27 +16,27 @@ import AddRootFolderConnector from './RootFolder/AddRootFolderConnector';
 import translate from 'Utilities/String/translate';
 
 const episodeTitleRequiredOptions = [
-  { key: 'always', value: 'Always' },
-  { key: 'bulkSeasonReleases', value: 'Only for Bulk Season Releases' },
-  { key: 'never', value: 'Never' }
+  { key: 'always', value: translate('always') },
+  { key: 'bulkSeasonReleases', value: translate('onlyForBulkReleases') },
+  { key: 'never', value: translate('never') }
 ];
 
 const rescanAfterRefreshOptions = [
-  { key: 'always', value: 'Always' },
-  { key: 'afterManual', value: 'After Manual Refresh' },
-  { key: 'never', value: 'Never' }
+  { key: 'always', value: translate('always') },
+  { key: 'afterManual', value: translate('afterManualRefresh') },
+  { key: 'never', value: translate('never') }
 ];
 
 const downloadPropersAndRepacksOptions = [
-  { key: 'preferAndUpgrade', value: 'Prefer and Upgrade' },
-  { key: 'doNotUpgrade', value: 'Do not Upgrade Automatically' },
-  { key: 'doNotPrefer', value: 'Do not Prefer' }
+  { key: 'preferAndUpgrade', value: translate('preferAndUpgrade') },
+  { key: 'doNotUpgrade', value: translate('doNotUpgradeAutomatically') },
+  { key: 'doNotPrefer', value: translate('doNotPrefer') }
 ];
 
 const fileDateOptions = [
-  { key: 'none', value: 'None' },
-  { key: 'localAirDate', value: 'Local Air Date' },
-  { key: 'utcAirDate', value: 'UTC Air Date' }
+  { key: 'none', value: translate('none') },
+  { key: 'localAirDate', value: translate('localAirDate') },
+  { key: 'utcAirDate', value: translate('utcAirDate') }
 ];
 
 class MediaManagement extends Component {
@@ -58,7 +58,7 @@ class MediaManagement extends Component {
     } = this.props;
 
     return (
-      <PageContent title="Media Management Settings">
+      <PageContent title={translate('mediaManagementSettings')}>
         <SettingsToolbarConnector
           advancedSettings={advancedSettings}
           {...otherProps}
@@ -70,14 +70,14 @@ class MediaManagement extends Component {
 
           {
             isFetching &&
-              <FieldSet legend="Naming Settings">
+              <FieldSet legend={translate('namingSettings')}>
                 <LoadingIndicator />
               </FieldSet>
           }
 
           {
             !isFetching && error &&
-            <FieldSet legend="Naming Settings">
+            <FieldSet legend={translate('namingSettings')}>
               <div>Unable to load Media Management settings</div>
             </FieldSet>
           }
@@ -90,18 +90,18 @@ class MediaManagement extends Component {
               >
                 {
                   advancedSettings &&
-                    <FieldSet legend="Folders">
+                    <FieldSet legend={translate('folders')}>
                       <FormGroup
                         advancedSettings={advancedSettings}
                         isAdvanced={true}
                         size={sizes.MEDIUM}
                       >
-                        <FormLabel>Create empty series folders</FormLabel>
+                        <FormLabel>{translate('createEmptySeriesFolders')}</FormLabel>
 
                         <FormInputGroup
                           type={inputTypes.CHECK}
                           name="createEmptySeriesFolders"
-                          helpText="Create missing series folders during disk scan"
+                          helpText={translate('createEmptySeriesFoldersHelpText')}
                           onChange={onInputChange}
                           {...settings.createEmptySeriesFolders}
                         />
@@ -112,12 +112,12 @@ class MediaManagement extends Component {
                         isAdvanced={true}
                         size={sizes.MEDIUM}
                       >
-                        <FormLabel>Delete empty folders</FormLabel>
+                        <FormLabel>{translate('deleteEmptyFolders')}</FormLabel>
 
                         <FormInputGroup
                           type={inputTypes.CHECK}
                           name="deleteEmptyFolders"
-                          helpText="Delete empty series and season folders during disk scan and when episode files are deleted"
+                          helpText={translate('deleteEmptyFoldersHelpText')}
                           onChange={onInputChange}
                           {...settings.deleteEmptyFolders}
                         />
@@ -128,19 +128,19 @@ class MediaManagement extends Component {
                 {
                   advancedSettings &&
                     <FieldSet
-                      legend="Importing"
+                      legend={translate('importing')}
                     >
                       <FormGroup
                         advancedSettings={advancedSettings}
                         isAdvanced={true}
                         size={sizes.SMALL}
                       >
-                        <FormLabel>Episode Title Required</FormLabel>
+                        <FormLabel>{translate('episodeTitleRequired')}</FormLabel>
 
                         <FormInputGroup
                           type={inputTypes.SELECT}
                           name="episodeTitleRequired"
-                          helpText="Prevent importing for up to 24 hours if the episode title is in the naming format and the episode title is TBA"
+                          helpText={translate('episodeTitleRequiredHelpText')}
                           values={episodeTitleRequiredOptions}
                           onChange={onInputChange}
                           {...settings.episodeTitleRequired}
@@ -154,12 +154,12 @@ class MediaManagement extends Component {
                             isAdvanced={true}
                             size={sizes.MEDIUM}
                           >
-                            <FormLabel>Skip Free Space Check</FormLabel>
+                            <FormLabel>{translate('skipFreeSpaceCheck')}</FormLabel>
 
                             <FormInputGroup
                               type={inputTypes.CHECK}
                               name="skipFreeSpaceCheckWhenImporting"
-                              helpText="Use when Sonarr is unable to detect free space from your series root folder"
+                              helpText={translate('skipFreeSpaceCheckWhenImportingHelpText')}
                               onChange={onInputChange}
                               {...settings.skipFreeSpaceCheckWhenImporting}
                             />
@@ -171,13 +171,13 @@ class MediaManagement extends Component {
                         isAdvanced={true}
                         size={sizes.MEDIUM}
                       >
-                        <FormLabel>Minimum Free Space</FormLabel>
+                        <FormLabel>{translate('minimumFreeSpace')}</FormLabel>
 
                         <FormInputGroup
                           type={inputTypes.NUMBER}
                           unit='MB'
                           name="minimumFreeSpaceWhenImporting"
-                          helpText="Prevent import if it would leave less than this amount of disk space available"
+                          helpText={translate('minimumFreeSpaceWhenImportingHelpText')}
                           onChange={onInputChange}
                           {...settings.minimumFreeSpaceWhenImporting}
                         />
@@ -188,25 +188,25 @@ class MediaManagement extends Component {
                         isAdvanced={true}
                         size={sizes.MEDIUM}
                       >
-                        <FormLabel>Use Hardlinks instead of Copy</FormLabel>
+                        <FormLabel>{translate('useHardlinksInsteadOfCopy')}</FormLabel>
 
                         <FormInputGroup
                           type={inputTypes.CHECK}
                           name="copyUsingHardlinks"
-                          helpText="Use Hardlinks when trying to copy files from torrents that are still being seeded"
-                          helpTextWarning="Occasionally, file locks may prevent renaming files that are being seeded. You may temporarily disable seeding and use Sonarr's rename function as a work around."
+                          helpText={translate('copyUsingHardlinksHelpText')}
+                          helpTextWarning={translate('copyUsingHardlinksHelpTextWarning')}
                           onChange={onInputChange}
                           {...settings.copyUsingHardlinks}
                         />
                       </FormGroup>
 
                       <FormGroup size={sizes.MEDIUM}>
-                        <FormLabel>Import Extra Files</FormLabel>
+                        <FormLabel>{translate('importExtraFiles')}</FormLabel>
 
                         <FormInputGroup
                           type={inputTypes.CHECK}
                           name="importExtraFiles"
-                          helpText="Import matching extra files (subtitles, nfo, etc) after importing an episode file"
+                          helpText={translate('importExtraFilesHelpText')}
                           onChange={onInputChange}
                           {...settings.importExtraFiles}
                         />
@@ -218,14 +218,14 @@ class MediaManagement extends Component {
                             advancedSettings={advancedSettings}
                             isAdvanced={true}
                           >
-                            <FormLabel>Import Extra Files</FormLabel>
+                            <FormLabel>{translate('importExtraFiles')}</FormLabel>
 
                             <FormInputGroup
                               type={inputTypes.TEXT}
                               name="extraFileExtensions"
                               helpTexts={[
-                                'Comma separated list of extra files to import (.nfo will be imported as .nfo-orig)',
-                                'Examples: ".sub, .nfo" or "sub,nfo"'
+                                translate('extraFileExtensionsHelpTexts1'),
+                                translate('extraFileExtensionsHelpTexts2')
                               ]}
                               onChange={onInputChange}
                               {...settings.extraFileExtensions}
@@ -236,15 +236,15 @@ class MediaManagement extends Component {
                 }
 
                 <FieldSet
-                  legend="File Management"
+                  legend={translate('fileManagement')}
                 >
                   <FormGroup size={sizes.MEDIUM}>
-                    <FormLabel>Unmonitor Deleted Episodes</FormLabel>
+                    <FormLabel>{translate('ignoreDeletedEpisodes')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.CHECK}
                       name="autoUnmonitorPreviouslyDownloadedEpisodes"
-                      helpText="Episodes deleted from disk are automatically unmonitored in Sonarr"
+                      helpText={translate('ignoreDeletedEpisodesHelpText')}
                       onChange={onInputChange}
                       {...settings.autoUnmonitorPreviouslyDownloadedEpisodes}
                     />
@@ -255,18 +255,18 @@ class MediaManagement extends Component {
                     isAdvanced={true}
                     size={sizes.MEDIUM}
                   >
-                    <FormLabel>Propers and Repacks</FormLabel>
+                    <FormLabel>{translate('downloadPropersAndRepacks')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.SELECT}
                       name="downloadPropersAndRepacks"
                       helpTexts={[
-                        'Whether or not to automatically upgrade to Propers/Repacks',
-                        'Use \'Do not Prefer\' to sort by preferred word score over propers/repacks'
+                        translate('downloadPropersAndRepacksHelpText1'),
+                        translate('downloadPropersAndRepacksHelpText2')
                       ]}
                       helpTextWarning={
                         settings.downloadPropersAndRepacks.value === 'doNotPrefer' ?
-                          'Use preferred words for automatic upgrades to propers/repacks' :
+                          translate('downloadPropersAndRepacksHelpTextWarning') :
                           undefined
                       }
                       values={downloadPropersAndRepacksOptions}
@@ -280,12 +280,12 @@ class MediaManagement extends Component {
                     isAdvanced={true}
                     size={sizes.MEDIUM}
                   >
-                    <FormLabel>Analyse video files</FormLabel>
+                    <FormLabel>{translate('analyseVideoFiles')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.CHECK}
                       name="enableMediaInfo"
-                      helpText="Extract video information such as resolution, runtime and codec information from files. This requires Sonarr to read parts of the file which may cause high disk or network activity during scans."
+                      helpText={translate('analyseVideoFilesHelpText')}
                       onChange={onInputChange}
                       {...settings.enableMediaInfo}
                     />
@@ -295,13 +295,13 @@ class MediaManagement extends Component {
                     advancedSettings={advancedSettings}
                     isAdvanced={true}
                   >
-                    <FormLabel>Rescan Series Folder after Refresh</FormLabel>
+                    <FormLabel>{translate('rescanSeriesFolderAfterRefresh')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.SELECT}
                       name="rescanAfterRefresh"
-                      helpText="Rescan the series folder after refreshing the series"
-                      helpTextWarning="Sonarr will not automatically detect changes to files when not set to 'Always'"
+                      helpText={translate('rescanAfterRefreshHelpText')}
+                      helpTextWarning={translate('rescanAfterRefreshHelpTextWarning')}
                       values={rescanAfterRefreshOptions}
                       onChange={onInputChange}
                       {...settings.rescanAfterRefresh}
@@ -312,12 +312,12 @@ class MediaManagement extends Component {
                     advancedSettings={advancedSettings}
                     isAdvanced={true}
                   >
-                    <FormLabel>Change File Date</FormLabel>
+                    <FormLabel>{translate('changeFileDate')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.SELECT}
                       name="fileDate"
-                      helpText="Change file date on import/rescan"
+                      helpText={translate('changeFileDateHelpText')}
                       values={fileDateOptions}
                       onChange={onInputChange}
                       {...settings.fileDate}
@@ -328,12 +328,12 @@ class MediaManagement extends Component {
                     advancedSettings={advancedSettings}
                     isAdvanced={true}
                   >
-                    <FormLabel>Recycling Bin</FormLabel>
+                    <FormLabel>{translate('recyclingBin')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.PATH}
                       name="recycleBin"
-                      helpText="Episode files will go here when deleted instead of being permanently deleted"
+                      helpText={translate('recycleBinHelpText')}
                       onChange={onInputChange}
                       {...settings.recycleBin}
                     />
@@ -343,13 +343,13 @@ class MediaManagement extends Component {
                     advancedSettings={advancedSettings}
                     isAdvanced={true}
                   >
-                    <FormLabel>Recycling Bin Cleanup</FormLabel>
+                    <FormLabel>{translate('recyclingBinCleanup')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.NUMBER}
                       name="recycleBinCleanupDays"
-                      helpText="Set to 0 to disable automatic cleanup"
-                      helpTextWarning="Files in the recycle bin older than the selected number of days will be cleaned up automatically"
+                      helpText={translate('recycleBinCleanupDaysHelpText')}
+                      helpTextWarning={translate('recycleBinCleanupDaysHelpTextWarning')}
                       min={0}
                       onChange={onInputChange}
                       {...settings.recycleBinCleanupDays}
@@ -360,20 +360,20 @@ class MediaManagement extends Component {
                 {
                   advancedSettings && isMono &&
                     <FieldSet
-                      legend="Permissions"
+                      legend={translate('permissions')}
                     >
                       <FormGroup
                         advancedSettings={advancedSettings}
                         isAdvanced={true}
                         size={sizes.MEDIUM}
                       >
-                        <FormLabel>Set Permissions</FormLabel>
+                        <FormLabel>{translate('setPermissions')}</FormLabel>
 
                         <FormInputGroup
                           type={inputTypes.CHECK}
                           name="setPermissionsLinux"
-                          helpText="Should chmod be run when files are imported/renamed?"
-                          helpTextWarning="If you're unsure what these settings do, do not alter them."
+                          helpText={translate('setPermissionsLinuxHelpText')}
+                          helpTextWarning={translate('setPermissionsLinuxHelpTextWarning')}
                           onChange={onInputChange}
                           {...settings.setPermissionsLinux}
                         />
@@ -383,13 +383,13 @@ class MediaManagement extends Component {
                         advancedSettings={advancedSettings}
                         isAdvanced={true}
                       >
-                        <FormLabel>chmod Folder</FormLabel>
+                        <FormLabel>{translate('chmodFolder')}</FormLabel>
 
                         <FormInputGroup
                           type={inputTypes.UMASK}
                           name="chmodFolder"
-                          helpText="Octal, applied during import/rename to media folders and files (without execute bits)"
-                          helpTextWarning="This only works if the user running sonarr is the owner of the file. It's better to ensure the download client sets the permissions properly."
+                          helpText={translate('chmodFolderHelpText')}
+                          helpTextWarning={translate('chmodFolderHelpTextWarning')}
                           onChange={onInputChange}
                           {...settings.chmodFolder}
                         />
@@ -399,13 +399,13 @@ class MediaManagement extends Component {
                         advancedSettings={advancedSettings}
                         isAdvanced={true}
                       >
-                        <FormLabel>chown Group</FormLabel>
+                        <FormLabel>{translate('chownGroup')}</FormLabel>
 
                         <FormInputGroup
                           type={inputTypes.TEXT}
                           name="chownGroup"
-                          helpText="Group name or gid. Use gid for remote file systems."
-                          helpTextWarning="This only works if the user running sonarr is the owner of the file. It's better to ensure the download client uses the same group as sonarr."
+                          helpText={translate('chownGroupHelpText')}
+                          helpTextWarning={translate('chownGroupHelpTextWarning')}
                           values={fileDateOptions}
                           onChange={onInputChange}
                           {...settings.chownGroup}

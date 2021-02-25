@@ -50,7 +50,7 @@ function EditIndexerModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        {`${id ? 'Edit' : 'Add'} Indexer - ${implementationName}`}
+        {`${id ? translate('editIndexer') : translate('addIndexer')} - ${implementationName}`}
       </ModalHeader>
 
       <ModalBody>
@@ -61,14 +61,14 @@ function EditIndexerModalContent(props) {
 
         {
           !isFetching && !!error &&
-            <div>Unable to add a new indexer, please try again.</div>
+            <div>{translate('unableToAddANewIndexerPleaseTryAgain')}</div>
         }
 
         {
           !isFetching && !error &&
             <Form {...otherProps}>
               <FormGroup>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{translate('name')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.TEXT}
@@ -79,12 +79,12 @@ function EditIndexerModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Enable RSS</FormLabel>
+                <FormLabel>{translate('enableRSS')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="enableRss"
-                  helpTextWarning={supportsRss.value ? undefined : 'RSS is not supported with this indexer'}
+                  helpTextWarning={supportsRss.value ? undefined : translate('rssIsNotSupportedWithThisIndexer')}
                   isDisabled={!supportsRss.value}
                   {...enableRss}
                   onChange={onInputChange}
@@ -92,13 +92,13 @@ function EditIndexerModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Enable Automatic Search</FormLabel>
+                <FormLabel>{translate('enableAutomaticSearch')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="enableAutomaticSearch"
-                  helpText={supportsSearch.value ? 'Will be used when automatic searches are performed via the UI or by Sonarr' : undefined}
-                  helpTextWarning={supportsSearch.value ? undefined : 'Search is not supported with this indexer'}
+                  helpText={supportsSearch.value ? translate('indexerEnableAutomaticSearchHelpText') : undefined}
+                  helpTextWarning={supportsSearch.value ? undefined : translate('enableInteractiveSearchHelpTextWarning')}
                   isDisabled={!supportsSearch.value}
                   {...enableAutomaticSearch}
                   onChange={onInputChange}
@@ -106,13 +106,13 @@ function EditIndexerModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>Enable Interactive Search</FormLabel>
+                <FormLabel>{translate('enableInteractiveSearch')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="enableInteractiveSearch"
-                  helpText={supportsSearch.value ? 'Will be used when interactive search is used' : undefined}
-                  helpTextWarning={supportsSearch.value ? undefined : 'Search is not supported with this indexer'}
+                  helpText={supportsSearch.value ? translate('enableInteractiveSearchHelpText') : undefined}
+                  helpTextWarning={supportsSearch.value ? undefined : translate('enableInteractiveSearchHelpTextWarning')}
                   isDisabled={!supportsSearch.value}
                   {...enableInteractiveSearch}
                   onChange={onInputChange}
@@ -137,12 +137,12 @@ function EditIndexerModalContent(props) {
                 advancedSettings={advancedSettings}
                 isAdvanced={true}
               >
-                <FormLabel>Indexer Priority</FormLabel>
+                <FormLabel>{translate('indexerPriority')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.NUMBER}
                   name="priority"
-                  helpText="Indexer Priority from 1 (Highest) to 50 (Lowest). Default: 25."
+                  helpText={translate('indexerPriorityHelpTextInterp', [1, 50, 25])}
                   min={1}
                   max={50}
                   {...priority}
@@ -169,7 +169,7 @@ function EditIndexerModalContent(props) {
           error={saveError}
           onPress={onTestPress}
         >
-          Test
+          {translate('test')}
         </SpinnerErrorButton>
 
         <Button

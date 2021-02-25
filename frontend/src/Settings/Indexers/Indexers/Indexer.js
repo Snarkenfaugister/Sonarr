@@ -87,7 +87,7 @@ class Indexer extends Component {
 
           <IconButton
             className={styles.cloneButton}
-            title="Clone Indexer"
+            title={translate('cloneIndexer')}
             name={icons.CLONE}
             onPress={this.onCloneIndexerPress}
           />
@@ -98,28 +98,28 @@ class Indexer extends Component {
           {
             supportsRss && enableRss &&
               <Label kind={kinds.SUCCESS}>
-                RSS
+                {translate('rss')}
               </Label>
           }
 
           {
             supportsSearch && enableAutomaticSearch &&
               <Label kind={kinds.SUCCESS}>
-                Automatic Search
+                {translate('automaticSearch')}
               </Label>
           }
 
           {
             supportsSearch && enableInteractiveSearch &&
               <Label kind={kinds.SUCCESS}>
-                Interactive Search
+                {translate('interactiveSearch')}
               </Label>
           }
 
           {
             showPriority &&
               <Label kind={kinds.DEFAULT}>
-                Priority: {priority}
+                {translate('priorityInterp', [priority])}
               </Label>
           }
           {
@@ -128,7 +128,7 @@ class Indexer extends Component {
               kind={kinds.DISABLED}
               outline={true}
             >
-              Disabled
+              {translate('disabled')}
             </Label>
           }
         </div>
@@ -143,8 +143,8 @@ class Indexer extends Component {
         <ConfirmModal
           isOpen={this.state.isDeleteIndexerModalOpen}
           kind={kinds.DANGER}
-          title="Delete Indexer"
-          message={`Are you sure you want to delete the indexer '${name}'?`}
+          title={translate('deleteIndexer')}
+          message={translate('deleteIndexerMessageText', [name])}
           confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteIndexer}
           onCancel={this.onDeleteIndexerModalClose}

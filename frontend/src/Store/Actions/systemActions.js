@@ -125,7 +125,7 @@ export const defaultState = {
       },
       {
         key: 'info',
-        label: 'Info',
+        label: translate('info'),
         filters: [
           {
             key: 'level',

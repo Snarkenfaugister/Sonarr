@@ -28,49 +28,49 @@ function IndexerOptions(props) {
 
       {
         !isFetching && error &&
-          <div>Unable to load indexer options</div>
+          <div>{translate('unableToLoadIndexerOptions')}</div>
       }
 
       {
         hasSettings && !isFetching && !error &&
           <Form>
             <FormGroup>
-              <FormLabel>Minimum Age</FormLabel>
+              <FormLabel>{translate('minimumAge')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.NUMBER}
                 name="minimumAge"
                 min={0}
-                unit="minutes"
-                helpText="Usenet only: Minimum age in minutes of NZBs before they are grabbed. Use this to give new releases time to propagate to your usenet provider."
+                unit={translate('minutes')}
+                helpText={translate('minimumAgeHelpText')}
                 onChange={onInputChange}
                 {...settings.minimumAge}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Retention</FormLabel>
+              <FormLabel>{translate('retention')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.NUMBER}
                 name="retention"
                 min={0}
-                unit="days"
-                helpText="Usenet only: Set to zero to set for unlimited retention"
+                unit={translate('days')}
+                helpText={translate('retentionHelpText')}
                 onChange={onInputChange}
                 {...settings.retention}
               />
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Maximum Size</FormLabel>
+              <FormLabel>{translate('maximumSize')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.NUMBER}
                 name="maximumSize"
                 min={0}
-                unit="MB"
-                helpText="Maximum size for a release to be grabbed in MB. Set to zero to set to unlimited"
+                unit={translate('megaBytes')}
+                helpText={translate('maximumSizeHelpText')}
                 onChange={onInputChange}
                 {...settings.maximumSize}
               />
@@ -80,16 +80,16 @@ function IndexerOptions(props) {
               advancedSettings={advancedSettings}
               isAdvanced={true}
             >
-              <FormLabel>RSS Sync Interval</FormLabel>
+              <FormLabel>{translate('rssSyncInterval')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.NUMBER}
                 name="rssSyncInterval"
                 min={0}
                 max={120}
-                unit="minutes"
-                helpText="Interval in minutes. Set to zero to disable (this will stop all automatic release grabbing)"
-                helpTextWarning="This will apply to all indexers, please follow the rules set forth by them"
+                unit={translate('minutes')}
+                helpText={translate('rssSyncIntervalHelpText')}
+                helpTextWarning={translate('rssSyncIntervalHelpTextWarning')}
                 helpLink="https://wiki.servarr.com/Sonarr_FAQ#How_does_Sonarr_find_episodes"
                 onChange={onInputChange}
                 {...settings.rssSyncInterval}

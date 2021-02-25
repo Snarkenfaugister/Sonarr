@@ -9,6 +9,7 @@ import Indexer from './Indexer';
 import AddIndexerModal from './AddIndexerModal';
 import EditIndexerModalConnector from './EditIndexerModalConnector';
 import styles from './Indexers.css';
+import translate from 'Utilities/String/translate';
 
 class Indexers extends Component {
 
@@ -66,9 +67,9 @@ class Indexers extends Component {
     const showPriority = items.some((index) => index.priority !== 25);
 
     return (
-      <FieldSet legend="Indexers">
+      <FieldSet legend={translate('indexers')}>
         <PageSectionContent
-          errorMessage="Unable to load Indexers"
+          errorMessage={translate('unableToLoadIndexers')}
           {...otherProps}
         >
           <div className={styles.indexers}>

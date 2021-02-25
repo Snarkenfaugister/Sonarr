@@ -5,6 +5,7 @@ import LoadingIndicator from 'Components/Loading/LoadingIndicator';
 import Table from 'Components/Table/Table';
 import TableBody from 'Components/Table/TableBody';
 import QueuedTaskRowConnector from './QueuedTaskRowConnector';
+import translate from 'Utilities/String/translate';
 
 const columns = [
   {
@@ -14,7 +15,7 @@ const columns = [
   },
   {
     name: 'commandName',
-    label: 'Name',
+    label: translate('name'),
     isVisible: true
   },
   {

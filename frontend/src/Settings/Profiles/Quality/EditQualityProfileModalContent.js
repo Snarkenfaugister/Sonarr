@@ -148,7 +148,7 @@ class EditQualityProfileModalContent extends Component {
                       <div className={styles.formGroupWrapper}>
                         <FormGroup size={sizes.EXTRA_SMALL}>
                           <FormLabel size={sizes.SMALL}>
-                            Name
+                            {translate('name')}
                           </FormLabel>
 
                           <FormInputGroup

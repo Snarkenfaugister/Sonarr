@@ -156,7 +156,7 @@ class ReleaseProfile extends Component {
               kind={kinds.DISABLED}
               outline={true}
             >
-              Disabled
+              {translate('disabled')}
             </Label>
           }
 
