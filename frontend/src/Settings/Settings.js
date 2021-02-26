@@ -8,7 +8,7 @@ import translate from 'Utilities/String/translate';
 
 function Settings() {
   return (
-    <PageContent title="Settings">
+    <PageContent title={translate('settings')}>
       <SettingsToolbarConnector
         hasPendingChanges={false}
       />
@@ -18,88 +18,88 @@ function Settings() {
           className={styles.link}
           to="/settings/mediamanagement"
         >
-          Media Management
+          {translate('mediaManagement')}
         </Link>
 
         <div className={styles.summary}>
-          Naming, file management settings and root folders
+          {translate('mediaManagementSettingsSummary')}
         </div>
 
         <Link
           className={styles.link}
           to="/settings/profiles"
         >
-          Profiles
+          {translate('profiles')}
         </Link>
 
         <div className={styles.summary}>
-          Quality, Language, Delay and Release profiles
+          {translate('profilesSettingsSummary')}
         </div>
 
         <Link
           className={styles.link}
           to="/settings/quality"
         >
-          Quality
+          {translate('quality')}
         </Link>
 
         <div className={styles.summary}>
-          Quality sizes and naming
+          {translate('qualitySettingsSummary')}
         </div>
 
         <Link
           className={styles.link}
           to="/settings/indexers"
         >
-          Indexers
+          {translate('indexers')}
         </Link>
 
         <div className={styles.summary}>
-          Indexers and indexer options
+          {translate('indexersSettingsSummary')}
         </div>
 
         <Link
           className={styles.link}
           to="/settings/downloadclients"
         >
-          Download Clients
+          {translate('downloadClients')}
         </Link>
 
         <div className={styles.summary}>
-          Download clients, download handling and remote path mappings
+          {translate('downloadClientsSettingsSummary')}
         </div>
 
         <Link
           className={styles.link}
           to="/settings/importlists"
         >
-          Import Lists
+          {translate('importLists')}
         </Link>
 
         <div className={styles.summary}>
-          Import from another Sonarr instance or Trakt lists and manage list exclusions
+          {translate('importListsSettingsSummary')}
         </div>
 
         <Link
           className={styles.link}
           to="/settings/connect"
         >
-          Connect
+          {translate('connect')}
         </Link>
 
         <div className={styles.summary}>
-          Notifications, connections to media servers/players and custom scripts
+          {translate('connectSettingsSummary')}
         </div>
 
         <Link
           className={styles.link}
           to="/settings/metadata"
         >
-          Metadata
+          {translate('metadata')}
         </Link>
 
         <div className={styles.summary}>
-          Create metadata files when episodes are imported or series are refreshed
+          {translate('metadataSettingsSummary')}
         </div>
 
         <Link
@@ -110,29 +110,29 @@ function Settings() {
         </Link>
 
         <div className={styles.summary}>
-          See all tags and how they are used. Unused tags can be removed
+          {translate('tagsSettingsSummary')}
         </div>
 
         <Link
           className={styles.link}
           to="/settings/general"
         >
-          General
+          {translate('general')}
         </Link>
 
         <div className={styles.summary}>
-          Port, SSL, username/password, proxy, analytics and updates
+          {translate('generalSettingsSummary')}
         </div>
 
         <Link
           className={styles.link}
           to="/settings/ui"
         >
-          UI
+          {translate('ui')}
         </Link>
 
         <div className={styles.summary}>
-          Calendar, date and color impaired options
+          {translate('uiSettingsSummary')}
         </div>
       </PageContentBody>
     </PageContent>

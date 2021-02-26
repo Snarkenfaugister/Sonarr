@@ -9,6 +9,7 @@ import Notification from './Notification';
 import AddNotificationModal from './AddNotificationModal';
 import EditNotificationModalConnector from './EditNotificationModalConnector';
 import styles from './Notifications.css';
+import translate from 'Utilities/String/translate';
 
 class Notifications extends Component {
 
@@ -58,9 +59,9 @@ class Notifications extends Component {
     } = this.state;
 
     return (
-      <FieldSet legend="Connections">
+      <FieldSet legend={translate('connections')}>
         <PageSectionContent
-          errorMessage="Unable to load Notifications"
+          errorMessage={translate('unableToLoadNotifications')}
           {...otherProps}
         >
           <div className={styles.notifications}>

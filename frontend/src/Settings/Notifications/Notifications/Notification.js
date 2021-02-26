@@ -86,7 +86,7 @@ class Notification extends Component {
         {
           supportsOnGrab && onGrab ?
             <Label kind={kinds.SUCCESS}>
-              On Grab
+              {translate('onGrab')}
             </Label> :
             null
         }
@@ -94,7 +94,7 @@ class Notification extends Component {
         {
           supportsOnDownload && onDownload ?
             <Label kind={kinds.SUCCESS}>
-              On Import
+              {translate('onImport')}
             </Label> :
             null
         }
@@ -102,7 +102,7 @@ class Notification extends Component {
         {
           supportsOnUpgrade && onDownload && onUpgrade ?
             <Label kind={kinds.SUCCESS}>
-              On Upgrade
+              {translate('onUpgrade')}
             </Label> :
             null
         }
@@ -110,7 +110,7 @@ class Notification extends Component {
         {
           supportsOnRename && onRename ?
             <Label kind={kinds.SUCCESS}>
-              On Rename
+              {translate('onRename')}
             </Label> :
             null
         }
@@ -118,7 +118,7 @@ class Notification extends Component {
         {
           supportsOnHealthIssue && onHealthIssue ?
             <Label kind={kinds.SUCCESS}>
-              On Health Issue
+              {translate('onHealthIssue')}
             </Label> :
             null
         }
@@ -126,7 +126,7 @@ class Notification extends Component {
         {
           supportsOnSeriesDelete && onSeriesDelete ?
             <Label kind={kinds.SUCCESS}>
-              On Series Delete
+              {translate('onSeriesDelete')}
             </Label> :
             null
         }
@@ -134,7 +134,7 @@ class Notification extends Component {
         {
           supportsOnEpisodeFileDelete && onEpisodeFileDelete ?
             <Label kind={kinds.SUCCESS}>
-              On Episode File Delete
+              {translate('onEpisodeFileDelete')}
             </Label> :
             null
         }
@@ -142,7 +142,7 @@ class Notification extends Component {
         {
           supportsOnEpisodeFileDeleteForUpgrade && onEpisodeFileDelete && onEpisodeFileDeleteForUpgrade ?
             <Label kind={kinds.SUCCESS}>
-              On Episode File Delete For Upgrade
+              {translate('onEpisodeFileDeleteForUpgrade')}
             </Label> :
             null
         }
@@ -168,8 +168,8 @@ class Notification extends Component {
         <ConfirmModal
           isOpen={this.state.isDeleteNotificationModalOpen}
           kind={kinds.DANGER}
-          title="Delete Notification"
-          message={`Are you sure you want to delete the notification '${name}'?`}
+          title={translate('deleteNotification')}
+          message={translate('deleteNotificationMessageText', [name])}
           confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteNotification}
           onCancel={this.onDeleteNotificationModalClose}

@@ -44,7 +44,7 @@ function EditLanguageProfileModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        {id ? 'Edit Language Profile' : 'Add Language Profile'}
+        {id ? translate('editLanguageProfile') : translate('addLanguageProfile')}
       </ModalHeader>
 
       <ModalBody>
@@ -55,7 +55,7 @@ function EditLanguageProfileModalContent(props) {
 
         {
           !isFetching && !!error &&
-            <div>Unable to add a new language profile, please try again.</div>
+            <div>{translate('unableToAddANewLanguageProfilePleaseTryAgain')}</div>
         }
 
         {
@@ -74,14 +74,14 @@ function EditLanguageProfileModalContent(props) {
 
               <FormGroup>
                 <FormLabel>
-                  Upgrades Allowed
+                  {translate('upgradesAllowed')}
                 </FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="upgradeAllowed"
                   {...upgradeAllowed}
-                  helpText="If disabled languages will not be upgraded"
+                  helpText={translate('languageUpgradeAllowedHelpText')}
                   onChange={onInputChange}
                 />
               </FormGroup>
@@ -89,7 +89,7 @@ function EditLanguageProfileModalContent(props) {
               {
                 upgradeAllowed.value &&
                   <FormGroup>
-                    <FormLabel>Upgrade Until</FormLabel>
+                    <FormLabel>{translate('upgradeUntil')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.SELECT}
@@ -97,7 +97,7 @@ function EditLanguageProfileModalContent(props) {
                       {...cutoff}
                       value={cutoff ? cutoff.value.id : 0}
                       values={languages}
-                      helpText="Once this language is reached Sonarr will no longer download episodes"
+                      helpText={translate('languageCutoffHelpText')}
                       onChange={onCutoffChange}
                     />
                   </FormGroup>
@@ -118,7 +118,7 @@ function EditLanguageProfileModalContent(props) {
           id &&
             <div
               className={styles.deleteButtonContainer}
-              title={isInUse && 'Can\'t delete a language profile that is attached to a series'}
+              title={isInUse && translate('languageProfileInUse')}
             >
               <Button
                 kind={kinds.DANGER}

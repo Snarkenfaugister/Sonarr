@@ -17,15 +17,15 @@ function getDelay(enabled, delay) {
   }
 
   if (!delay) {
-    return 'No Delay';
+    return translate('noDelay');
   }
 
   if (delay === 1) {
-    return '1 Minute';
+    return translate('oneMinute');
   }
 
   // TODO: use better units of time than just minutes
-  return `${delay} Minutes`;
+  return translate('minutesInterp', [delay]);
 }
 
 class DelayProfile extends Component {
@@ -88,9 +88,9 @@ class DelayProfile extends Component {
     let preferred = titleCase(preferredProtocol);
 
     if (!enableUsenet) {
-      preferred = 'Only Torrent';
+      preferred = translate('onlyTorrent');
     } else if (!enableTorrent) {
-      preferred = 'Only Usenet';
+      preferred = translate('onlyUsenet');
     }
 
     return (
@@ -140,8 +140,8 @@ class DelayProfile extends Component {
         <ConfirmModal
           isOpen={this.state.isDeleteDelayProfileModalOpen}
           kind={kinds.DANGER}
-          title="Delete Delay Profile"
-          message="Are you sure you want to delete this delay profile?"
+          title={translate('deleteDelayProfile')}
+          message={translate('areYouSureYouWantToDeleteThisDelayProfile')}
           confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteDelayProfile}
           onCancel={this.onDeleteDelayProfileModalClose}

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import formatBytes from 'Utilities/Number/formatBytes';
+import translate from 'Utilities/String/translate';
 
 function QualityDefinitionLimits(props) {
   const {
@@ -18,9 +19,9 @@ function QualityDefinitionLimits(props) {
 
   return (
     <div>
-      <div>30 Minutes: {thirty}</div>
-      <div>45 Minutes: {fourtyFive}</div>
-      <div>60 Minutes: {sixty}</div>
+      <div>{translate('xMinutesInterp', [30, thirty])}</div>
+      <div>{translate('xMinutesInterp', [45, fourtyFive])}</div>
+      <div>{translate('xMinutesInterp', [60, sixty])}</div>
     </div>
   );
 }

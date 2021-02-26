@@ -89,7 +89,7 @@ class Tag extends Component {
               {
                 seriesIds.length ?
                   <div>
-                    {seriesIds.length} series
+                    {translate('seriesInterp', [seriesIds.length])}
                   </div> :
                   null
               }
@@ -97,7 +97,7 @@ class Tag extends Component {
               {
                 delayProfileIds.length ?
                   <div>
-                    {delayProfileIds.length} delay profile{delayProfileIds.length > 1 && 's'}
+                    {translate(delayProfileIds.length > 1 ? 'delayProfilesInterp' : 'delayProfileInterp', [delayProfileIds.length])}
                   </div> :
                   null
               }
@@ -105,7 +105,7 @@ class Tag extends Component {
               {
                 importListIds.length ?
                   <div>
-                    {importListIds.length} import list{importListIds.length > 1 && 's'}
+                    {translate(importListIds.length > 1 ? 'importListsInterp' : 'importListInterp', [importListIds.length])}
                   </div> :
                   null
               }
@@ -113,7 +113,7 @@ class Tag extends Component {
               {
                 notificationIds.length ?
                   <div>
-                    {notificationIds.length} connection{notificationIds.length > 1 && 's'}
+                    {translate(notificationIds.length > 1 ? 'connectionsInterp' : 'connectionInterp', [notificationIds.length])}
                   </div> :
                   null
               }
@@ -121,7 +121,7 @@ class Tag extends Component {
               {
                 restrictionIds.length ?
                   <div>
-                    {restrictionIds.length} restriction{restrictionIds.length > 1 && 's'}
+                    {translate(restrictionIds.length > 1 ? 'restrictionsInterp' : 'restrictionInterp', [restrictionIds.length])}
                   </div> :
                   null
               }
@@ -131,7 +131,7 @@ class Tag extends Component {
         {
           !isTagUsed &&
             <div>
-              No links
+              {translate('noLinks')}
             </div>
         }
 
@@ -151,8 +151,8 @@ class Tag extends Component {
         <ConfirmModal
           isOpen={isDeleteTagModalOpen}
           kind={kinds.DANGER}
-          title="Delete Tag"
-          message={`Are you sure you want to delete the tag '${label}'?`}
+          title={translate('deleteTag')}
+          message={translate('deleteTagMessageText', [label])}
           confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteTag}
           onCancel={this.onDeleteTagModalClose}

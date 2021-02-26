@@ -28,7 +28,7 @@ class AddNotificationModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Add Notification
+          {translate('addNotification')}
         </ModalHeader>
 
         <ModalBody>
@@ -39,7 +39,7 @@ class AddNotificationModalContent extends Component {
 
           {
             !isSchemaFetching && !!schemaError &&
-              <div>Unable to add a new notification, please try again.</div>
+              <div>{translate('unableToAddANewNotificationPleaseTryAgain')}</div>
           }
 
           {

@@ -85,7 +85,7 @@ class QualityProfile extends Component {
 
           <IconButton
             className={styles.cloneButton}
-            title="Clone Profile"
+            title={translate('cloneProfile')}
             name={icons.CLONE}
             onPress={this.onCloneQualityProfilePress}
           />
@@ -105,7 +105,7 @@ class QualityProfile extends Component {
                   <Label
                     key={item.quality.id}
                     kind={isCutoff ? kinds.INFO : kinds.default}
-                    title={isCutoff ? 'Upgrade until this quality is met or exceeded' : null}
+                    title={isCutoff ? translate('upgradeUntilThisQualityIsMetOrExceeded') : null}
                   >
                     {item.quality.name}
                   </Label>
@@ -121,7 +121,7 @@ class QualityProfile extends Component {
                   anchor={
                     <Label
                       kind={isCutoff ? kinds.INFO : kinds.default}
-                      title={isCutoff ? 'Cutoff' : null}
+                      title={isCutoff ? translate('cutoff') : null}
                     >
                       {item.name}
                     </Label>
@@ -134,7 +134,7 @@ class QualityProfile extends Component {
                             <Label
                               key={groupItem.quality.id}
                               kind={isCutoff ? kinds.INFO : kinds.default}
-                              title={isCutoff ? 'Cutoff' : null}
+                              title={isCutoff ? translate('cutoff') : null}
                             >
                               {groupItem.quality.name}
                             </Label>
@@ -161,8 +161,8 @@ class QualityProfile extends Component {
         <ConfirmModal
           isOpen={this.state.isDeleteQualityProfileModalOpen}
           kind={kinds.DANGER}
-          title="Delete Quality Profile"
-          message={`Are you sure you want to delete the quality profile '${name}'?`}
+          title={translate('deleteQualityProfile')}
+          message={translate('qualityProfileDeleteConfirm', [name])}
           confirmLabel={translate('delete')}
           isSpinning={isDeleting}
           onConfirm={this.onConfirmDeleteQualityProfile}

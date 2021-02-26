@@ -9,6 +9,7 @@ import CheckInput from 'Components/Form/CheckInput';
 import TextInput from 'Components/Form/TextInput';
 import QualityProfileItemDragSource from './QualityProfileItemDragSource';
 import styles from './QualityProfileItemGroup.css';
+import translate from 'Utilities/String/translate';
 
 class QualityProfileItemGroup extends Component {
 
@@ -77,7 +78,7 @@ class QualityProfileItemGroup extends Component {
                 <IconButton
                   className={styles.deleteGroupButton}
                   name={icons.UNGROUP}
-                  title="Ungroup"
+                  title={translate('ungroup')}
                   onPress={this.onDeleteGroupPress}
                 />
 
@@ -133,7 +134,7 @@ class QualityProfileItemGroup extends Component {
                 <Icon
                   className={styles.dragIcon}
                   name={icons.REORDER}
-                  title="Reorder"
+                  title={translate('reorder')}
                 />
               </div>
             )

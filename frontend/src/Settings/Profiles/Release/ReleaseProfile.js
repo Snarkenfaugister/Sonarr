@@ -181,8 +181,8 @@ class ReleaseProfile extends Component {
         <ConfirmModal
           isOpen={isDeleteReleaseProfileModalOpen}
           kind={kinds.DANGER}
-          title="Delete ReleaseProfile"
-          message={'Are you sure you want to delete this releaseProfile?'}
+          title={translate('deleteReleaseProfile')}
+          message={translate('deleteReleaseProfileHelpText')}
           confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeleteReleaseProfile}
           onCancel={this.onDeleteReleaseProfileModalClose}

@@ -119,7 +119,7 @@ class EditQualityProfileModalContent extends Component {
           onMeasure={this.onHeaderMeasure}
         >
           <ModalHeader>
-            {id ? 'Edit Quality Profile' : 'Add Quality Profile'}
+            {id ? translate('editQualityProfile') : translate('addQualityProfile')}
           </ModalHeader>
         </Measure>
 
@@ -136,7 +136,7 @@ class EditQualityProfileModalContent extends Component {
 
               {
                 !isFetching && !!error &&
-                  <div>Unable to add a new quality profile, please try again.</div>
+                  <div>{translate('unableToAddANewQualityProfilePleaseTryAgain')}</div>
               }
 
               {
@@ -161,14 +161,14 @@ class EditQualityProfileModalContent extends Component {
 
                         <FormGroup size={sizes.EXTRA_SMALL}>
                           <FormLabel size={sizes.SMALL}>
-                            Upgrades Allowed
+                            {translate('upgradesAllowed')}
                           </FormLabel>
 
                           <FormInputGroup
                             type={inputTypes.CHECK}
                             name="upgradeAllowed"
                             {...upgradeAllowed}
-                            helpText="If disabled qualities will not be upgraded"
+                            helpText={translate('qualityUpgradeAllowedHelpText')}
                             onChange={onInputChange}
                           />
                         </FormGroup>
@@ -177,7 +177,7 @@ class EditQualityProfileModalContent extends Component {
                           upgradeAllowed.value &&
                             <FormGroup size={sizes.EXTRA_SMALL}>
                               <FormLabel size={sizes.SMALL}>
-                                Upgrade Until
+                                {translate('upgradeUntil')}
                               </FormLabel>
 
                               <FormInputGroup
@@ -185,7 +185,7 @@ class EditQualityProfileModalContent extends Component {
                                 name="cutoff"
                                 {...cutoff}
                                 values={qualities}
-                                helpText="Once this quality is reached Sonarr will no longer download episodes"
+                                helpText={translate('qualityCutoffHelpText')}
                                 onChange={onCutoffChange}
                               />
                             </FormGroup>
@@ -221,7 +221,7 @@ class EditQualityProfileModalContent extends Component {
                   className={styles.deleteButtonContainer}
                   title={
                     isInUse ?
-                      'Can\'t delete a quality profile that is attached to a series' :
+                      translate('qualityProfileInUse') :
                       undefined
                   }
                 >

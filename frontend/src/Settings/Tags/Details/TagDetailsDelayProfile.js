@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import titleCase from 'Utilities/String/titleCase';
+import translate from 'Utilities/String/translate';
 
 function TagDetailsDelayProfile(props) {
   const {
@@ -14,22 +15,22 @@ function TagDetailsDelayProfile(props) {
   return (
     <div>
       <div>
-        Protocol: {titleCase(preferredProtocol)}
+        {translate('protocolInterp', [titleCase(preferredProtocol)])}
       </div>
 
       <div>
         {
           enableUsenet ?
-            `Usenet Delay: ${usenetDelay}` :
-            'Usenet disabled'
+            translate('usenetDelayTime', [usenetDelay]) :
+            translate('usenetDisabled')
         }
       </div>
 
       <div>
         {
           enableTorrent ?
-            `Torrent Delay: ${torrentDelay}` :
-            'Torrents disabled'
+            translate('torrentDelayTime', [torrentDelay]) :
+            translate('torrentsDisabled')
         }
       </div>
     </div>

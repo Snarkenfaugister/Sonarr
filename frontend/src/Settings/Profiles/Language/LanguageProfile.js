@@ -84,7 +84,7 @@ onCloneLanguageProfilePress
 
           <IconButton
             className={styles.cloneButton}
-            title="Clone Profile"
+            title={translate('cloneProfile')}
             name={icons.CLONE}
             onPress={this.onCloneLanguageProfilePress}
           />
@@ -103,7 +103,7 @@ onCloneLanguageProfilePress
                 <Label
                   key={item.language.id}
                   kind={isCutoff ? kinds.INFO : kinds.default}
-                  title={isCutoff ? 'Upgrade until this language is met or exceeded' : null}
+                  title={isCutoff ? translate('upgradeUntilThisLanguageIsMetOrExceeded') : null}
                 >
                   {item.language.name}
                 </Label>
@@ -122,8 +122,8 @@ onCloneLanguageProfilePress
         <ConfirmModal
           isOpen={this.state.isDeleteLanguageProfileModalOpen}
           kind={kinds.DANGER}
-          title="Delete Language Profile"
-          message={`Are you sure you want to delete the language profile '${name}'?`}
+          title={translate('deleteLanguageProfile')}
+          message={translate('languageProfileDeleteConfirm', [name])}
           confirmLabel={translate('delete')}
           isSpinning={isDeleting}
           onConfirm={this.onConfirmDeleteLanguageProfile}

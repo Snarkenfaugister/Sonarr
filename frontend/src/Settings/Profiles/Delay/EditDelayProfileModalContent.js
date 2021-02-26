@@ -46,7 +46,7 @@ function EditDelayProfileModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        {id ? 'Edit Delay Profile' : 'Add Delay Profile'}
+        {id ? translate('editDelayProfile') : translate('addDelayProfile')}
       </ModalHeader>
 
       <ModalBody>
@@ -57,21 +57,21 @@ function EditDelayProfileModalContent(props) {
 
         {
           !isFetching && !!error &&
-            <div>Unable to add a new quality profile, please try again.</div>
+            <div>{translate('unableToAddANewQualityProfilePleaseTryAgain')}</div>
         }
 
         {
           !isFetching && !error &&
             <Form {...otherProps}>
               <FormGroup>
-                <FormLabel>Protocol</FormLabel>
+                <FormLabel>{translate('protocol')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.SELECT}
                   name="protocol"
                   value={protocol}
                   values={protocolOptions}
-                  helpText="Choose which protocol(s) to use and which one is preferred when choosing between otherwise equal releases"
+                  helpText={translate('protocolHelpText')}
                   onChange={onProtocolChange}
                 />
               </FormGroup>
@@ -79,14 +79,14 @@ function EditDelayProfileModalContent(props) {
               {
                 enableUsenet.value &&
                   <FormGroup>
-                    <FormLabel>Usenet Delay</FormLabel>
+                    <FormLabel>{translate('usenetDelay')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.NUMBER}
                       name="usenetDelay"
                       unit={translate('minutes')}
                       {...usenetDelay}
-                      helpText="Delay in minutes to wait before grabbing a release from Usenet"
+                      helpText={translate('usenetDelayHelpText')}
                       onChange={onInputChange}
                     />
                   </FormGroup>
@@ -95,14 +95,14 @@ function EditDelayProfileModalContent(props) {
               {
                 enableTorrent.value &&
                   <FormGroup>
-                    <FormLabel>Torrent Delay</FormLabel>
+                    <FormLabel>{translate('torrentDelay')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.NUMBER}
                       name="torrentDelay"
                       unit={translate('minutes')}
                       {...torrentDelay}
-                      helpText="Delay in minutes to wait before grabbing a torrent"
+                      helpText={translate('torrentDelayHelpText')}
                       onChange={onInputChange}
                     />
                   </FormGroup>
@@ -111,7 +111,7 @@ function EditDelayProfileModalContent(props) {
               {
                 id === 1 ?
                   <Alert>
-                    This is the default profile. It applies to all series that don't have an explicit profile.
+                    {translate('defaultDelayProfile')}
                   </Alert> :
 
                   <FormGroup>
@@ -121,7 +121,7 @@ function EditDelayProfileModalContent(props) {
                       type={inputTypes.TAG}
                       name="tags"
                       {...tags}
-                      helpText="Applies to series with at least one matching tag"
+                      helpText={translate('tagsHelpText')}
                       onChange={onInputChange}
                     />
                   </FormGroup>

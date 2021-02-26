@@ -68,9 +68,9 @@ class DelayProfiles extends Component {
 
     return (
       <Measure onMeasure={this.onMeasure}>
-        <FieldSet legend="Delay Profiles">
+        <FieldSet legend={translate('delayProfiles')}>
           <PageSectionContent
-            errorMessage="Unable to load Delay Profiles"
+            errorMessage={translate('unableToLoadDelayProfiles')}
             {...otherProps}
           >
             <Scroller
@@ -82,9 +82,9 @@ class DelayProfiles extends Component {
             >
               <div>
                 <div className={styles.delayProfilesHeader}>
-                  <div className={styles.column}>Protocol</div>
-                  <div className={styles.column}>Usenet Delay</div>
-                  <div className={styles.column}>Torrent Delay</div>
+                  <div className={styles.column}>{translate('protocol')}</div>
+                  <div className={styles.column}>{translate('usenetDelay')}</div>
+                  <div className={styles.column}>{translate('torrentDelay')}</div>
                   <div className={styles.tags}>{translate('tags')}</div>
                 </div>
 

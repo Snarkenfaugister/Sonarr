@@ -35,7 +35,7 @@ function EditMetadataModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        Edit {name.value} Metadata
+        {translate('editMetadataInterp', [name.value])}
       </ModalHeader>
 
       <ModalBody>
@@ -46,7 +46,7 @@ function EditMetadataModalContent(props) {
             <FormInputGroup
               type={inputTypes.CHECK}
               name="enable"
-              helpText="Enable metadata file creation for this metadata type"
+              helpText={translate('meatadataEnableHelpText')}
               {...enable}
               onChange={onInputChange}
             />

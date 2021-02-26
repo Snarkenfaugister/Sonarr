@@ -6,6 +6,7 @@ import FormInputHelpText from 'Components/Form/FormInputHelpText';
 import LanguageProfileItemDragSource from './LanguageProfileItemDragSource';
 import LanguageProfileItemDragPreview from './LanguageProfileItemDragPreview';
 import styles from './LanguageProfileItems.css';
+import translate from 'Utilities/String/translate';
 
 class LanguageProfileItems extends Component {
 
@@ -28,10 +29,10 @@ class LanguageProfileItems extends Component {
 
     return (
       <FormGroup>
-        <FormLabel>Languages</FormLabel>
+        <FormLabel>{translate('languages')}</FormLabel>
         <div>
           <FormInputHelpText
-            text="Languages higher in the list are more preferred. Only checked languages are wanted"
+            text={translate('languagesHelpText')}
           />
 
           {

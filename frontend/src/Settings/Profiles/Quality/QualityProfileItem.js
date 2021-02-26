@@ -6,6 +6,7 @@ import Icon from 'Components/Icon';
 import IconButton from 'Components/Link/IconButton';
 import CheckInput from 'Components/Form/CheckInput';
 import styles from './QualityProfileItem.css';
+import translate from 'Utilities/String/translate';
 
 class QualityProfileItem extends Component {
 
@@ -63,7 +64,7 @@ class QualityProfileItem extends Component {
               <IconButton
                 className={styles.createGroupButton}
                 name={icons.GROUP}
-                title="Group"
+                title={translate('group')}
                 onPress={this.onCreateGroupPress}
               />
           }
@@ -95,7 +96,7 @@ class QualityProfileItem extends Component {
             <div className={styles.dragHandle}>
               <Icon
                 className={styles.dragIcon}
-                title="Create group"
+                title={translate('createGroup')}
                 name={icons.REORDER}
               />
             </div>

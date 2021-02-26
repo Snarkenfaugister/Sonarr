@@ -19,20 +19,20 @@ class QualityDefinitions extends Component {
     } = this.props;
 
     return (
-      <FieldSet legend="Quality Definitions">
+      <FieldSet legend={translate('qualityDefinitions')}>
         <PageSectionContent
-          errorMessage="Unable to load Quality Definitions"
+          errorMessage={translate('unableToLoadQualityDefinitions')}
           {...otherProps}
         >
           <div className={styles.header}>
-            <div className={styles.quality}>Quality</div>
+            <div className={styles.quality}>{translate('quality')}</div>
             <div className={styles.title}>{translate('title')}</div>
-            <div className={styles.sizeLimit}>Size Limit</div>
+            <div className={styles.sizeLimit}>{translate('sizeLimit')}</div>
 
             {
               advancedSettings ?
                 <div className={styles.megabytesPerMinute}>
-                  Megabytes Per Minute
+                  {translate('megabytesPerMinute')}
                 </div> :
                 null
             }
@@ -54,7 +54,7 @@ class QualityDefinitions extends Component {
 
           <div className={styles.sizeLimitHelpTextContainer}>
             <div className={styles.sizeLimitHelpText}>
-              Limits are automatically adjusted for the series runtime and number of episodes in the file.
+              {translate('qualityLimitsHelpText')}
             </div>
           </div>
         </PageSectionContent>

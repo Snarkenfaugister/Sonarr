@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import selectSettings from 'Store/Selectors/selectSettings';
 import { setDelayProfileValue, saveDelayProfile } from 'Store/Actions/settingsActions';
 import EditDelayProfileModalContent from './EditDelayProfileModalContent';
+import translate from 'Utilities/String/translate';
 
 const newDelayProfile = {
   enableUsenet: true,
@@ -17,10 +18,10 @@ const newDelayProfile = {
 };
 
 const protocolOptions = [
-  { key: 'preferUsenet', value: 'Prefer Usenet' },
-  { key: 'preferTorrent', value: 'Prefer Torrent' },
-  { key: 'onlyUsenet', value: 'Only Usenet' },
-  { key: 'onlyTorrent', value: 'Only Torrent' }
+  { key: 'preferUsenet', value: translate('preferUsenet') },
+  { key: 'preferTorrent', value: translate('preferTorrent') },
+  { key: 'onlyUsenet', value: translate('onlyUsenet') },
+  { key: 'onlyTorrent', value: translate('onlyTorrent') }
 ];
 
 function createDelayProfileSelector() {
@@ -142,7 +143,7 @@ class EditDelayProfileModalContentConnector extends Component {
         this.props.setDelayProfileValue({ name: 'preferredProtocol', value: 'torrent' });
         break;
       default:
-        throw Error(`Unknown protocol option: ${value}`);
+        throw Error(translate('unknownProtocolOptionInterp', [value]));
     }
   }
 

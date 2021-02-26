@@ -82,7 +82,7 @@ class Metadata extends Component {
           enable && !!metadataFields.length &&
             <div>
               <div className={styles.section}>
-                Metadata
+                {translate('metadata')}
               </div>
 
               {
@@ -108,7 +108,7 @@ class Metadata extends Component {
           enable && !!imageFields.length &&
             <div>
               <div className={styles.section}>
-                Images
+                {translate('images')}
               </div>
 
               {

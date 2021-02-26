@@ -64,7 +64,7 @@ function EditNotificationModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        {`${id ? 'Edit' : 'Add'} Connection - ${implementationName}`}
+        {`${id ? translate('editConnection') : translate('addConnection')} - ${implementationName}`}
       </ModalHeader>
 
       <ModalBody>
@@ -75,7 +75,7 @@ function EditNotificationModalContent(props) {
 
         {
           !isFetching && !!error &&
-            <div>Unable to add a new notification, please try again.</div>
+            <div>{translate('unableToAddANewNotificationPleaseTryAgain')}</div>
         }
 
         {
@@ -103,12 +103,12 @@ function EditNotificationModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>On Grab</FormLabel>
+                <FormLabel>{translate('onGrab')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="onGrab"
-                  helpText="Be notified when episodes are available for download and has been sent to a download client"
+                  helpText={translate('onGrabHelpText')}
                   isDisabled={!supportsOnGrab.value}
                   {...onGrab}
                   onChange={onInputChange}
@@ -116,12 +116,12 @@ function EditNotificationModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>On Import</FormLabel>
+                <FormLabel>{translate('onImport')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="onDownload"
-                  helpText="Be notified when episodes are successfully imported"
+                  helpText={translate('onImportHelpText')}
                   isDisabled={!supportsOnDownload.value}
                   {...onDownload}
                   onChange={onInputChange}
@@ -131,12 +131,12 @@ function EditNotificationModalContent(props) {
               {
                 onDownload.value &&
                   <FormGroup>
-                    <FormLabel>On Upgrade</FormLabel>
+                    <FormLabel>{translate('onUpgrade')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.CHECK}
                       name="onUpgrade"
-                      helpText="Be notified when episodes are upgraded to a better quality"
+                      helpText={translate('onUpgradenameHelpText')}
                       isDisabled={!supportsOnUpgrade.value}
                       {...onUpgrade}
                       onChange={onInputChange}
@@ -145,12 +145,12 @@ function EditNotificationModalContent(props) {
               }
 
               <FormGroup>
-                <FormLabel>On Rename</FormLabel>
+                <FormLabel>{translate('onRename')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="onRename"
-                  helpText="Be notified when episodes are renamed"
+                  helpText={translate('onRenameHelpText')}
                   isDisabled={!supportsOnRename.value}
                   {...onRename}
                   onChange={onInputChange}
@@ -158,12 +158,12 @@ function EditNotificationModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>On Series Delete</FormLabel>
+                <FormLabel>{translate('onSeriesDelete')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="onSeriesDelete"
-                  helpText="Be notified when series are deleted"
+                  helpText={translate('onSeriesDeleteHelpText')}
                   isDisabled={!supportsOnSeriesDelete.value}
                   {...onSeriesDelete}
                   onChange={onInputChange}
@@ -171,12 +171,12 @@ function EditNotificationModalContent(props) {
               </FormGroup>
 
               <FormGroup>
-                <FormLabel>On Episode File Delete</FormLabel>
+                <FormLabel>{translate('onEpisodeFileDelete')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="onEpisodeFileDelete"
-                  helpText="Be notified when episode files are deleted"
+                  helpText={translate('onEpisodeFileDeleteHelpText')}
                   isDisabled={!supportsOnEpisodeFileDelete.value}
                   {...onEpisodeFileDelete}
                   onChange={onInputChange}
@@ -186,12 +186,12 @@ function EditNotificationModalContent(props) {
               {
                 onEpisodeFileDelete.value ?
                   <FormGroup>
-                    <FormLabel>On Episode File Delete For Upgrade</FormLabel>
+                    <FormLabel>{translate('onEpisodeFileDeleteForUpgrade')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.CHECK}
                       name="onEpisodeFileDeleteForUpgrade"
-                      helpText="Be notified when episode files are deleted for upgrades"
+                      helpText={translate('onEpisodeFileDeleteForUpgradeHelpText')}
                       isDisabled={!supportsOnEpisodeFileDeleteForUpgrade.value}
                       {...onEpisodeFileDeleteForUpgrade}
                       onChange={onInputChange}
@@ -201,12 +201,12 @@ function EditNotificationModalContent(props) {
               }
 
               <FormGroup>
-                <FormLabel>On Health Issue</FormLabel>
+                <FormLabel>{translate('onHealthIssue')}</FormLabel>
 
                 <FormInputGroup
                   type={inputTypes.CHECK}
                   name="onHealthIssue"
-                  helpText="Be notified on health check failures"
+                  helpText={translate('onHealthIssueHelpText')}
                   isDisabled={!supportsOnHealthIssue.value}
                   {...onHealthIssue}
                   onChange={onInputChange}
@@ -216,12 +216,12 @@ function EditNotificationModalContent(props) {
               {
                 onHealthIssue.value &&
                   <FormGroup>
-                    <FormLabel>Include Health Warnings</FormLabel>
+                    <FormLabel>{translate('includeHealthWarnings')}</FormLabel>
 
                     <FormInputGroup
                       type={inputTypes.CHECK}
                       name="includeHealthWarnings"
-                      helpText="Be notified on health warnings in addition to errors"
+                      helpText={translate('includeHealthWarningsHelpText')}
                       isDisabled={!supportsOnHealthIssue.value}
                       {...includeHealthWarnings}
                       onChange={onInputChange}
@@ -235,7 +235,7 @@ function EditNotificationModalContent(props) {
                 <FormInputGroup
                   type={inputTypes.TAG}
                   name="tags"
-                  helpText="Only send notifications for series with at least one matching tag"
+                  helpText={translate('notificationTagsHelpText')}
                   {...tags}
                   onChange={onInputChange}
                 />

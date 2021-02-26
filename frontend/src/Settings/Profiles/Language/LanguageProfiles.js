@@ -8,6 +8,7 @@ import PageSectionContent from 'Components/Page/PageSectionContent';
 import LanguageProfile from './LanguageProfile';
 import EditLanguageProfileModalConnector from './EditLanguageProfileModalConnector';
 import styles from './LanguageProfiles.css';
+import translate from 'Utilities/String/translate';
 
 class LanguageProfiles extends Component {
 
@@ -51,9 +52,9 @@ class LanguageProfiles extends Component {
     } = this.props;
 
     return (
-      <FieldSet legend="Language Profiles">
+      <FieldSet legend={translate('languageProfiles')}>
         <PageSectionContent
-          errorMessage="Unable to load Language Profiles"
+          errorMessage={translate('unableToLoadLanguageProfiles')}
           {...otherProps}
         >
           <div className={styles.languageProfiles}>

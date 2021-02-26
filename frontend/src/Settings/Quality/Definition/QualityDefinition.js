@@ -10,6 +10,7 @@ import TextInput from 'Components/Form/TextInput';
 import Popover from 'Components/Tooltip/Popover';
 import QualityDefinitionLimits from './QualityDefinitionLimits';
 import styles from './QualityDefinition.css';
+import translate from 'Utilities/String/translate';
 
 const MIN = 0;
 const MAX = 400;
@@ -163,10 +164,10 @@ class QualityDefinition extends Component {
     } = this.state;
 
     const minBytes = minSize * 1024 * 1024;
-    const minSixty = `${formatBytes(minBytes * 60)}/h`;
+    const minSixty = translate('perHourInterp', [formatBytes(minBytes * 60)]);
 
     const maxBytes = maxSize && maxSize * 1024 * 1024;
-    const maxSixty = maxBytes ? `${formatBytes(maxBytes * 60)}/h` : 'Unlimited';
+    const maxSixty = maxBytes ? translate('perHourInterp', [formatBytes(maxBytes * 60)]) : translate('unlimited');
 
     return (
       <div className={styles.qualityDefinition}>
@@ -204,11 +205,11 @@ class QualityDefinition extends Component {
                 anchor={
                   <Label kind={kinds.INFO}>{minSixty}</Label>
                 }
-                title="Minimum Limits"
+                title={translate('minimumLimits')}
                 body={
                   <QualityDefinitionLimits
                     bytes={minBytes}
-                    message="No minimum for any runtime"
+                    message={translate('noMinimumForAnyRuntime')}
                   />
                 }
                 position={tooltipPositions.BOTTOM}
@@ -220,11 +221,11 @@ class QualityDefinition extends Component {
                 anchor={
                   <Label kind={kinds.WARNING}>{maxSixty}</Label>
                 }
-                title="Maximum Limits"
+                title={translate('maximumLimits')}
                 body={
                   <QualityDefinitionLimits
                     bytes={maxBytes}
-                    message="No limit for any runtime"
+                    message={translate('noLimitForAnyRuntime')}
                   />
                 }
                 position={tooltipPositions.BOTTOM}

@@ -29,13 +29,13 @@ function TagDetailsModalContent(props) {
   return (
     <ModalContent onModalClose={onModalClose}>
       <ModalHeader>
-        Tag Details - {label}
+        {translate('tagDetails', [label])}
       </ModalHeader>
 
       <ModalBody>
         {
           !isTagUsed &&
-            <div>Tag is not used and can be deleted</div>
+            <div>{translate('tagIsNotUsedAndCanBeDeleted')}</div>
         }
 
         {
@@ -55,7 +55,7 @@ function TagDetailsModalContent(props) {
 
         {
           !!delayProfiles.length &&
-            <FieldSet legend="Delay Profile">
+            <FieldSet legend={translate('delayProfile')}>
               {
                 delayProfiles.map((item) => {
                   const {
@@ -84,7 +84,7 @@ function TagDetailsModalContent(props) {
 
         {
           !!notifications.length &&
-            <FieldSet legend="Connections">
+            <FieldSet legend={translate('connections')}>
               {
                 notifications.map((item) => {
                   return (
@@ -99,7 +99,7 @@ function TagDetailsModalContent(props) {
 
         {
           !!importLists.length &&
-            <FieldSet legend="Import Lists">
+            <FieldSet legend={translate('importLists')}>
               {
                 importLists.map((item) => {
                   return (
@@ -114,7 +114,7 @@ function TagDetailsModalContent(props) {
 
         {
           !!releaseProfiles.length &&
-            <FieldSet legend="Release Profiles">
+            <FieldSet legend={translate('releaseProfiles')}>
               {
                 releaseProfiles.map((item) => {
                   return (
@@ -164,7 +164,7 @@ function TagDetailsModalContent(props) {
           <Button
             className={styles.deleteButton}
             kind={kinds.DANGER}
-            title={isTagUsed ? 'Cannot be deleted while in use' : undefined}
+            title={isTagUsed ? translate('tagCannotBeDeletedWhileInUse') : undefined}
             isDisabled={isTagUsed}
             onPress={onDeleteTagPress}
           >
