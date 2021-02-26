@@ -21,7 +21,7 @@ import translate from 'Utilities/String/translate';
 const columns = [
   {
     name: 'type',
-    label: 'Type',
+    label: translate('type'),
     isVisible: true
   },
   {

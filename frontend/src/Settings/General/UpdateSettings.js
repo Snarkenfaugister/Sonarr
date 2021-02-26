@@ -49,7 +49,7 @@ function UpdateSettings(props) {
   updateOptions.push({ key: 'script', value: translate('script') });
 
   return (
-    <FieldSet legend="Updates">
+    <FieldSet legend={translate('updates')}>
       <FormGroup
         advancedSettings={advancedSettings}
         isAdvanced={true}

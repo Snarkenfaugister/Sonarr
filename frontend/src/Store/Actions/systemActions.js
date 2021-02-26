@@ -81,27 +81,27 @@ export const defaultState = {
     columns: [
       {
         name: 'level',
-        columnLabel: 'Level',
+        columnLabel: translate('level'),
         isSortable: false,
         isVisible: true,
         isModifiable: false
       },
       {
         name: 'logger',
-        label: 'Component',
+        label: translate('component'),
         isSortable: false,
         isVisible: true,
         isModifiable: false
       },
       {
         name: 'message',
-        label: 'Message',
+        label: translate('message'),
         isVisible: true,
         isModifiable: false
       },
       {
         name: 'time',
-        label: 'Time',
+        label: translate('time'),
         isSortable: true,
         isVisible: true,
         isModifiable: false
@@ -120,7 +120,7 @@ export const defaultState = {
     filters: [
       {
         key: 'all',
-        label: 'All',
+        label: translate('all'),
         filters: []
       },
       {
@@ -136,7 +136,7 @@ export const defaultState = {
       },
       {
         key: 'warn',
-        label: 'Warn',
+        label: translate('warn'),
         filters: [
           {
             key: 'level',
@@ -147,7 +147,7 @@ export const defaultState = {
       },
       {
         key: 'error',
-        label: 'Error',
+        label: translate('error'),
         filters: [
           {
             key: 'level',

@@ -8,6 +8,7 @@ import updateSectionState from 'Utilities/State/updateSectionState';
 import { createThunk, handleThunks } from 'Store/thunks';
 import { set } from 'Store/Actions/baseActions';
 import createHandleActions from './Creators/createHandleActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -59,7 +60,7 @@ function showOAuthWindow(url, payload) {
       responseJSON: [
         {
           propertyName: payload.name,
-          errorMessage: 'Pop-ups are being blocked by your browser'
+          errorMessage: translate('oAuthPopupMessage')
         }
       ]
     };

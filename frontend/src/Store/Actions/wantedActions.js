@@ -30,7 +30,7 @@ export const defaultState = {
     columns: [
       {
         name: 'series.sortTitle',
-        label: 'Series Title',
+        label: translate('seriesTitle'),
         isSortable: true,
         isVisible: true
       },
@@ -41,7 +41,7 @@ export const defaultState = {
       },
       {
         name: 'episodeTitle',
-        label: 'Episode Title',
+        label: translate('episodeTitle'),
         isVisible: true
       },
       {
@@ -52,7 +52,7 @@ export const defaultState = {
       },
       {
         name: 'status',
-        label: 'Status',
+        label: translate('status'),
         isVisible: true
       },
       {
@@ -102,7 +102,7 @@ export const defaultState = {
     columns: [
       {
         name: 'series.sortTitle',
-        label: 'Series Title',
+        label: translate('seriesTitle'),
         isSortable: true,
         isVisible: true
       },
@@ -113,7 +113,7 @@ export const defaultState = {
       },
       {
         name: 'episodeTitle',
-        label: 'Episode Title',
+        label: translate('episodeTitle'),
         isVisible: true
       },
       {
@@ -129,7 +129,7 @@ export const defaultState = {
       },
       {
         name: 'status',
-        label: 'Status',
+        label: translate('status'),
         isVisible: true
       },
       {

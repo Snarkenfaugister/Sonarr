@@ -19,12 +19,12 @@ import translate from 'Utilities/String/translate';
 const columns = [
   {
     name: 'filename',
-    label: 'Filename',
+    label: translate('filename'),
     isVisible: true
   },
   {
     name: 'lastWriteTime',
-    label: 'Last Write Time',
+    label: translate('lastWriteTime'),
     isVisible: true
   },
   {
@@ -51,7 +51,7 @@ class LogFiles extends Component {
     } = this.props;
 
     return (
-      <PageContent title="Log Files">
+      <PageContent title={translate('logFiles')}>
         <PageToolbar>
           <PageToolbarSection>
             <LogsNavMenu current={currentLogView} />
@@ -67,7 +67,7 @@ class LogFiles extends Component {
             />
 
             <PageToolbarButton
-              label="Clear"
+              label={translate('clear')}
               iconName={icons.CLEAR}
               isSpinning={deleteFilesExecuting}
               onPress={onDeleteFilesPress}
@@ -77,13 +77,13 @@ class LogFiles extends Component {
         <PageContentBody>
           <Alert>
             <div>
-              Log files are located in: {location}
+              {translate('logFilesLocationInterp', [location])}
             </div>
 
             {
               currentLogView === 'Log Files' &&
                 <div>
-                  The log level defaults to 'Info' and can be changed in <Link to="/settings/general">General Settings</Link>
+                  {translate('theLogLevelDefaultText')} <Link to="/settings/general">{translate('generalSettings')}</Link>
                 </div>
             }
           </Alert>
@@ -118,7 +118,7 @@ class LogFiles extends Component {
 
           {
             !isFetching && !items.length &&
-              <div>No log files</div>
+              <div>{translate('noLogFiles')}</div>
           }
         </PageContentBody>
       </PageContent>

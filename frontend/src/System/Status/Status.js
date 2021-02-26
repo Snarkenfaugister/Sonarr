@@ -5,6 +5,7 @@ import HealthConnector from './Health/HealthConnector';
 import DiskSpaceConnector from './DiskSpace/DiskSpaceConnector';
 import AboutConnector from './About/AboutConnector';
 import MoreInfo from './MoreInfo/MoreInfo';
+import translate from 'Utilities/String/translate';
 
 class Status extends Component {
 
@@ -13,7 +14,7 @@ class Status extends Component {
 
   render() {
     return (
-      <PageContent title="Status">
+      <PageContent title={translate('status')}>
         <PageContentBody>
           <HealthConnector />
           <DiskSpaceConnector />

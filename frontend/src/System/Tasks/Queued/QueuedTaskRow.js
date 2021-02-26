@@ -12,6 +12,7 @@ import ConfirmModal from 'Components/Modal/ConfirmModal';
 import TableRow from 'Components/Table/TableRow';
 import TableRowCell from 'Components/Table/Cells/TableRowCell';
 import styles from './QueuedTaskRow.css';
+import translate from 'Utilities/String/translate';
 
 function getStatusIconProps(status, message) {
   const title = titleCase(status);
@@ -34,7 +35,7 @@ function getStatusIconProps(status, message) {
       return {
         name: icons.CHECK,
         kind: kinds.SUCCESS,
-        title: message === 'Completed' ? title : `${title}: ${message}`
+        title: message === translate('completed') ? title : `${title}: ${message}`
       };
 
     case 'failed':

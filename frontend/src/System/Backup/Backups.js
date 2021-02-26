@@ -25,7 +25,7 @@ const columns = [
   },
   {
     name: 'time',
-    label: 'Time',
+    label: translate('time'),
     isVisible: true
   },
   {
@@ -76,18 +76,18 @@ class Backups extends Component {
     const noBackups = isPopulated && !items.length;
 
     return (
-      <PageContent title="Backups">
+      <PageContent title={translate('backups')}>
         <PageToolbar>
           <PageToolbarSection>
             <PageToolbarButton
-              label="Backup Now"
+              label={translate('backupNow')}
               iconName={icons.BACKUP}
               isSpinning={backupExecuting}
               onPress={onBackupPress}
             />
 
             <PageToolbarButton
-              label="Restore Backup"
+              label={translate('restoreBackup')}
               iconName={icons.RESTORE}
               onPress={this.onRestorePress}
             />
@@ -102,12 +102,12 @@ class Backups extends Component {
 
           {
             !isFetching && !!error &&
-              <div>Unable to load backups</div>
+              <div>{translate('unableToLoadBackups')}</div>
           }
 
           {
             noBackups &&
-              <div>No backups are available</div>
+              <div>{translate('noBackupsAreAvailable')}</div>
           }
 
           {

@@ -11,6 +11,7 @@ import createSaveProviderHandler, { createCancelSaveProviderHandler } from 'Stor
 import createTestProviderHandler, { createCancelTestProviderHandler } from 'Store/Actions/Creators/createTestProviderHandler';
 import createTestAllProvidersHandler from 'Store/Actions/Creators/createTestAllProvidersHandler';
 import createRemoveItemHandler from 'Store/Actions/Creators/createRemoveItemHandler';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -137,7 +138,7 @@ export default {
 
       // Set the name in pendingChanges
       newState.pendingChanges = {
-        name: `${item.name} - Copy`
+        name: `${item.name} - ${translate('copy')}`
       };
 
       return updateSectionState(state, section, newState);

@@ -85,7 +85,7 @@ class MonitoringOptionsModalContent extends Component {
         <ModalBody>
           <Form {...otherProps}>
             <FormGroup>
-              <FormLabel>Monitoring</FormLabel>
+              <FormLabel>{translate('monitoring')}</FormLabel>
 
               <FormInputGroup
                 type={inputTypes.MONITOR_EPISODES_SELECT}

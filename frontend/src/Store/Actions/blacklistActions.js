@@ -33,7 +33,7 @@ export const defaultState = {
   columns: [
     {
       name: 'series.sortTitle',
-      label: 'Series Title',
+      label: translate('seriesTitle'),
       isSortable: true,
       isVisible: true
     },

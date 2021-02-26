@@ -35,14 +35,14 @@ export const defaultState = {
   columns: [
     {
       name: 'status',
-      columnLabel: 'Status',
+      columnLabel: translate('status'),
       isSortable: true,
       isVisible: true,
       isModifiable: false
     },
     {
       name: 'sortTitle',
-      label: 'Series Title',
+      label: translate('seriesTitle'),
       isSortable: true,
       isVisible: true,
       isModifiable: false
@@ -61,7 +61,7 @@ export const defaultState = {
     },
     {
       name: 'seriesType',
-      label: 'Type',
+      label: translate('type'),
       isSortable: true,
       isVisible: true
     },

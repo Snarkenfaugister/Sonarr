@@ -20,22 +20,22 @@ const columns = [
   },
   {
     name: 'queued',
-    label: 'Queued',
+    label: translate('queued'),
     isVisible: true
   },
   {
     name: 'started',
-    label: 'Started',
+    label: translate('started'),
     isVisible: true
   },
   {
     name: 'ended',
-    label: 'Ended',
+    label: translate('ended'),
     isVisible: true
   },
   {
     name: 'duration',
-    label: 'Duration',
+    label: translate('duration'),
     isVisible: true
   },
   {
@@ -52,7 +52,7 @@ function QueuedTasks(props) {
   } = props;
 
   return (
-    <FieldSet legend="Queue">
+    <FieldSet legend={translate('queue')}>
       {
         isFetching && !isPopulated &&
         <LoadingIndicator />

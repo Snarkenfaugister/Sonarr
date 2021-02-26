@@ -8,6 +8,7 @@ import ModalHeader from 'Components/Modal/ModalHeader';
 import ModalBody from 'Components/Modal/ModalBody';
 import ModalFooter from 'Components/Modal/ModalFooter';
 import styles from './MoveSeriesModal.css';
+import translate from 'Utilities/String/translate';
 
 function MoveSeriesModal(props) {
   const {
@@ -40,14 +41,14 @@ function MoveSeriesModal(props) {
         onModalClose={onSavePress}
       >
         <ModalHeader>
-          Move Files
+          {translate('moveFiles')}
         </ModalHeader>
 
         <ModalBody>
           {
             destinationRootFolder ?
-              `Would you like to move the series folders to '${destinationRootFolder}'?` :
-              `Would you like to move the series files from '${originalPath}' to '${destinationPath}'?`
+              translate('moveFolders1', [destinationRootFolder]) :
+              translate('moveFolders2', [originalPath, destinationPath])
           }
         </ModalBody>
 
@@ -56,14 +57,14 @@ function MoveSeriesModal(props) {
             className={styles.doNotMoveButton}
             onPress={onSavePress}
           >
-            No, I'll Move the Files Myself
+            {translate('noMoveFilesSelf')}
           </Button>
 
           <Button
             kind={kinds.DANGER}
             onPress={onMoveSeriesPress}
           >
-            Yes, Move the Files
+            {translate('yesMoveFiles')}
           </Button>
         </ModalFooter>
       </ModalContent>

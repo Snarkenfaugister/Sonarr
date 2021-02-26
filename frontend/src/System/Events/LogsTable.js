@@ -33,7 +33,7 @@ function LogsTable(props) {
   } = props;
 
   return (
-    <PageContent title="Logs">
+    <PageContent title={translate('logs')}>
       <PageToolbar>
         <PageToolbarSection>
           <PageToolbarButton
@@ -45,7 +45,7 @@ function LogsTable(props) {
           />
 
           <PageToolbarButton
-            label="Clear"
+            label={translate('clear')}
             iconName={icons.CLEAR}
             isSpinning={clearLogExecuting}
             onPress={onClearLogsPress}
@@ -83,7 +83,7 @@ function LogsTable(props) {
         {
           isPopulated && !error && !items.length &&
           <div>
-            No events found
+            {translate('noEventsFound')}
           </div>
         }
 

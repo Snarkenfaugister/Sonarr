@@ -30,12 +30,12 @@ export const section = 'series';
 export const filters = [
   {
     key: 'all',
-    label: 'All',
+    label: translate('all'),
     filters: []
   },
   {
     key: 'monitored',
-    label: 'Monitored Only',
+    label: translate('monitoredOnly'),
     filters: [
       {
         key: 'monitored',
@@ -46,7 +46,7 @@ export const filters = [
   },
   {
     key: 'unmonitored',
-    label: 'Unmonitored Only',
+    label: translate('unmonitoredOnly'),
     filters: [
       {
         key: 'monitored',
@@ -57,7 +57,7 @@ export const filters = [
   },
   {
     key: 'continuing',
-    label: 'Continuing Only',
+    label: translate('continuingOnly'),
     filters: [
       {
         key: 'status',
@@ -68,7 +68,7 @@ export const filters = [
   },
   {
     key: 'ended',
-    label: 'Ended Only',
+    label: translate('endedOnly'),
     filters: [
       {
         key: 'status',
@@ -79,7 +79,7 @@ export const filters = [
   },
   {
     key: 'missing',
-    label: 'Missing Episodes',
+    label: translate('missingEpisodes'),
     filters: [
       {
         key: 'missing',
@@ -158,13 +158,13 @@ export const filterBuilderProps = [
   },
   {
     name: 'status',
-    label: 'Status',
+    label: translate('status'),
     type: filterBuilderTypes.EXACT,
     valueType: filterBuilderValueTypes.SERIES_STATUS
   },
   {
     name: 'seriesType',
-    label: 'Type',
+    label: translate('type'),
     type: filterBuilderTypes.EXACT,
     valueType: filterBuilderValueTypes.SERIES_TYPES
   },
@@ -201,19 +201,19 @@ export const filterBuilderProps = [
   },
   {
     name: 'nextAiring',
-    label: 'Next Airing',
+    label: translate('nextAiring'),
     type: filterBuilderTypes.DATE,
     valueType: filterBuilderValueTypes.DATE
   },
   {
     name: 'previousAiring',
-    label: 'Previous Airing',
+    label: translate('previousAiring'),
     type: filterBuilderTypes.DATE,
     valueType: filterBuilderValueTypes.DATE
   },
   {
     name: 'added',
-    label: 'Added',
+    label: translate('added'),
     type: filterBuilderTypes.DATE,
     valueType: filterBuilderValueTypes.DATE
   },
@@ -224,7 +224,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'episodeProgress',
-    label: 'Episode Progress',
+    label: translate('episodeProgress'),
     type: filterBuilderTypes.NUMBER
   },
   {
@@ -234,7 +234,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'rootFolderPath',
-    label: 'Root Folder Path',
+    label: translate('rootFolderPath'),
     type: filterBuilderTypes.EXACT
   },
   {
@@ -245,7 +245,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'genres',
-    label: 'Genres',
+    label: translate('genres'),
     type: filterBuilderTypes.ARRAY,
     optionsSelector: function(items) {
       const tagList = items.reduce((acc, series) => {
@@ -264,12 +264,12 @@ export const filterBuilderProps = [
   },
   {
     name: 'ratings',
-    label: 'Rating',
+    label: translate('rating'),
     type: filterBuilderTypes.NUMBER
   },
   {
     name: 'certification',
-    label: 'Certification',
+    label: translate('certification'),
     type: filterBuilderTypes.EXACT
   },
   {
@@ -280,7 +280,7 @@ export const filterBuilderProps = [
   },
   {
     name: 'useSceneNumbering',
-    label: 'Scene Numbering',
+    label: translate('sceneNumbering'),
     type: filterBuilderTypes.EXACT
   }
 ];

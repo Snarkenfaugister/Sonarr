@@ -145,28 +145,28 @@ const links = [
     to: '/system/status',
     children: [
       {
-        title: 'Status',
+        title: translate('status'),
         to: '/system/status',
         statusComponent: HealthStatusConnector
       },
       {
-        title: 'Tasks',
+        title: translate('tasks'),
         to: '/system/tasks'
       },
       {
-        title: 'Backup',
+        title: translate('backup'),
         to: '/system/backup'
       },
       {
-        title: 'Updates',
+        title: translate('updates'),
         to: '/system/updates'
       },
       {
-        title: 'Events',
+        title: translate('events'),
         to: '/system/events'
       },
       {
-        title: 'Log Files',
+        title: translate('logFiles'),
         to: '/system/logs/files'
       }
     ]

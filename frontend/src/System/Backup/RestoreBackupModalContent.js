@@ -14,7 +14,7 @@ import translate from 'Utilities/String/translate';
 
 function getErrorMessage(error) {
   if (!error || !error.responseJSON || !error.responseJSON.message) {
-    return 'Error restoring backup';
+    return translate('errorRestoringBackup');
   }
 
   return error.responseJSON.message;
@@ -141,12 +141,12 @@ class RestoreBackupModalContent extends Component {
     return (
       <ModalContent onModalClose={onModalClose}>
         <ModalHeader>
-          Restore Backup
+          {translate('restoreBackup')}
         </ModalHeader>
 
         <ModalBody>
           {
-            !!id && `Would you like to restore the backup '${name}'?`
+            !!id && translate('wouldYouLikeToRestoreBackup', [name])
           }
 
           {
@@ -168,7 +168,7 @@ class RestoreBackupModalContent extends Component {
                 />
               </div>
 
-              <div>Restore</div>
+              <div>{translate('restore')}</div>
             </div>
 
             <div className={styles.step}>
@@ -179,7 +179,7 @@ class RestoreBackupModalContent extends Component {
                 />
               </div>
 
-              <div>Restart</div>
+              <div>{translate('restart')}</div>
             </div>
 
             <div className={styles.step}>
@@ -190,14 +190,14 @@ class RestoreBackupModalContent extends Component {
                 />
               </div>
 
-              <div>Reload</div>
+              <div>{translate('reload')}</div>
             </div>
           </div>
         </ModalBody>
 
         <ModalFooter>
           <div className={styles.additionalInfo}>
-            Note: Sonarr will automatically restart and reload the UI during the restore process.
+            {translate('restartReloadNote')}
           </div>
 
           <Button onPress={onModalClose}>
@@ -210,7 +210,7 @@ class RestoreBackupModalContent extends Component {
             isSpinning={isRestoring}
             onPress={this.onRestorePress}
           >
-            Restore
+            {translate('restore')}
           </SpinnerButton>
         </ModalFooter>
       </ModalContent>

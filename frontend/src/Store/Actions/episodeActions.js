@@ -67,12 +67,12 @@ export const defaultState = {
     },
     {
       name: 'audioInfo',
-      label: 'Audio Info',
+      label: translate('audioInfo'),
       isVisible: false
     },
     {
       name: 'videoCodec',
-      label: 'Video Codec',
+      label: translate('videoCodec'),
       isVisible: false
     },
     {
@@ -82,7 +82,7 @@ export const defaultState = {
     },
     {
       name: 'status',
-      label: 'Status',
+      label: translate('status'),
       isVisible: true
     },
     {

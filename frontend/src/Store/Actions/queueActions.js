@@ -58,7 +58,7 @@ export const defaultState = {
     columns: [
       {
         name: 'status',
-        columnLabel: 'Status',
+        columnLabel: translate('status'),
         isSortable: true,
         isVisible: true,
         isModifiable: false
@@ -77,13 +77,13 @@ export const defaultState = {
       },
       {
         name: 'episode.title',
-        label: 'Episode Title',
+        label: translate('episodeTitle'),
         isSortable: true,
         isVisible: true
       },
       {
         name: 'episode.airDateUtc',
-        label: 'Episode Air Date',
+        label: translate('episodeAirDate'),
         isSortable: true,
         isVisible: false
       },
@@ -101,7 +101,7 @@ export const defaultState = {
       },
       {
         name: 'protocol',
-        label: 'Protocol',
+        label: translate('protocol'),
         isSortable: true,
         isVisible: false
       },
@@ -113,31 +113,31 @@ export const defaultState = {
       },
       {
         name: 'downloadClient',
-        label: 'Download Client',
+        label: translate('downloadClient'),
         isSortable: true,
         isVisible: false
       },
       {
         name: 'title',
-        label: 'Release Title',
+        label: translate('releaseTitle'),
         isSortable: true,
         isVisible: false
       },
       {
         name: 'outputPath',
-        label: 'Output Path',
+        label: translate('outputPath'),
         isSortable: false,
         isVisible: false
       },
       {
         name: 'estimatedCompletionTime',
-        label: 'Timeleft',
+        label: translate('Timeleft'),
         isSortable: true,
         isVisible: true
       },
       {
         name: 'progress',
-        label: 'Progress',
+        label: translate('progress'),
         isSortable: true,
         isVisible: true
       },

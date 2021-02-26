@@ -7,6 +7,7 @@ import DescriptionList from 'Components/DescriptionList/DescriptionList';
 import DescriptionListItem from 'Components/DescriptionList/DescriptionListItem';
 import StartTime from './StartTime';
 import styles from './About.css';
+import translate from 'Utilities/String/translate';
 
 class About extends Component {
 
@@ -29,17 +30,17 @@ class About extends Component {
     } = this.props;
 
     return (
-      <FieldSet legend="About">
+      <FieldSet legend={translate('about')}>
         <DescriptionList className={styles.descriptionList}>
           <DescriptionListItem
-            title="Version"
+            title={translate('version')}
             data={version}
           />
 
           {
             packageVersion &&
               <DescriptionListItem
-                title="Package Version"
+                title={translate('packageVersion')}
                 data={(packageAuthor ? <span> {packageVersion} {' by '} <InlineMarkdown data={packageAuthor} /> </span> : packageVersion)}
               />
           }
@@ -47,32 +48,32 @@ class About extends Component {
           {
             isMonoRuntime ?
               <DescriptionListItem
-                title="Mono Version"
+                title={translate('monoVersion')}
                 data={runtimeVersion}
               /> :
               <DescriptionListItem
-                title=".net Version"
+                title={translate('dotNetVersion')}
                 data={runtimeVersion}
               />
           }
 
           <DescriptionListItem
-            title="AppData directory"
+            title={translate('appDataDirectory')}
             data={appData}
           />
 
           <DescriptionListItem
-            title="Startup directory"
+            title={translate('startupDirectory')}
             data={startupPath}
           />
 
           <DescriptionListItem
-            title="Mode"
+            title={translate('mode')}
             data={titleCase(mode)}
           />
 
           <DescriptionListItem
-            title="Uptime"
+            title={translate('uptime')}
             data={
               <StartTime
                 startTime={startTime}

@@ -43,15 +43,15 @@ class Updates extends Component {
     const hasUpdateToInstall = hasUpdates && _.some(items, { installable: true, latest: true });
     const noUpdateToInstall = hasUpdates && !hasUpdateToInstall;
 
-    const externalUpdaterPrefix = 'Unable to update Sonarr directly,';
+    const externalUpdaterPrefix = translate('unableToUpdateSonarrDirectly');
     const externalUpdaterMessages = {
-      external: 'Sonarr is configured to use an external update mechanism',
-      apt: 'use apt to install the update',
-      docker: 'update the docker container to receive the update'
+      external: translate('externalUpdater'),
+      apt: translate('aptUpdater'),
+      docker: translate('dockerUpdater')
     };
 
     return (
-      <PageContent title="Updates">
+      <PageContent title={translate('updates')}>
         <PageContentBody>
           {
             !isPopulated && !hasError &&
@@ -60,7 +60,7 @@ class Updates extends Component {
 
           {
             noUpdates &&
-              <div>No updates are available</div>
+              <div>{translate('noUpdatesAreAvailable')}</div>
           }
 
           {
@@ -74,7 +74,7 @@ class Updates extends Component {
                       isSpinning={isInstallingUpdate}
                       onPress={onInstallLatestPress}
                     >
-                      Install Latest
+                      {translate('installLatest')}
                     </SpinnerButton> :
 
                     <Fragment>
@@ -110,7 +110,7 @@ class Updates extends Component {
                 />
 
                 <div className={styles.message}>
-                  The latest version of Sonarr is already installed
+                  {translate('onLatestVersion')}
                 </div>
 
                 {
@@ -162,7 +162,7 @@ class Updates extends Component {
                                 kind={kinds.SUCCESS}
                                 title={formatDateTime(update.installedOn, longDateFormat, timeFormat)}
                               >
-                                Currently Installed
+                                {translate('currentlyInstalled')}
                               </Label> :
                               null
                           }
@@ -174,7 +174,7 @@ class Updates extends Component {
                                 kind={kinds.INVERSE}
                                 title={formatDateTime(update.installedOn, longDateFormat, timeFormat)}
                               >
-                                Previously Installed
+                                {translate('previouslyInstalled')}
                               </Label> :
                               null
                           }
@@ -209,14 +209,14 @@ class Updates extends Component {
           {
             !!updatesError &&
               <div>
-                Failed to fetch updates
+                {translate('failedToFetchUpdates')}
               </div>
           }
 
           {
             !!generalSettingsError &&
               <div>
-                Failed to update settings
+                {translate('failedToUpdateSettings')}
               </div>
           }
         </PageContentBody>

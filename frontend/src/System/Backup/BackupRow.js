@@ -74,14 +74,14 @@ class BackupRow extends Component {
     } = this.state;
 
     let iconClassName = icons.SCHEDULED;
-    let iconTooltip = 'Scheduled';
+    let iconTooltip = translate('scheduled');
 
     if (type === 'manual') {
       iconClassName = icons.INTERACTIVE;
-      iconTooltip = 'Manual';
+      iconTooltip = translate('manual');
     } else if (type === 'update') {
       iconClassName = icons.UPDATE;
-      iconTooltip = 'Before update';
+      iconTooltip = translate('beforeUpdate');
     }
 
     return (
@@ -131,8 +131,8 @@ class BackupRow extends Component {
         <ConfirmModal
           isOpen={isConfirmDeleteModalOpen}
           kind={kinds.DANGER}
-          title="Delete Backup"
-          message={`Are you sure you want to delete the backup '${name}'?`}
+          title={translate('deleteBackup')}
+          message={translate('deleteBackupMessageText', [name])}
           confirmLabel={translate('delete')}
           onConfirm={this.onConfirmDeletePress}
           onCancel={this.onConfirmDeleteModalClose}

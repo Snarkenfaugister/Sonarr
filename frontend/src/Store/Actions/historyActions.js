@@ -32,7 +32,7 @@ export const defaultState = {
   columns: [
     {
       name: 'eventType',
-      columnLabel: 'Event Type',
+      columnLabel: translate('eventType'),
       isVisible: true,
       isModifiable: false
     },
@@ -49,7 +49,7 @@ export const defaultState = {
     },
     {
       name: 'episodeTitle',
-      label: 'Episode Title',
+      label: translate('episodeTitle'),
       isVisible: true
     },
     {
@@ -70,7 +70,7 @@ export const defaultState = {
     },
     {
       name: 'downloadClient',
-      label: 'Download Client',
+      label: translate('downloadClient'),
       isVisible: false
     },
     {
@@ -80,15 +80,15 @@ export const defaultState = {
     },
     {
       name: 'releaseGroup',
-      label: 'Release Group',
+      label: translate('releaseGroup'),
       isVisible: false
     },
     {
       name: 'preferredWordScore',
-      columnLabel: 'Preferred Word Score',
+      columnLabel: translate('preferredWordScore'),
       label: React.createElement(Icon, {
         name: icons.SCORE,
-        title: 'Preferred word score'
+        title: translate('preferredWordScore')
       }),
       isVisible: false
     },
@@ -105,7 +105,7 @@ export const defaultState = {
   filters: [
     {
       key: 'all',
-      label: 'All',
+      label: translate('all'),
       filters: []
     },
     {
@@ -121,7 +121,7 @@ export const defaultState = {
     },
     {
       key: 'imported',
-      label: 'Imported',
+      label: translate('imported'),
       filters: [
         {
           key: 'eventType',
@@ -132,7 +132,7 @@ export const defaultState = {
     },
     {
       key: 'failed',
-      label: 'Failed',
+      label: translate('failed'),
       filters: [
         {
           key: 'eventType',
@@ -143,7 +143,7 @@ export const defaultState = {
     },
     {
       key: 'deleted',
-      label: 'Deleted',
+      label: translate('deleted'),
       filters: [
         {
           key: 'eventType',
@@ -154,7 +154,7 @@ export const defaultState = {
     },
     {
       key: 'renamed',
-      label: 'Renamed',
+      label: translate('renamed'),
       filters: [
         {
           key: 'eventType',
@@ -165,7 +165,7 @@ export const defaultState = {
     },
     {
       key: 'ignored',
-      label: 'Ignored',
+      label: translate('ignored'),
       filters: [
         {
           key: 'eventType',

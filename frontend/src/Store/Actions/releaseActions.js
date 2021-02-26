@@ -53,12 +53,12 @@ export const defaultState = {
   filters: [
     {
       key: 'all',
-      label: 'All',
+      label: translate('all'),
       filters: []
     },
     {
       key: 'season-pack',
-      label: 'Season Pack',
+      label: translate('seasonPack'),
       filters: [
         {
           key: 'fullSeason',
@@ -69,7 +69,7 @@ export const defaultState = {
     },
     {
       key: 'not-season-pack',
-      label: 'Not Season Pack',
+      label: translate('notSeasonPack'),
       filters: [
         {
           key: 'fullSeason',
@@ -137,7 +137,7 @@ export const defaultState = {
     },
     {
       name: 'protocol',
-      label: 'Protocol',
+      label: translate('protocol'),
       type: filterBuilderTypes.EXACT,
       valueType: filterBuilderValueTypes.PROTOCOL
     },
@@ -154,7 +154,7 @@ export const defaultState = {
     },
     {
       name: 'seeders',
-      label: 'Seeders',
+      label: translate('seeders'),
       type: filterBuilderTypes.NUMBER
     },
     {
@@ -170,7 +170,7 @@ export const defaultState = {
     },
     {
       name: 'rejectionCount',
-      label: 'Rejection Count',
+      label: translate('rejectionCount'),
       type: filterBuilderTypes.NUMBER
     }
   ],

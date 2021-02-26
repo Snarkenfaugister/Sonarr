@@ -15,17 +15,17 @@ const columns = [
   },
   {
     name: 'interval',
-    label: 'Interval',
+    label: translate('interval'),
     isVisible: true
   },
   {
     name: 'lastExecution',
-    label: 'Last Execution',
+    label: translate('lastExecution'),
     isVisible: true
   },
   {
     name: 'nextExecution',
-    label: 'Next Execution',
+    label: translate('nextExecution'),
     isVisible: true
   },
   {
@@ -42,7 +42,7 @@ function ScheduledTasks(props) {
   } = props;
 
   return (
-    <FieldSet legend="Scheduled">
+    <FieldSet legend={translate('scheduled')}>
       {
         isFetching && !isPopulated &&
         <LoadingIndicator />

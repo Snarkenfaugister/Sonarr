@@ -3,6 +3,7 @@ import React from 'react';
 import { kinds } from 'Helpers/Props';
 import Button from 'Components/Link/Button';
 import styles from './NoSeries.css';
+import translate from 'Utilities/String/translate';
 
 function NoSeries(props) {
   const { totalItems } = props;
@@ -11,7 +12,7 @@ function NoSeries(props) {
     return (
       <div>
         <div className={styles.message}>
-          All series are hidden due to the applied filter.
+          {translate('allSeriesHiddenDueToFilter')}
         </div>
       </div>
     );
@@ -20,7 +21,7 @@ function NoSeries(props) {
   return (
     <div>
       <div className={styles.message}>
-        No series found, to get started you'll want to import your existing series or add a new series.
+        {translate('noSeriesExist')}
       </div>
 
       <div className={styles.buttonContainer}>
@@ -28,7 +29,7 @@ function NoSeries(props) {
           to="/add/import"
           kind={kinds.PRIMARY}
         >
-          Import Existing Series
+          {translate('importExistingSeries')}
         </Button>
       </div>
 
@@ -37,7 +38,7 @@ function NoSeries(props) {
           to="/add/new"
           kind={kinds.PRIMARY}
         >
-          Add New Series
+          {translate('addNewSeries')}
         </Button>
       </div>
     </div>

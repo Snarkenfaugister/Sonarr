@@ -8,6 +8,7 @@ import SpinnerIconButton from 'Components/Link/SpinnerIconButton';
 import TableRow from 'Components/Table/TableRow';
 import TableRowCell from 'Components/Table/Cells/TableRowCell';
 import styles from './ScheduledTaskRow.css';
+import translate from 'Utilities/String/translate';
 
 function getFormattedDates(props) {
   const {
@@ -132,12 +133,12 @@ class ScheduledTaskRow extends Component {
 
         {
           executeNow && isQueued &&
-            <TableRowCell className={styles.nextExecution}>queued</TableRowCell>
+            <TableRowCell className={styles.nextExecution}>{translate('queued')}</TableRowCell>
         }
 
         {
           executeNow && !isQueued &&
-            <TableRowCell className={styles.nextExecution}>now</TableRowCell>
+            <TableRowCell className={styles.nextExecution}>{translate('now')}</TableRowCell>
         }
 
         {

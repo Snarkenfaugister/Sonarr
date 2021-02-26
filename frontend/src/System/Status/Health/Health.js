@@ -23,7 +23,7 @@ function getInternalLink(source) {
       return (
         <IconButton
           name={icons.SETTINGS}
-          title="Settings"
+          title={translate('settings')}
           to="/settings/indexers"
         />
       );
@@ -33,7 +33,7 @@ function getInternalLink(source) {
       return (
         <IconButton
           name={icons.SETTINGS}
-          title="Settings"
+          title={translate('settings')}
           to="/settings/downloadclients"
         />
       );
@@ -49,7 +49,7 @@ function getInternalLink(source) {
       return (
         <IconButton
           name={icons.UPDATE}
-          title="Updates"
+          title={translate('updates')}
           to="/system/updates"
         />
       );
@@ -64,7 +64,7 @@ function getTestLink(source, props) {
       return (
         <SpinnerIconButton
           name={icons.TEST}
-          title="Test All"
+          title={translate('testAll')}
           isSpinning={props.isTestingAllIndexers}
           onPress={props.dispatchTestAllIndexers}
         />
@@ -74,7 +74,7 @@ function getTestLink(source, props) {
       return (
         <SpinnerIconButton
           name={icons.TEST}
-          title="Test All"
+          title={translate('testAll')}
           isSpinning={props.isTestingAllDownloadClients}
           onPress={props.dispatchTestAllDownloadClients}
         />
@@ -93,7 +93,7 @@ const columns = [
   },
   {
     name: 'message',
-    label: 'Message',
+    label: translate('message'),
     isVisible: true
   },
   {
@@ -121,7 +121,7 @@ class Health extends Component {
       <FieldSet
         legend={
           <div className={styles.legend}>
-            Health
+            {translate('health')}
 
             {
               isFetching && isPopulated &&
@@ -141,7 +141,7 @@ class Health extends Component {
         {
           !healthIssues &&
             <div className={styles.healthOk}>
-              No issues with your configuration
+              {translate('healthNoIssues')}
             </div>
         }
 
@@ -186,7 +186,7 @@ class Health extends Component {
                           <IconButton
                             name={icons.WIKI}
                             to={item.wikiUrl}
-                            title="Read the Wiki for more information"
+                            title={translate('readTheWikiForMoreInformation')}
                           />
 
                           {

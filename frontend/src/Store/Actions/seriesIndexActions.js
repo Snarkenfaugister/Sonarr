@@ -54,21 +54,21 @@ export const defaultState = {
   columns: [
     {
       name: 'status',
-      columnLabel: 'Status',
+      columnLabel: translate('status'),
       isSortable: true,
       isVisible: true,
       isModifiable: false
     },
     {
       name: 'sortTitle',
-      label: 'Series Title',
+      label: translate('seriesTitle'),
       isSortable: true,
       isVisible: true,
       isModifiable: false
     },
     {
       name: 'seriesType',
-      label: 'Type',
+      label: translate('type'),
       isSortable: true,
       isVisible: false
     },
@@ -92,19 +92,19 @@ export const defaultState = {
     },
     {
       name: 'nextAiring',
-      label: 'Next Airing',
+      label: translate('nextAiring'),
       isSortable: true,
       isVisible: true
     },
     {
       name: 'previousAiring',
-      label: 'Previous Airing',
+      label: translate('previousAiring'),
       isSortable: true,
       isVisible: false
     },
     {
       name: 'added',
-      label: 'Added',
+      label: translate('added'),
       isSortable: true,
       isVisible: false
     },
@@ -116,25 +116,25 @@ export const defaultState = {
     },
     {
       name: 'episodeProgress',
-      label: 'Episodes',
+      label: translate('episodes'),
       isSortable: true,
       isVisible: true
     },
     {
       name: 'episodeCount',
-      label: 'Episode Count',
+      label: translate('episodeCount'),
       isSortable: true,
       isVisible: false
     },
     {
       name: 'latestSeason',
-      label: 'Latest Season',
+      label: translate('latestSeason'),
       isSortable: true,
       isVisible: false
     },
     {
       name: 'year',
-      label: 'Year',
+      label: translate('year'),
       isSortable: true,
       isVisible: false
     },
@@ -152,19 +152,19 @@ export const defaultState = {
     },
     {
       name: 'genres',
-      label: 'Genres',
+      label: translate('genres'),
       isSortable: false,
       isVisible: false
     },
     {
       name: 'ratings',
-      label: 'Rating',
+      label: translate('rating'),
       isSortable: true,
       isVisible: false
     },
     {
       name: 'certification',
-      label: 'Certification',
+      label: translate('certification'),
       isSortable: false,
       isVisible: false
     },
@@ -176,7 +176,7 @@ export const defaultState = {
     },
     {
       name: 'useSceneNumbering',
-      label: 'Scene Numbering',
+      label: translate('sceneNumbering'),
       isSortable: true,
       isVisible: false
     },

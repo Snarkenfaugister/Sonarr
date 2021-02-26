@@ -15,7 +15,7 @@ import translate from 'Utilities/String/translate';
 const columns = [
   {
     name: 'path',
-    label: 'Location',
+    label: translate('location'),
     isVisible: true
   },
   {
@@ -25,7 +25,7 @@ const columns = [
   },
   {
     name: 'totalSpace',
-    label: 'Total Space',
+    label: translate('totalSpace'),
     isVisible: true
   },
   {
@@ -46,7 +46,7 @@ class DiskSpace extends Component {
     } = this.props;
 
     return (
-      <FieldSet legend="Disk Space">
+      <FieldSet legend={translate('diskSpace')}>
         {
           isFetching &&
             <LoadingIndicator />
