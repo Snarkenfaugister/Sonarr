@@ -1,13 +1,13 @@
 import translate from 'Utilities/String/translate';
 
 const monitorOptions = [
-  { key: 'all', value: 'All Episodes' },
-  { key: 'future', value: 'Future Episodes' },
+  { key: 'all', value: translate('allEpisodes') },
+  { key: 'future', value: translate('futureEpisodes') },
   { key: 'missing', value: translate('missingEpisodes') },
-  { key: 'existing', value: 'Existing Episodes' },
-  { key: 'pilot', value: 'Pilot Episode' },
-  { key: 'firstSeason', value: 'Only First Season' },
-  { key: 'latestSeason', value: 'Only Latest Season' },
+  { key: 'existing', value: translate('existingEpisodes') },
+  { key: 'pilot', value: translate('pilotEpisode') },
+  { key: 'firstSeason', value: translate('onlyFirstSeason') },
+  { key: 'latestSeason', value: translate('onlyLatestSeason') },
   { key: 'none', value: translate('none') }
 ];
 

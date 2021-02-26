@@ -48,6 +48,9 @@
     "futureEpisodes": "Future Episodes",
     "missingEpisodes": "Missing Episodes",
     "existingEpisodes": "Existing Episodes",
+    "pilotEpisode": "Pilot Episode",
+    "onlyFirstSeason": "Only First Season",
+    "onlyLatestSeason": "Only Latest Season",
     "existingSeries": "Existing Series",
     "firstSeason": "First Season",
     "latestSeason": "Latest Season",
@@ -545,6 +548,7 @@
     "minimumFreeSpaceWhenImportingHelpText": "Prevent import if it would leave less than this amount of disk space available",
     "minimumLimits": "Minimum Limits",
     "minutes": "Minutes",
+    "minute": "Minute",
     "minutesInterp": "{0} Minutes",
     "minutesHundredTwenty": "120 Minutes: {0}",
     "minutesNinety": "90 Minutes: {0}",
@@ -1468,5 +1472,6 @@
     "monitoring": "Monitoring",
     "continuingMsg": "More episodes/another season is expected",
     "endedMsg": "No additional episodes or seasons are expected",
-    "upcomingMsg": "Series has been announced but no exact air date yet"
+    "upcomingMsg": "Series has been announced but no exact air date yet",
+    "daysInterp": "{0}d {1}"
 }
