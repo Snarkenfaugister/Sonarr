@@ -258,7 +258,7 @@ export const actionHandlers = handleThunks({
     });
 
     promise.fail((xhr) => {
-      const grabError = xhr.responseJSON && xhr.responseJSON.message || 'Failed to add to download queue';
+      const grabError = xhr.responseJSON && xhr.responseJSON.message || translate('failedToAddToDownloadQueue');
 
       dispatch(updateRelease({
         guid,

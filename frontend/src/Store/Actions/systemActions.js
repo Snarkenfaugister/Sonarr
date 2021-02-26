@@ -299,7 +299,7 @@ export const actionHandlers = handleThunks({
       dispatch(set({
         section: backupsSection,
         isRestoring: false,
-        restoreError: 'Error restoring backup'
+        restoreError: translate('errorRestoringBackup')
       }));
     }
 

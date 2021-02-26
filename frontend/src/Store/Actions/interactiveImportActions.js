@@ -9,6 +9,7 @@ import createSetClientSideCollectionSortReducer from './Creators/Reducers/create
 import createFetchHandler from './Creators/createFetchHandler';
 import createHandleActions from './Creators/createHandleActions';
 import { set, update, updateItem } from './baseActions';
+import translate from 'Utilities/String/translate';
 
 //
 // Variables
@@ -106,7 +107,7 @@ export const clearInteractiveImportEpisodes = createAction(CLEAR_INTERACTIVE_IMP
 export const actionHandlers = handleThunks({
   [FETCH_INTERACTIVE_IMPORT_ITEMS]: function(getState, payload, dispatch) {
     if (!payload.downloadId && !payload.folder) {
-      dispatch(set({ section, error: { message: '`downloadId` or `folder` is required.' } }));
+      dispatch(set({ section, error: { message: translate('downloadIdOrFolderIsRequired') } }));
       return;
     }
 
