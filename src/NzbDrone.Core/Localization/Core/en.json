@@ -78,6 +78,8 @@
     "applyTagsHelpTexts3": "Remove: Remove the entered tags",
     "applyTagsHelpTexts4": "Replace: Replace the tags with the entered tags (enter no tags to clear all tags)",
     "aptUpdater": "use apt to install the update",
+    "areYouSureYouWantToSearchForCutoffUnmetEpisodes": "Are you sure you want to search for all {0} Cutoff Unmet episodes?",
+    "areYouSureYouWantToSearchForMissingEpisodes": "Are you sure you want to search for all {0} missing episodes?",
     "areYouSureYouWantToDeleteFormat": "Are you sure you want to delete format tag {0} ?",
     "areYouSureYouWantToDeleteThisDelayProfile": "Are you sure you want to delete this delay profile?",
     "areYouSureYouWantToDeleteThisImportListExclusion": "Are you sure you want to delete this import list exclusion?",
@@ -1473,5 +1475,13 @@
     "continuingMsg": "More episodes/another season is expected",
     "endedMsg": "No additional episodes or seasons are expected",
     "upcomingMsg": "Series has been announced but no exact air date yet",
-    "daysInterp": "{0}d {1}"
+    "daysInterp": "{0}d {1}",
+    "unmonitorSelected": "Unmonitor Selected",
+    "monitorSelected": "Monitor Selected",
+    "errorFetchingCutoffUnmet": "Error fetching cutoff unmet",
+    "noCutoffUnmetItems": "No cutoff unmet items",
+    "searchForAllCutoffUnmetEpisodes": "Search for all Cutoff Unmet episodes",
+    "searchForAllMissingEpisodes": "Search for all missing episodes",
+    "errorFetchingMissingItems": "Error fetching missing items",
+    "noMissingItems": "No missing items"
 }
