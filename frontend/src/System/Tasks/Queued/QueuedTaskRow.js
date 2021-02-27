@@ -183,7 +183,7 @@ class QueuedTaskRow extends Component {
           <span className={styles.triggerContent}>
             <Icon
               name={triggerIcon}
-              title={titleCase(trigger)}
+              title={translate(trigger)}
             />
 
             <Icon

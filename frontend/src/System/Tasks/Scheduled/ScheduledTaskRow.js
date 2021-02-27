@@ -116,7 +116,7 @@ class ScheduledTaskRow extends Component {
         <TableRowCell
           className={styles.interval}
         >
-          {isDisabled ? 'disabled' : duration}
+          {isDisabled ? translate('disabled') : duration}
         </TableRowCell>
 
         <TableRowCell

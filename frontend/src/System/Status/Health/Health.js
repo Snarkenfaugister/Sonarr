@@ -176,7 +176,7 @@ class Health extends Component {
                           <Icon
                             name={icons.DANGER}
                             kind={kind}
-                            title={titleCase(item.type)}
+                            title={translate(item.type)}
                           />
                         </TableRowCell>
 
