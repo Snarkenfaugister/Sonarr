@@ -54,7 +54,7 @@ class LogFiles extends Component {
       <PageContent title={translate('logFiles')}>
         <PageToolbar>
           <PageToolbarSection>
-            <LogsNavMenu current={currentLogView} />
+            <LogsNavMenu current={translate(currentLogView)} />
 
             <PageToolbarSeparator />
 
@@ -81,7 +81,7 @@ class LogFiles extends Component {
             </div>
 
             {
-              currentLogView === 'Log Files' &&
+              currentLogView === 'logFiles' &&
                 <div>
                   {translate('theLogLevelDefaultText')} <Link to="/settings/general">{translate('generalSettings')}</Link>
                 </div>

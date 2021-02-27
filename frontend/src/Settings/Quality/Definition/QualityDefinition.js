@@ -238,7 +238,7 @@ class QualityDefinition extends Component {
           advancedSettings &&
             <div className={styles.megabytesPerMinute}>
               <div>
-                Min
+                {translate('min')}
 
                 <NumberInput
                   className={styles.sizeInput}
@@ -253,7 +253,7 @@ class QualityDefinition extends Component {
               </div>
 
               <div>
-                Max
+                {translate('max')}
 
                 <NumberInput
                   className={styles.sizeInput}
