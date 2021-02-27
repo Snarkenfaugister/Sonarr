@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NzbDrone.Common.Disk;
 using NzbDrone.Core.ImportLists;
+using NzbDrone.Core.Localization;
 using NzbDrone.Core.MediaFiles.Events;
 using NzbDrone.Core.RootFolders;
 using NzbDrone.Core.Tv;
@@ -18,7 +19,8 @@ namespace NzbDrone.Core.HealthCheck.Checks
         private readonly IImportListFactory _importListFactory;
         private readonly IDiskProvider _diskProvider;
 
-        public ImportListRootFolderCheck(IImportListFactory importListFactory, IDiskProvider diskProvider)
+        public ImportListRootFolderCheck(IImportListFactory importListFactory, IDiskProvider diskProvider, ILocalizationService localization)
+            : base(localization)
         {
             _importListFactory = importListFactory;
             _diskProvider = diskProvider;
@@ -51,10 +53,10 @@ namespace NzbDrone.Core.HealthCheck.Checks
                 if (missingRootFolders.Count == 1)
                 {
                     var missingRootFolder = missingRootFolders.First();
-                    return new HealthCheck(GetType(), HealthCheckResult.Error, $"Missing root folder for import list(s): {FormatRootFolder(missingRootFolder.Key, missingRootFolder.Value)}", "#import_list_missing_root_folder");
+                    return new HealthCheck(GetType(), HealthCheckResult.Error, string.Format(_localizationService.GetLocalizedString("importListRootFolderCheckMissingFolderMessage"), FormatRootFolder(missingRootFolder.Key, missingRootFolder.Value)), "#import_list_missing_root_folder");
                 }
 
-                var message = string.Format("Multiple root folders are missing for import lists: {0}", string.Join(" | ", missingRootFolders.Select(m => FormatRootFolder(m.Key, m.Value))));
+                var message = string.Format(_localizationService.GetLocalizedString("importListRootFolderCheckMultipleFoldersMessage"), string.Join(" | ", missingRootFolders.Select(m => FormatRootFolder(m.Key, m.Value))));
                 return new HealthCheck(GetType(), HealthCheckResult.Error, message, "#import_list_missing_root_folder");
             }
 

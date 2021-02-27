@@ -2,6 +2,7 @@
 using System.Linq;
 using NzbDrone.Common.Extensions;
 using NzbDrone.Core.Indexers;
+using NzbDrone.Core.Localization;
 using NzbDrone.Core.ThingiProvider.Events;
 
 namespace NzbDrone.Core.HealthCheck.Checks
@@ -14,7 +15,8 @@ namespace NzbDrone.Core.HealthCheck.Checks
         private readonly IIndexerFactory _providerFactory;
         private readonly IIndexerStatusService _providerStatusService;
 
-        public IndexerStatusCheck(IIndexerFactory providerFactory, IIndexerStatusService providerStatusService)
+        public IndexerStatusCheck(IIndexerFactory providerFactory, IIndexerStatusService providerStatusService, ILocalizationService localization)
+            : base(localization)
         {
             _providerFactory = providerFactory;
             _providerStatusService = providerStatusService;
@@ -39,10 +41,11 @@ namespace NzbDrone.Core.HealthCheck.Checks
 
             if (backOffProviders.Count == enabledProviders.Count)
             {
-                return new HealthCheck(GetType(), HealthCheckResult.Error, "All indexers are unavailable due to failures", "#indexers_are_unavailable_due_to_failures");
+                return new HealthCheck(GetType(), HealthCheckResult.Error, _localizationService.GetLocalizedString("indexerStatusCheckAllClientMessage"), "#indexers_are_unavailable_due_to_failures");
             }
 
-            return new HealthCheck(GetType(), HealthCheckResult.Warning, string.Format("Indexers unavailable due to failures: {0}", string.Join(", ", backOffProviders.Select(v => v.Provider.Definition.Name))), "#indexers_are_unavailable_due_to_failures");
+            var message = string.Format(_localizationService.GetLocalizedString("indexerStatusCheckSingleClientMessage"), string.Join(", ", backOffProviders.Select(v => v.Provider.Definition.Name)));
+            return new HealthCheck(GetType(), HealthCheckResult.Warning, message, "#indexers_are_unavailable_due_to_failures");
         }
     }
 }

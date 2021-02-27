@@ -6,6 +6,7 @@ using NzbDrone.Core.Configuration.Events;
 using NzbDrone.Core.Download;
 using NzbDrone.Core.Download.Clients.Nzbget;
 using NzbDrone.Core.Download.Clients.Sabnzbd;
+using NzbDrone.Core.Localization;
 using NzbDrone.Core.ThingiProvider.Events;
 
 namespace NzbDrone.Core.HealthCheck.Checks
@@ -19,7 +20,8 @@ namespace NzbDrone.Core.HealthCheck.Checks
         private readonly IProvideDownloadClient _provideDownloadClient;
 
 
-        public ImportMechanismCheck(IConfigService configService, IProvideDownloadClient provideDownloadClient)
+        public ImportMechanismCheck(IConfigService configService, IProvideDownloadClient provideDownloadClient, ILocalizationService localization)
+            : base(localization)
         {
             _configService = configService;
             _provideDownloadClient = provideDownloadClient;
@@ -50,25 +52,28 @@ namespace NzbDrone.Core.HealthCheck.Checks
                 // Migration helper logic
                 if (!downloadClientIsLocalHost)
                 {
-                    return new HealthCheck(GetType(), HealthCheckResult.Warning, "Enable Completed Download Handling if possible (Multi-Computer unsupported)", "Migrating_to_Completed_Download_Handling#Unsupported_download_client_on_different_computer");
+                    var message = string.Format(_localizationService.GetLocalizedString("importMechanismHealthCheckSingleNiceMessage"), _localizationService.GetLocalizedString("multiComputerUnsupported"));
+                    return new HealthCheck(GetType(), HealthCheckResult.Warning, message, "Migrating_to_Completed_Download_Handling#Unsupported_download_client_on_different_computer");
                 }
 
                 if (downloadClients.All(v => v.DownloadClient is Sabnzbd))
                 {
-                    return new HealthCheck(GetType(), HealthCheckResult.Warning, "Enable Completed Download Handling if possible (Sabnzbd)", "Migrating_to_Completed_Download_Handling#sabnzbd_enable_completed_download_handling");
+                    var message = string.Format(_localizationService.GetLocalizedString("importMechanismHealthCheckSingleNiceMessage"), "Sabnzbd");
+                    return new HealthCheck(GetType(), HealthCheckResult.Warning, message, "Migrating_to_Completed_Download_Handling#sabnzbd_enable_completed_download_handling");
                 }
 
                 if (downloadClients.All(v => v.DownloadClient is Nzbget))
                 {
-                    return new HealthCheck(GetType(), HealthCheckResult.Warning, "Enable Completed Download Handling if possible (Nzbget)", "Migrating_to_Completed_Download_Handling#nzbget_enable_completed_download_handling");
+                    var message = string.Format(_localizationService.GetLocalizedString("importMechanismHealthCheckSingleNiceMessage"), "Nzbget");
+                    return new HealthCheck(GetType(), HealthCheckResult.Warning, message, "Migrating_to_Completed_Download_Handling#nzbget_enable_completed_download_handling");
                 }
 
-                return new HealthCheck(GetType(), HealthCheckResult.Warning, "Enable Completed Download Handling if possible", "Migrating_to_Completed_Download_Handling");
+                return new HealthCheck(GetType(), HealthCheckResult.Warning, _localizationService.GetLocalizedString("importMechanismHealthCheckNiceMessage"), "Migrating_to_Completed_Download_Handling");
             }
 
             if (!_configService.EnableCompletedDownloadHandling)
             {
-                return new HealthCheck(GetType(), HealthCheckResult.Warning, "Enable Completed Download Handling");
+                return new HealthCheck(GetType(), HealthCheckResult.Warning, _localizationService.GetLocalizedString("importMechanismHealthCheckMessage"));
             }
 
             return new HealthCheck(GetType());

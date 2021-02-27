@@ -2,6 +2,7 @@
 using System.Linq;
 using NLog;
 using NzbDrone.Core.Download;
+using NzbDrone.Core.Localization;
 using NzbDrone.Core.ThingiProvider.Events;
 
 namespace NzbDrone.Core.HealthCheck.Checks
@@ -14,7 +15,8 @@ namespace NzbDrone.Core.HealthCheck.Checks
         private readonly IProvideDownloadClient _downloadClientProvider;
         private readonly Logger _logger;
 
-        public DownloadClientCheck(IProvideDownloadClient downloadClientProvider, Logger logger)
+        public DownloadClientCheck(IProvideDownloadClient downloadClientProvider, ILocalizationService localization, Logger logger)
+            : base(localization)
         {
             _downloadClientProvider = downloadClientProvider;
             _logger = logger;
@@ -26,7 +28,7 @@ namespace NzbDrone.Core.HealthCheck.Checks
 
             if (!downloadClients.Any())
             {
-                return new HealthCheck(GetType(), HealthCheckResult.Warning, "No download client is available");
+                return new HealthCheck(GetType(), HealthCheckResult.Warning, _localizationService.GetLocalizedString("downloadClientCheckNoneAvailableMessage"));
             }
 
             foreach (var downloadClient in downloadClients)
@@ -39,7 +41,7 @@ namespace NzbDrone.Core.HealthCheck.Checks
                 {
                     _logger.Debug(ex, "Unable to communicate with {0}", downloadClient.Definition.Name);
 
-                    var message = $"Unable to communicate with {downloadClient.Definition.Name}.";
+                    var message = string.Format(_localizationService.GetLocalizedString("downloadClientCheckUnableToCommunicateMessage"), downloadClient.Definition.Name);
                     return new HealthCheck(GetType(), HealthCheckResult.Error, $"{message} {ex.Message}", "#unable_to_communicate_with_download_client");
                 }
             }

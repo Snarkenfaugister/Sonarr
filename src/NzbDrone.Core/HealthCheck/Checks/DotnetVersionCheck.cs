@@ -1,6 +1,7 @@
 using System;
 using NLog;
 using NzbDrone.Common.EnvironmentInfo;
+using NzbDrone.Core.Localization;
 
 namespace NzbDrone.Core.HealthCheck.Checks
 {
@@ -10,7 +11,8 @@ namespace NzbDrone.Core.HealthCheck.Checks
         private readonly IOsInfo _osInfo;
         private readonly Logger _logger;
 
-        public DotnetVersionCheck(IPlatformInfo platformInfo, IOsInfo osInfo, Logger logger)
+        public DotnetVersionCheck(IPlatformInfo platformInfo, IOsInfo osInfo, ILocalizationService localization, Logger logger)
+            : base(localization)
         {
             _platformInfo = platformInfo;
             _osInfo = osInfo;
@@ -40,14 +42,14 @@ namespace NzbDrone.Core.HealthCheck.Checks
             {
                 _logger.Debug("Dotnet version is {0} or better: {1}", stableVersion, dotnetVersion);
                 return new HealthCheck(GetType(), HealthCheckResult.Notice,
-                    $"Currently installed .Net Framework {dotnetVersion} is supported but we recommend upgrading to at least {targetVersion}.",
+                    string.Format(_localizationService.GetLocalizedString("dotNetVersionCheckNotRecommendedMessage"), dotnetVersion, targetVersion),
                     "#currently_installed_net_framework_is_supported_but_upgrading_is_recommended");
             }
 
             if (Version.TryParse(_osInfo.Version, out var osVersion) && osVersion < new Version("10.0.14393"))
             {
                 return new HealthCheck(GetType(), HealthCheckResult.Error,
-                    $"Currently installed .Net Framework {dotnetVersion} is no longer supported. However your Operating System cannot be upgraded to {targetVersion}.",
+                    string.Format(_localizationService.GetLocalizedString("dotNetVersionCheckOldUnsupportedMessage"), dotnetVersion, targetVersion),
                     "#currently_installed_net_framework_is_old_and_unsupported");
             }
 
@@ -55,12 +57,12 @@ namespace NzbDrone.Core.HealthCheck.Checks
             if (dotnetVersion >= oldVersion)
             {
                 return new HealthCheck(GetType(), HealthCheckResult.Error,
-                    $"Currently installed .Net Framework {dotnetVersion} is no longer supported. Please upgrade the .Net Framework to at least {targetVersion}.",
+                    string.Format(_localizationService.GetLocalizedString("dotNetVersionCheckOldUnsupportedMessage"), dotnetVersion, targetVersion),
                     "#currently_installed_net_framework_is_old_and_unsupported");
             }
 
             return new HealthCheck(GetType(), HealthCheckResult.Error,
-                $"Currently installed .Net Framework {dotnetVersion} is old and unsupported. Please upgrade the .Net Framework to at least {targetVersion}.",
+                string.Format(_localizationService.GetLocalizedString("dotNetVersionCheckOldUnsupportedMessage"), dotnetVersion, targetVersion),
                 "#currently_installed_net_framework_is_old_and_unsupported");
         }
 

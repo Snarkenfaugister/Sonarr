@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using NLog;
 using NzbDrone.Common.Extensions;
+using NzbDrone.Core.Localization;
 using NzbDrone.Core.Tv;
 using NzbDrone.Core.Tv.Events;
 
@@ -14,7 +15,8 @@ namespace NzbDrone.Core.HealthCheck.Checks
         private readonly ISeriesService _seriesService;
         private readonly Logger _logger;
 
-        public RemovedSeriesCheck(ISeriesService seriesService, Logger logger)
+        public RemovedSeriesCheck(ISeriesService seriesService, ILocalizationService localization, Logger logger)
+            : base(localization)
         {
             _seriesService = seriesService;
             _logger = logger;
@@ -33,10 +35,10 @@ namespace NzbDrone.Core.HealthCheck.Checks
             
             if (deletedSeries.Count() == 1)
             {
-                return new HealthCheck(GetType(), HealthCheckResult.Error, $"Series {seriesText} was removed from TheTVDB", "#series_removed_from_thetvdb");
+                return new HealthCheck(GetType(), HealthCheckResult.Error, string.Format(_localizationService.GetLocalizedString("removedSeriesCheckSingleMessage"), seriesText), "#series_removed_from_thetvdb");
             }
 
-            return new HealthCheck(GetType(), HealthCheckResult.Error, $"Series {seriesText} were removed from TheTVDB", "#series_removed_from_thetvdb");
+            return new HealthCheck(GetType(), HealthCheckResult.Error, string.Format(_localizationService.GetLocalizedString("removedSeriesCheckMultipleMessage"), seriesText), "#series_removed_from_thetvdb");
         }
 
         public bool ShouldCheckOnEvent(SeriesDeletedEvent deletedEvent)
