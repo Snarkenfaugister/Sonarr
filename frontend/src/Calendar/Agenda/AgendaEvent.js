@@ -128,7 +128,7 @@ class AgendaEvent extends Component {
                 <Icon
                   className={styles.statusIcon}
                   name={icons.WARNING}
-                  title={translate('Episode does not have an absolute episode number')}
+                  title={translate('episodeNoAbsoluteOrder')}
                 />
             }
 

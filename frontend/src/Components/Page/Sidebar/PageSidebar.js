@@ -141,7 +141,7 @@ const links = [
 
   {
     iconName: icons.SYSTEM,
-    title: 'System',
+    title: translate('system'),
     to: '/system/status',
     children: [
       {

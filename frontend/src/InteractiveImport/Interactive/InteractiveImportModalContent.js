@@ -261,7 +261,7 @@ class InteractiveImportModalContent extends Component {
 
                     <div className={styles.filterText}>
                       {
-                        filterExistingFiles ? translate('unmappedFilesOnly') : translate('All Files')
+                        filterExistingFiles ? translate('unmappedFilesOnly') : translate('allFiles')
                       }
                     </div>
                   </MenuButton>

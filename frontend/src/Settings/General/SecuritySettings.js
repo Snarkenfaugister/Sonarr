@@ -77,7 +77,7 @@ class SecuritySettings extends Component {
     const authenticationEnabled = authenticationMethod && authenticationMethod.value !== 'none';
 
     return (
-      <FieldSet legend={translate('Security')}>
+      <FieldSet legend={translate('security')}>
         <FormGroup>
           <FormLabel>{translate('authentication')}</FormLabel>
 

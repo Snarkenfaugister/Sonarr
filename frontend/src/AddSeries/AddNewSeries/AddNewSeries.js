@@ -160,7 +160,7 @@ class AddNewSeries extends Component {
                 </div>
                 <div>
                   <Link to="https://wiki.servarr.com/Sonarr_FAQ#Why_cant_I_add_a_new_series_when_I_know_the_TVDB_ID">
-                    {translate('cantFindMovie')}
+                    {translate('cantFindShow')}
                   </Link>
                 </div>
               </div>

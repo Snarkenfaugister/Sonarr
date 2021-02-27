@@ -136,7 +136,7 @@ function EditNotificationModalContent(props) {
                     <FormInputGroup
                       type={inputTypes.CHECK}
                       name="onUpgrade"
-                      helpText={translate('onUpgradenameHelpText')}
+                      helpText={translate('onUpgradeHelpText')}
                       isDisabled={!supportsOnUpgrade.value}
                       {...onUpgrade}
                       onChange={onInputChange}

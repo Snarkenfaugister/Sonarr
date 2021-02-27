@@ -128,7 +128,7 @@ class Naming extends Component {
       { key: 2, value: translate('styleOptionsRepeat'), hint: 'S01E01E02E03' },
       { key: 3, value: translate('styleOptionsScene'), hint: 'S01E01-E02-E03' },
       { key: 4, value: translate('styleOptionsRange'), hint: 'S01E01-03' },
-      { key: 5, value: translate('styleOptionsPrefixed Range'), hint: 'S01E01-E03' }
+      { key: 5, value: translate('styleOptionsPrefixedRange'), hint: 'S01E01-E03' }
     ];
 
     const standardEpisodeFormatHelpTexts = [];

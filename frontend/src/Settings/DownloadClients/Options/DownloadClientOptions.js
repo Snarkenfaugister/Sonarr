@@ -67,7 +67,7 @@ function DownloadClientOptions(props) {
             </FieldSet>
 
             <FieldSet
-              legend="Failed Download Handling"
+              legend={translate('failedDownloadHandling')}
             >
               <Form>
                 <FormGroup size={sizes.MEDIUM}>

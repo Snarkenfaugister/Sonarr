@@ -375,7 +375,7 @@ class SeriesDetails extends Component {
                                 size={20}
                               />
                             }
-                            title={translate('Alternate Titles')}
+                            title={translate('alternateTitles')}
                             body={<SeriesAlternateTitles alternateTitles={alternateTitles} />}
                             position={tooltipPositions.BOTTOM}
                           />

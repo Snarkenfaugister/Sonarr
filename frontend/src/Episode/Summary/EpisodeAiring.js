@@ -30,7 +30,7 @@ function EpisodeAiring(props) {
   if (!airDateUtc) {
     return (
       <span>
-        {translate('tbaOnInterp', [networkLabel])}
+        {translate('tbaOnNetworkInterp', [networkLabel])}
       </span>
     );
   }

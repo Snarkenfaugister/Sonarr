@@ -35,7 +35,7 @@ function QueueDetails(props) {
         <Icon
           name={icons.DOWNLOAD}
           kind={kinds.DANGER}
-          title={translate('ImportFailed', [errorMessage])}
+          title={translate('importFailed', [errorMessage])}
         />
       );
     }

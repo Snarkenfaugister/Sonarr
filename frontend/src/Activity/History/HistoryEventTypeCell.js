@@ -39,7 +39,7 @@ function getIconKind(eventType) {
 function getTooltip(eventType, data) {
   switch (eventType) {
     case 'grabbed':
-      return translate('episodeGrabbedFromTo', [data.indexer, data.downloadClient]);
+      return translate('episodeGrabbedFromSentTo', [data.indexer, data.downloadClient]);
     case 'seriesFolderImported':
       return translate('episodeImportedFromSeriesFolder');
     case 'downloadFolderImported':

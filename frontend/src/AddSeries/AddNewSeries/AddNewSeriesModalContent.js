@@ -248,7 +248,7 @@ class AddNewSeriesModalContent extends Component {
           <div>
             <label className={styles.searchLabelContainer}>
               <span className={styles.searchLabel}>
-                {translate('StartSearchForMissingEpisodes')}
+                {translate('startSearchForMissingEpisodes')}
               </span>
 
               <CheckInput

@@ -10,12 +10,12 @@ import styles from './DateFilterBuilderRowValue.css';
 import translate from 'Utilities/String/translate';
 
 const timeOptions = [
-  { key: 'seconds', value: 'seconds' },
-  { key: 'minutes', value: 'minutes' },
-  { key: 'hours', value: 'hours' },
-  { key: 'days', value: 'days' },
-  { key: 'weeks', value: 'weeks' },
-  { key: 'months', value: 'months' }
+  { key: 'seconds', value: translate('seconds') },
+  { key: 'minutes', value: translate('minutes') },
+  { key: 'hours', value: translate('hours') },
+  { key: 'days', value: translate('days') },
+  { key: 'weeks', value: translate('weeks') },
+  { key: 'months', value: translate('months') }
 ];
 
 function isInFilter(filterType) {
