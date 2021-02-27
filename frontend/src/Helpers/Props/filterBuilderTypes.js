@@ -1,3 +1,4 @@
+import translate from 'Utilities/String/translate';
 import * as filterTypes from './filterTypes';
 
 export const ARRAY = 'array';
@@ -16,37 +17,37 @@ export const all = [
 
 export const possibleFilterTypes = {
   [ARRAY]: [
-    { key: filterTypes.CONTAINS, value: 'contains' },
-    { key: filterTypes.NOT_CONTAINS, value: 'does not contain' }
+    { key: filterTypes.CONTAINS, value: translate('filterContains') },
+    { key: filterTypes.NOT_CONTAINS, value: translate('filterDoesNotContain') }
   ],
 
   [DATE]: [
-    { key: filterTypes.LESS_THAN, value: 'is before' },
-    { key: filterTypes.GREATER_THAN, value: 'is after' },
-    { key: filterTypes.IN_LAST, value: 'in the last' },
-    { key: filterTypes.NOT_IN_LAST, value: 'not in the last' },
-    { key: filterTypes.IN_NEXT, value: 'in the next' },
-    { key: filterTypes.NOT_IN_NEXT, value: 'not in the next' }
+    { key: filterTypes.LESS_THAN, value: translate('filterIsBefore') },
+    { key: filterTypes.GREATER_THAN, value: translate('filterIsAfter') },
+    { key: filterTypes.IN_LAST, value: translate('filterInTheLast') },
+    { key: filterTypes.NOT_IN_LAST, value: translate('filterNotInTheLast') },
+    { key: filterTypes.IN_NEXT, value: translate('filterInTheNext') },
+    { key: filterTypes.NOT_IN_NEXT, value: translate('filterNotInTheNext') }
   ],
 
   [EXACT]: [
-    { key: filterTypes.EQUAL, value: 'is' },
-    { key: filterTypes.NOT_EQUAL, value: 'is not' }
+    { key: filterTypes.EQUAL, value: translate('filterIs') },
+    { key: filterTypes.NOT_EQUAL, value: translate('filterIsNot') }
   ],
 
   [NUMBER]: [
-    { key: filterTypes.EQUAL, value: 'equal' },
-    { key: filterTypes.GREATER_THAN, value: 'greater than' },
-    { key: filterTypes.GREATER_THAN_OR_EQUAL, value: 'greater than or equal' },
-    { key: filterTypes.LESS_THAN, value: 'less than' },
-    { key: filterTypes.LESS_THAN_OR_EQUAL, value: 'less than or equal' },
-    { key: filterTypes.NOT_EQUAL, value: 'not equal' }
+    { key: filterTypes.EQUAL, value: translate('filterEqual') },
+    { key: filterTypes.GREATER_THAN, value: translate('filterGreaterThan') },
+    { key: filterTypes.GREATER_THAN_OR_EQUAL, value: translate('filterGreaterThanOrEqual') },
+    { key: filterTypes.LESS_THAN, value: translate('filterLessThan') },
+    { key: filterTypes.LESS_THAN_OR_EQUAL, value: translate('filterLessThanOrEqual') },
+    { key: filterTypes.NOT_EQUAL, value: translate('filterNotEqual') }
   ],
 
   [STRING]: [
-    { key: filterTypes.CONTAINS, value: 'contains' },
-    { key: filterTypes.NOT_CONTAINS, value: 'does not contain' },
-    { key: filterTypes.EQUAL, value: 'equal' },
-    { key: filterTypes.NOT_EQUAL, value: 'not equal' }
+    { key: filterTypes.CONTAINS, value: translate('filterContains') },
+    { key: filterTypes.NOT_CONTAINS, value: translate('filterDoesNotContain') },
+    { key: filterTypes.EQUAL, value: translate('filterEqual') },
+    { key: filterTypes.NOT_EQUAL, value: translate('filterNotEqual') }
   ]
 };

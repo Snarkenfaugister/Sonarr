@@ -5,9 +5,9 @@ import translate from 'Utilities/String/translate';
 import SelectInput from './SelectInput';
 
 const seriesTypeOptions = [
-  { key: seriesTypes.STANDARD, value: 'Standard' },
-  { key: seriesTypes.DAILY, value: 'Daily' },
-  { key: seriesTypes.ANIME, value: 'Anime' }
+  { key: seriesTypes.STANDARD, value: translate('standard') },
+  { key: seriesTypes.DAILY, value: translate('daily') },
+  { key: seriesTypes.ANIME, value: translate('anime') }
 ];
 
 function SeriesTypeSelectInput(props) {

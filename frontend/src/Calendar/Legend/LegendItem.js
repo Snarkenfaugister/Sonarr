@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import titleCase from 'Utilities/String/titleCase';
 import styles from './LegendItem.css';
+import translate from 'Utilities/String/translate';
 
 function LegendItem(props) {
   const {
@@ -21,7 +21,7 @@ function LegendItem(props) {
       )}
       title={tooltip}
     >
-      {name ? name : titleCase(status)}
+      {name ? name : translate(status)}
     </div>
   );
 }

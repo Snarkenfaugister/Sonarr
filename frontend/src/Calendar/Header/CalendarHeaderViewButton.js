@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import titleCase from 'Utilities/String/titleCase';
 import Button from 'Components/Link/Button';
 import * as calendarViews from 'Calendar/calendarViews';
+import translate from 'Utilities/String/translate';
 // import styles from './CalendarHeaderViewButton.css';
 
 class CalendarHeaderViewButton extends Component {
@@ -30,7 +31,7 @@ class CalendarHeaderViewButton extends Component {
         {...otherProps}
         onPress={this.onPress}
       >
-        {titleCase(view)}
+        {translate(view)}
       </Button>
     );
   }
