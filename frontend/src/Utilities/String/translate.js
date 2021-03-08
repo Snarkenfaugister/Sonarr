@@ -25,7 +25,7 @@ const translations = getTranslations();
 export default function translate(key, args = '') {
   if (args) {
     const translatedKey = translate(key);
-    return translatedKey.replace(/\{(\d+)\}/g, (match, index) => {
+    return translatedKey.replace(/\{(\w+)\}/g, (match, index) => {
       return args[index];
     });
   }

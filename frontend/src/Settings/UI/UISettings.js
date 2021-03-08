@@ -61,7 +61,6 @@ class UISettings extends Component {
     } = this.props;
 
     const uiLanguages = languages.filter((item) => item.value !== 'Original');
-    console.log(languages);
 
     return (
       <PageContent title="UI Settings">
@@ -182,13 +181,13 @@ class UISettings extends Component {
 
                 <FieldSet legend={translate('language')}>
                   <FormGroup>
-                    <FormLabel>{translate('uiLanguage')}</FormLabel>
+                    <FormLabel>{translate('uI Language')}</FormLabel>
                     <FormInputGroup
                       type={inputTypes.SELECT}
                       name="uiLanguage"
                       values={uiLanguages}
-                      helpText={translate('uiLanguageHelpText')}
-                      helpTextWarning={translate('uiLanguageHelpTextWarning')}
+                      helpText={translate('language that Sonarr will use for UI')}
+                      helpTextWarning={translate('browser Reload Required')}
                       onChange={onInputChange}
                       {...settings.uiLanguage}
                     />
