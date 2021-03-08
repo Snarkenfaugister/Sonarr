@@ -1,6 +1,6 @@
 {
-  "language": "Language",
-  "uI Language": "UI Language",
-  "language that Sonarr will use for UI": "Language that Sonarr will use for UI",
-  "browser Reload Required": "Browser Reload Required"
+  "Language": "Language",
+  "UI Language": "UI Language",
+  "Language that Sonarr will use for UI": "Language that Sonarr will use for UI",
+  "Browser Reload Required": "Browser Reload Required"
 }

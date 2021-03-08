@@ -179,15 +179,15 @@ class UISettings extends Component {
                   </FormGroup>
                 </FieldSet>
 
-                <FieldSet legend={translate('language')}>
+                <FieldSet legend={translate('Language')}>
                   <FormGroup>
-                    <FormLabel>{translate('uI Language')}</FormLabel>
+                    <FormLabel>{translate('UI Language')}</FormLabel>
                     <FormInputGroup
                       type={inputTypes.SELECT}
                       name="uiLanguage"
                       values={uiLanguages}
-                      helpText={translate('language that Sonarr will use for UI')}
-                      helpTextWarning={translate('browser Reload Required')}
+                      helpText={translate('Language that Sonarr will use for UI')}
+                      helpTextWarning={translate('Browser Reload Required')}
                       onChange={onInputChange}
                       {...settings.uiLanguage}
                     />

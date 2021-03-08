@@ -9,7 +9,7 @@ function getTranslations() {
     dataType: 'json',
     url: `${window.Sonarr.apiRoot}/localization`,
     success: function(data) {
-      localization = data.strings;
+      localization = data;
     }
   };
 
